@@ -1,0 +1,23 @@
+.header {
+    width: 100vw;
+    height: 6rem;
+    background-color: blue;
+
+    // background-color: transparent;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // flex-direction: row;
+    &__link {
+        text-decoration: none;
+    }
+    &__link-active {
+        text-decoration-line: underline;
+    }
+
+}
+
+// @media (max-width: ){
+
+// }

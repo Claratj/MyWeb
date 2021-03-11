@@ -10,10 +10,10 @@ export function ContactPage() {
             <Header />
             <div className="contact-container">
                 <div className="col-4">
-                    <figure className="about-image">
+                    {/* <figure className="about-image">
                         <img className="about-image__img" src={img} />
                         <h2 className="about-image__txt">Clara</h2>
-                    </figure>
+                    </figure> */}
 
                 </div>
                 <div className="col-8">

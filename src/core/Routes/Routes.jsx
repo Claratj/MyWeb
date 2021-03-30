@@ -4,19 +4,15 @@ import {
     Route
 } from "react-router-dom";
 import { EntryPage } from '../../pages/EntryPage/EntryPage';
-import { HomePage } from '../../pages/HomePage/HomePage';
-import { ContactPage } from '../../pages/ContactPage/ContactPage';
+import { About } from '../../pages/About/About';
 import { WebDevelopment } from '../../pages/WebDevelopment/WebDevelopment';
 import { GraphicDesign } from '../../pages/GraphicDesign/GraphicDesign';
 
 export function Routes() {
     return (
         <Switch>
-            <Route path="/home">
-                <HomePage />
-            </Route>
             <Route path="/about">
-                <ContactPage />
+                <About />
             </Route>
             <Route path="/web">
                 <WebDevelopment />

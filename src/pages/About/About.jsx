@@ -2,6 +2,7 @@ import React from 'react';
 import { Header } from '../../core/Header/Header';
 import './About.scss';
 import img from '../../assets/img/foto-linkedin.jpg';
+import Chronology from './Chronology/Chronology';
 
 
 export function About() {
@@ -16,13 +17,12 @@ export function About() {
                         <img className="about-image__img" src={img} />
                         <h2 className="about-image__txt">Clara</h2>
                     </figure>
-
                 </div>
                 <div className="col-8">
-            
-                        Formación y skills
+                    Formación y skills
                 </div>
-                
+                <Chronology />
+
             </div>
         </div>
     );

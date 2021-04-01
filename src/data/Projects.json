@@ -12,10 +12,10 @@
             "Sass"
         ],
         "githubUrl": "https://gitlab.com/Claratj/Lucky",
-        "webUrl":
+        "webUrl": "..."
     },
     {
-        "id": "",
+        "id": "2",
         "title": "Game of Thrones",
         "photo": "",
         "description": "",
@@ -24,10 +24,10 @@
             "API"
         ],
         "githubUrl": "https://gitlab.com/Claratj/project-react-got",
-        "webUrl":
+        "webUrl": "..."
     },
     {
-        "id": "",
+        "id": "3",
         "title": "Shopify",
         "photo": "",
         "description": "",
@@ -37,15 +37,28 @@
             "Sass"
         ],
         "githubUrl": "https://gitlab.com/Claratj/shopeame-products",
-        "webUrl":
+        "webUrl": "..."
     },
     {
-        "id": "",
+        "id": "4",
         "title": "Rol Game",
         "photo": "",
         "description": "",
         "technologies": "",
         "githubUrl": "https://gitlab.com/Claratj/rol_game",
-        "webUrl":
+        "webUrl": "..."
+    },
+    {
+        "id": "5",
+        "title": "Cinema Blog",
+        "photo": "",
+        "description": "",
+        "technologies": [
+            "Html",
+            "Css",
+            "Javascript"
+        ],
+        "githubUrl": "https://gitlab.com/Claratj/cinema-blog",
+        "webUrl": "..."
     }
 ]

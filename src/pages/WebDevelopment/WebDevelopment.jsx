@@ -1,21 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { ProjectList } from '../../shared/ProjectList/ProjectList';
+import { Header } from '../../core/Header/Header';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
-import { Header } from '../../core/Header/Header';
+
 import './WebDevelopment.scss';
+import Projects from '../../data/Projects.json';
+
 library.add(fab);
 library.add(fas);
 
 export function WebDevelopment() {
 
-    // const [projects, setProjects] = useState([])
+    const [projects, setProjects] = useState([])
 
-    // useEffect(() => {
-    //     setProjects(projectsData);
-    // }, []);
+    useEffect(() => {
+        setProjects(Projects);
+    }, []);
+
     return (
         <>
             <Header />
@@ -54,7 +58,7 @@ export function WebDevelopment() {
                         <span> Scrum</span>
                     </div>
                 </section>
-                <ProjectList />
+                <ProjectList projects={projects} />
             </div>
 
         </>

@@ -1,0 +1,51 @@
+[
+    {
+        "id": "1",
+        "title": "Lucky App",
+        "photo": "",
+        "description": "App para adoptar todo tipo de mascotas desarrollada con Stack MERN",
+        "technologies": [
+            "MongoDB",
+            "ExpressJS",
+            "React",
+            "NodeJS",
+            "Sass"
+        ],
+        "githubUrl": "https://gitlab.com/Claratj/Lucky",
+        "webUrl":
+    },
+    {
+        "id": "",
+        "title": "Game of Thrones",
+        "photo": "",
+        "description": "",
+        "technologies": [
+            "React",
+            "API"
+        ],
+        "githubUrl": "https://gitlab.com/Claratj/project-react-got",
+        "webUrl":
+    },
+    {
+        "id": "",
+        "title": "Shopify",
+        "photo": "",
+        "description": "",
+        "technologies": [
+            "Angular",
+            "API",
+            "Sass"
+        ],
+        "githubUrl": "https://gitlab.com/Claratj/shopeame-products",
+        "webUrl":
+    },
+    {
+        "id": "",
+        "title": "Rol Game",
+        "photo": "",
+        "description": "",
+        "technologies": "",
+        "githubUrl": "https://gitlab.com/Claratj/rol_game",
+        "webUrl":
+    }
+]

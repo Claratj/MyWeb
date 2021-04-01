@@ -24,7 +24,7 @@ export function WebDevelopment() {
         <>
             <Header />
             <div>
-                <h1>Technologies I work with</h1>
+                <h2>Technologies I work with</h2>
                 <section className="technologies">
                     <div>
                         <span>HTML |</span>
@@ -50,8 +50,7 @@ export function WebDevelopment() {
                         <span> Git |</span>
                         <span> GitLab</span>
                         <span> Trello |</span>
-                        <span> Figma |</span>
-                        <span> Zeplin</span>
+              
                     </div>
                     <div>
                         <span> Agile |</span>

@@ -1,6 +1,23 @@
-@mixin mobileHeaderStyle {
-    min-width: 320px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+@mixin mobile {
+  @media all and (min-width: 320px) {
+    @content;
   }
+
+    // min-width: 320px;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+}
+
+
+@mixin tablet {
+    @media all and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media all and (min-width: 1024px) {
+        @content;
+    }
+}

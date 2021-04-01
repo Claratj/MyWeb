@@ -1,6 +1,21 @@
 .flip-box{
+    @include desktop {
+        width: 400px;
+        height: 250px;
+        font-size: 12px;
+       &-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            transform: translate(-40px, 20px);
+            &:hover {
+                transform: rotateY(180deg);
 
-    &-front{
-        background: chocolate;
+            }
+       }
     }
+    
 }

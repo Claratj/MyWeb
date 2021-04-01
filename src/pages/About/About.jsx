@@ -7,23 +7,19 @@ import Chronology from './Chronology/Chronology';
 
 export function About() {
     return (
-
-
-        <div>
+        <>
             <Header />
             <div className="contact-container">
-                <div className="col-4">
-                    <figure className="about-image">
-                        <img className="about-image__img" src={img} />
-                        <h2 className="about-image__txt">Clara</h2>
-                    </figure>
+                <figure className="about-image">
+                    <img className="about-image_img" src={img} />
+                    <h2 className="about-image_txt">Hi! I'm Clara</h2>
+                    <h3 className="">Full Stack Developer Jr</h3>
+                    <p>Based in Madrid, I'm focused on mainly Front-end but Back-end technologies too. Art&Design lover, blablabla</p>
+                </figure>
+                <div className=" c-chronology">
+                    <Chronology />
                 </div>
-                <div className="col-8">
-                    Formación y skills
-                </div>
-                <Chronology />
-
             </div>
-        </div>
+        </>
     );
 }

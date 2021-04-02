@@ -13,7 +13,6 @@ export function GraphicDesign() {
     }, []);
     return (
         <>
-            <Header />
             <div>
                 <h2>Photography & Graphic Design</h2>
                 <section className="technologies">

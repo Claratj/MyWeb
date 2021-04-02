@@ -1,5 +1,4 @@
 import React from 'react';
-import { Header } from '../../core/Header/Header';
 import './About.scss';
 import img from '../../assets/img/foto-linkedin.jpg';
 import Chronology from './Chronology/Chronology';
@@ -8,7 +7,6 @@ import Chronology from './Chronology/Chronology';
 export function About() {
     return (
         <>
-            <Header />
             <div className="contact-container">
                 <figure className="about-image">
                     <img className="about-image_img" src={img} />

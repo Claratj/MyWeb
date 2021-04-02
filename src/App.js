@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+// import { Router } from 'express';
 
 import './App.css';
 
@@ -13,6 +14,7 @@ function App() {
 
 
   return (
+    // <Router>
       <div className="App">
         <header>
           <Header/>
@@ -22,7 +24,7 @@ function App() {
             <EntryPage/>
           </section>
           <section id="about">
-            <About/>
+            {/* <About/> */}
           </section>
           <section id="web">
             <WebDevelopment/>
@@ -35,7 +37,7 @@ function App() {
           <Footer/>
         </footer>
       </div>
-      
+    // </Router>
   );
 }
 

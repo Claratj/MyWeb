@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { ProjectList } from '../../shared/ProjectList/ProjectList';
-import { Header } from '../../core/Header/Header';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
@@ -22,7 +21,6 @@ export function WebDevelopment() {
 
     return (
         <>
-            <Header />
             <div>
                 <h2>Technologies I work with</h2>
                 <section className="technologies">

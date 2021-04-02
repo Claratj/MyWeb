@@ -1,15 +1,15 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import './Header.scss';
 
 export function Header() {
     return (
-
         <nav className="header">
-            <NavLink className={"header__link"} activeClassName={"header__link-active"} exact to={"/home"}>Home</NavLink>
-            <NavLink className={"header__link"} activeClassName={"header__link-active"} to={"/about"}>About</NavLink>
-            <NavLink className={"header__link"} activeClassName={"header__link-active"} to={"/web"}>Web Developer</NavLink>
-            <NavLink className={"header__link"} activeClassName={"header__link-active"} to={"/graphic"}>Graphic Designer</NavLink>
+            <ul>
+                <li><a className={"header__link"} activeClassName={"header__link-active"} href="#home">Home</a></li>
+                <li><a className={"header__link"} activeClassName={"header__link-active"} href="#about">About</a></li>
+                <li><a className={"header__link"} activeClassName={"header__link-active"} href="#web">Web Developer</a></li>
+                <li><a className={"header__link"} activeClassName={"header__link-active"} href="#graphic">Graphic Designer</a></li>
+            </ul>
         </nav>
 
     )

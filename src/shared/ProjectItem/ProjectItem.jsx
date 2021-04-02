@@ -1,9 +1,12 @@
 import React from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { library } from '@fortawesome/fontawesome-svg-core';
-// import { fab } from '@fortawesome/free-brands-svg-icons';
-// import { fas } from '@fortawesome/free-solid-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+
+library.add(fab);
+library.add(fas);
 
 export function ProjectItem(props) {
 
@@ -11,17 +14,16 @@ export function ProjectItem(props) {
     console.log(props);
     return (
 
-        <article className="flip-box" key={key}>
-            <div className="flip-box-inner">
-                <div className="flip-box-front">
-                    <img src={process.env.PUBLIC_URL + photo} alt={title} className="project-photo"></img>
+        <article className="flip-card" key={key}>
+            <div className="flip-card-inner">
+                <div className="flip-card-front">
+                    <img src={process.env.PUBLIC_URL + photo} alt={title} className="project-img"></img>
                 </div>
-                <div className="flip-box-back">
-                    <div className="project-details">
+                <div className="flip-card-back">
+                    <div>
                         <h5>{title}</h5>
                         <p className="project-description">{description}</p>
-                        <p className="project-technologies
-                    ">{technologies}</p>
+                        <p className="project-technologies">{technologies}</p>
                         <nav className="social-media">
                             <ul>
                                 <li><a href={githubUrl} alt={title} target="_blank" rel="noopener noreferrer" ><FontAwesomeIcon icon={['fab', 'github']} size='lg'></FontAwesomeIcon></a>

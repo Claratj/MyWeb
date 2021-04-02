@@ -18,10 +18,8 @@ export function ProjectList(props) {
 
 
     return (
-        <section>
-            <div className="projects">
-                {projectItem}
-            </div>
+        <section className="project">
+            {projectItem}
         </section>
 
     )

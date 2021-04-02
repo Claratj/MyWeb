@@ -1,0 +1,23 @@
+@mixin mobileView {
+  @media all and (min-width: 320px) {
+    @content;
+  }
+
+    // min-width: 320px;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+}
+
+
+@mixin tabletView {
+    @media all and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktopView {
+    @media all and (min-width: 1024px) {
+        @content;
+    }
+}

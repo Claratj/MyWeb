@@ -1,0 +1,32 @@
+@import '../settings/variables.settings';
+
+.technologies {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    max-width: 480px;
+    margin: auto;
+    &:first-of-type {
+        // @include tablet {
+        //     font-size: 1.5em;
+        // }
+    }
+    h4 {
+        margin-block-start: 4em;
+        margin-block-end: 2em;
+    }
+    // @include tablet {
+    //     max-width: 630px;
+    // }
+    span {
+        font-size: 16px;
+        font-weight: 500;
+        // @include tablet {
+        //     font-size: 20px;
+        &:hover {
+            color: $color-orange;
+        }
+        
+    }
+}

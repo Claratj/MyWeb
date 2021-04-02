@@ -1,0 +1,84 @@
+@import '../settings/mixings.settings';
+@import '../settings/variables.settings';
+
+.project {
+    background-color: blanchedalmond;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-img {
+        width: 320px;
+        height: 215px;
+        border-radius: 8px;
+        box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+                    0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.062),
+                    0 41.8px 33.4px rgba(0, 0, 0, 0.066), 0 100px 80px rgba(0, 0, 0, 0.01);
+        @media all and (max-width: 768px) {
+            transition: all 0.2s ease-in-out;
+            &:hover {
+                transform: scale(1.3);
+            }
+        }
+    }
+
+    &-description {
+
+    }
+    
+    @include tabletView {
+        
+    }
+    
+    @include desktopView {
+        flex-direction: unset;
+        padding: 0 5rem;
+    }
+}
+
+.flip-card{
+    width: 80%;
+    margin: 1.5rem 0;
+    height: 250px;
+    border-radius: 8px;
+
+    @include desktopView {
+        width: 400px;
+        font-size: 16px;
+        margin: 2rem;
+        h5 {
+            font-size: 20px;
+            font-family: Montserrat-Bold;
+        }
+       &-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            &:hover {
+                transform: rotateY(180deg);
+            }
+       }
+       &-front {
+           background-color: aqua;
+       }
+       &-front,
+       &-back {
+           position: absolute;
+           border-radius: 8px;
+           width: 100%;
+           height: 100%;
+           -webkit-backface-visibility: hidden;
+           backface-visibility: hidden;
+       }
+       &-back {
+           background-color: $color-green-blue;
+           color: white;
+           transform: rotateY(180deg);
+       }
+    }
+    
+}

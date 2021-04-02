@@ -6,7 +6,7 @@ export function EntryPage() {
     const history = useHistory();
     return (
         <div>
-            <button onClick={() => history.push('/home')}>Enter</button>
+            {/* <button onClick={() => history.push('/home')}>Enter</button> */}
         </div>
     );
 }

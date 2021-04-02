@@ -1,15 +1,29 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useState } from 'react';
 import './Header.scss';
 
 export function Header() {
-    return (
 
+    const [click, setClick] = useState(false);
+    const handleClick = () => setClick(!click);
+    const closeMobileMenu = () => setClick(false);
+
+
+
+    return (
         <nav className="header">
-            <NavLink className={"header__link"} activeClassName={"header__link-active"} exact to={"/home"}>Home</NavLink>
-            <NavLink className={"header__link"} activeClassName={"header__link-active"} to={"/about"}>About</NavLink>
-            <NavLink className={"header__link"} activeClassName={"header__link-active"} to={"/web"}>Web Developer</NavLink>
-            <NavLink className={"header__link"} activeClassName={"header__link-active"} to={"/graphic"}>Graphic Designer</NavLink>
+            <ul className={click ? "nav-options active" : "nav-options"}>
+                <li className="option" onClick={closeMobileMenu}><a href="#home">Home</a></li>
+                <li className="option" onClick={closeMobileMenu}><a href="#about">About</a></li>
+                <li className="option" onClick={closeMobileMenu}><a href="#web">Web Developer</a></li>
+                <li className="option" onClick={closeMobileMenu}><a href="#graphic">Graphic Designer</a></li>
+            </ul>
+            <div className="mobile-menu" onClick={handleClick}>
+                {click ? (
+                    <span className="icon-up" />
+                ) : (
+                    <span className="icon-menu" />
+                )}
+            </div>
         </nav>
 
     )

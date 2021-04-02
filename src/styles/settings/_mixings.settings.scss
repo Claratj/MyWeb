@@ -1,5 +1,5 @@
 @mixin mobileView {
-  @media all and (min-width: 320px) {
+  @media all and (max-width: 768px) {
     @content;
   }
 

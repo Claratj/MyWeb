@@ -1,59 +1,71 @@
 @import '../../styles/settings/mixings.settings';
+@import '../../styles/settings/variables.settings';
 
 .header {
+    background-color: violet;
     width: 100%;
-    height: 6rem;
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    padding: 0px 40px;
+    @include mobileView {
+        padding: 0px 10px;
+    }
 }
 .nav-options {
-    display: flex;
-    width: 100%;
-    height: 350px;
-    position: absolute;
-    top: 80px;
-    left: -100%;
-    opacity: 0;
-    transition: all 0.5s ease;
-    flex-direction: column;
+    padding-left: 25px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 50px;
     list-style-type: none;
-    grid-gap: 0px;
-    @include tabletView {
-        padding-left: 25px;
-        display: grid;
-        grid-template-columns: repeat(3, auto);
-        grid-gap: 50px;
+
+    @include mobileView {
+        display: flex;
+        width: 100%;
+        height: 350px;
+        position: absolute;
+        top: 80px;
+        left: -100%;
+        opacity: 0;
+        transition: all 0.5s ease;
+        flex-direction: column;
         list-style-type: none;
+        grid-gap: 0px;
+        &.active {
+            background: #9899d1;
+            left: 0;
+            opacity: 1;
+            transition: all 0.5s ease;
+            z-index: 1;
+            align-content: center;
+            padding-left: 0px;
+        }
     }
 }
-
-.nav-options.active {
-    background: #9899d1;
-    left: 0;
-    opacity: 1;
-    transition: all 0.5s ease;
-    z-index: 1;
-    align-content: center;
-    padding-left: 0px;
-}
-
-.option {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 10vw;
-    padding: 30px 0px;
-}
-
 .mobile-menu {
-    display: block;
-    @include tabletView {
-        display: none;
+    display: none;
+    @include mobileView {
+        display: block;
+
+    }
+}
+@include mobileView {
+    .option {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 10vw;
+        padding: 30px 0px;
+        &:hover {
+            color: $color-purple;
+        }
     }
 }
 
+.icon-up, .icon-menu {
+    font-size: 24px;
+}
 
     
 //     @include tabletView {

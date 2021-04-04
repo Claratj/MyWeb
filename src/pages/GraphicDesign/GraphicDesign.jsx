@@ -13,7 +13,7 @@ export function GraphicDesign() {
     }, []);
     return (
         <>
-            <div>
+            <div className="main">
                 <h2>Photography & Graphic Design</h2>
                 <section className="technologies">
                     <div>

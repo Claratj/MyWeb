@@ -4,10 +4,9 @@ import {
     Route
 } from "react-router-dom";
 import { EntryPage } from '../../pages/EntryPage/EntryPage';
-import { About } from '../../pages/About/About';
-import { WebDevelopment } from '../../pages/WebDevelopment/WebDevelopment';
-import { GraphicDesign } from '../../pages/GraphicDesign/GraphicDesign';
 import AboutDetail from '../../pages/About/AboutDetail/AboutDetail';
+import WebPorfolio from '../../pages/WebDevelopment/WebPorfolio/WebPorfolio';
+import GraphicPorfolio from '../../pages/GraphicDesign/GraphicPorfolio/GraphicPorfolio';
 
 export function Routes() {
     return (
@@ -15,15 +14,12 @@ export function Routes() {
             <Route path="/about">
                 <AboutDetail />
             </Route>
-            {/* <Route path="/about">
-                <About />
-            </Route> */}
-            {/* <Route path="/web">
-                <WebDevelopment />
+            <Route path="/web">
+                <WebPorfolio />
             </Route>
             <Route path="/graphic">
-                <GraphicDesign />
-            </Route> */}
+                <GraphicPorfolio />
+            </Route>
             <Route path="/">
                 <EntryPage />
             </Route>

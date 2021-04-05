@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Header } from '../../core/Header/Header';
+import { Link } from 'react-router-dom';
 import { ProjectList } from '../../shared/ProjectList/ProjectList';
 import ProjectsGaphic from '../../data/ProjectsGraphic.json';
 
@@ -25,7 +25,9 @@ export function GraphicDesign() {
                     </div>
                 </section>
                 <ProjectList projects={projectsG} />
-                <button className="btn-more">Ver más</button>
+                <Link to="/graphic">
+                    <button className="btn-more">Ver más</button>
+                </Link>
             </div>
         </>
     );

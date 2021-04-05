@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ProjectList } from '../../shared/ProjectList/ProjectList';
+import { Link } from 'react-router-dom';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
@@ -56,8 +57,9 @@ export function WebDevelopment() {
                     </div>
                 </section>
                 <ProjectList projects={projects} />
-                <button className="btn-more">Ver más</button>
-
+                <Link to="/web">
+                    <button className="btn-more">Ver más</button>
+                </Link>
             </div>
 
         </>

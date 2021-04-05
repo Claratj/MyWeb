@@ -48,7 +48,7 @@ export function WebDevelopment() {
                         <span> Git |</span>
                         <span> GitLab</span>
                         <span> Trello |</span>
-              
+
                     </div>
                     <div>
                         <span> Agile |</span>
@@ -56,6 +56,8 @@ export function WebDevelopment() {
                     </div>
                 </section>
                 <ProjectList projects={projects} />
+                <button className="btn-more">Ver más</button>
+
             </div>
 
         </>

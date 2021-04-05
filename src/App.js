@@ -24,7 +24,7 @@ function App() {
             <EntryPage/>
           </section>
           <section id="about">
-            {/* <About/> */}
+            <About/>
           </section>
           <section id="web">
             <WebDevelopment/>

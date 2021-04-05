@@ -1,3 +1,4 @@
+@import '../../styles/settings/mixings.settings';
 
 .contact-container{
     width: 100vw;
@@ -9,23 +10,49 @@
   }
 
 .about-image{
+  padding-top: 100px;
   flex: 1;
-  position: relative;
-//  @include mobileHeaderStyle()
+  @include tabletView {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+  }
+//  
 
   &_img {
-    height: 500px;
-    border-radius: 25px;
+    // height: 500px;
+    object-fit: cover;
+    height: 230px;
+    // height: 100%;
+    width: 230px;
+    border-radius: 100%;
+    
+    @include tabletView {
+      border-radius: 25px;
+      width: 30%;
+      height: 500px;
+    }
   }
 
   &_txt {
     font-family: Montserrat-Bold;
     font-size: 3rem;
-    color: white;
-    position: absolute;
-    z-index: 2;
-    top: 1.5rem;
-    left: 3.5rem;
+    text-align: center;
+    @include tabletView {
+      color: white;
+      position: absolute;
+      z-index: 2;
+      top: 1.5rem;
+      left: 3.5rem;
+      text-align: left;
+
+    }
+  }
+  &-description {
+    h2 {
+      text-align: center;
+    }
   }
 
 }

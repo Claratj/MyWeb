@@ -25,6 +25,7 @@ export function GraphicDesign() {
                     </div>
                 </section>
                 <ProjectList projects={projectsG} />
+                <button className="btn-more">Ver más</button>
             </div>
         </>
     );

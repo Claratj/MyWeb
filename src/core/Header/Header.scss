@@ -16,8 +16,14 @@
         padding: 0px 10px;
     }
 }
+.figure {
+    width: 10%;
+    img {
+        height: 3rem;
+    }
+}
 .nav-options {
-    width: 100%;
+    width: 90%;
     padding-left: 25px;
     display: flex;
     justify-content: space-between;

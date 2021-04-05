@@ -5,9 +5,10 @@ import { Footer } from '../../core/Footer/Footer';
 import { About } from '../About/About';
 import { WebDevelopment } from '../WebDevelopment/WebDevelopment';
 import { GraphicDesign } from '../GraphicDesign/GraphicDesign';
+import Intro from '../Intro/Intro';
 
 
-export function EntryPage() {
+export function Home() {
 
     const history = useHistory();
     return (
@@ -17,6 +18,9 @@ export function EntryPage() {
                 <Header />
             </header>
             <main>
+                <section>
+                    <Intro />
+                </section>
                 <section id="about">
                     <About />
                 </section>

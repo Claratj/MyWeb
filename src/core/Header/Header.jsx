@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
+
 import './Header.scss';
 import Logo1 from '../../assets/img/logo1-01.svg';
 export function Header() {
@@ -12,7 +14,7 @@ export function Header() {
     return (
         <nav className="header">
             <figure className="figure">
-                <img src={Logo1} />
+                <Link to={"/"}><img src={Logo1} /></Link>
             </figure>
             <ul className={click ? "nav-options active" : "nav-options"}>
                 <li className="option" onClick={closeMobileMenu}><a href="#about">About</a></li>

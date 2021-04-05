@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './About.scss';
 import img from '../../assets/img/foto-linkedin.jpg';
 import Chronology from './Chronology/Chronology';
@@ -19,8 +20,9 @@ export function About() {
                         <p>My previous experience has been very useful tool when approaching any project, since I take into account the technical approach to development together with the user experience point of view.</p>
                     </div>
                 </figure>
-                <button className="btn-more">Ver más</button>
-
+                <Link to="/about" >
+                    <button className="btn-more">Ver más</button>
+                </Link>
                 {/* <div className=" c-chronology">
                     <Chronology />
                 </div> */}

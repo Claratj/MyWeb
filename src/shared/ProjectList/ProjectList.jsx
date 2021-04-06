@@ -1,6 +1,8 @@
 import React from 'react';
 import { ProjectItem } from '../ProjectItem/ProjectItem';
 
+import Got from '../../assets/img/got.png';
+
 export function ProjectList(props) {
 
     console.log(props.projects);
@@ -8,6 +10,7 @@ export function ProjectList(props) {
     const projectItem = props.projects.map((project => {
         return (<ProjectItem key={project.id}
             photo={project.photo}
+            // photo={Got}
             title={project.title}
             description={project.description}
             technologies={project.technologies}

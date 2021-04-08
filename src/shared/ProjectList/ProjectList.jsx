@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { ProjectItem } from '../ProjectItem/ProjectItem';
 
 
@@ -38,41 +39,20 @@ export function ProjectList(props) {
     }
 
 
-    // const lessProjects = props.projects.slice(0, 4).map((project => {
-    //     return (<ProjectItem key={project.id}
-    //         photo={project.photo}
-    //         title={project.title}
-    //         description={project.description}
-    //         technologies={project.technologies}
-    //         githubUrl={project.githubUrl}
-    //         webUrl={project.webUrl} />)
-    // }));
-
-
-    // const projectItem = props.projects.map((project => {
-    //     return (<ProjectItem key={project.id}
-    //         photo={project.photo}
-    //         title={project.title}
-    //         description={project.description}
-    //         technologies={project.technologies}
-    //         githubUrl={project.githubUrl}
-    //         webUrl={project.webUrl} />)
-
-    // }))
-
-
 
     return (
-        <>
-        {showLess && 
-            <section className="project">
-                {lessProjects}
-            </section>
-        }
-            <section className="project">
-                {projectItem}
-            </section>
-        </>
+        
 
+        <div className="list">
+
+            {showLess && 
+                <section className="project">
+                    {lessProjects}
+                </section>
+            }
+                <section className="project">
+                    {projectItem}
+                </section>
+        </div>
     )
 }

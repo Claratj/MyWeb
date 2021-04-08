@@ -18,12 +18,12 @@ export function ProjectItem(props) {
                         <nav className="social-media">
                             <ul>
                                 <li>
-                                    <a href={githubUrl} alt={title} target="_blank">
+                                    <a href={githubUrl} alt={title} >
                                         <span className="icon-gitlab" /> Gitlab
                                     </a>
                                 </li>
                                 <li>
-                                    <a href={webUrl} alt={title} target="_blank" >Visit Website</a>
+                                    <a href={webUrl} alt={title} >Visit Website</a>
                                 </li>
                             </ul>
                         </nav>

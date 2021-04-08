@@ -60,7 +60,9 @@ export function WebDevelopment() {
                 </section>
                 <ProjectList projects={projects} showLess={showLess} />
                 <Link to="/web">
-                    <button className="btn-more">Ver más</button>
+                    <button className="btn-more">
+                        <span>Ver más</span>
+                    </button>
                 </Link>
             </div>
 

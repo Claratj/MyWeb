@@ -1,13 +1,5 @@
 import React from 'react';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fab } from '@fortawesome/free-brands-svg-icons';
-import { fas } from '@fortawesome/free-solid-svg-icons';
-
-library.add(fab);
-library.add(fas);
-
 export function ProjectItem(props) {
 
     const { key, photo, title, description, technologies, githubUrl, webUrl } = props;
@@ -26,9 +18,13 @@ export function ProjectItem(props) {
                         <p className="project-technologies">{technologies}</p>
                         <nav className="social-media">
                             <ul>
-                                <li><a href={githubUrl} alt={title} target="_blank" rel="noopener noreferrer" ><FontAwesomeIcon icon={['fab', 'github']} size='lg'></FontAwesomeIcon></a>
+                                <li>
+                                    <a href={githubUrl} alt={title} target="_blank">
+                                        <span className="icon-gitlab" /> Gitlab
+                                    </a>
                                 </li>
-                                <li><a href={webUrl} alt={title} target="_blank" rel="noopener noreferrer">Visit Website</a>
+                                <li>
+                                    <a href={webUrl} alt={title} target="_blank" >Visit Website</a>
                                 </li>
                             </ul>
                         </nav>

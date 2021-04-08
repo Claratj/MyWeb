@@ -4,15 +4,15 @@ import './Intro.scss';
 
 export default function Intro() {
 
-    let circle = document.querySelector(".circle")
-    let triangle = document.querySelector(".triangle")
-    let pentagon = document.querySelector(".pentagon")
+    let circle = document.querySelector(".circle");
+    let triangle = document.querySelector(".triangle");
+    let hexagone = document.querySelector(".hex");
 
-    window.onmousemove = (e) => {
+    window.onmouseover = (e) => {
         // console.log(e.clientX)
-        circle.style.transform = "scale(" + (e.clientX * 0.001) + ")"
-        triangle.style.transform = "rotate(" + (-1 * e.clientX * 0.1) + "deg)"
-        pentagon.style.transform = "rotate(" + (e.clientX * 0.1) + "deg)" + "scale(" + (e.clientX * 0.005) + ")"
+        // circle.style.transform = "scale(" + (e.clientX * 0.001) + ")";
+        // triangle.style.transform = "rotate(" + (-1 * e.clientX * 0.1) + "deg)";
+        // hexagone.style.transform = "rotate(" + (e.clientX * 0.1) + "deg)" + "scale(" + (e.clientX * 0.005) + ")"
     }
 
 
@@ -25,7 +25,7 @@ export default function Intro() {
             </div>
             <div className="circle"></div>
             <div className="triangle"></div>
-            <div className="pentagon"></div>
+            <div className="hex"></div>
         </div>
     )
 }

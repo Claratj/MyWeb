@@ -16,6 +16,8 @@ export function WebDevelopment() {
 
     const [projects, setProjects] = useState([])
 
+    const showLess = true;
+
     useEffect(() => {
         setProjects(Projects);
     }, []);
@@ -56,7 +58,7 @@ export function WebDevelopment() {
                         <span> Scrum</span>
                     </div>
                 </section>
-                <ProjectList projects={projects} />
+                <ProjectList projects={projects} showLess={showLess} />
                 <Link to="/web">
                     <button className="btn-more">Ver más</button>
                 </Link>

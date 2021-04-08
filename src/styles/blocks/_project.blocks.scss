@@ -11,6 +11,7 @@
     &-img {
         width: 320px;
         height: 215px;
+        object-fit: cover;
         border-radius: 8px;
         box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048),
                     0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.062),
@@ -22,6 +23,11 @@
             }
         }
     }
+
+    &-title {
+        text-align: center;
+        font-size: 1.3rem;
+    } 
 
     &-description, &-technologies {
         text-align: center;
@@ -43,6 +49,13 @@
     margin: 1.5rem 0;
     height: 250px;
     border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-front {
+        margin: 0 auto;
+    }
 
     @include desktopView {
         width: 400px;
@@ -63,9 +76,9 @@
                 transform: rotateY(180deg);
             }
        }
-       &-front {
-           background-color: aqua;
-       }
+    //    &-front {
+    //        margin: 0 auto;
+    //    }
        &-front,
        &-back {
            position: absolute;

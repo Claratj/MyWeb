@@ -3,7 +3,6 @@ import React from 'react';
 export function ProjectItem(props) {
 
     const { key, photo, title, description, technologies, githubUrl, webUrl } = props;
-    console.log(props);
     return (
 
         <article className="flip-card" key={key}>
@@ -13,7 +12,7 @@ export function ProjectItem(props) {
                 </div>
                 <div className="flip-card-back">
                     <div>
-                        <h5>{title}</h5>
+                        <h5 className="project-title">{title}</h5>
                         <p className="project-description">{description}</p>
                         <p className="project-technologies">{technologies}</p>
                         <nav className="social-media">

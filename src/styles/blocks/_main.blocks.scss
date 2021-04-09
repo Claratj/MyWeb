@@ -16,28 +16,40 @@
     flex-direction: column;
     &-about {
         text-align: center;
-        justify-content: center;
         flex-direction: column;
         position: relative;
+
+        & .icon-quote-left,.icon-quote-right {
+            color: $color-light-orange;
+            position: absolute;
+            opacity: 0.3;
+            z-index: 3;
+            font-size: 8rem;
+        }
+        & .icon-quote-left {
+            top: -1rem;
+            left: 1rem;
+        }
+        & .icon-quote-right {
+            bottom: 0;
+            right: 1rem;
+        }
+
 
         @include desktopView {
             width: 70%;
             margin: 0 auto;
             flex-direction: unset;
             & .icon-quote-left,.icon-quote-right   {
-                position: absolute;
-                font-size: 14rem;
-                opacity: 0.4;
-                z-index: 3;
-                color: $color-light-orange;
+                font-size: 12rem;
             }
             & .icon-quote-left {
-                  top: 0;
-                  left: 0;
+                  top:0;
+                  left: 0rem;
               }
               & .icon-quote-right {
-                  right: 0;
-                  bottom: 6rem;
+                  bottom: 4rem;
+                  right: 2rem;
               }
         }
     }

@@ -38,18 +38,20 @@
 
         @include desktopView {
             width: 70%;
+            height: 80vh;
             margin: 0 auto;
+            padding-top: 5rem;
             flex-direction: unset;
             & .icon-quote-left,.icon-quote-right   {
                 font-size: 12rem;
             }
             & .icon-quote-left {
                   top:0;
-                  left: 0rem;
+                  left: 0;
               }
               & .icon-quote-right {
-                  bottom: 4rem;
-                  right: 2rem;
+                  bottom: 0;
+                  right: 0;
               }
         }
     }

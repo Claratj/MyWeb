@@ -1,37 +1,29 @@
 @import '../../styles/settings/mixings.settings';
 
-.contact-container{
-    width: 100vw;
-    min-width: 320px;
-    display: flex;
-    // width: 100%;
-    // background-color: violet;
-    // @include mobileHeaderStyle()
-  }
 
 .about-image{
-  padding-top: 100px;
-  flex: 1;
+  
+  padding: 100px 3rem 0;
+  background-color: aquamarine;
+  margin: auto 0;
+  
   @include tabletView {
+    flex: 1;
+    // height: 70vh;
     position: relative;
-    display: flex;
-    align-items: center;
 
   }
  
-
   &_img {
-    // height: 500px;
     object-fit: cover;
     height: 230px;
-    // height: 100%;
     width: 230px;
     border-radius: 100%;
     
     @include tabletView {
-      border-radius: 25px;
-      width: 30%;
-      height: 500px;
+      flex: 2;
+      width: 45rem;
+      height: 45rem;
     }
   }
 
@@ -39,21 +31,34 @@
     font-family: Montserrat-Bold;
     font-size: 3rem;
     text-align: center;
+    
     @include tabletView {
-      color: white;
+      // color: white;
+      width: 90%;
+      padding: 2rem;
+      font-size: 5rem;
       position: absolute;
       z-index: 2;
-      top: 1.5rem;
-      left: 3.5rem;
+      top: 4.5rem;
+      left: 0;
       text-align: left;
 
     }
   }
   &-description {
-
     h2 {
       text-align: center;
     }
+    @include tabletView {
+      flex: 1;
+      padding: 3rem;
+
+
+    }
+
+  }
+  &-p{
+    background-color: greenyellow;
   }
 
 }

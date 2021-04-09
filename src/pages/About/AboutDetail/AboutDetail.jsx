@@ -1,8 +1,10 @@
-import React from 'react'
+import React from 'react';
+
+
 
 export default function AboutDetail() {
     return (
-        <div>
+        <div className="main">
 
 
             <button>Download my Cv</button>

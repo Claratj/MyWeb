@@ -1,13 +1,14 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
-
 import img from '../../assets/img/foto-linkedin.jpg';
+import Button from '../../shared/Button/Button';
 
 import './About.scss';
 
 
 export function About() {
+
+   
     return (
         <div className="main">
             <div className="main-about">
@@ -24,11 +25,7 @@ export function About() {
                 </div>
                 <span className="icon-quote-right" />
             </div>
-            <Link to="/about" >
-                <button className="btn-more">
-                    <span>Ver más</span>
-                </button>
-            </Link>
+                <Button cv={true} text={'CV Download'}/>
         </div>
     );
 }

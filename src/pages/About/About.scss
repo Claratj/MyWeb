@@ -1,34 +1,73 @@
+@import '../../styles/settings/mixings.settings';
+@import '../../styles/settings/variables.settings';
 
-.contact-container{
-    width: 100vw;
-    min-width: 320px;
-    display: flex;
-    // width: 100%;
-    // background-color: violet;
-    // @include mobileHeaderStyle()
+//HOME
+
+.about-figure{
+
+  
+  @include tabletView {
+    margin: auto 0;
+    flex: 1;
+    position: relative;
+    padding-bottom: 6rem;
   }
-
-.about-image{
-  flex: 1;
-  position: relative;
-//  @include mobileHeaderStyle()
-
+ 
   &_img {
-    height: 500px;
-    border-radius: 25px;
+    margin-top: 1rem;
+    object-fit: cover;
+    height: 260px;
+    width: 260px;
+    border-radius: 100%;
+    
+    @include tabletView {
+      flex: 2;
+      margin-top: 0;
+      width: 45rem;
+      height: 45rem;
+    }
   }
 
   &_txt {
     font-family: Montserrat-Bold;
     font-size: 3rem;
-    color: white;
-    position: absolute;
-    z-index: 2;
-    top: 1.5rem;
-    left: 3.5rem;
+    text-align: center;
+    padding: 2rem 0 0;
+    margin: 0;
+    
+    @include tabletView {
+      font-size: 5rem;
+      position: absolute;
+      z-index: 2;
+      top: 4.4rem;
+      left: 0;
+      text-align: center;
+
+    }
   }
 
 }
+
+// Description
+
+.about-description {
+
+  padding: 0 2rem 4rem;
+
+
+    @include tabletView {
+      flex: 1;
+      padding: 3rem;
+      font-family: Montserrat-SemiBold;
+      font-size: 2rem;
+      text-align: center;
+    }
+
+
+}
+
+
+// More About me 
 .c-chronology {
   flex: 2;
 }

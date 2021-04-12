@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ProjectList } from '../../shared/ProjectList/ProjectList';
+import { Link } from 'react-router-dom';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
@@ -15,13 +16,15 @@ export function WebDevelopment() {
 
     const [projects, setProjects] = useState([])
 
+    const showLess = true;
+
     useEffect(() => {
         setProjects(Projects);
     }, []);
 
     return (
         <>
-            <div>
+            <div className="main">
                 <h2>Technologies I work with</h2>
                 <section className="technologies">
                     <div>
@@ -48,14 +51,19 @@ export function WebDevelopment() {
                         <span> Git |</span>
                         <span> GitLab</span>
                         <span> Trello |</span>
-              
+
                     </div>
                     <div>
                         <span> Agile |</span>
                         <span> Scrum</span>
                     </div>
                 </section>
-                <ProjectList projects={projects} />
+                <ProjectList projects={projects} showLess={showLess} />
+                <Link to="/web">
+                    <button className="btn-more">
+                        <span>Ver más</span>
+                    </button>
+                </Link>
             </div>
 
         </>

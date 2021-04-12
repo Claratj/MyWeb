@@ -1,0 +1,58 @@
+@import '../settings/mixings.settings';
+@import '../settings/variables.settings';
+
+
+.main, .main-about {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;  
+    
+}
+
+
+.main {
+    padding-top: 100px;
+    flex-direction: column;
+    &-about {
+        text-align: center;
+        flex-direction: column;
+        position: relative;
+
+        & .icon-quote-left,.icon-quote-right {
+            color: $color-light-orange;
+            position: absolute;
+            opacity: 0.3;
+            z-index: 3;
+            font-size: 8rem;
+        }
+        & .icon-quote-left {
+            top: -1rem;
+            left: 1rem;
+        }
+        & .icon-quote-right {
+            bottom: 0;
+            right: 1rem;
+        }
+
+
+        @include desktopView {
+            width: 70%;
+            height: 80vh;
+            margin: 0 auto;
+            padding-top: 5rem;
+            flex-direction: unset;
+            & .icon-quote-left,.icon-quote-right   {
+                font-size: 12rem;
+            }
+            & .icon-quote-left {
+                  top:0;
+                  left: 0;
+              }
+              & .icon-quote-right {
+                  bottom: 0;
+                  right: 0;
+              }
+        }
+    }
+}

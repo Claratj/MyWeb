@@ -2,7 +2,7 @@
     {
         "id": "1",
         "title": "Lucky App",
-        "photo": "",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1617873745/app-lucky_h6lozi.png",
         "description": "App para adoptar todo tipo de mascotas desarrollada con Stack MERN",
         "technologies": [
             "MongoDB",
@@ -12,12 +12,12 @@
             "Sass"
         ],
         "githubUrl": "https://gitlab.com/Claratj/Lucky",
-        "webUrl": "..."
+        "webUrl": "https://lucky-app.netlify.app/"
     },
     {
         "id": "2",
         "title": "Game of Thrones",
-        "photo": "",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1617873742/got_dl9iui.png",
         "description": "",
         "technologies": [
             "React",
@@ -28,8 +28,8 @@
     },
     {
         "id": "3",
-        "title": "Shopify",
-        "photo": "",
+        "title": "Shopeame",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1617873428/shopeame_wt2fun.png",
         "description": "",
         "technologies": [
             "Angular",
@@ -42,7 +42,7 @@
     {
         "id": "4",
         "title": "Rol Game",
-        "photo": "",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1617873429/rol-vanilla_gfs5yb.png",
         "description": "",
         "technologies": "",
         "githubUrl": "https://gitlab.com/Claratj/rol_game",
@@ -51,7 +51,7 @@
     {
         "id": "5",
         "title": "Cinema Blog",
-        "photo": "",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1617873429/blog_cine_zngeu0.png",
         "description": "",
         "technologies": [
             "Html",
@@ -60,5 +60,42 @@
         ],
         "githubUrl": "https://gitlab.com/Claratj/cinema-blog",
         "webUrl": "..."
+    },
+    {
+        "id": "6",
+        "title": "Coffee Blog",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1617873429/blog-cafe_qcso1g.png",
+        "description": "",
+        "technologies": [
+            "Html",
+            "Css"
+        ],
+        "githubUrl": "",
+        "webUrl": "..."
+    },
+    {
+        "id": "7",
+        "title": "Real State",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1617873428/bienes_qf3jq6.png",
+        "description": "",
+        "technologies": [
+            "Html",
+            "Css"
+        ],
+        "githubUrl": "",
+        "webUrl": "..."
+    },
+    {
+        "id": "8",
+        "title": "Web Design",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1617873428/web_design_vpjzza.png",
+        "description": "",
+        "technologies": [
+            "Html",
+            "Css"
+        ],
+        "githubUrl": "",
+        "webUrl": "..."
     }
+
 ]

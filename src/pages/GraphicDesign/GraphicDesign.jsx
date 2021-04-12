@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Header } from '../../core/Header/Header';
+import { Link } from 'react-router-dom';
 import { ProjectList } from '../../shared/ProjectList/ProjectList';
 import ProjectsGaphic from '../../data/ProjectsGraphic.json';
 
@@ -13,7 +13,7 @@ export function GraphicDesign() {
     }, []);
     return (
         <>
-            <div>
+            <div className="main">
                 <h2>Photography & Graphic Design</h2>
                 <section className="technologies">
                     <div>
@@ -25,6 +25,11 @@ export function GraphicDesign() {
                     </div>
                 </section>
                 <ProjectList projects={projectsG} />
+                <Link to="/graphic">
+                    <button className="btn-more">
+                        <span>Ver más</span>
+                    </button>
+                </Link>
             </div>
         </>
     );

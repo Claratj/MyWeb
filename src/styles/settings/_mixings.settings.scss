@@ -2,11 +2,6 @@
   @media all and (max-width: 768px) {
     @content;
   }
-
-    // min-width: 320px;
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
 }
 
 
@@ -20,4 +15,11 @@
     @media all and (min-width: 1024px) {
         @content;
     }
+}
+
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

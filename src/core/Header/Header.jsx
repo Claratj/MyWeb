@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link as Link } from "react-router-dom";
+// import { Link as Link } from "react-router-dom";
 
 import { Link as LinkScroll } from 'react-scroll';
 
@@ -17,12 +17,12 @@ export function Header() {
     return (
         <nav className="header">
             <figure className="figure">
-                <Link to={"/"}><img src={Logo1} /></Link>
+                <LinkScroll to="intro" smooth={true} duration={1000}><img src={Logo1} /></LinkScroll>
             </figure>
             <ul className={click ? "nav-options active" : "nav-options"}>
-                <li className="option" onClick={closeMobileMenu}><LinkScroll to="about">About</LinkScroll></li>
-                <li className="option" onClick={closeMobileMenu}><LinkScroll to="web">Web Developer</LinkScroll></li>
-                <li className="option" onClick={closeMobileMenu}><LinkScroll to="graphic">Graphic Designer</LinkScroll></li>
+                <li className="option" onClick={closeMobileMenu}><LinkScroll to="about" smooth={true} duration={1000}>About</LinkScroll></li>
+                <li className="option" onClick={closeMobileMenu}><LinkScroll to="web" smooth={true} duration={1000}>Web Developer</LinkScroll></li>
+                <li className="option" onClick={closeMobileMenu}><LinkScroll to="graphic" smooth={true} duration={1000}>Graphic Designer</LinkScroll></li>
             </ul>
             <div className="mobile-menu" onClick={handleClick}>
                 {click ? (

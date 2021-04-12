@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-// import { Link as Link } from "react-router-dom";
-
 import { Link as LinkScroll } from 'react-scroll';
 
 

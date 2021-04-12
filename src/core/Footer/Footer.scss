@@ -1,0 +1,8 @@
+@import '../../styles/settings/mixings.settings';
+
+footer {
+    background-color: black;
+    color: white;
+    height: 80px;
+    @include flexCenter;
+}

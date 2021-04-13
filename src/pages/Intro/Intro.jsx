@@ -25,7 +25,6 @@ export default function Intro() {
             </div>
             <div className="circle"></div>
             <div className="triangle"></div>
-            <div className="hex"></div>
         </div>
     )
 }

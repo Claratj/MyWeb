@@ -7,10 +7,9 @@ import Logo1 from '../../assets/img/logo1-01.svg';
 export function Header() {
     const [scrollNav, setScrollNav] = useState(false);
     const [click, setClick] = useState(false);
+
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
-
-
     const changeNav = () => {
 
         if (window.scrollY >= 80) {
@@ -24,9 +23,6 @@ export function Header() {
     useEffect(() => {
         window.addEventListener('scroll', changeNav)
     }, [])
-
-
-
 
     return (
         <nav className={scrollNav ?  'header active' : 'header'}>

@@ -19,8 +19,8 @@ export default function Intro() {
 
 
     return (
-        <div className="main">
-            <div className="intro-txt">
+        <div className="main" id="intro">
+            <div className="intro-txt" >
                 <h2 className="headline headline--ghost">Hola caracola</h2>
             </div>
             <div className="circle"></div>

@@ -2,11 +2,6 @@
   @media all and (max-width: 768px) {
     @content;
   }
-
-    // min-width: 320px;
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
 }
 
 
@@ -21,3 +16,11 @@
         @content;
     }
 }
+
+
+@mixin flex($value) {
+    display: flex;
+    justify-content: $value;
+    align-items: center;
+}
+

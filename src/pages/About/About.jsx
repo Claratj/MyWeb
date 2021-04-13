@@ -11,7 +11,7 @@ export function About() {
    
     return (
         <div className="main">
-            <div className="main-about">
+            <div className="main-about" id="about">
                 <span className="icon-quote-left" />
                 <figure className="about-figure">
                     <img className="about-figure_img" src={img} />

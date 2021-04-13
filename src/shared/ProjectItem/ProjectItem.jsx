@@ -19,11 +19,11 @@ export function ProjectItem(props) {
                             <ul>
                                 <li>
                                     <a href={githubUrl} alt={title} >
-                                        <span className="icon-gitlab" /> Gitlab
+                                        <span className="icon-gitlab" />Gitlab
                                     </a>
                                 </li>
                                 <li>
-                                    <a href={webUrl} alt={title} >Visit Website</a>
+                                    <a href={webUrl} alt={title} >Website</a>
                                 </li>
                             </ul>
                         </nav>

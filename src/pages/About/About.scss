@@ -4,11 +4,8 @@
 //HOME
 
 .about-figure{
-
-  
   @include tabletView {
     margin: auto 0;
-    flex: 1;
     position: relative;
     padding-bottom: 6rem;
   }
@@ -21,7 +18,7 @@
     border-radius: 100%;
     
     @include tabletView {
-      flex: 2;
+      // flex: 2;
       margin-top: 0;
       width: 45rem;
       height: 45rem;

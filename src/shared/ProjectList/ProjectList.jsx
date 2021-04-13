@@ -41,18 +41,15 @@ export function ProjectList(props) {
 
 
     return (
-        
-
-        <div className="list">
-
-            {showLess && 
+        <>
+            {showLess &&
                 <section className="project">
                     {lessProjects}
                 </section>
             }
-                <section className="project">
-                    {projectItem}
-                </section>
-        </div>
+            <section className="project">
+                {projectItem}
+            </section>
+        </>
     )
 }

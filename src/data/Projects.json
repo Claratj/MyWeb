@@ -3,13 +3,13 @@
         "id": "1",
         "title": "Lucky App",
         "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1617873745/app-lucky_h6lozi.png",
-        "description": "App para adoptar todo tipo de mascotas desarrollada con Stack MERN",
+        "description": "A Full Stack MERN app where the main challenges where the communication between different models on the Back End when registering for events, selecting the differents available animals for adoptions, or saving different available animals to adoption as favorite",
         "technologies": [
-            "MongoDB",
-            "ExpressJS",
-            "React",
-            "NodeJS",
-            "Sass"
+            "MongoDB ",
+            "ExpressJS ",
+            "React ",
+            "NodeJS ",
+            "Sass "
         ],
         "githubUrl": "https://gitlab.com/Claratj/Lucky",
         "webUrl": "https://lucky-app.netlify.app/"
@@ -18,10 +18,14 @@
         "id": "2",
         "title": "Game of Thrones",
         "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1617873742/got_dl9iui.png",
-        "description": "",
+        "description": "A React project consuming a public API",
         "technologies": [
-            "React",
-            "API"
+            "React ",
+            "API ",
+            "Html ",
+            "Sass ",
+            "Css ",
+            "JavaScript "
         ],
         "githubUrl": "https://gitlab.com/Claratj/project-react-got",
         "webUrl": "..."
@@ -30,11 +34,12 @@
         "id": "3",
         "title": "Shopeame",
         "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1617873428/shopeame_wt2fun.png",
-        "description": "",
+        "description": " A Full Stack app with Angular where you can post you can sell your products. The app lets you add products, remove them or edit them.",
         "technologies": [
-            "Angular",
-            "API",
-            "Sass"
+            "Angular ",
+            "API ",
+            "Sass ",
+            "Css "
         ],
         "githubUrl": "https://gitlab.com/Claratj/shopeame-products",
         "webUrl": "..."
@@ -43,8 +48,12 @@
         "id": "4",
         "title": "Rol Game",
         "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1617873429/rol-vanilla_gfs5yb.png",
-        "description": "",
-        "technologies": "",
+        "description": "A desktop app based mainly in Vanilla Js, with the minimum of HTML and lots of CSS. A fun exercise to put into practise all the JavaScript bases.",
+        "technologies": [
+            "Html ",
+            "Css ",
+            "JavaScript "
+        ],
         "githubUrl": "https://gitlab.com/Claratj/rol_game",
         "webUrl": "..."
     },
@@ -54,9 +63,10 @@
         "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1617873429/blog_cine_zngeu0.png",
         "description": "",
         "technologies": [
-            "Html",
-            "Css",
-            "Javascript"
+            "API ",
+            "JavaScript ",
+            "Html ",
+            "Css "
         ],
         "githubUrl": "https://gitlab.com/Claratj/cinema-blog",
         "webUrl": "..."
@@ -65,10 +75,10 @@
         "id": "6",
         "title": "Coffee Blog",
         "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1617873429/blog-cafe_qcso1g.png",
-        "description": "",
+        "description": "Exercise of recreating a design.",
         "technologies": [
-            "Html",
-            "Css"
+            "Html ",
+            "Css "
         ],
         "githubUrl": "",
         "webUrl": "..."
@@ -77,10 +87,10 @@
         "id": "7",
         "title": "Real State",
         "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1617873428/bienes_qf3jq6.png",
-        "description": "",
+        "description": "A simple excercise in pure Html and Css reacreating a design.",
         "technologies": [
-            "Html",
-            "Css"
+            "Html ",
+            "Css "
         ],
         "githubUrl": "",
         "webUrl": "..."
@@ -89,13 +99,12 @@
         "id": "8",
         "title": "Web Design",
         "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1617873428/web_design_vpjzza.png",
-        "description": "",
+        "description": "Exercise of recreating a design.",
         "technologies": [
-            "Html",
-            "Css"
+            "Html ",
+            "Css "
         ],
         "githubUrl": "",
         "webUrl": "..."
     }
-
 ]

@@ -16,7 +16,12 @@
     @include mobileView {
         padding: 0px 10px;
     }
+    &.active {
+        background-color: white;
+    }
 }
+
+
 .figure {
     width: 10%;
     img {

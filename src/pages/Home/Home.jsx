@@ -14,6 +14,7 @@ import { Footer } from '../../core/Footer/Footer';
 
 
 import 'aos/dist/aos.css';
+import './Home.scss';
 
 export function Home() {
     AOS.init(
@@ -23,6 +24,8 @@ export function Home() {
         }
     );
 
+
+
     const history = useHistory();
     return (
         <div>
@@ -30,7 +33,8 @@ export function Home() {
             <header>
                 <Header />
             </header>
-            <main>
+            {/* <div className="arrow animated bounce"></div> */}
+            <main className="home-content">
                 <section>
                     <Intro />
                 </section>

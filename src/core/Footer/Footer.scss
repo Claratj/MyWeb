@@ -1,8 +1,24 @@
 @import '../../styles/settings/mixings.settings';
 
 footer {
+    margin-top: 2rem;;
     background-color: black;
     color: white;
-    height: 80px;
+    height: 100px;
     @include flexCenter;
+
 }
+
+.rrss {
+    display: flex;
+    justify-content: space-between;
+    & .icon-twitter, .icon-gitlab, .icon-in, .icon-mail {
+        font-size: 1.8rem;
+
+        &:hover {
+            color: violet;
+        }
+    }
+
+}
+

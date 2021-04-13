@@ -24,7 +24,7 @@ export function GraphicDesign() {
                         <span> After Effects</span>
                     </div>
                 </section>
-                <ProjectList projects={projectsG} />
+                {/* <ProjectList projects={projectsG} /> */}
                 <Link to="/graphic">
                     <button className="btn-more">
                         <span>Ver más</span>

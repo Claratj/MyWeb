@@ -1,22 +1,28 @@
 @import '../../styles/settings/mixings.settings';
+@import '../../styles/settings/variables.settings';
 
 footer {
+    width: 100%;
     margin-top: 2rem;;
-    background-color: black;
-    color: white;
+    background-color: $color-mint;
+    color: $color-purple;
+    font-family: Montserrat-SemiBold;
     height: 100px;
-    @include flexCenter;
+    @include flex(center);
 
 }
 
 .rrss {
-    display: flex;
-    justify-content: space-between;
+    padding-top: 1rem;
+    @include flex(space-between);
+
     & .icon-twitter, .icon-gitlab, .icon-in, .icon-mail {
         font-size: 1.8rem;
+        color: $color-purple;
 
         &:hover {
-            color: violet;
+            color: $color-b-orange;
+            cursor: pointer;
         }
     }
 

@@ -18,14 +18,9 @@
 }
 
 
-@mixin flexCenter {
+@mixin flex($value) {
     display: flex;
-    justify-content: center;
+    justify-content: $value;
     align-items: center;
 }
 
-@mixin flexBetween {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}

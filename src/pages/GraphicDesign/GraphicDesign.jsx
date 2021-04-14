@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ProjectList } from '../../shared/ProjectList/ProjectList';
-import ProjectsGaphic from '../../data/ProjectsGraphic.json';
+// import ProjectsGaphic from '../../data/ProjectsGraphic.json';
 
 
 export function GraphicDesign() {
 
     const [projectsG, setProjectsG] = useState([])
 
-    useEffect(() => {
-        setProjectsG(ProjectsGaphic);
-    }, []);
+    // useEffect(() => {
+    //     setProjectsG(ProjectsGaphic);
+    // }, []);
     return (
         <>
             <div className="main">

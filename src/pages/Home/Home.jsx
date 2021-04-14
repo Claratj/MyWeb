@@ -45,7 +45,8 @@ export function Home() {
                     <WebDevelopment />
                 </section>
                 <section data-aos="fade-right" id="graphic">
-                    <GraphicDesign />
+                    {/* <GraphicDesign />
+                     */}
                 </section>
             </main>
             <footer>

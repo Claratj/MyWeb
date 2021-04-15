@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import { ProjectList } from '../../shared/ProjectList/ProjectList';
-// import  GraphicGallery  from './GraphicGallery/GraphicGallery';
-// import ProjectsGaphic from '../../data/ProjectsGraphic.json';
-import PhotoProjects from '../../data/PhotoProjects.json';
+import CreativeGallery from './CreativeGallery/CreativeGallery';
 
-import CreativeGallery  from './CreativeGallery/CreativeGallery';
+
+import PhotoProjects from '../../data/PhotoProjects.json';
+import GraphicsProjects from '../../data/GraphicsProjects.json';
+
 
 import './Creative.scss';
 
@@ -14,12 +14,13 @@ import './Creative.scss';
 export function Creative() {
 
     const [projectsP, setProjectsP] = useState([])
-
+    const [projectsG, setProjectsG] = useState([])
     const showLess = true;
 
 
     useEffect(() => {
         setProjectsP(PhotoProjects);
+        setProjectsG(GraphicsProjects);
     }, []);
 
 
@@ -51,6 +52,8 @@ export function Creative() {
                         </Link>
                     </div>
                     <div className="creative">
+
+                        <CreativeGallery projectsG={projectsG} showLess={showLess} />
 
                         <Link to="/graphic">
                             <button className="btn-more">

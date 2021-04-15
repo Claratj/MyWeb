@@ -4,7 +4,7 @@ import { ProjectItem } from '../ProjectItem/ProjectItem';
 
 
 export function ProjectList(props) {
-    console.log(props.showLess);
+    // console.log(props.showLess);
 
     let showLess = props.showLess;
     let lessProjects = '';

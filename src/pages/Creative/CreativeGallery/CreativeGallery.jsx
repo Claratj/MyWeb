@@ -5,48 +5,49 @@ import React from 'react';
 import './CreativeGallery.scss';
 
 export default function CreativeGallery(props) {
+    console.log(props.showLess);
 
     let showLess = props.showLess;
-    let projectP = props.projectP;
-    let projectG = props.projectG;
     let lessProjects = '';
     const allProjects = '';
+
+    console.log(props.projectP);
 
     switch (showLess !== null) {
         case (showLess === true && props.projectP):
             lessProjects = props.projectP.slice(0, 3).map((project => {
-                return <div class="col-sm-12 col-md-4">
-                    <figure class="img-container">
-                        <img src={projectP.photo} />
+                return (<div className="col-sm-12 col-md-4" key={project.id}>
+                    <figure className="img-container">
+                        <img src={project.photo} />
                         <figcaption class="img-content">
-                            <h2 class="title">{projectP.title}</h2>
-                            <p class="category">{projectP.description}</p>
+                            <h2 className="title">{project.title}</h2>
+                            <p className="category">{project.description}</p>
                         </figcaption>
-                        <span class="img-content-hover">
-                            <h2 class="title">Smart Watch</h2>
-                            <p class="category">Showcase</p>
+                        <span className="img-content-hover">
+                            <h2 className="title">Smart Watch</h2>
+                            <p className="category">Showcase</p>
                         </span>
                     </figure>
-                </div>
-            }))
+                </div>)
+            }));
 
             break;
         case (showLess === false && props.projectP):
             allProjects = props.projectP.map((project => {
-                return <div class="col-sm-12 col-md-4">
-                    <figure class="img-container">
-                        <img src={projectP.photo} />
-                        <figcaption class="img-content">
-                            <h2 class="title">{projectP.title}</h2>
-                            <p class="category">{projectP.description}</p>
+                return (<div className="col-sm-12 col-md-4" key={project.id}>
+                    <figure className="img-container">
+                        <img src={project.photo} />
+                        <figcaption className="img-content">
+                            <h2 className="title">{project.title}</h2>
+                            <p className="category">{project.description}</p>
                         </figcaption>
-                        <span class="img-content-hover">
-                            <h2 class="title">Smart Watch</h2>
-                            <p class="category">Showcase</p>
+                        <span className="img-content-hover">
+                            <h2 className="title">Smart Watch</h2>
+                            <p className="category">Showcase</p>
                         </span>
                     </figure>
-                </div>
-            }))
+                </div>)
+            }));
 
             break;
 
@@ -58,8 +59,11 @@ export default function CreativeGallery(props) {
     return (
 
         <section class="main-gallery">
+            {showLess && <div class="gallery">
+                {lessProjects}
+            </div>}
             <div class="gallery">
-                {showLess ? lessProjects  :  allProjects }
+                {allProjects}
             </div>
         </section>
 

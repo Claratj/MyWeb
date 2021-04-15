@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import CreativeGallery from './CreativeGallery/CreativeGallery';
 
 
-import PhotoProjects from '../../data/PhotoProjects.json';
-import GraphicsProjects from '../../data/GraphicsProjects.json';
+import Photography from '../../data/PhotoProjects.json';
+import GraphicDesign from '../../data/GraphicsProjects.json';
 
 
 import './Creative.scss';
@@ -13,17 +13,17 @@ import './Creative.scss';
 
 export function Creative() {
 
-    const [projectsP, setProjectsP] = useState([])
-    const [projectsG, setProjectsG] = useState([])
+    const [photography, setPhotography] = useState([]);
+    const [graphicDesign, setGraphicDesign] = useState([]);
     const showLess = true;
 
 
+
+
     useEffect(() => {
-        setProjectsP(PhotoProjects);
-        setProjectsG(GraphicsProjects);
+        setPhotography(Photography);
+        setGraphicDesign(GraphicDesign);
     }, []);
-
-
 
 
     return (
@@ -39,11 +39,10 @@ export function Creative() {
                         <span> After Effects</span>
                     </div>
                 </section>
-                {/* <ProjectList projects={projectsG} showLess={showLess} /> */}
                 <section className="porfolio-creative">
                     <div className="creative">
 
-                        <CreativeGallery projectsP={projectsP} showLess={showLess} />
+                        <CreativeGallery photography={photography} showLess={showLess} />
 
                         <Link to="/photography">
                             <button className="btn-more">
@@ -53,7 +52,7 @@ export function Creative() {
                     </div>
                     <div className="creative">
 
-                        <CreativeGallery projectsG={projectsG} showLess={showLess} />
+                        <CreativeGallery graphicDesign={graphicDesign} showLess={showLess} />
 
                         <Link to="/graphic">
                             <button className="btn-more">

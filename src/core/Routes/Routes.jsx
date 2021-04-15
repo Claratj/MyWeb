@@ -3,8 +3,10 @@ import {
     Switch,
     Route
 } from "react-router-dom";
-import GraphicPorfolio from '../../pages/Creative/GraphicPorfolio/GraphicPorfolio';
+
 import { Home } from '../../pages/Home/Home';
+import GraphicPorfolio from '../../pages/Creative/GraphicPorfolio/GraphicPorfolio';
+import PhotographyPorfolio from '../../pages/Creative/PhotographyPorfolio/PhotographyPorfolio';
 import WebPorfolio from '../../pages/WebDevelopment/WebPorfolio/WebPorfolio';
 
 export function Routes() {
@@ -14,11 +16,11 @@ export function Routes() {
                 <WebPorfolio />
             </Route>
             <Route path="/photography">
-                <GraphicPorfolio />
+                <PhotographyPorfolio />
             </Route>
-            {/* <Route path="/graphic">
+            <Route path="/graphic">
                 <GraphicGallery />
-            </Route> */}
+            </Route>
             <Route path="/">
                 <Home />
             </Route>

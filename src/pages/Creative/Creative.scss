@@ -1,0 +1,13 @@
+@import '../../styles/settings/mixings.settings';
+@import '../../styles/settings/variables.settings';
+
+.porfolio-creative{
+    width: 80%;
+    background-color: aquamarine;
+    @include flex(space-between);
+
+}
+
+.creative {
+    width: 50%;
+}

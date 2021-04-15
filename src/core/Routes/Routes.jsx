@@ -3,9 +3,9 @@ import {
     Switch,
     Route
 } from "react-router-dom";
+import GraphicPorfolio from '../../pages/Creative/GraphicPorfolio/GraphicPorfolio';
 import { Home } from '../../pages/Home/Home';
 import WebPorfolio from '../../pages/WebDevelopment/WebPorfolio/WebPorfolio';
-import GraphicPorfolio from '../../pages/GraphicDesign/GraphicPorfolio/GraphicPorfolio';
 
 export function Routes() {
     return (
@@ -13,9 +13,12 @@ export function Routes() {
             <Route path="/web">
                 <WebPorfolio />
             </Route>
-            <Route path="/creative">
+            <Route path="/photography">
                 <GraphicPorfolio />
             </Route>
+            {/* <Route path="/graphic">
+                <GraphicGallery />
+            </Route> */}
             <Route path="/">
                 <Home />
             </Route>

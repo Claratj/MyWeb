@@ -8,7 +8,7 @@ import { Link } from 'react-scroll';
 import { Header } from '../../core/Header/Header';
 import Intro from '../Intro/Intro';
 import { WebDevelopment } from '../WebDevelopment/WebDevelopment';
-import { GraphicDesign } from '../GraphicDesign/GraphicDesign';
+import { Creative } from '../Creative/Creative';
 import { About } from '../About/About';
 import { Footer } from '../../core/Footer/Footer';
 
@@ -45,8 +45,7 @@ export function Home() {
                     <WebDevelopment />
                 </section>
                 <section data-aos="fade-right" id="graphic">
-                    {/* <GraphicDesign />
-                     */}
+                    <Creative />
                 </section>
             </main>
             <footer>

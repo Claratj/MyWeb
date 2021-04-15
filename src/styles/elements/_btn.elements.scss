@@ -1,4 +1,5 @@
 @import '../settings/variables.settings';
+@import '../settings/mixings.settings';
 
 .btn-more { 
 
@@ -33,6 +34,7 @@
 
     }
 }
+
 
 @keyframes rotate {
     0% {

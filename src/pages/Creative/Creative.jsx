@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import CreativeGallery from './CreativeGallery/CreativeGallery';
 
 
-import Photography from '../../data/PhotoProjects.json';
-import GraphicDesign from '../../data/GraphicsProjects.json';
+import Photography from '../../data/Photography.json';
+import GraphicDesign from '../../data/GraphicDesign.json';
 
 
 import './Creative.scss';
@@ -14,17 +14,17 @@ import './Creative.scss';
 export function Creative() {
 
     const [photography, setPhotography] = useState([]);
-    const [graphicDesign, setGraphicDesign] = useState([]);
-    const showLess = true;
+    // const [graphicDesign, setGraphicDesign] = useState([]);
 
 
 
 
     useEffect(() => {
         setPhotography(Photography);
-        setGraphicDesign(GraphicDesign);
+        // setGraphicDesign(GraphicDesign);
     }, []);
 
+    const showLess = true;
 
     return (
         <>
@@ -52,7 +52,7 @@ export function Creative() {
                     </div>
                     <div className="creative">
 
-                        <CreativeGallery graphicDesign={graphicDesign} showLess={showLess} />
+                        {/* <CreativeGallery graphicDesign={graphicDesign} showLess={showLess} /> */}
 
                         <Link to="/graphic">
                             <button className="btn-more">

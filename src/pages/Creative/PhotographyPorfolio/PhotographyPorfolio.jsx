@@ -1,22 +1,23 @@
 import React, { useState, useEffect } from 'react';
+
 import CreativeGallery from '../CreativeGallery/CreativeGallery';
 
-
+import Photography from '../../../data/Photography.json';
 
 
 export default function PhotographyPorfolio() {
 
-    // const [projectsP, setProjectsP] = useState([])
+    const [photography, setPhotography] = useState([]);
 
-    // useEffect(() => {
-    //     setProjectsP();
-    // }, []);
+    useEffect(() => {
+        setPhotography(Photography);
+    }, []);
 
-    let showLess = false;
+    const showLess = false;
 
     return (
         <div>
-            <CreativeGallery/>
+            <CreativeGallery photography={photography} showLess={showLess} />
         </div>
     )
 }

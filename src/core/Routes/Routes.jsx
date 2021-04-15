@@ -19,7 +19,7 @@ export function Routes() {
                 <PhotographyPorfolio />
             </Route>
             <Route path="/graphic">
-                <GraphicGallery />
+                <GraphicPorfolio />
             </Route>
             <Route path="/">
                 <Home />

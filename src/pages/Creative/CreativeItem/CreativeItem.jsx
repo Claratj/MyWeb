@@ -5,26 +5,25 @@ import './CreativeItem.scss';
 export default function CreativeItem(props) {
 
     const { key, title, photo, description } = props;
-    const flexGrow = '';
     console.log(title);
 
-    switch (title) {
-        case (title === "Envy" && title === "Gluttony" && title === "Pride" && title === "Black bird"):
-            flexGrow = "flex";
-            break;
+    // switch (title) {
+    //     case (title === "Envy" && title === "Gluttony" && title === "Pride" && title === "Black bird"):
+    //         flexGrow = "flex";
+    //         break;
 
-        case (title === "Lust" || title === "Irbis" || title === "Prometheus II"):
-            flexGrow = "flex2";
-            break;
+    //     case (title === "Lust" || title === "Irbis" || title === "Prometheus II"):
+    //         flexGrow = "flex2";
+    //         break;
 
-        case (title === "Flamingo"):
-            flexGrow = "flex3";
+    //     case (title === "Flamingo"):
+    //         flexGrow = "flex3";
 
-        default: break;
-    }
+    //     default: break;
+    // }
 
     return (
-        <div className={flexGrow} key={key}>
+        <div className="gridWrapper" key={key}>
             <figure className="img-container">
                 <img src={photo} alt={title} />
                 <figcaption class="img-content">

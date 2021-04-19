@@ -10,3 +10,13 @@
 .flex3 {
     @include flexGrow(1);
 }
+
+.gridWrapper {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
+    display: grid;
+    height: 130em;
+    justify-content: center;
+    align-content: end;
+    grid-gap: 7px;
+}

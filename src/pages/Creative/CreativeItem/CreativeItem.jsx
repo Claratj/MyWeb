@@ -1,5 +1,8 @@
 import React from 'react';
 
+import GridListTile from '@material-ui/core/GridListTile';
+import GridListTileBar from '@material-ui/core/GridListTileBar';
+
 import './CreativeItem.scss';
 
 export default function CreativeItem(props) {
@@ -24,18 +27,19 @@ export default function CreativeItem(props) {
     }
 
     return (
-        <div className={flexGrow} key={key}>
-            <figure className="img-container">
-                <img src={photo} alt={title} />
-                <figcaption class="img-content">
+        <GridListTile key={key} style={{ flexGrow: '1' }} cols={(photo.width / 1200 / 4).toFixed(0)}>
+            {/* <figure className="img-container"> */}
+            <img src={photo} alt={title} />
+            <GridListTileBar title={title} subtitle={description} />
+            {/* <figcaption class="img-content">
                     <h2 className="title">{title}</h2>
                     <p className="category">{description}</p>
-                </figcaption>
-                <span className="img-content-hover">
+                </figcaption> */}
+            {/* <span className="img-content-hover">
                     <h2 className="title">Smart Watch</h2>
                     <p className="category">Showcase</p>
-                </span>
-            </figure>
-        </div>
+                </span> */}
+            {/* </figure> */}
+        </GridListTile>
     )
 }

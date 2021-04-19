@@ -1,5 +1,11 @@
 import React from 'react';
 
+import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
+import GridList from '@material-ui/core/GridList';
+import GridListTile from '@material-ui/core/GridListTile';
+import GridListTileBar from '@material-ui/core/GridListTileBar';
+
 import CreativeItem from '../CreativeItem/CreativeItem';
 
 import './CreativeGallery.scss';
@@ -13,14 +19,13 @@ export default function CreativeGallery(props) {
     let lessProjects = '';
     let allProjects = '';
 
-
     switch (showLess !== null) {
         case (showLess === true):
             lessProjects = props.photography.slice(0, 3).map((project => {
-                return (<CreativeItem key={project.id}
-                    photo={project.photo}
-                    title={project.title}
-                    description={project.description} />)
+                return (<GridListTile key={project.id} style={{ flexGrow: '1' }} cols={(project.photo.width / 1200 / 6).toFixed(0)}>
+                    <img src={project.photo} alt={project.title} />
+                    <GridListTileBar title={project.title} subtitle={project.description} />
+                </GridListTile>)
             }));
 
             break;
@@ -28,10 +33,12 @@ export default function CreativeGallery(props) {
         case (showLess === false):
             allProjects = props.photography.map((project => {
                 return (
-                    <CreativeItem key={project.id}
-                        photo={project.photo}
-                        title={project.title}
-                        description={project.description} />)
+                    <GridListTile key={project.id} style={{ flexGrow: '1' }} cols={(project.photo.width / 1200 / 6).toFixed(0)}>
+                        <img src={project.photo} alt={project.title} />
+                        <GridListTileBar title={project.title} subtitle={project.description} />
+
+                    </GridListTile>
+                )
             }));
 
             break;
@@ -41,16 +48,17 @@ export default function CreativeGallery(props) {
     }
 
 
+
     return (
 
         <section class="main-gallery">
-            <div class="gallery">
+            <Container>
                 {showLess &&
-                    lessProjects
-                }
 
-                {allProjects}
-            </div>
+                    <GridList celHeigth={600} cols={1}>{lessProjects}</GridList>
+                }
+                <GridList celHeigth={600} cols={3}>{allProjects}</GridList>
+            </Container>
         </section>
 
     )

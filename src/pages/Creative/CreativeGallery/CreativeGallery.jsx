@@ -24,7 +24,7 @@ export default function CreativeGallery(props) {
             lessProjects = props.photography.slice(0, 3).map((project => {
                 return (<GridListTile key={project.id} cols={project.cols}>
                     <img src={project.photo} alt={project.title} />
-                    <GridListTileBar title={project.title} subtitle={project.description} />
+                    {/* <GridListTileBar title={project.title} subtitle={project.description} /> */}
                 </GridListTile>)
             }));
 
@@ -33,9 +33,9 @@ export default function CreativeGallery(props) {
         case (showLess === false):
             allProjects = props.photography.map((project => {
                 return (
-                    <GridListTile key={project.id} cols={project.cols} >
+                    <GridListTile key={project.id} cols={project.cols} style={{ height: 500 }}>
                         <img src={project.photo} alt={project.title} />
-                        <GridListTileBar title={project.title} subtitle={project.description} />
+                        {/* <GridListTileBar title={project.title} subtitle={project.description} /> */}
 
                     </GridListTile>
                 )
@@ -55,7 +55,7 @@ export default function CreativeGallery(props) {
             <Container>
                 {showLess &&
 
-                    <GridList celHeigth={600} cols={1}>{lessProjects}</GridList>
+                    <GridList celHeigth={300} cols={1}>{lessProjects}</GridList>
                 }
                 <GridList celHeigth={600} cols={3} >{allProjects}</GridList>
             </Container>

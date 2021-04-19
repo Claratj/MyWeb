@@ -1,24 +1,30 @@
 import React from 'react';
 
+import './CreativeItem.scss';
+
 export default function CreativeItem(props) {
 
     const { key, title, photo, description } = props;
-    let colStyle = '';
+    const flexGrow = '';
+    console.log(title);
 
     switch (title) {
-        case (title === "Envy" || "Gluttony" || "Pride" || "Black bird" || "Flamingo"):
-            colStyle = "col-md-4";
+        case (title === "Envy" && title === "Gluttony" && title === "Pride" && title === "Black bird"):
+            flexGrow = "flex";
             break;
 
-        case (title === "Lust" || "Irbis" || "Prometheus II"):
-            colStyle = "col-md-8";
+        case (title === "Lust" || title === "Irbis" || title === "Prometheus II"):
+            flexGrow = "flex2";
             break;
+
+        case (title === "Flamingo"):
+            flexGrow = "flex3";
 
         default: break;
     }
 
     return (
-        <div className={colStyle} key={key}>
+        <div className={flexGrow} key={key}>
             <figure className="img-container">
                 <img src={photo} alt={title} />
                 <figcaption class="img-content">

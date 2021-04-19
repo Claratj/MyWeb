@@ -1,0 +1,12 @@
+@import '../../../styles/settings/mixings.settings';
+
+.flex {
+    @include flexGrow(0.6);
+}
+.flex2 {
+    @include flexGrow(3);
+}
+
+.flex3 {
+    @include flexGrow(1);
+}

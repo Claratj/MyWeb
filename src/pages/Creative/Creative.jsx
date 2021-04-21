@@ -5,7 +5,7 @@ import CreativeGallery from './CreativeGallery/CreativeGallery';
 
 
 import Photography from '../../data/Photography.json';
-import GraphicDesign from '../../data/GraphicDesign.json';
+// import GraphicDesign from '../../data/GraphicDesign.json';
 
 
 import './Creative.scss';

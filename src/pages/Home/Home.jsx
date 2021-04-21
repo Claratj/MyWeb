@@ -1,8 +1,8 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 
 import AOS from 'aos';
-import { Link } from 'react-scroll';
+// import { Link } from 'react-scroll';
 
 
 import { Header } from '../../core/Header/Header';
@@ -26,7 +26,7 @@ export function Home() {
 
 
 
-    const history = useHistory();
+    // const history = useHistory();
     return (
         <div>
             {/* <button onClick={() => history.push('/home')}>Enter</button> */}

@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, GridList, GridListTile, GridListTileBar } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 
 
-import CreativeItem from '../CreativeItem/CreativeItem';
+// import CreativeItem from '../CreativeItem/CreativeItem';
 
 import './CreativeGallery.scss';
 
@@ -16,6 +16,28 @@ export default function CreativeGallery(props) {
 
     let lessProjects = '';
     let allProjects = '';
+
+    const useStyles = makeStyles((theme) => ({
+        root: {
+            overflow: 'hidden',
+        },
+        gridList: {
+            width: 500,
+            height: 450,
+
+        },
+        grid: {
+            width: '100%',
+            margin: '0px',
+            overflow: 'hidden',
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'space-around',
+        }
+    }));
+
+    const classes = useStyles();
+
 
     switch (showLess !== null) {
         case (showLess === true):
@@ -33,13 +55,18 @@ export default function CreativeGallery(props) {
         case (showLess === false):
             allProjects = props.photography.map((project => {
                 return (
-                    <Grid item key={project.id} style={{ height: 600 }}>
+
+
+                    <Grid item key={project.id} xs={project.cols} md={project.colsXs}>
                         <figure className="img-container">
                             <img src={project.photo} alt={project.title} />
+                            {/* <GridListTileBar title={project.title} subtitle={project.description} /> */}
                         </figure>
-                        {/* <GridListTileBar title={project.title} subtitle={project.description} /> */}
 
                     </Grid>
+
+
+
                 )
             }));
 
@@ -49,42 +76,20 @@ export default function CreativeGallery(props) {
 
     }
 
-    const useStyles = makeStyles((theme) => ({
-        root: {
-            overflow: 'hidden',
-        },
-        gridList: {
-            width: 500,
-            height: 450,
-
-        },
-        grid: {
-            width: '100%',
-            margin: '0px',
-            overflow: 'hidden',
-            //     display: 'flex',
-            //     flexWrap: 'wrap',
-            //     justifyContent: 'space-between',
-        }
-    }));
-
-    const classes = useStyles();
-
     return (
 
         <section class="main-gallery">
             <div className="gallery">
-                {/* <Container className={classes.root} > */}
-                {showLess &&
 
-                    <GridList className={classes.gridList} >{lessProjects}</GridList>
+                {showLess &&
+                    <Grid container >
+                        {lessProjects}
+                    </Grid>
                 }
-                <Grid container spacing={8} className={classes.grid}>
+
+                <Grid container spacing={2} className={classes.grid}>
                     {allProjects}
                 </Grid>
-                {/* <GridList cols={3} >{allProjects}</GridList> */}
-                {/* </Container> */}
-
             </div>
         </section>
 

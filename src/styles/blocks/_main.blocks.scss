@@ -13,6 +13,8 @@
 
 .main {
     padding-top: 100px;
+
+  
     
     &-about {
         text-align: center;
@@ -59,5 +61,13 @@
         // margin: 0 auto;
         @include flex(space-between);
 
+    }
+    &-creative {
+        padding-top: 80px;
+        
+        @include desktopView {
+            width: 70%;
+            margin: 0 auto;
+        }
     }
 }

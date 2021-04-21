@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import { Header } from '../../../core/Header/Header';
+
 import CreativeGallery from '../CreativeGallery/CreativeGallery';
 
 import GraphicDesign from '../../../data/GraphicDesign.json';
@@ -14,7 +16,13 @@ export default function GraphicPorfolio() {
     let showLess = false;
     return (
         <div>
-            <CreativeGallery graphicDesign={graphicDesign} showLess={showLess} />
+            <Header />
+            <div className="main-creative">
+                <div>
+                    <h2>Photography</h2>
+                </div>
+                <CreativeGallery graphicDesign={graphicDesign} showLess={showLess} />
+            </div>
         </div>
     )
 }

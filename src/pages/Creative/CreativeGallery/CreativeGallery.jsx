@@ -9,6 +9,7 @@ import { Grid } from '@material-ui/core';
 import './CreativeGallery.scss';
 
 export default function CreativeGallery(props) {
+    const [isShown, setIsShown] = useState(false);
 
     console.log(props.showLess);
 
@@ -40,10 +41,10 @@ export default function CreativeGallery(props) {
         case (showLess === true):
             lessProjects = props.photography.slice(0, 3).map((project => {
                 return (<Grid key={project.id} style={{ height: 200, width: 200 }}>
-                    <figure className="img-container">
+                    <figure className="img-container" >
                         <img src={project.photo} alt={project.title} />
                     </figure>
-                    {/* <GridListTileBar title={project.title} subtitle={project.description} /> */}
+
                 </Grid>)
             }));
 
@@ -55,11 +56,12 @@ export default function CreativeGallery(props) {
 
 
                     <Grid item key={project.id} xs={project.cols} md={project.colsXs}>
-                        <figure className="img-container">
+                        <figure className="img-container" onMouseEnter={() => setIsShown(true)} onMouseLeave={() => setIsShown(false)}>
                             <img src={project.photo} alt={project.title} />
-                            {/* <GridListTileBar title={project.title} subtitle={project.description} /> */}
                         </figure>
+                        {isShown
 
+                        }
                     </Grid>
 
 

@@ -21,11 +21,6 @@ export default function CreativeGallery(props) {
         root: {
             overflow: 'hidden',
         },
-        gridList: {
-            width: 500,
-            height: 450,
-
-        },
         grid: {
             width: '100%',
             margin: '0px',
@@ -34,6 +29,8 @@ export default function CreativeGallery(props) {
             flexWrap: 'wrap',
             justifyContent: 'space-around',
         }
+
+
     }));
 
     const classes = useStyles();
@@ -42,7 +39,7 @@ export default function CreativeGallery(props) {
     switch (showLess !== null) {
         case (showLess === true):
             lessProjects = props.photography.slice(0, 3).map((project => {
-                return (<Grid key={project.id} style={{ height: 250, width: 250 }}>
+                return (<Grid key={project.id} style={{ height: 200, width: 200 }}>
                     <figure className="img-container">
                         <img src={project.photo} alt={project.title} />
                     </figure>
@@ -76,13 +73,15 @@ export default function CreativeGallery(props) {
 
     }
 
+
+
     return (
 
         <section class="main-gallery">
             <div className="gallery">
 
                 {showLess &&
-                    <Grid container >
+                    <Grid container  >
                         {lessProjects}
                     </Grid>
                 }

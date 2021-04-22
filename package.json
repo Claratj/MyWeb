@@ -13,6 +13,7 @@
     "@testing-library/user-event": "^12.6.3",
     "aos": "^2.3.4",
     "axios": "^0.21.1",
+    "framer-motion": "^4.1.7",
     "node-sass": "^4.14.1",
     "normalize.css": "^8.0.1",
     "react": "^17.0.1",

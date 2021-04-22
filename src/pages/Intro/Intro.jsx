@@ -6,10 +6,7 @@ import './Intro.scss';
 
 export default function Intro() {
 
-    const variants = {
-        hidden: { opacity: 0 },
-        visible: { opacity: 1 },
-    }
+
 
     return (
         <div className="main intro" id="intro">
@@ -17,11 +14,23 @@ export default function Intro() {
                 <h2 className="">Hola caracola</h2>
             </div>
             <motion.div drag="x"
-                dragConstraints={{ left: -200, right: 100 }} whileHover={{ scale: 7 }} whileTap={{ scale: 1 }} className="circle" />
+                dragConstraints={{ left: -200, right: 100 }} whileHover={{ scale: 12 }} whileTap={{ scale: 1 }} className="circle" />
 
-            <motion.div initial="hidden"
-                animate="visible"
-                variants={variants} className="triangle" whileHover={{ scale: 3 }} />
+            <motion.div className="triangle" whileHover={{
+                scale: [1, 2, 10, 2, 1],
+                rotate: [0, 0, 270, 270, 0]
+            }} transition={{
+                duration: 1.2,
+                ease: "easeInOut",
+
+            }}
+                whileTap={{ scale: 1 }}
+            />
+            <motion.div whileHover={{ scale: 8, rotate: [0, 0, 20, 270, 0] }} transition={{
+                duration: 1,
+                ease: "easeInOut",
+
+            }} className="hex" />
 
         </div>
     )

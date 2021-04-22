@@ -3,19 +3,20 @@ import {
     Switch,
     Route
 } from "react-router-dom";
+
 import { Home } from '../../pages/Home/Home';
-import AboutDetail from '../../pages/About/AboutDetail/AboutDetail';
+import GraphicPorfolio from '../../pages/Creative/GraphicPorfolio/GraphicPorfolio';
+import PhotographyPorfolio from '../../pages/Creative/PhotographyPorfolio/PhotographyPorfolio';
 import WebPorfolio from '../../pages/WebDevelopment/WebPorfolio/WebPorfolio';
-import GraphicPorfolio from '../../pages/GraphicDesign/GraphicPorfolio/GraphicPorfolio';
 
 export function Routes() {
     return (
         <Switch>
-            <Route path="/about">
-                <AboutDetail />
-            </Route>
             <Route path="/web">
                 <WebPorfolio />
+            </Route>
+            <Route path="/photography">
+                <PhotographyPorfolio />
             </Route>
             <Route path="/graphic">
                 <GraphicPorfolio />

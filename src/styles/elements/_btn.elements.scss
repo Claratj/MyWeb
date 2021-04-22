@@ -1,4 +1,5 @@
 @import '../settings/variables.settings';
+@import '../settings/mixings.settings';
 
 .btn-more { 
 
@@ -19,9 +20,9 @@
     margin-top: 1.5rem;
     span{
         
-        color: rgba(22, 76, 167, 1);
+        color: $color-b-orange;
+        font-family: Montserrat-Bold;
         font-size: 12px;
-        font-weight: 500;
         letter-spacing: 0.7px;
     }
     &:hover {
@@ -33,6 +34,7 @@
 
     }
 }
+
 
 @keyframes rotate {
     0% {

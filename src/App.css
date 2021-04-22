@@ -13,3 +13,6 @@ body{
   /* overflow: hidden; */
 
 }
+.App {
+  overflow: hidden;
+}

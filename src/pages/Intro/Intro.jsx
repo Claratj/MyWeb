@@ -11,10 +11,13 @@ export default function Intro() {
     return (
         <div className="main intro" id="intro">
             <div className="intro-txt" >
-                <h2 className="">Hola caracola</h2>
+                <motion.h2 className="">Hola caracola</motion.h2>
             </div>
             <motion.div drag="x"
-                dragConstraints={{ left: -200, right: 100 }} whileHover={{ scale: 12 }} whileTap={{ scale: 1 }} className="circle" />
+                dragConstraints={{ left: -200, right: 100 }}
+                whileHover={{ scale: 12 }}
+                whileTap={{ scale: 1 }}
+                className="circle" />
 
             <motion.div className="triangle" whileHover={{
                 scale: [1, 2, 10, 2, 1],

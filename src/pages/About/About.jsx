@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { motion } from 'framer-motion';
+
 import img from '../../assets/img/foto-linkedin.jpg';
 import Button from '../../shared/Button/Button';
 
@@ -8,11 +10,20 @@ import './About.scss';
 
 export function About() {
 
-   
+
     return (
         <div className="main">
             <div className="main-about" id="about">
-                <span className="icon-quote-left" />
+                <motion.span className="icon-quote-left"
+                    initial={{ x: '-100vw' }}
+                    animate={{ x: 0 }}
+                    transition={{
+                        delay: 0.3,
+                        duration: 1.5,
+                        type: 'spring',
+                        stiffness: 120
+
+                    }} />
                 <figure className="about-figure">
                     <img className="about-figure_img" src={img} />
                     <h2 className="about-figure_txt">Hi! <br /> I'm Clara</h2>
@@ -23,9 +34,17 @@ export function About() {
                         I found in Web Development a field of infinite possibilities where the technical base is complemented with creativity and good practices.</p>
                     <p>My previous experience has been very useful tool when approaching any project, since I take into account the technical approach to development together with the user experience point of view.</p>
                 </div>
-                <span className="icon-quote-right" />
+                <motion.span className="icon-quote-right"
+                    initial={{ x: '100vw' }}
+                    animate={{ x: 0 }}
+                    transition={{
+                        delay: 0.3,
+                        duration: 1.5,
+                        type: 'spring',
+                        stiffness: 120
+                    }} />
             </div>
-                <Button cv={true} text={'CV Download'}/>
+            <Button cv={true} text={'CV Download'} />
         </div>
     );
 }

@@ -6,6 +6,10 @@ import './Intro.scss';
 
 export default function Intro() {
 
+    const introElements = {
+
+    }
+
 
 
     return (
@@ -17,6 +21,10 @@ export default function Intro() {
                 dragConstraints={{ left: -200, right: 100 }}
                 whileHover={{ scale: 12 }}
                 whileTap={{ scale: 1 }}
+                transition={{
+                    type: 'spring',
+                    stiffness: 300
+                }}
                 className="circle" />
 
             <motion.div className="triangle" whileHover={{
@@ -25,7 +33,6 @@ export default function Intro() {
             }} transition={{
                 duration: 1.2,
                 ease: "easeInOut",
-
             }}
                 whileTap={{ scale: 1 }}
             />
@@ -33,7 +40,9 @@ export default function Intro() {
                 duration: 1,
                 ease: "easeInOut",
 
-            }} className="hex" />
+            }}
+                whileTap={{ scale: 1 }}
+                className="hex" />
 
         </div>
     )

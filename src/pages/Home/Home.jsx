@@ -2,6 +2,7 @@ import React from 'react';
 // import { useHistory } from 'react-router-dom';
 
 import AOS from 'aos';
+import { motion } from 'framer-motion';
 // import { Link } from 'react-scroll';
 
 
@@ -23,6 +24,27 @@ export function Home() {
             duration: 1000,
         }
     );
+
+
+
+    const containerVariants = {
+        hidden: {
+            opacity: 0
+        },
+        visible: {
+            opacity: 1,
+            transition: {
+                delay: 1.5,
+                duration: 1.5
+            },
+            exit: {
+                y: '-100vh',
+                transition: {
+                    ease: 'easeInOut'
+                }
+            }
+        }
+    }
 
 
 

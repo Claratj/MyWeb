@@ -106,5 +106,32 @@
         ],
         "githubUrl": "",
         "webUrl": "..."
+    },
+    {
+        "id": "9",
+        "title": "Bacardi Drop",
+        "photo": "",
+        "description": "Animation technical test. Exclusive use of Vanilla Js, HTML and CSS.",
+        "technologies": [
+            "Html ",
+            "Css ",
+            "JavaScript "
+        ],
+        "githubUrl": "https://gitlab.com/Claratj/drop_bacardi",
+        "webUrl": "https://drop-ex-bacardi.netlify.app/"
+    },
+    {
+        "id": "10",
+        "title": "My Web",
+        "photo": "",
+        "description": "Platform to showcase my portfolio.",
+        "technologies": [
+            "Html ",
+            "Css ",
+            "JavaScript ",
+            "React "
+        ],
+        "githubUrl": "",
+        "webUrl": ""
     }
 ]

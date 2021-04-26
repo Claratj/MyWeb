@@ -73,39 +73,37 @@ export default function CreativeGallery(props) {
             }));
 
             break;
-        //     case (showLess === true && design !== null):
-        //     lessProjects = props.graphicDesign.slice(0, 3).map((project => {
-        //         return (<Grid key={project.id} style={{ height: 200, width: 200 }}>
-        //             <figure className="img-container" >
-        //                 <img src={project.photo} alt={project.title} />
-        //             </figure>
+        case (showLess === true && design !== null):
+            lessProjects = props.graphicDesign.slice(0, 3).map((project => {
+                return (<Grid key={project.id} style={{ height: 200, width: 200 }}>
+                    <figure className="img-container" >
+                        <img src={project.photo} alt={project.title} />
+                    </figure>
 
-        //         </Grid>)
-        //     }));
+                </Grid>)
+            }));
 
-        //     break;
+            break;
 
-        //     case (showLess === false && design !== null):
-        //         allProjects = props.graphicDesign.map((project => {
-        //             return (
+        case (showLess === false && design !== null):
+            allProjects = props.graphicDesign.map((project => {
+                return (
+                    <Grid item key={project.id} xs={project.cols} md={project.colsXs} >
+                        <figure className="img-container" onMouseEnter={() => setIsShown(true)} onMouseLeave={() => setIsShown(false)}>
+                            <img src={project.photo} alt={project.title} />
 
+                            {isShown && (
+                                <div className="img-container-hover">
+                                    <button>Bigger please!</button>
 
-        //                 <Grid item key={project.id} xs={project.cols} md={project.colsXs} >
-        //                     <figure className="img-container" onMouseEnter={() => setIsShown(true)} onMouseLeave={() => setIsShown(false)}>
-        //                         <img src={project.photo} alt={project.title} />
+                                </div>
+                            )}
+                        </figure>
+                    </Grid>
+                )
+            }));
 
-        //                         {isShown && (
-        //                             <div className="img-container-hover">
-        //                                 <button>Bigger please!</button>
-
-        //                             </div>
-        //                         )}
-        //                     </figure>
-        //                 </Grid>
-        //             )
-        //         }));
-
-        // default: break;
+        default: break;
 
     }
 

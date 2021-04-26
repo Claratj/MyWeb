@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-// import { useHistory } from 'react-router-dom';
 
 // import AOS from 'aos';
 import { motion } from 'framer-motion';
@@ -14,8 +13,8 @@ import { About } from '../About/About';
 import { Footer } from '../../core/Footer/Footer';
 
 
-import 'aos/dist/aos.css';
-import './Home.scss';
+// import 'aos/dist/aos.css';
+// import './Home.scss';
 
 export function Home() {
     const [lastYPos, setLastYPos] = useState(0);
@@ -31,7 +30,7 @@ export function Home() {
     useEffect(()=>{
         function handleScroll(e) {
             const yPos = window.scrollY;
-            const isScrollingUp = yPos < lastYPos;
+            const isScrollingUp = yPos > lastYPos;
       
             setShouldShowActions(isScrollingUp);
             setLastYPos(yPos);
@@ -76,10 +75,10 @@ export function Home() {
                 <motion.section variants={variants} initial="hidden" animate="visible" >
                     <Intro />
                 </motion.section>
-                <motion.section  initial={{x: "-100vw"}} animate={{x: shouldShowActions? 0: "-2000"}} transition={{duration: 0.5}}  id="about">
+                <motion.section  initial={{x: "-100vw"}} animate={{x: shouldShowActions? 0: "-2000"}} transition={{duration: 1}}  id="about">
                     <About />
                 </motion.section>
-                <motion.section  id="web">
+                <motion.section initial={{x: "10000vw"}} animate={{x: shouldShowActions? 0: "10000"}} transition={{duration: 1.2}}  id="web">
                     <WebDevelopment />
                 </motion.section>
                 <motion.section id="graphic">

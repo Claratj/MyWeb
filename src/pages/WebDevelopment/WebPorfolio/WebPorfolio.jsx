@@ -14,7 +14,12 @@ export default function WebPorfolio() {
 
     return (
         <div>
-            <ProjectList projects={projects} showLess={showLess} />
+            <div className="main-creative">
+                 <div>
+                    <h2>Web Development</h2>
+                </div>
+                <ProjectList projects={projects} showLess={showLess} />
+            </div>
         </div>
     )
 }

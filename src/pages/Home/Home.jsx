@@ -19,7 +19,7 @@ import './Home.scss';
 
 export function Home() {
     const [lastYPos, setLastYPos] = useState(0);
-    const [shouldShowActions, setShouldShowActions]= useState();
+    const [shouldShowActions, setShouldShowActions]= useState(false);
    
     // AOS.init(
     //     {
@@ -27,6 +27,22 @@ export function Home() {
     //         duration: 1000,
     //     }
     // );
+
+    useEffect(()=>{
+        function handleScroll(e) {
+            const yPos = window.scrollY;
+            const isScrollingUp = yPos < lastYPos;
+      
+            setShouldShowActions(isScrollingUp);
+            setLastYPos(yPos);
+        }
+
+        window.addEventListener("scroll", handleScroll, false);
+
+        return () => {
+          window.removeEventListener("scroll", handleScroll, false);
+        };
+    }, [[lastYPos]])
 
 
     const variants = {
@@ -36,7 +52,6 @@ export function Home() {
         visible: {
             opacity: 1,
             transition: {
-                delay: 1.5,
                 duration: 1.3
             },
             exit: {
@@ -44,15 +59,6 @@ export function Home() {
                 transition: {
                     ease: 'easeInOut'
                 }
-            }
-        },
-        fromLeft: {
-            x: '-100vw'
-        },
-        recenter: {
-            x: 0,
-            transition: {
-                duration: 1
             }
         }
     }
@@ -67,10 +73,10 @@ export function Home() {
                 <Header />
             </header>
             <main className="home-content">
-                <motion.section variants={variants} initial="hidden" animate="visible" }>
+                <motion.section variants={variants} initial="hidden" animate="visible" >
                     <Intro />
                 </motion.section>
-                <motion.section   id="about">
+                <motion.section  initial={{x: "-100vw"}} animate={{x: shouldShowActions? 0: "-2000"}} transition={{duration: 0.5}}  id="about">
                     <About />
                 </motion.section>
                 <motion.section  id="web">

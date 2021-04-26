@@ -19,7 +19,7 @@ export default function GraphicPorfolio() {
             <Header />
             <div className="main-creative">
                 <div>
-                    <h2>Photography</h2>
+                    <h2>Graphic Design</h2>
                 </div>
                 <CreativeGallery graphicDesign={graphicDesign} showLess={showLess} />
             </div>

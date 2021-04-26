@@ -3,72 +3,96 @@
         "id": "1",
         "title": "Artecristal Baños Catalogue",
         "photo": "",
-        "description": "Design, layout and product photography."
+        "description": "Design, layout and product photography.",
+        "cols": 12,
+        "colsXs": 4
     },
     {
         "id": "2",
         "title": "Artecristal Baños Mirror's Catalogue",
         "photo": "",
-        "description": "Design, layout and product photography. Special edition for Leroy Merlin."
+        "description": "Design, layout and product photography. Special edition for Leroy Merlin.",
+        "cols": 12,
+        "colsXs": 4
     },
     {
         "id": "3",
         "title": "Rebranding Kareca 3D",
         "photo": "",
-        "description": "Conception, design and layout of the new image."
+        "description": "Conception, design and layout of the new image.",
+        "cols": 12,
+        "colsXs": 4
     },
     {
         "id": "4",
         "title": "Meloncotton Poster",
         "photo": "",
-        "description": "Poster design and layout for a funky music concert. "
+        "description": "Poster design and layout for a funky music concert.",
+        "cols": 12,
+        "colsXs": 4
     },
     {
         "id": "5",
         "title": "DayJazz Poster",
         "photo": "",
-        "description": "Design and layout for a daytime jazz concert."
+        "description": "Design and layout for a daytime jazz concert.",
+        "cols": 12,
+        "colsXs": 4
     },
     {
         "id": "6",
         "title": "NightJazz Poster",
         "photo": "",
-        "description": "Design and layout for evening jazz concert."
+        "description": "Design and layout for evening jazz concert.",
+        "cols": 12,
+        "colsXs": 4
     },
     {
         "id": "7",
         "title": "Loctite Add",
         "photo": "",
-        "description": "Design and layout for Loctite advertising campaign."
+        "description": "Design and layout for Loctite advertising campaign.",
+        "cols": 12,
+        "colsXs": 4
     },
     {
         "id": "8",
         "title": "Post-it Add",
         "photo": "",
-        "description": "Design and layout for Post-It advertising campaign."
+        "description": "Design and layout for Post-It advertising campaign.",
+        "cols": 12,
+        "colsXs": 4
     },
     {
         "id": "9",
         "title": "Loewe Splash",
         "photo": "",
-        "description": "Watercolour illustration based on a Loewe advertising campaign."
+        "description": "Watercolour illustration based on a Loewe advertising campaign.",
+        "cols": 12,
+        "colsXs": 4
     },
     {
         "id": "10",
         "title": "Child Portrait",
         "photo": "",
-        "description": "Set of coloured pencil portraits."
+        "description": "Set of coloured pencil portraits.",
+        "cols": 12,
+        "colsXs": 4
     },
     {
         "id": "11",
         "title": "Child Portrait",
         "photo": "",
-        "description": "Set of coloured pencil portraits."
+        "description": "Set of coloured pencil portraits.",
+        "cols": 12,
+        "colsXs": 4
     },
     {
         "id": "12",
         "title": "Pattern Design",
         "photo": "",
-        "description": "Pattern design mixing traditional and digital techniques. "
+        "description": "Pattern design mixing traditional and digital techniques.",
+        "cols": 12,
+        "colsXs": 4
     }
 ]

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 // import { useHistory } from 'react-router-dom';
 
-import AOS from 'aos';
+// import AOS from 'aos';
 import { motion } from 'framer-motion';
 // import { Link } from 'react-scroll';
 
@@ -18,16 +18,18 @@ import 'aos/dist/aos.css';
 import './Home.scss';
 
 export function Home() {
-    AOS.init(
-        {
-            offset: 400,
-            duration: 1000,
-        }
-    );
+    const [lastYPos, setLastYPos] = useState(0);
+    const [shouldShowActions, setShouldShowActions]= useState();
+   
+    // AOS.init(
+    //     {
+    //         offset: 400,
+    //         duration: 1000,
+    //     }
+    // );
 
 
-
-    const containerVariants = {
+    const variants = {
         hidden: {
             opacity: 0
         },
@@ -35,7 +37,7 @@ export function Home() {
             opacity: 1,
             transition: {
                 delay: 1.5,
-                duration: 1.5
+                duration: 1.3
             },
             exit: {
                 y: '-100vh',
@@ -43,32 +45,40 @@ export function Home() {
                     ease: 'easeInOut'
                 }
             }
+        },
+        fromLeft: {
+            x: '-100vw'
+        },
+        recenter: {
+            x: 0,
+            transition: {
+                duration: 1
+            }
         }
     }
 
+    
 
 
-    // const history = useHistory();
+
     return (
         <div>
-            {/* <button onClick={() => history.push('/home')}>Enter</button> */}
             <header>
                 <Header />
             </header>
-            {/* <div className="arrow animated bounce"></div> */}
             <main className="home-content">
-                <section>
+                <motion.section variants={variants} initial="hidden" animate="visible" }>
                     <Intro />
-                </section>
-                <section data-aos="zoom-out-up" id="about">
+                </motion.section>
+                <motion.section   id="about">
                     <About />
-                </section>
-                <section data-aos="fade-left" id="web">
+                </motion.section>
+                <motion.section  id="web">
                     <WebDevelopment />
-                </section>
-                <section data-aos="fade-right" id="graphic">
+                </motion.section>
+                <motion.section id="graphic">
                     <Creative />
-                </section>
+                </motion.section>
             </main>
             <footer>
                 <Footer />

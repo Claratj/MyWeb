@@ -113,7 +113,7 @@ export default function CreativeGallery(props) {
 
     return (
 
-        <section class="main-gallery">
+        <section className="main-gallery">
             <div className="gallery">
 
                 {showLess &&

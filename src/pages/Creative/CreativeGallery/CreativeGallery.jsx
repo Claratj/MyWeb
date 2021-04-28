@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core';
@@ -11,23 +12,25 @@ import './CreativeGallery.scss';
 export default function CreativeGallery(props) {
 
     const [isShown, setIsShown] = useState(false);
+
+    const location = useLocation();
     // const itemEls = useRef({})
 
-    const boxRef = React.useRef(null);
+    // const boxRef = React.useRef(null);
 
-    const showHover = () => {
-        return (
-            <div className="img-container-hover" onMouseLeave={() => setIsShown(false)}>
-                <button>Bigger please!</button>
-            </div>
-        )
-    }
+    // const showHover = () => {
+    //     return (
+    //         <div className="img-container-hover" onMouseLeave={() => setIsShown(false)}>
+    //             <button>Bigger please!</button>
+    //         </div>
+    //     )
+    // }
 
 
     const handleMouseEnter = (e) => {
         console.log(e.target);
         setIsShown(true);
-        showHover();
+        // showHover();
     };
 
     const handleMouseLeave = () => {
@@ -62,35 +65,53 @@ export default function CreativeGallery(props) {
 
         <section className="main-gallery">
             <div className="gallery">
-                {/* 
-                {showLess &&
-                    <Grid container  >
-                        {lessProjects}
+                
+               
+                    <Grid container spacing={3}>
+                        {props.photography && props.photography.slice(0, 3).map((project, i) => {
+                            return (
+                            <Grid key={i} style={{ height: 150, width: 250 }}>
+                                <figure className="img-container" >
+                                    <img src={project.photo} alt={project.title} />
+                                </figure>
+                            </Grid> 
+                            )})
+                        }
+
+                        {props.graphicDesign && props.graphicDesign.slice(0, 3).map((project, j) => {
+                            return (
+                                <Grid key={j} style={{ height: 200, width: 200 }}>
+                                    <figure className="img-container" >
+                                        <img src={project.photo} alt={project.title} />
+                                    </figure>
+                                </Grid> 
+                            )})
+                        }
                     </Grid>
-                } */}
+                
 
                 <Grid container spacing={2} className={classes.grid}>
-                    {/* {allProjects} */}
 
-                    {props.photography &&
-                        props.photography.map((project, i) => {
-                            return (
-
-                                <Grid item key={i} xs={project.cols} md={project.colsXs} >
-                                    <figure className="img-container" ref={boxRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                    {location.pathname === "/photography" &&
+                        props.photography.map((project, k) => {
+                            return(
+                                <Grid item key={k} xs={project.cols} md={project.colsXs} >
+                                    <figure className="img-container" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                                         <img src={project.photo} alt={project.title} />
                                     </figure>
 
                                 </Grid>
                             )
+                       
+                        
                         })
                     }
 
-                    {/* {props.graphicDesign &&
+                    {/* {location.pathname === "/graphic" &&
                         props.graphicDesign.map((project => {
                             return (
                                 <Grid item key={project.id} xs={project.cols} md={project.colsXs} >
-                                    <figure className="img-container" ref={refs.current[project.id]} onFocus={() => setIsShown(true)} onFocus={() => setIsShown(false)}>
+                                    <figure className="img-container"  onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                                         <img src={project.photo} alt={project.title} />
 
                                         {isShown && (
@@ -104,7 +125,7 @@ export default function CreativeGallery(props) {
                             )
                         }))
 
-                    } */}
+                    }   */}
 
                 </Grid>
 

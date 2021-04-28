@@ -9,6 +9,8 @@ import { motion } from 'framer-motion';
 
 import './Header.scss';
 import Logo1 from '../../assets/img/logo1-01.svg';
+
+
 export function Header() {
     const [scrollNav, setScrollNav] = useState(false);
     const [click, setClick] = useState(false);
@@ -55,7 +57,7 @@ export function Header() {
             <motion.figure className="figure"
                 whileHover={{ scale: 1.2 }}
                 transition={{ type: 'spring', stiffness: 500 }}>
-                { location.pathname === "/photography" || location.pathname === "/web" || location.pathname === "/graphic" ? (<Link to="/"><img src={Logo1} alt="logo"/></Link>) : (<LinkScroll to="intro" smooth={true} duration={1000}><img src={Logo1} /></LinkScroll>)
+                { location.pathname === "/photography" || location.pathname === "/web" || location.pathname === "/graphic" ? (<Link to="/"><img src={Logo1} alt="logo"/></Link>) : (<LinkScroll to="intro" smooth={true} duration={1000}><img src={Logo1} alt="logo"/></LinkScroll>)
                 }                
             </motion.figure>
             <ul className={click ? "nav-options active" : "nav-options"}>

@@ -45,7 +45,7 @@ export function Creative() {
                 <section className="porfolio-creative">
                     <div className="creative">
 
-                        <CreativeGallery photography={photography} showLess={showLess} />
+                        <CreativeGallery photography={photography} />
 
                         <Link to="/photography">
                             <button className="btn-more">
@@ -55,7 +55,7 @@ export function Creative() {
                     </div>
                     <div className="creative">
 
-                        {/* <CreativeGallery graphicDesign={graphicDesign} showLess={showLess} /> */}
+                        {/* <CreativeGallery graphicDesign={graphicDesign} /> */}
 
                         <Link to="/graphic">
                             <button className="btn-more">

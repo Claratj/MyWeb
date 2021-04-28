@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core';
@@ -9,15 +9,33 @@ import { Grid } from '@material-ui/core';
 import './CreativeGallery.scss';
 
 export default function CreativeGallery(props) {
+
     const [isShown, setIsShown] = useState(false);
-    const creativeItem = useRef();
+    // const itemEls = useRef({})
 
-    console.log(props.showLess);
+    const boxRef = React.useRef(null);
 
-    let showLess = props.showLess;
+    const showHover = () => {
+        return (
+            <div className="img-container-hover" onMouseLeave={() => setIsShown(false)}>
+                <button>Bigger please!</button>
+            </div>
+        )
+    }
 
-    let lessProjects = '';
-    let allProjects = '';
+
+    const handleMouseEnter = (e) => {
+        console.log(e.target);
+        setIsShown(true);
+        showHover();
+    };
+
+    const handleMouseLeave = () => {
+
+        setIsShown(false);
+
+
+    }
 
     const useStyles = makeStyles((theme) => ({
         root: {
@@ -38,73 +56,6 @@ export default function CreativeGallery(props) {
     const classes = useStyles();
 
 
-    // switch (showLess !== null) {
-    //     case (showLess === true && photography !== null):
-    //         lessProjects = props.photography.slice(0, 3).map((project => {
-    //             return (<Grid key={project.id} style={{ height: 200, width: 200 }}>
-    //                 <figure className="img-container" >
-    //                     <img src={project.photo} alt={project.title} />
-    //                 </figure>
-
-    //             </Grid>)
-    //         }));
-
-    // break;
-
-    // case (showLess === false && photography !== null):
-    //     allProjects = props.photography.map((project => {
-    //         return (
-
-    //             <Grid item key={project.id} xs={project.cols} md={project.colsXs} >
-    //                 <figure className="img-container" onMouseEnter={() => setIsShown(true)} onMouseLeave={() => setIsShown(false)}>
-    //                     <img src={project.photo} alt={project.title} />
-
-    //                     {isShown && (
-    //                         <div className="img-container-hover">
-    //                             <button>Bigger please!</button>
-
-    //                         </div>
-    //                     )}
-    //                 </figure>
-    //             </Grid>
-    //         )
-    //     }));
-
-    // break;
-    // case (showLess === true && design !== null):
-    //     lessProjects = props.graphicDesign.slice(0, 3).map((project => {
-    //         return (<Grid item key={project.id} style={{ height: 200, width: 200 }}>
-    //             <figure className="img-container" >
-    //                 <img src={project.photo} alt={project.title} />
-    //             </figure>
-
-    //         </Grid>)
-    //     }));
-
-    //     break;
-
-    // case (showLess === false && design !== null):
-    // allProjects = props.graphicDesign.map((project => {
-    //     return (
-    //         <Grid item key={project.id} xs={project.cols} md={project.colsXs} >
-    //             <figure className="img-container" onMouseEnter={() => setIsShown(true)} onMouseLeave={() => setIsShown(false)}>
-    //                 <img src={project.photo} alt={project.title} />
-
-    //                 {isShown && (
-    //                     <div className="img-container-hover">
-    //                         <button>Bigger please!</button>
-
-    //                     </div>
-    //                 )}
-    //             </figure>
-    //         </Grid>
-    //     )
-    // }));
-
-    //     default: break;
-
-    // }
-
 
 
     return (
@@ -122,30 +73,24 @@ export default function CreativeGallery(props) {
                     {/* {allProjects} */}
 
                     {props.photography &&
-                        props.photography.map((project => {
+                        props.photography.map((project, i) => {
                             return (
 
-                                <Grid item key={project.id} xs={project.cols} md={project.colsXs} >
-                                    <figure className="img-container" onMouseEnter={() => setIsShown(true)} onMouseLeave={() => setIsShown(false)}>
+                                <Grid item key={i} xs={project.cols} md={project.colsXs} >
+                                    <figure className="img-container" ref={boxRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                                         <img src={project.photo} alt={project.title} />
-
-                                        {isShown && (
-                                            <div className="img-container-hover">
-                                                <button>Bigger please!</button>
-
-                                            </div>
-                                        )}
                                     </figure>
+
                                 </Grid>
                             )
-                        }))
+                        })
                     }
 
-                    {props.graphicDesign &&
+                    {/* {props.graphicDesign &&
                         props.graphicDesign.map((project => {
                             return (
                                 <Grid item key={project.id} xs={project.cols} md={project.colsXs} >
-                                    <figure className="img-container" onMouseEnter={() => setIsShown(true)} onMouseLeave={() => setIsShown(false)}>
+                                    <figure className="img-container" ref={refs.current[project.id]} onFocus={() => setIsShown(true)} onFocus={() => setIsShown(false)}>
                                         <img src={project.photo} alt={project.title} />
 
                                         {isShown && (
@@ -159,7 +104,7 @@ export default function CreativeGallery(props) {
                             )
                         }))
 
-                    }
+                    } */}
 
                 </Grid>
 

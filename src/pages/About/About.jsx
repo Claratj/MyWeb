@@ -25,7 +25,7 @@ export function About() {
 
                     }} />
                 <figure className="about-figure">
-                    <img className="about-figure_img" src={img} />
+                    <img className="about-figure_img" src={img} alt="About me portrait" />
                     <h2 className="about-figure_txt">Hi! <br /> I'm Clara</h2>
                 </figure>
                 <div className="about-description">

@@ -14,18 +14,6 @@ export function Header() {
     const [click, setClick] = useState(false);
     const location = useLocation();
 
-
-
-    const route = '';
-
-    if (location.pathname === "/photography") {
-    }
-
-
-    if (location.pathname === "/web" || location.pathname === "/graphic") {
-
-    }
-
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
     const changeNav = () => {
@@ -67,7 +55,7 @@ export function Header() {
             <motion.figure className="figure"
                 whileHover={{ scale: 1.2 }}
                 transition={{ type: 'spring', stiffness: 500 }}>
-                { location.pathname === "/photography" || location.pathname === "/web" || location.pathname === "/graphic" ? (<Link to="/"><img src={Logo1} /></Link>) : (<LinkScroll to="intro" smooth={true} duration={1000}><img src={Logo1} /></LinkScroll>)
+                { location.pathname === "/photography" || location.pathname === "/web" || location.pathname === "/graphic" ? (<Link to="/"><img src={Logo1} alt="logo"/></Link>) : (<LinkScroll to="intro" smooth={true} duration={1000}><img src={Logo1} /></LinkScroll>)
                 }                
             </motion.figure>
             <ul className={click ? "nav-options active" : "nav-options"}>

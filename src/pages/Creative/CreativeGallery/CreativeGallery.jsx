@@ -66,12 +66,14 @@ export default function CreativeGallery(props) {
         <section className="main-gallery">
             <div className="gallery">
 
+                {location.pathname === "/" &&
 
-                <Grid container spacing={3}>
-                    {props.showLessPhotography}
+                    <Grid container spacing={3}>
+                        {props.showLessPhotography}
+                        {props.showLessGraphic}
+                    </Grid>
 
-                    {props.showLessGraphic}
-                </Grid>
+                }
 
 
                 <Grid container spacing={2} className={classes.grid}>
@@ -91,11 +93,11 @@ export default function CreativeGallery(props) {
                         })
                     }
 
-                    {/* {location.pathname === "/graphic" &&
+                    {location.pathname === "/graphic" &&
                         props.graphicDesign.map((project => {
                             return (
                                 <Grid item key={project.id} xs={project.cols} md={project.colsXs} >
-                                    <figure className="img-container"  onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                                    <figure className="img-container" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                                         <img src={project.photo} alt={project.title} />
 
                                         {isShown && (
@@ -109,7 +111,7 @@ export default function CreativeGallery(props) {
                             )
                         }))
 
-                    }   */}
+                    }
 
                 </Grid>
 

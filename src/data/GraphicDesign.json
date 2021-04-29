@@ -61,7 +61,7 @@
         "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619689671/postit_ouowwn.png",
         "description": "Design and layout for Post-It advertising campaign.",
         "cols": 12,
-        "colsXs": 4
+        "colsXs": 8
     },
     {
         "id": "9",
@@ -77,7 +77,7 @@
         "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619689671/SquareLuc_rtv81f.png",
         "description": "Set of coloured pencil portraits.",
         "cols": 12,
-        "colsXs": 4
+        "colsXs": 8
     },
     {
         "id": "11",

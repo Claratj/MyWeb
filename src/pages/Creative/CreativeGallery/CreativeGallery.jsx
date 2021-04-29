@@ -5,8 +5,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core';
 
 
-// import CreativeItem from '../CreativeItem/CreativeItem';
-
 import './CreativeGallery.scss';
 
 export default function CreativeGallery(props) {
@@ -65,15 +63,6 @@ export default function CreativeGallery(props) {
 
         <section className="main-gallery">
             <div className="gallery">
-
-                {location.pathname === "/" &&
-
-                    <Grid container spacing={3}>
-                        {props.showLessPhotography}
-                        {props.showLessGraphic}
-                    </Grid>
-
-                }
 
 
                 <Grid container spacing={2} className={classes.grid}>

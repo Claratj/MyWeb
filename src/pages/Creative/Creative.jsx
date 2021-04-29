@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { Grid } from '@material-ui/core';
 
-
-import CreativeGallery from './CreativeGallery/CreativeGallery';
-
+import MiniGallery from './CreativeGallery/MiniGallery/MiniGallery';
 
 import Photography from '../../data/Photography.json';
 import GraphicDesign from '../../data/GraphicDesign.json';
@@ -65,7 +63,7 @@ export function Creative() {
                 <section className="porfolio-creative">
                     <div className="creative">
 
-                        <CreativeGallery photography={photography} showLessPhotography={showLessPhotography} />
+                        <MiniGallery showLessPhotography={showLessPhotography} />
 
                         <Link to="/photography">
                             <button className="btn-more">
@@ -75,7 +73,7 @@ export function Creative() {
                     </div>
                     <div className="creative">
 
-                        <CreativeGallery graphicDesign={graphicDesign} showLessGraphic={showLessGraphic} />
+                        <MiniGallery showLessGraphic={showLessGraphic} />
 
                         <Link to="/graphic">
                             <button className="btn-more">

@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+import { Grid } from '@material-ui/core';
+
+
 import CreativeGallery from './CreativeGallery/CreativeGallery';
 
 
 import Photography from '../../data/Photography.json';
-// import GraphicDesign from '../../data/GraphicDesign.json';
+import GraphicDesign from '../../data/GraphicDesign.json';
 
 
 import './Creative.scss';
@@ -14,18 +17,35 @@ import './Creative.scss';
 export function Creative() {
 
     const [photography, setPhotography] = useState([]);
-    // const [graphicDesign, setGraphicDesign] = useState([]);
+    const [graphicDesign, setGraphicDesign] = useState([]);
 
 
 
 
     useEffect(() => {
         setPhotography(Photography);
-        // setGraphicDesign(GraphicDesign);
+        setGraphicDesign(GraphicDesign);
     }, []);
 
-    const showLess = true;
+    const showLessPhotography = photography.slice(0, 3).map((project, i) => {
+        return (
+            <Grid key={i} style={{ height: 150, width: 250 }}>
+                <figure className="img-container" >
+                    <img src={project.photo} alt={project.title} />
+                </figure>
+            </Grid>
+        )
+    });
 
+    const showLessGraphic = graphicDesign.slice(0, 3).map((project, j) => {
+        return (
+            <Grid key={j} style={{ height: 200, width: 200 }}>
+                <figure className="img-container" >
+                    <img src={project.photo} alt={project.title} />
+                </figure>
+            </Grid>
+        )
+    });
 
 
 
@@ -45,7 +65,7 @@ export function Creative() {
                 <section className="porfolio-creative">
                     <div className="creative">
 
-                        <CreativeGallery photography={photography} />
+                        <CreativeGallery photography={photography} showLessPhotography={showLessPhotography} />
 
                         <Link to="/photography">
                             <button className="btn-more">
@@ -55,7 +75,7 @@ export function Creative() {
                     </div>
                     <div className="creative">
 
-                        {/* <CreativeGallery graphicDesign={graphicDesign} /> */}
+                        <CreativeGallery graphicDesign={graphicDesign} showLessGraphic={showLessGraphic} />
 
                         <Link to="/graphic">
                             <button className="btn-more">

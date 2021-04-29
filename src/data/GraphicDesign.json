@@ -2,7 +2,7 @@
     {
         "id": "1",
         "title": "Artecristal Baños Catalogue",
-        "photo": "",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619689670/catalogoba%C3%B1os_sufkek.png",
         "description": "Design, layout and product photography.",
         "cols": 12,
         "colsXs": 4
@@ -10,7 +10,7 @@
     {
         "id": "2",
         "title": "Artecristal Baños Mirror's Catalogue",
-        "photo": "",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619689670/leroy_idfn6h.png",
         "description": "Design, layout and product photography. Special edition for Leroy Merlin.",
         "cols": 12,
         "colsXs": 4
@@ -26,7 +26,7 @@
     {
         "id": "4",
         "title": "Meloncotton Poster",
-        "photo": "",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619689671/Meloncotton_i58tef.png",
         "description": "Poster design and layout for a funky music concert.",
         "cols": 12,
         "colsXs": 4
@@ -34,7 +34,7 @@
     {
         "id": "5",
         "title": "DayJazz Poster",
-        "photo": "",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619689670/jazzDay_tlfoci.png",
         "description": "Design and layout for a daytime jazz concert.",
         "cols": 12,
         "colsXs": 4
@@ -42,7 +42,7 @@
     {
         "id": "6",
         "title": "NightJazz Poster",
-        "photo": "",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619689670/jazzNight_gldv8i.png",
         "description": "Design and layout for evening jazz concert.",
         "cols": 12,
         "colsXs": 4
@@ -50,7 +50,7 @@
     {
         "id": "7",
         "title": "Loctite Add",
-        "photo": "",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619689671/Loctite_vfxqjg.png",
         "description": "Design and layout for Loctite advertising campaign.",
         "cols": 12,
         "colsXs": 4
@@ -58,7 +58,7 @@
     {
         "id": "8",
         "title": "Post-it Add",
-        "photo": "",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619689671/postit_ouowwn.png",
         "description": "Design and layout for Post-It advertising campaign.",
         "cols": 12,
         "colsXs": 4
@@ -66,7 +66,7 @@
     {
         "id": "9",
         "title": "Loewe Splash",
-        "photo": "",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619689671/loewe_fdbk64.png",
         "description": "Watercolour illustration based on a Loewe advertising campaign.",
         "cols": 12,
         "colsXs": 4
@@ -74,23 +74,15 @@
     {
         "id": "10",
         "title": "Child Portrait",
-        "photo": "",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619689671/SquareLuc_rtv81f.png",
         "description": "Set of coloured pencil portraits.",
         "cols": 12,
         "colsXs": 4
     },
     {
         "id": "11",
-        "title": "Child Portrait",
-        "photo": "",
-        "description": "Set of coloured pencil portraits.",
-        "cols": 12,
-        "colsXs": 4
-    },
-    {
-        "id": "12",
         "title": "Pattern Design",
-        "photo": "",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619689670/tazas_akumuw.png",
         "description": "Pattern design mixing traditional and digital techniques.",
         "cols": 12,
         "colsXs": 4

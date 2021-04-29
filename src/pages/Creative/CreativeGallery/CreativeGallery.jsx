@@ -65,36 +65,20 @@ export default function CreativeGallery(props) {
 
         <section className="main-gallery">
             <div className="gallery">
-                
-               
-                    <Grid container spacing={3}>
-                        {props.photography && props.photography.slice(0, 3).map((project, i) => {
-                            return (
-                            <Grid key={i} style={{ height: 150, width: 250 }}>
-                                <figure className="img-container" >
-                                    <img src={project.photo} alt={project.title} />
-                                </figure>
-                            </Grid> 
-                            )})
-                        }
 
-                        {props.graphicDesign && props.graphicDesign.slice(0, 3).map((project, j) => {
-                            return (
-                                <Grid key={j} style={{ height: 200, width: 200 }}>
-                                    <figure className="img-container" >
-                                        <img src={project.photo} alt={project.title} />
-                                    </figure>
-                                </Grid> 
-                            )})
-                        }
-                    </Grid>
-                
+
+                <Grid container spacing={3}>
+                    {props.showLessPhotography}
+
+                    {props.showLessGraphic}
+                </Grid>
+
 
                 <Grid container spacing={2} className={classes.grid}>
 
                     {location.pathname === "/photography" &&
                         props.photography.map((project, k) => {
-                            return(
+                            return (
                                 <Grid item key={k} xs={project.cols} md={project.colsXs} >
                                     <figure className="img-container" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                                         <img src={project.photo} alt={project.title} />
@@ -102,8 +86,8 @@ export default function CreativeGallery(props) {
 
                                 </Grid>
                             )
-                       
-                        
+
+
                         })
                     }
 

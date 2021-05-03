@@ -10,30 +10,35 @@ import './CreativeGallery.scss';
 export default function CreativeGallery(props) {
 
     const [isShown, setIsShown] = useState(false);
-
     const location = useLocation();
-    // const itemEls = useRef({})
+    const itemRef = useRef(null);
+    const showItemsRef = useRef([]);
+    showItemsRef.current = [];
 
-    // const boxRef = React.useRef(null);
-
-    // const showHover = () => {
-    //     return (
-    //         <div className="img-container-hover" onMouseLeave={() => setIsShown(false)}>
-    //             <button>Bigger please!</button>
-    //         </div>
-    //     )
-    // }
-
+    const addToRefs = (e) => {
+        if (e && !showItemsRef.current.includes(e)) {
+            showItemsRef.current.push(e);
+        }
+        // console.log(showItemsRef.current);
+    }
 
     const handleMouseEnter = (e) => {
-        console.log(e.target);
+        console.log('he entrado');
+        e.preventDefault();
+        // console.log(item);
+        // showItemsRef.current[item-1].className="img-container-hover";
         setIsShown(true);
+        // item = itemRef.current;
+
+        // console.log(item);
         // showHover();
     };
 
-    const handleMouseLeave = () => {
+    const handleMouseLeave = (e) => {
 
         setIsShown(false);
+        console.log('he salido');
+        // showItemsRef.current[item-1].className="img-container";
 
 
     }
@@ -85,16 +90,16 @@ export default function CreativeGallery(props) {
                     {location.pathname === "/graphic" &&
                         props.graphicDesign.map((project => {
                             return (
-                                <Grid item key={project.id} xs={project.cols} md={project.colsXs} >
-                                    <figure className="img-container" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                                        <img src={project.photo} alt={project.title} />
-
+                                <Grid item key={project.id} xs={project.cols} md={project.colsXs} ref={addToRefs}>
+                                    <figure key={project.id} className="img-container" onMouseEnter={handleMouseEnter} onMouseLeave={() => handleMouseLeave(project.id)}>
+                                        <img key={project.id} src={project.photo} alt={project.title} />
                                         {isShown && (
                                             <div className="img-container-hover">
                                                 <button>Bigger please!</button>
 
                                             </div>
                                         )}
+
                                     </figure>
                                 </Grid>
                             )

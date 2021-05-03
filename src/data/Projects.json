@@ -2,7 +2,7 @@
     {
         "id": "1",
         "title": "Lucky App",
-        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1617873745/app-lucky_h6lozi.png",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619694149/app-lucky_ff0nqb.png",
         "description": "A Full Stack MERN app where the main challenges where the communication between different models on the Back End when registering for events, selecting the differents available animals for adoptions, or saving different available animals to adoption as favorite",
         "technologies": [
             "MongoDB ",
@@ -17,7 +17,7 @@
     {
         "id": "2",
         "title": "Game of Thrones",
-        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1617873742/got_dl9iui.png",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619694150/got_w7fwxr.png",
         "description": "A React project consuming a public API",
         "technologies": [
             "React ",
@@ -33,7 +33,7 @@
     {
         "id": "3",
         "title": "Shopeame",
-        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1617873428/shopeame_wt2fun.png",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619694138/shopeame_tyq5gl.png",
         "description": " A Full Stack app with Angular where you can post you can sell your products. The app lets you add products, remove them or edit them.",
         "technologies": [
             "Angular ",
@@ -47,7 +47,7 @@
     {
         "id": "4",
         "title": "Rol Game",
-        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1617873429/rol-vanilla_gfs5yb.png",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619694150/rol-vanilla_ujmniy.png",
         "description": "A desktop app based mainly in Vanilla Js, with the minimum of HTML and lots of CSS. A fun exercise to put into practise all the JavaScript bases.",
         "technologies": [
             "Html ",
@@ -60,7 +60,7 @@
     {
         "id": "5",
         "title": "Cinema Blog",
-        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1617873429/blog_cine_zngeu0.png",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619694150/blog_cine_jfyemh.png",
         "description": "",
         "technologies": [
             "API ",
@@ -74,7 +74,7 @@
     {
         "id": "6",
         "title": "Coffee Blog",
-        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1617873429/blog-cafe_qcso1g.png",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619694150/blog-cafe_adnc6r.png",
         "description": "Exercise of recreating a design.",
         "technologies": [
             "Html ",
@@ -86,7 +86,7 @@
     {
         "id": "7",
         "title": "Real State",
-        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1617873428/bienes_qf3jq6.png",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619694149/bienes_ewyqcc.png",
         "description": "A simple excercise in pure Html and Css reacreating a design.",
         "technologies": [
             "Html ",
@@ -98,7 +98,7 @@
     {
         "id": "8",
         "title": "Web Design",
-        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1617873428/web_design_vpjzza.png",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619694150/web_design_v1zne8.png",
         "description": "Exercise of recreating a design.",
         "technologies": [
             "Html ",
@@ -106,5 +106,32 @@
         ],
         "githubUrl": "",
         "webUrl": "..."
+    },
+    {
+        "id": "9",
+        "title": "Bacardi Drop",
+        "photo": "",
+        "description": "Animation technical test. Exclusive use of Vanilla Js, HTML and CSS.",
+        "technologies": [
+            "Html ",
+            "Css ",
+            "JavaScript "
+        ],
+        "githubUrl": "https://gitlab.com/Claratj/drop_bacardi",
+        "webUrl": "https://drop-ex-bacardi.netlify.app/"
+    },
+    {
+        "id": "10",
+        "title": "My Web",
+        "photo": "",
+        "description": "Platform to showcase my portfolio.",
+        "technologies": [
+            "Html ",
+            "Css ",
+            "JavaScript ",
+            "React "
+        ],
+        "githubUrl": "",
+        "webUrl": ""
     }
 ]

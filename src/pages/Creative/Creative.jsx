@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import CreativeGallery from './CreativeGallery/CreativeGallery';
 
 
 import Photography from '../../data/Photography.json';
@@ -14,17 +13,16 @@ import './Creative.scss';
 export function Creative() {
 
     const [photography, setPhotography] = useState([]);
-    // const [graphicDesign, setGraphicDesign] = useState([]);
+    const [graphicDesign, setGraphicDesign] = useState([]);
 
 
 
 
     useEffect(() => {
         setPhotography(Photography);
-        // setGraphicDesign(GraphicDesign);
+        setGraphicDesign(GraphicDesign);
     }, []);
 
-    const showLess = true;
 
     return (
         <>
@@ -42,7 +40,15 @@ export function Creative() {
                 <section className="porfolio-creative">
                     <div className="creative">
 
-                        <CreativeGallery photography={photography} showLess={showLess} />
+                        {photography.slice(0, 3).map((project => {
+                            return (
+                                <figure className="img-container">
+                                    <img src={project.photo} alt={project.title} />
+                                </figure>
+                            )
+
+                        }))
+                        }
 
                         <Link to="/photography">
                             <button className="btn-more">
@@ -50,9 +56,19 @@ export function Creative() {
                             </button>
                         </Link>
                     </div>
-                    <div className="creative">
 
-                        {/* <CreativeGallery graphicDesign={graphicDesign} showLess={showLess} /> */}
+
+                    <div className="creative">
+                        {graphicDesign.slice(0, 3).map((project => {
+                            return (
+                                <figure className="img-container">
+                                    <img src={project.photo} alt={project.title} />
+                                </figure>
+                            )
+                        }))
+
+                        }
+
 
                         <Link to="/graphic">
                             <button className="btn-more">

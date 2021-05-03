@@ -1,56 +1,90 @@
 [
     {
         "id": "1",
-        "title": "envy",
-        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1618391971/Envy_uo98ku.jpg",
-        "description": "Fine Art Photography portraying the sin of envy"
+        "title": "Artecristal Baños Catalogue",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619689670/catalogoba%C3%B1os_sufkek.png",
+        "description": "Design, layout and product photography.",
+        "cols": 12,
+        "colsXs": 4
     },
     {
         "id": "2",
-        "title": "Gluttony",
-        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1618391970/_CT16751-Recuperado_wehjao.jpg",
-        "description": "Fine Art Photography depicting the sin of gluttony"
+        "title": "Artecristal Baños Mirror's Catalogue",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619689670/leroy_idfn6h.png",
+        "description": "Design, layout and product photography. Special edition for Leroy Merlin.",
+        "cols": 12,
+        "colsXs": 4
     },
     {
         "id": "3",
-        "title": "Pride",
-        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1618391970/_CT17069-5-Recuperado3_apgvhs.jpg",
-        "description": "Fine Art Photography depicting the sin of pride"
+        "title": "Rebranding Kareca 3D",
+        "photo": "",
+        "description": "Conception, design and layout of the new image.",
+        "cols": 12,
+        "colsXs": 4
     },
     {
         "id": "4",
-        "title": "Lust",
-        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1618391970/_CT16865-3_lxuqt3.jpg",
-        "description": "Fine Art Photography depicting the sin of lust"
+        "title": "Meloncotton Poster",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619689671/Meloncotton_i58tef.png",
+        "description": "Poster design and layout for a funky music concert.",
+        "cols": 12,
+        "colsXs": 4
     },
     {
         "id": "5",
-        "title": "Flamingo",
-        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1618391970/_CT17446-EditarWEB_ehvm7b.jpg",
-        "description": "Animalistic's series representing the animal I associate with the person. In this case a Flamingo"
+        "title": "DayJazz Poster",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619689670/jazzDay_tlfoci.png",
+        "description": "Design and layout for a daytime jazz concert.",
+        "cols": 12,
+        "colsXs": 4
     },
     {
         "id": "6",
-        "title": "Irbis",
-        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1618391970/_CT17338-Editar4_fgspgd.jpg",
-        "description": "Animalistic's series representing the animal I associate with the person. In this case an Irbis"
+        "title": "NightJazz Poster",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619689670/jazzNight_gldv8i.png",
+        "description": "Design and layout for evening jazz concert.",
+        "cols": 12,
+        "colsXs": 4
     },
     {
         "id": "7",
-        "title": "Black bird",
-        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1618391969/_CT16572---experimentacion_tqlxzv.jpg",
-        "description": "Animalistic's series representing the animal I associate with the person. In this case a Crow"
+        "title": "Loctite Add",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619689671/Loctite_vfxqjg.png",
+        "description": "Design and layout for Loctite advertising campaign.",
+        "cols": 12,
+        "colsXs": 4
     },
     {
         "id": "8",
-        "title": "Prometheus I",
-        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1618391970/_CT16532-1-insta_zlqwaf.jpg",
-        "description": "The decadence of the human being, the return to the basics."
+        "title": "Post-it Add",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619689671/postit_ouowwn.png",
+        "description": "Design and layout for Post-It advertising campaign.",
+        "cols": 12,
+        "colsXs": 8
     },
     {
         "id": "9",
-        "title": "Prometheus II",
-        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1618391969/_CT16494-1-preparaci%C3%B3n-insta3_z3yynw.jpg",
-        "description": "The decadence of the human being, the return to the basics."
+        "title": "Loewe Splash",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619689671/loewe_fdbk64.png",
+        "description": "Watercolour illustration based on a Loewe advertising campaign.",
+        "cols": 12,
+        "colsXs": 4
+    },
+    {
+        "id": "10",
+        "title": "Child Portrait",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619689671/SquareLuc_rtv81f.png",
+        "description": "Set of coloured pencil portraits.",
+        "cols": 12,
+        "colsXs": 8
+    },
+    {
+        "id": "11",
+        "title": "Pattern Design",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619689670/tazas_akumuw.png",
+        "description": "Pattern design mixing traditional and digital techniques.",
+        "cols": 12,
+        "colsXs": 4
     }
 ]

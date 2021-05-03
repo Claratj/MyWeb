@@ -1,12 +1,20 @@
 import React, { useState, useEffect } from 'react';
+
+import { Link, useLocation } from 'react-router-dom';
 import { Link as LinkScroll } from 'react-scroll';
+
+import { motion } from 'framer-motion';
+
 
 
 import './Header.scss';
 import Logo1 from '../../assets/img/logo1-01.svg';
+
+
 export function Header() {
     const [scrollNav, setScrollNav] = useState(false);
     const [click, setClick] = useState(false);
+    const location = useLocation();
 
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
@@ -24,24 +32,68 @@ export function Header() {
         window.addEventListener('scroll', changeNav)
     }, [])
 
+    const containerVariants = {
+        hidden: {
+            opacity: 0,
+            y: '100vh'
+        },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                type: 'spring',
+                stiffness: 950
+            }
+        }
+    }
+
+
     return (
-        <nav className={scrollNav ?  'header active' : 'header'}>
-            <figure className="figure">
-                <LinkScroll to="intro" smooth={true} duration={1000}><img src={Logo1} /></LinkScroll>
-            </figure>
+        <motion.nav className={scrollNav ? 'header active' : 'header'}
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+        >
+            <motion.figure className="figure"
+                whileHover={{ scale: 1.2 }}
+                transition={{ type: 'spring', stiffness: 500 }}>
+                { location.pathname === "/photography" || location.pathname === "/web" || location.pathname === "/graphic" ? (<Link to="/"><img src={Logo1} alt="logo"/></Link>) : (<LinkScroll to="intro" smooth={true} duration={1000}><img src={Logo1} alt="logo"/></LinkScroll>)
+                }                
+            </motion.figure>
             <ul className={click ? "nav-options active" : "nav-options"}>
-                <li className="option" onClick={closeMobileMenu}><LinkScroll to="about" smooth={true} duration={1000}>About</LinkScroll></li>
-                <li className="option" onClick={closeMobileMenu}><LinkScroll to="web" smooth={true} duration={1000}>Web Developer</LinkScroll></li>
-                <li className="option" onClick={closeMobileMenu}><LinkScroll to="graphic" smooth={true} duration={1000}>Graphic Designer</LinkScroll></li>
+                <motion.li className="option" onClick={closeMobileMenu}
+                    whileHover={{ scale: 1.2 }}
+                    transition={{ type: 'spring', stiffness: 500 }}>
+                     { location.pathname === "/photography" || location.pathname === "/web" || location.pathname === "/graphic" ? <Link to="/:about">About</Link> :
+                    <LinkScroll to="about" smooth={true} duration={1000}>About</LinkScroll> }
+                </motion.li>
+                <motion.li className="option" onClick={closeMobileMenu}
+                    whileHover={{ scale: 1.2 }}
+                    transition={{ type: 'spring', stiffness: 500 }}>
+                    { location.pathname === "/photography" || location.pathname === "/web" || location.pathname === "/graphic" ? <Link to="/web">Web Developer</Link> :
+                    <LinkScroll to="web" smooth={true} duration={1000}>Web Developer</LinkScroll>}
+                </motion.li>
+                <motion.li className="option" onClick={closeMobileMenu}
+                    whileHover={{ scale: 1.2 }}
+                    transition={{ type: 'spring', stiffness: 500 }}>
+                    { location.pathname === "/photography" || location.pathname === "/web" || location.pathname === "/graphic" ? <Link to="/graphic">Graphic Designer</Link> :
+                    <LinkScroll to="graphic" smooth={true} duration={1000}>Graphic Designer</LinkScroll> }
+                </motion.li>
             </ul>
-            <div className="mobile-menu" onClick={handleClick}>
+            <motion.div className="mobile-menu" onClick={handleClick}
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+            >
                 {click ? (
-                    <span className="icon-up" />
+                    <motion.span className="icon-up"
+
+                    />
                 ) : (
-                    <span className="icon-menu" />
+                    <motion.span className="icon-menu" />
                 )}
-            </div>
-        </nav>
+            </motion.div>
+        </motion.nav>
 
     )
 }

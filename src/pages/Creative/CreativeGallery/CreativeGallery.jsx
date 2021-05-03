@@ -93,12 +93,13 @@ export default function CreativeGallery(props) {
                                 <Grid item key={project.id} xs={project.cols} md={project.colsXs} ref={addToRefs}>
                                     <figure key={project.id} className="img-container" onMouseEnter={handleMouseEnter} onMouseLeave={() => handleMouseLeave(project.id)}>
                                         <img key={project.id} src={project.photo} alt={project.title} />
-                                        {isShown && (
-                                            <div className="img-container-hover">
-                                                <button>Bigger please!</button>
 
-                                            </div>
-                                        )}
+                                        <div className="content-overlay">
+                                            <h3>{project.title}</h3>
+                                            <p>{project.description}</p>
+                                            <button>Bigger please!</button>
+
+                                        </div>
 
                                     </figure>
                                 </Grid>

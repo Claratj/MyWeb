@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -8,40 +8,48 @@ import { Grid } from '@material-ui/core';
 import './CreativeGallery.scss';
 
 export default function CreativeGallery(props) {
+    const [bigger, setBigger] = useState(false);
+    const [imageToShow, setImageToShow] = useState('');
 
-    const [isShown, setIsShown] = useState(false);
     const location = useLocation();
-    const itemRef = useRef(null);
-    const showItemsRef = useRef([]);
-    showItemsRef.current = [];
 
-    const addToRefs = (e) => {
-        if (e && !showItemsRef.current.includes(e)) {
-            showItemsRef.current.push(e);
-        }
-        // console.log(showItemsRef.current);
+    let srcPhoto = '';
+    let altPhoto = '';
+
+    const biggerImage = (photo) => {
+        setBigger(true);
+        setImageToShow(photo);
+        // console.log(props.photography[0].photo)
     }
 
-    const handleMouseEnter = (e) => {
-        console.log('he entrado');
-        e.preventDefault();
-        // console.log(item);
-        // showItemsRef.current[item-1].className="img-container-hover";
-        setIsShown(true);
-        // item = itemRef.current;
+    const reset = () => {
+        setBigger(false);
+    }
 
-        // console.log(item);
-        // showHover();
+    const showNext = (e) => {
+        e.stopPropagation();
+        let currentIndex = props.photography.indexOf(imageToShow);
+        console.log(currentIndex);
+        if (currentIndex >= props.photography.length - 1) {
+            setBigger(false);
+        } else {
+            let nextImage = props.photography[currentIndex + 1];
+            setImageToShow(nextImage);
+        }
     };
 
-    const handleMouseLeave = (e) => {
+    const showPrev = (e) => {
+        e.stopPropagation();
+        let currentIndex = props.photography.indexOf(imageToShow);
+        if (currentIndex <= 0) {
+            setBigger(false);
+        } else {
+            let nextImage = props.photography[currentIndex - 1];
+            setImageToShow(nextImage);
+        }
+    };
 
-        setIsShown(false);
-        console.log('he salido');
-        // showItemsRef.current[item-1].className="img-container";
 
-
-    }
 
     const useStyles = makeStyles((theme) => ({
         root: {
@@ -76,8 +84,14 @@ export default function CreativeGallery(props) {
                         props.photography.map((project, k) => {
                             return (
                                 <Grid item key={k} xs={project.cols} md={project.colsXs} >
-                                    <figure className="img-container" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                                        <img src={project.photo} alt={project.title} />
+                                    <figure className="img-container" >
+                                        <img src={project.photo} alt={project.title} className="img-grid" />
+                                        <div className="content-overlay">
+                                            <h3>{project.title}</h3>
+                                            <p>{project.description}</p>
+                                            <button onClick={() => biggerImage(project)}>Bigger please!</button>
+
+                                        </div>
                                     </figure>
 
                                 </Grid>
@@ -90,10 +104,9 @@ export default function CreativeGallery(props) {
                     {location.pathname === "/graphic" &&
                         props.graphicDesign.map((project => {
                             return (
-                                <Grid item key={project.id} xs={project.cols} md={project.colsXs} ref={addToRefs}>
-                                    <figure key={project.id} className="img-container" onMouseEnter={handleMouseEnter} onMouseLeave={() => handleMouseLeave(project.id)}>
+                                <Grid item key={project.id} xs={project.cols} md={project.colsXs} >
+                                    <figure key={project.id} className="img-container" >
                                         <img key={project.id} src={project.photo} alt={project.title} />
-
                                         <div className="content-overlay">
                                             <h3>{project.title}</h3>
                                             <p>{project.description}</p>
@@ -109,6 +122,14 @@ export default function CreativeGallery(props) {
                     }
 
                 </Grid>
+                {bigger ?
+                    <div id="lightbox" >
+                        <button onClick={showPrev}>⭠</button>
+                        <img src={imageToShow.photo} id="lightbox-img" onClick={reset} />
+                        <button onClick={showNext}>⭢</button>
+                    </div>
+                    : ""
+                }
 
 
             </div>

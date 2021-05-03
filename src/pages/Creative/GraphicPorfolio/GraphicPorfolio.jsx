@@ -9,10 +9,10 @@ import GraphicDesign from '../../../data/GraphicDesign.json';
 
 export default function GraphicPorfolio() {
 
-    const [graphicDesign, setGraphicDesign] = useState([]);
+    const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-        setGraphicDesign(GraphicDesign);
+        setProjects(GraphicDesign);
     }, []);
 
     let showLess = false;
@@ -23,7 +23,7 @@ export default function GraphicPorfolio() {
                 <div>
                     <h2>Graphic Design</h2>
                 </div>
-                <CreativeGallery graphicDesign={graphicDesign} showLess={showLess} />
+                <CreativeGallery projects={projects} showLess={showLess} />
             </div>
         </div>
     )

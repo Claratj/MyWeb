@@ -9,10 +9,10 @@ import Photography from '../../../data/Photography.json';
 
 export default function PhotographyPorfolio() {
 
-    const [photography, setPhotography] = useState([]);
+    const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-        setPhotography(Photography);
+        setProjects(Photography);
     }, []);
 
     const showLess = false;
@@ -24,7 +24,7 @@ export default function PhotographyPorfolio() {
                 <div>
                     <h2>Photography</h2>
                 </div>
-                <CreativeGallery photography={photography} showLess={showLess} />
+                <CreativeGallery projects={projects} showLess={showLess} />
             </div>
         </div>
     )

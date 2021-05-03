@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import { Grid } from '@material-ui/core';
 
-import MiniGallery from './CreativeGallery/MiniGallery/MiniGallery';
 
 import Photography from '../../data/Photography.json';
 import GraphicDesign from '../../data/GraphicDesign.json';
@@ -25,27 +23,6 @@ export function Creative() {
         setGraphicDesign(GraphicDesign);
     }, []);
 
-    const showLessPhotography = photography.slice(0, 3).map((project, i) => {
-        return (
-            <Grid key={i} style={{ height: 150, width: 250 }}>
-                <figure className="img-container" >
-                    <img src={project.photo} alt={project.title} />
-                </figure>
-            </Grid>
-        )
-    });
-
-    const showLessGraphic = graphicDesign.slice(0, 3).map((project, j) => {
-        return (
-            <Grid key={j} style={{ height: 200, width: 200 }}>
-                <figure className="img-container" >
-                    <img src={project.photo} alt={project.title} />
-                </figure>
-            </Grid>
-        )
-    });
-
-
 
     return (
         <>
@@ -63,7 +40,15 @@ export function Creative() {
                 <section className="porfolio-creative">
                     <div className="creative">
 
-                        <MiniGallery showLessPhotography={showLessPhotography} />
+                        {photography.slice(0, 3).map((project => {
+                            return (
+                                <figure className="img-container">
+                                    <img src={project.photo} alt={project.title} />
+                                </figure>
+                            )
+
+                        }))
+                        }
 
                         <Link to="/photography">
                             <button className="btn-more">
@@ -71,9 +56,19 @@ export function Creative() {
                             </button>
                         </Link>
                     </div>
-                    <div className="creative">
 
-                        <MiniGallery showLessGraphic={showLessGraphic} />
+
+                    <div className="creative">
+                        {graphicDesign.slice(0, 3).map((project => {
+                            return (
+                                <figure className="img-container">
+                                    <img src={project.photo} alt={project.title} />
+                                </figure>
+                            )
+                        }))
+
+                        }
+
 
                         <Link to="/graphic">
                             <button className="btn-more">

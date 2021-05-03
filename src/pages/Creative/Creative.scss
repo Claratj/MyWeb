@@ -2,12 +2,23 @@
 @import '../../styles/settings/variables.settings';
 
 .porfolio-creative{
-    width: 80%;
-    background-color: aquamarine;
-    @include flex(space-between);
+    @include flex(center);
+    flex-direction: column;
+    
+    @include desktopView {
+        width: 80%;
+        flex-direction: unset;
+        justify-content: space-between;
+
+    }
 
 }
 
 .creative {
-    width: 50%;
+    width: 100%;
+
+    @include desktopView {
+        width: 50%;
+
+    }
 }

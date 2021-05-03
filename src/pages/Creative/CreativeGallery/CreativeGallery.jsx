@@ -90,7 +90,6 @@ export default function CreativeGallery(props) {
                                             <h3>{project.title}</h3>
                                             <p>{project.description}</p>
                                             <button onClick={() => biggerImage(project)}>Bigger please!</button>
-
                                         </div>
                                     </figure>
 

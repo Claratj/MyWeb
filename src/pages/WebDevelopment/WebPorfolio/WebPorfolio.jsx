@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import { Header } from '../../../core/Header/Header';
+import { Footer } from '../../../core/Footer/Footer';
 
 import { ProjectList } from '../../../shared/ProjectList/ProjectList';
 
@@ -23,6 +24,7 @@ export default function WebPorfolio() {
                 </div>
                 <ProjectList projects={projects} showLess={showLess} />
             </div>
+            <Footer />
         </div>
     )
 }

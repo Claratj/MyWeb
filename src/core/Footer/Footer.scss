@@ -9,6 +9,7 @@ footer {
     color: $color-purple;
     font-family: Montserrat-SemiBold;
     @include flex(center);
+    flex-direction: column;
 }
 
 .rrss {

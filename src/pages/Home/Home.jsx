@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
 // import AOS from 'aos';
 import { motion } from 'framer-motion';
@@ -18,8 +18,8 @@ import { Footer } from '../../core/Footer/Footer';
 
 export function Home() {
     const [lastYPos, setLastYPos] = useState(0);
-    const [shouldShowActions, setShouldShowActions]= useState(false);
-   
+    const [shouldShowActions, setShouldShowActions] = useState(false);
+
     // AOS.init(
     //     {
     //         offset: 400,
@@ -27,11 +27,11 @@ export function Home() {
     //     }
     // );
 
-    useEffect(()=>{
+    useEffect(() => {
         function handleScroll(e) {
             const yPos = window.scrollY;
             const isScrollingUp = yPos > lastYPos;
-      
+
             setShouldShowActions(isScrollingUp);
             setLastYPos(yPos);
         }
@@ -39,7 +39,7 @@ export function Home() {
         window.addEventListener("scroll", handleScroll, false);
 
         return () => {
-          window.removeEventListener("scroll", handleScroll, false);
+            window.removeEventListener("scroll", handleScroll, false);
         };
     }, [[lastYPos]])
 
@@ -62,32 +62,28 @@ export function Home() {
         }
     }
 
-    
+
 
 
 
     return (
         <div>
-            <header>
                 <Header />
-            </header>
             <main className="home-content">
                 <motion.section variants={variants} initial="hidden" animate="visible" >
                     <Intro />
                 </motion.section>
-                <motion.section  initial={{x: "-100vw"}} animate={{x: shouldShowActions? 0: "-2000"}} transition={{duration: 1}}  id="about">
+                <motion.section initial={{ x: "-100vw" }} animate={{ x: shouldShowActions ? 0 : "-2000" }} transition={{ duration: 1 }} id="about">
                     <About />
                 </motion.section>
-                <motion.section initial={{x: "10000vw"}} animate={{x: shouldShowActions? 0: "10000"}} transition={{duration: 1.2}}  id="web">
+                <motion.section initial={{ x: "10000vw" }} animate={{ x: shouldShowActions ? 0 : "10000" }} transition={{ duration: 1.2 }} id="web">
                     <WebDevelopment />
                 </motion.section>
                 <motion.section id="graphic">
                     <Creative />
                 </motion.section>
             </main>
-            <footer>
                 <Footer />
-            </footer>
         </div>
     );
 }

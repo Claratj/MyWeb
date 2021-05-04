@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import { Header } from '../../../core/Header/Header';
+import { Footer } from '../../../core/Footer/Footer';
 
 import CreativeGallery from '../CreativeGallery/CreativeGallery';
 
@@ -26,6 +27,7 @@ export default function PhotographyPorfolio() {
                 </div>
                 <CreativeGallery projects={projects} showLess={showLess} />
             </div>
+            <Footer />
         </div>
     )
 }

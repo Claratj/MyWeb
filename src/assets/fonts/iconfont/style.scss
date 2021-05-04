@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: '#{$icomoon-font-family}';
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?7gze77');
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?7gze77#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?7gze77') format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?7gze77') format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?7gze77##{$icomoon-font-family}') format('svg');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?6u9egj');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?6u9egj#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?6u9egj') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?6u9egj') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?6u9egj##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -27,6 +27,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-cross-sign {
+  &:before {
+    content: $icon-cross-sign; 
+  }
+}
 .icon-ps {
   &:before {
     content: $icon-ps; 

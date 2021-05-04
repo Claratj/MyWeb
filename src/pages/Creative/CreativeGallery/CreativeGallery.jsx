@@ -89,7 +89,7 @@ export default function CreativeGallery(props) {
                                         <div className="content-overlay">
                                             <h3>{project.title}</h3>
                                             <p>{project.description}</p>
-                                            <button onClick={() => biggerImage(project)}>Bigger please!</button>
+                                            <button className="btn-more-hover" onClick={() => biggerImage(project)}><span>Bigger please!</span></button>
                                         </div>
                                     </figure>
 
@@ -109,7 +109,7 @@ export default function CreativeGallery(props) {
                                         <div className="content-overlay">
                                             <h3>{project.title}</h3>
                                             <p>{project.description}</p>
-                                            <button onClick={() => biggerImage(project)}>Bigger please!</button>
+                                            <button className="btn-more-hover" onClick={() => biggerImage(project)}><span>Bigger please!</span></button>
 
                                         </div>
 

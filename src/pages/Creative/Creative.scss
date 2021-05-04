@@ -6,17 +6,17 @@
     flex-direction: column;
     
     @include desktopView {
-        height: 85vh;
-        width: 80%;
         flex-direction: unset;
         justify-content: space-between;
+        height: 85vh;
+        width: 80%;
     }
 
 }
 
 .creative {
     width: 100%;
-    margin: 2rem 0;
+    margin: 2rem 1rem;
     
     & figure {
         width: 85%;
@@ -29,12 +29,12 @@
     }
 
     @include tabletView {
-      
+        
     }
 
     @include desktopView {
         width: 50%;
-
+        
         &-grid {
             @include flex(space-between);
         }

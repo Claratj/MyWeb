@@ -71,7 +71,6 @@ export function Creative() {
                                     </figure>
                                 )
                             }))
-
                             }
                         </div>
 

@@ -9,16 +9,41 @@
         width: 80%;
         flex-direction: unset;
         justify-content: space-between;
-
     }
 
 }
 
 .creative {
     width: 100%;
+    margin: 2rem 0;
+    
+    & figure {
+        width: 85%;
+        height: 30%;
+        margin: 1rem auto;
+
+        & img {
+            border-radius:8px;
+        }
+    }
+
+    @include tabletView {
+      
+    }
 
     @include desktopView {
         width: 50%;
 
+        &-grid {
+            @include flex(space-between);
+        }
+
+        & figure {
+            width: 32%;
+            height: 350px;
+            border-radius: 10px;
+        }
+
     }
 }
+

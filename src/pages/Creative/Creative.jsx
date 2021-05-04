@@ -39,16 +39,18 @@ export function Creative() {
                 </section>
                 <section className="porfolio-creative">
                     <div className="creative">
+                        <div className="creative-grid">
+                            {photography.slice(0, 3).map((project => {
+                                return (
+                                    <figure>
+                                        <img src={project.photo} alt={project.title} className="img-grid" />
+                                    </figure>
+                                )
 
-                        {photography.slice(0, 3).map((project => {
-                            return (
-                                <figure className="img-container">
-                                    <img src={project.photo} alt={project.title} />
-                                </figure>
-                            )
+                            }))
+                            }
+                        </div>
 
-                        }))
-                        }
 
                         <Link to="/photography">
                             <button className="btn-more">
@@ -59,15 +61,19 @@ export function Creative() {
 
 
                     <div className="creative">
-                        {graphicDesign.slice(0, 3).map((project => {
-                            return (
-                                <figure className="img-container">
-                                    <img src={project.photo} alt={project.title} />
-                                </figure>
-                            )
-                        }))
 
-                        }
+                        <div className="creative-grid">
+
+                            {graphicDesign.slice(0, 3).map((project => {
+                                return (
+                                    <figure>
+                                        <img src={project.photo} alt={project.title} className="img-grid" />
+                                    </figure>
+                                )
+                            }))
+
+                            }
+                        </div>
 
 
                         <Link to="/graphic">

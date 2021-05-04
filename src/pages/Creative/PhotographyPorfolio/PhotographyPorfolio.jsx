@@ -23,7 +23,7 @@ export default function PhotographyPorfolio() {
             <Header />
             <div className="main-creative">
                 <div>
-                    <h2>Photography</h2>
+                    <h2 className="section-title">Photography</h2>
                 </div>
                 <CreativeGallery projects={projects} showLess={showLess} />
             </div>

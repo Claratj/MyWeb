@@ -20,7 +20,7 @@ export default function WebPorfolio() {
             <Header />
             <div className="main-creative">
                 <div>
-                    <h2>Web Development</h2>
+                    <h2 className="section-title">Web Development</h2>
                 </div>
                 <ProjectList projects={projects} showLess={showLess} />
             </div>

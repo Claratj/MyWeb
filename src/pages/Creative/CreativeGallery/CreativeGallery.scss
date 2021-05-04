@@ -6,9 +6,7 @@
     width: 90%;
     margin: 0 auto;
     display: flex;
-    // flex-wrap: wrap;
     flex-direction: column;
-    // background-color: green;
 }
   
 .img-container {
@@ -23,13 +21,12 @@
   &:hover .content-overlay {
     opacity: 1;
     border-radius:8px;
-
   }
 }
 .content-overlay {
   background: rgba(0,0,0,0.7);
   position: absolute;
-  height: 99%;
+  height: 100%;
   width: 100%;
   left: 0;
   top: 0;
@@ -46,6 +43,16 @@
     color: white;
     padding: 0 2rem;
   }
+  & h3 {
+    width: 230px;
+    font-size: 20px;
+    padding-bottom: 0.5rem;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    border-bottom: 1px solid $color-light-orange;
+    // box-shadow: inset 0 -1px $color-light-orange;
+
+  }
 }
 
   
@@ -59,13 +66,13 @@
 
 }
 
-#lightbox-img {
+#carousel-img {
   height: 80vh;
   max-width: 90vw;
   object-fit: cover;
 }
 
-#lightbox {
+#carousel {
   z-index: 1;
   position: fixed;
   top: 0;

@@ -68,7 +68,7 @@ export function Home() {
 
     return (
         <div>
-                <Header />
+            <Header />
             <main className="home-content">
                 <motion.section variants={variants} initial="hidden" animate="visible" >
                     <Intro />
@@ -83,7 +83,7 @@ export function Home() {
                     <Creative />
                 </motion.section>
             </main>
-                <Footer />
+            <Footer />
         </div>
     );
 }

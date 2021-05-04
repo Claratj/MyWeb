@@ -27,18 +27,18 @@ export function Creative() {
     return (
         <>
             <div className="main">
-                <h2>Photography & Graphic Design</h2>
+                <h2 className="section-title">Creative</h2>
                 <section className="technologies">
                     <div>
                         <span>Photoshop |</span>
                         <span> Illustrator |</span>
                         <span> InDesign |</span>
-                        <span> Premiere Pro |</span>
-                        <span> After Effects</span>
+                        <span> Premiere Pro </span>
                     </div>
                 </section>
                 <section className="porfolio-creative">
                     <div className="creative">
+                        <h3>Photography</h3>
                         <div className="creative-grid">
                             {photography.slice(0, 3).map((project => {
                                 return (
@@ -61,7 +61,7 @@ export function Creative() {
 
 
                     <div className="creative">
-
+                    <h3>Graphic Design</h3>
                         <div className="creative-grid">
 
                             {graphicDesign.slice(0, 3).map((project => {

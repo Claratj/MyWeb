@@ -1,3 +1,6 @@
+@import '../settings/variables.settings';
+@import '../settings/mixings.settings';
+
 ul {
     list-style: unset;
 }
@@ -8,4 +11,23 @@ li {
 
 a {
     text-decoration: none;
+}
+
+h1, h2  {
+    font-family: Montserrat-Bold;
+}
+
+h3, h4, h5 {
+    font-family: Montserrat-SemiBold;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    padding:0 1.2rem;
+    @include tabletView {
+        font-size: 3rem;
+    }
+
+
 }

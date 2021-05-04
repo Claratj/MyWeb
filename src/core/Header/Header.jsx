@@ -98,7 +98,7 @@ export function Header() {
                     <motion.li className="option" onClick={closeMobileMenu}
                         whileHover={{ scale: 1.2 }}
                         transition={{ type: 'spring', stiffness: 500 }}>
-                        <Link to="/graphic">Graphic Designer</Link>
+                        <Link to="/graphic">Graphic Design</Link>
                     </motion.li>}
 
             </ul>

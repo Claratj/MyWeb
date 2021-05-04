@@ -122,9 +122,9 @@ export default function CreativeGallery(props) {
 
                 </Grid>
                 {bigger ?
-                    <div id="lightbox" >
+                    <div id="carousel" >
                         <button onClick={showPrev}>⭠</button>
-                        <img src={imageToShow.photo} id="lightbox-img" onClick={reset} />
+                        <img src={imageToShow.photo} id="carousel-img" onClick={reset} />
                         <button onClick={showNext}>⭢</button>
                     </div>
                     : ""

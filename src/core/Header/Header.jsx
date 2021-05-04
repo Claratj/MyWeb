@@ -57,29 +57,54 @@ export function Header() {
             <motion.figure className="figure"
                 whileHover={{ scale: 1.2 }}
                 transition={{ type: 'spring', stiffness: 500 }}>
-                { location.pathname === "/photography" || location.pathname === "/web" || location.pathname === "/graphic" ? (<Link to="/"><img src={Logo1} alt="logo"/></Link>) : (<LinkScroll to="intro" smooth={true} duration={1000}><img src={Logo1} alt="logo"/></LinkScroll>)
-                }                
+                {location.pathname === "/photography" || location.pathname === "/web" || location.pathname === "/graphic" ? (<Link to="/"><img src={Logo1} alt="logo" /></Link>) : (<LinkScroll to="intro" smooth={true} duration={1000}><img src={Logo1} alt="logo" /></LinkScroll>)
+                }
             </motion.figure>
+
             <ul className={click ? "nav-options active" : "nav-options"}>
                 <motion.li className="option" onClick={closeMobileMenu}
                     whileHover={{ scale: 1.2 }}
                     transition={{ type: 'spring', stiffness: 500 }}>
-                     { location.pathname === "/photography" || location.pathname === "/web" || location.pathname === "/graphic" ? <Link to="/:about">About</Link> :
-                    <LinkScroll to="about" smooth={true} duration={1000}>About</LinkScroll> }
+                    {location.pathname === "/photography" || location.pathname === "/web" || location.pathname === "/graphic" ? <Link to="/">About</Link> :
+                        <LinkScroll to="about" smooth={true} duration={1000}>About</LinkScroll>}
                 </motion.li>
-                <motion.li className="option" onClick={closeMobileMenu}
+
+                {location.pathname !== "/web" &&
+                    <motion.li className="option" onClick={closeMobileMenu}
+                        whileHover={{ scale: 1.2 }}
+                        transition={{ type: 'spring', stiffness: 500 }}>
+                        {location.pathname === "/photography" || location.pathname === "/graphic" ? <Link to="/web">Web Developer</Link> :
+                            <LinkScroll to="web" smooth={true} duration={1000}>Web Developer</LinkScroll>}
+                    </motion.li>
+                }
+
+                {location.pathname === "/" &&
+                    <motion.li className="option" onClick={closeMobileMenu}
+                        whileHover={{ scale: 1.2 }}
+                        transition={{ type: 'spring', stiffness: 500 }}>
+                        <LinkScroll to="graphic" smooth={true} duration={1000}>Creative</LinkScroll>
+                    </motion.li>
+                }
+
+                {(location.pathname === "/graphic" || location.pathname === "/web") && <motion.li className="option" onClick={closeMobileMenu}
                     whileHover={{ scale: 1.2 }}
                     transition={{ type: 'spring', stiffness: 500 }}>
-                    { location.pathname === "/photography" || location.pathname === "/web" || location.pathname === "/graphic" ? <Link to="/web">Web Developer</Link> :
-                    <LinkScroll to="web" smooth={true} duration={1000}>Web Developer</LinkScroll>}
-                </motion.li>
-                <motion.li className="option" onClick={closeMobileMenu}
-                    whileHover={{ scale: 1.2 }}
-                    transition={{ type: 'spring', stiffness: 500 }}>
-                    { location.pathname === "/photography" || location.pathname === "/web" || location.pathname === "/graphic" ? <Link to="/graphic">Graphic Designer</Link> :
-                    <LinkScroll to="graphic" smooth={true} duration={1000}>Graphic Designer</LinkScroll> }
-                </motion.li>
+                    <Link to="/photography">Photography</Link>
+                </motion.li>}
+
+
+
+                {(location.pathname === "/photography" || location.pathname === "/web") &&
+                    <motion.li className="option" onClick={closeMobileMenu}
+                        whileHover={{ scale: 1.2 }}
+                        transition={{ type: 'spring', stiffness: 500 }}>
+                        <Link to="/graphic">Graphic Designer</Link>
+                    </motion.li>}
+
             </ul>
+
+
+
             <motion.div className="mobile-menu" onClick={handleClick}
                 variants={containerVariants}
                 initial="hidden"

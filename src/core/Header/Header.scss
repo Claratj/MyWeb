@@ -19,7 +19,7 @@
 
 .figure {
     margin: 0;
-    padding: 0 0 0 1.5rem ;
+    padding: 0 0 0 2rem ;
     cursor: pointer;
     img {
         width: 4.2rem;
@@ -34,7 +34,7 @@
     list-style-type: none;
 
     & li {
-        padding: 0 2rem;
+        padding: 0 3rem 0 0 ;
         font-family: Montserrat-SemiBold;
         color: $color-purple;
         &:hover {

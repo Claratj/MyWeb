@@ -8,8 +8,7 @@
     @include desktopView {
         flex-direction: unset;
         justify-content: space-between;
-        height: 85vh;
-        width: 80%;
+        width: 90%;
     }
 
 }
@@ -17,6 +16,12 @@
 .creative {
     width: 100%;
     margin: 2rem 1rem;
+
+    &-title {
+        text-align: center;
+        font-size: 22px;
+    }
+
     
     & figure {
         width: 85%;

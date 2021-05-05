@@ -81,7 +81,7 @@
             "Css "
         ],
         "githubUrl": "",
-        "webUrl": "..."
+        "webUrl": ""
     },
     {
         "id": "7",
@@ -93,7 +93,7 @@
             "Css "
         ],
         "githubUrl": "",
-        "webUrl": "..."
+        "webUrl": ""
     },
     {
         "id": "8",
@@ -105,7 +105,7 @@
             "Css "
         ],
         "githubUrl": "",
-        "webUrl": "..."
+        "webUrl": ""
     },
     {
         "id": "9",
@@ -122,7 +122,7 @@
     },
     {
         "id": "10",
-        "title": "My Web",
+        "title": "This Web",
         "photo": "",
         "description": "Platform to showcase my portfolio.",
         "technologies": [
@@ -131,7 +131,6 @@
             "JavaScript ",
             "React "
         ],
-        "githubUrl": "",
-        "webUrl": ""
+        "githubUrl": ""
     }
 ]

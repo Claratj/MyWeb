@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-
-
 import Photography from '../../data/Photography.json';
 import GraphicDesign from '../../data/GraphicDesign.json';
 
@@ -25,7 +23,6 @@ export function Creative() {
 
 
     return (
-        <>
             <div className="main">
                 <h2 className="section-title">Creative</h2>
                 <section className="technologies">
@@ -38,7 +35,7 @@ export function Creative() {
                 </section>
                 <section className="porfolio-creative">
                     <div className="creative">
-                        <h3>Photography</h3>
+                        <h3 className="creative-title">Photography</h3>
                         <div className="creative-grid">
                             {photography.slice(0, 3).map((project => {
                                 return (
@@ -61,7 +58,7 @@ export function Creative() {
 
 
                     <div className="creative">
-                    <h3>Graphic Design</h3>
+                        <h3 className="creative-title">Graphic Design</h3>
                         <div className="creative-grid">
 
                             {graphicDesign.slice(0, 3).map((project => {
@@ -84,6 +81,5 @@ export function Creative() {
                 </section>
 
             </div>
-        </>
     );
 }

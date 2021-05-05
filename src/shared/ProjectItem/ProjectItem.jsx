@@ -1,8 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export function ProjectItem(props) {
 
     const { key, photo, title, description, technologies, githubUrl, webUrl } = props;
+
+    // console.log(githubUrl);
+
+    console.log(technologies);
+
+
     return (
 
         <article className="flip-card" key={key}>
@@ -18,13 +25,17 @@ export function ProjectItem(props) {
                         <nav className="social-media">
                             <ul>
                                 <li>
-                                    <a href={githubUrl} alt={title} >
+                                    <Link to={githubUrl}>
                                         <span className="icon-gitlab" />Gitlab
-                                    </a>
+                                </Link>
                                 </li>
-                                <li>
-                                    <a href={webUrl} alt={title} >Website</a>
-                                </li>
+                                {webUrl !== "" &&
+                                    <li>
+                                        <Link to={webUrl}>
+                                            Website
+                                    </Link>
+                                    </li>
+                                }
                             </ul>
                         </nav>
                     </div>

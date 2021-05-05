@@ -23,7 +23,7 @@ export function WebDevelopment() {
     }, []);
 
     return (
-        <>
+        
             <div className="main">
                 <h2 className="section-title">Technologies I work with</h2>
                 <section className="technologies">
@@ -65,7 +65,5 @@ export function WebDevelopment() {
                     </button>
                 </Link>
             </div>
-
-        </>
     );
 }

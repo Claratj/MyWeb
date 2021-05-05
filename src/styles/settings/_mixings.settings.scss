@@ -28,3 +28,12 @@
 @mixin flexGrow($number) {
     flex: $number;
 }  
+
+@mixin underlineTitle($width, $color) {
+    width: $width;
+    padding-bottom: 0.5rem;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    border-bottom: 1px solid $color;
+
+}

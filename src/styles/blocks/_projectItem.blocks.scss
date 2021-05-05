@@ -52,6 +52,8 @@
         h5 {
             font-family: Montserrat-Bold;
             font-size: 20px;
+            @include underlineTitle(230px, $color-light-orange);
+
         }
        &-inner {
            width: 100%;
@@ -84,9 +86,7 @@
     justify-content: center;
     list-style: none;
     ul {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: flex-end;
+        @include flex(space-evenly)
         li {
             padding: 1rem;
         }

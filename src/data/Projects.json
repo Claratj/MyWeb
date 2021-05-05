@@ -3,7 +3,7 @@
         "id": "1",
         "title": "Lucky App",
         "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619694149/app-lucky_ff0nqb.png",
-        "description": "A Full Stack MERN app where the main challenges where the communication between different models on the Back End when registering for events, selecting the differents available animals for adoptions, or saving different available animals to adoption as favorite",
+        "description": "A Full Stack MERN app where you can register, select differents available animals for adoptions, or save different available animals to adoption as favorite",
         "technologies": [
             "MongoDB ",
             "ExpressJS ",

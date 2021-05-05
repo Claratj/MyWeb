@@ -46,12 +46,30 @@
     &-description, &-technologies {
         text-align: center;
     }
-
+    
+    &-links {
+        align-items: flex-end;
+        justify-content: center;
+        list-style: none;
+        & ul {
+            @include flex(space-evenly)
+            & li {
+                padding: 1rem;
+            }
+        }
+    }
     @include tabletView {
         flex-direction: unset;
         flex-wrap: wrap;
-       justify-content: center;
-       align-items: center;
+        justify-content: center;
+        align-items: center;
+       &-div {
+           width: 100%;
+           height: 100%;
+           padding: 1rem 0;
+           @include flex(center);
+           flex-direction: column;
+       }
     }
 
 }

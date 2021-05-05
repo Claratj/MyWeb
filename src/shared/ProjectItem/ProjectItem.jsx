@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 export function ProjectItem(props) {
 
@@ -18,22 +17,18 @@ export function ProjectItem(props) {
                     <img src={process.env.PUBLIC_URL + photo} alt={title} className="project-img"></img>
                 </div>
                 <div className="flip-card-back">
-                    <div>
+                    <div className="project-div">
                         <h5 className="project-title">{title}</h5>
                         <p className="project-description">{description}</p>
                         <p className="project-technologies">{technologies}</p>
-                        <nav className="social-media">
+                        <nav className="project-links">
                             <ul>
                                 <li>
-                                    <Link to={githubUrl}>
-                                        <span className="icon-gitlab" />Gitlab
-                                </Link>
+                                    <a href={githubUrl} alt={title} ><span className="icon-gitlab"/>Gitlab</a>
                                 </li>
-                                {webUrl !== "" &&
+                                {webUrl === null &&
                                     <li>
-                                        <Link to={webUrl}>
-                                            Website
-                                    </Link>
+                                        <a href={webUrl} alt={title} >Website</a>
                                     </li>
                                 }
                             </ul>

@@ -26,7 +26,7 @@ export function ProjectItem(props) {
                                 <li>
                                     <a href={githubUrl} alt={title} ><span className="icon-gitlab"/>Gitlab</a>
                                 </li>
-                                {webUrl === null &&
+                                {webUrl &&
                                     <li>
                                         <a href={webUrl} alt={title} >Website</a>
                                     </li>

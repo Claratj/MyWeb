@@ -5,10 +5,10 @@
         "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619694149/app-lucky_ff0nqb.png",
         "description": "A Full Stack MERN app where you can register, select differents available animals for adoptions, or save different available animals to adoption as favorite",
         "technologies": [
-            "MongoDB ",
-            "ExpressJS ",
-            "React ",
-            "NodeJS ",
+            "MongoDB | ",
+            "ExpressJS | ",
+            "React | ",
+            "NodeJS | ",
             "Sass "
         ],
         "githubUrl": "https://gitlab.com/Claratj/Lucky",
@@ -20,11 +20,11 @@
         "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619694150/got_w7fwxr.png",
         "description": "A React project consuming a public API",
         "technologies": [
-            "React ",
-            "API ",
-            "Html ",
-            "Sass ",
-            "Css ",
+            "React | ",
+            "API | ",
+            "Html | ",
+            "Sass | ",
+            "Css | ",
             "JavaScript "
         ],
         "githubUrl": "https://gitlab.com/Claratj/project-react-got",
@@ -36,9 +36,9 @@
         "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619694138/shopeame_tyq5gl.png",
         "description": " A Full Stack app with Angular where you can post you can sell your products. The app lets you add products, remove them or edit them.",
         "technologies": [
-            "Angular ",
-            "API ",
-            "Sass ",
+            "Angular | ",
+            "API | ",
+            "Sass | ",
             "Css "
         ],
         "githubUrl": "https://gitlab.com/Claratj/shopeame-products",
@@ -50,8 +50,8 @@
         "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619694150/rol-vanilla_ujmniy.png",
         "description": "A desktop app based mainly in Vanilla Js, with the minimum of HTML and lots of CSS. A fun exercise to put into practise all the JavaScript bases.",
         "technologies": [
-            "Html ",
-            "Css ",
+            "Html | ",
+            "Css | ",
             "JavaScript "
         ],
         "githubUrl": "https://gitlab.com/Claratj/rol_game",
@@ -63,9 +63,9 @@
         "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619694150/blog_cine_jfyemh.png",
         "description": "",
         "technologies": [
-            "API ",
-            "JavaScript ",
-            "Html ",
+            "API | ",
+            "JavaScript | ",
+            "Html | ",
             "Css "
         ],
         "githubUrl": "https://gitlab.com/Claratj/cinema-blog",
@@ -77,7 +77,7 @@
         "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619694150/blog-cafe_adnc6r.png",
         "description": "Exercise of recreating a design.",
         "technologies": [
-            "Html ",
+            "Html | ",
             "Css "
         ],
         "githubUrl": "",
@@ -89,7 +89,7 @@
         "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619694149/bienes_ewyqcc.png",
         "description": "A simple excercise in pure Html and Css reacreating a design.",
         "technologies": [
-            "Html ",
+            "Html | ",
             "Css "
         ],
         "githubUrl": "",
@@ -101,7 +101,7 @@
         "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619694150/web_design_v1zne8.png",
         "description": "Exercise of recreating a design.",
         "technologies": [
-            "Html ",
+            "Html | ",
             "Css "
         ],
         "githubUrl": "",
@@ -113,8 +113,8 @@
         "photo": "",
         "description": "Animation technical test.",
         "technologies": [
-            "Html ",
-            "Css ",
+            "Html | ",
+            "Css | ",
             "JavaScript "
         ],
         "githubUrl": "https://gitlab.com/Claratj/drop_bacardi",
@@ -126,9 +126,9 @@
         "photo": "",
         "description": "Platform to showcase my portfolio.",
         "technologies": [
-            "Html ",
-            "Css ",
-            "JavaScript ",
+            "Html | ",
+            "Css | ",
+            "JavaScript | ",
             "React "
         ],
         "githubUrl": ""

@@ -24,11 +24,11 @@ export function ProjectItem(props) {
                         <nav className="project-links">
                             <ul>
                                 <li>
-                                    <a href={githubUrl} alt={title} ><span className="icon-gitlab"/>Gitlab</a>
+                                    <a href={githubUrl} alt={title} className="links" ><span className="icon-gitlab"/>Gitlab</a>
                                 </li>
                                 {webUrl &&
                                     <li>
-                                        <a href={webUrl} alt={title} >Website</a>
+                                        <a href={webUrl} alt={title} className="links" >Website</a>
                                     </li>
                                 }
                             </ul>

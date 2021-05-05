@@ -3,10 +3,9 @@
 
 footer {
     width: 100vw;
-    height: 100px;
-    margin-top: 2rem;;
-    background-color: $color-mint;
-    color: $color-purple;
+    height: 180px;
+    padding-top: 3rem;
+    background: linear-gradient(0deg, rgba(170,216,208,1) 0%, rgba(198,227,222,0.908000700280112) 36%, rgba(234,242,241,0.31976540616246496) 82%, rgba(255,255,255,0) 100%);    color: $color-purple;
     font-family: Montserrat-SemiBold;
     @include flex(center);
     flex-direction: column;

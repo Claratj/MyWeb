@@ -53,11 +53,13 @@
 
 
     @include tabletView {
-      flex: 1;
-      padding: 3rem;
       font-family: Montserrat-SemiBold;
       font-size: 1.5rem;
       text-align: center;
+    }
+    @include desktopLargeView{
+      padding: 3rem;
+
     }
 
 

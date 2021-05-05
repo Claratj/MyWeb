@@ -17,6 +17,12 @@
     }
 }
 
+@mixin desktopLargeView {
+    @media all and (min-width: 1200px) {
+        @content;
+    }
+}
+
 
 @mixin flex($value) {
     display: flex;

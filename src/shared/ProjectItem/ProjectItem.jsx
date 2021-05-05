@@ -4,7 +4,6 @@ export function ProjectItem(props) {
 
     const { key, photo, title, description, technologies, githubUrl, webUrl } = props;
 
-    // console.log(githubUrl);
 
     console.log(technologies);
 
@@ -24,7 +23,7 @@ export function ProjectItem(props) {
                         <nav className="project-links">
                             <ul>
                                 <li>
-                                    <a href={githubUrl} alt={title} className="links" ><span className="icon-gitlab"/>Gitlab</a>
+                                    <a href={githubUrl} alt={title} className="links" ><span className="icon-gitlab" />Gitlab</a>
                                 </li>
                                 {webUrl &&
                                     <li>

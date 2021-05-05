@@ -23,63 +23,64 @@ export function Creative() {
 
 
     return (
-            <div className="main">
-                <h2 className="section-title">Creative</h2>
-                <section className="technologies">
-                    <div>
-                        <span>Photoshop |</span>
-                        <span> Illustrator |</span>
-                        <span> InDesign |</span>
-                        <span> Premiere Pro </span>
-                    </div>
-                </section>
-                <section className="porfolio-creative">
-                    <div className="creative">
-                        <h3 className="creative-title">Photography</h3>
-                        <div className="creative-grid">
-                            {photography.slice(0, 3).map((project => {
-                                return (
-                                    <figure>
-                                        <img src={project.photo} alt={project.title} className="img-grid" />
-                                    </figure>
-                                )
+        <div className="main">
+            <h2 className="section-title">Creative</h2>
+            <h3 className="section-subtitle">Technologies I work with</h3>
+            <section className="technologies">
+                <div>
+                    <span>Photoshop |</span>
+                    <span> Illustrator |</span>
+                    <span> InDesign |</span>
+                    <span> Premiere Pro </span>
+                </div>
+            </section>
+            <section className="porfolio-creative">
+                <div className="creative">
+                    <h3 className="creative-title">Photography</h3>
+                    <div className="creative-grid">
+                        {photography.slice(0, 3).map((project => {
+                            return (
+                                <figure>
+                                    <img src={project.photo} alt={project.title} className="img-grid" />
+                                </figure>
+                            )
 
-                            }))
-                            }
-                        </div>
-
-
-                        <Link to="/photography">
-                            <button className="btn-more">
-                                <span>More please!</span>
-                            </button>
-                        </Link>
+                        }))
+                        }
                     </div>
 
 
-                    <div className="creative">
-                        <h3 className="creative-title">Graphic Design</h3>
-                        <div className="creative-grid">
-
-                            {graphicDesign.slice(0, 3).map((project => {
-                                return (
-                                    <figure>
-                                        <img src={project.photo} alt={project.title} className="img-grid" />
-                                    </figure>
-                                )
-                            }))
-                            }
-                        </div>
+                    <Link to="/photography">
+                        <button className="btn-more">
+                            <span>More please!</span>
+                        </button>
+                    </Link>
+                </div>
 
 
-                        <Link to="/graphic">
-                            <button className="btn-more">
-                                <span>More please!</span>
-                            </button>
-                        </Link>
+                <div className="creative">
+                    <h3 className="creative-title">Graphic Design</h3>
+                    <div className="creative-grid">
+
+                        {graphicDesign.slice(0, 3).map((project => {
+                            return (
+                                <figure>
+                                    <img src={project.photo} alt={project.title} className="img-grid" />
+                                </figure>
+                            )
+                        }))
+                        }
                     </div>
-                </section>
 
-            </div>
+
+                    <Link to="/graphic">
+                        <button className="btn-more">
+                            <span>More please!</span>
+                        </button>
+                    </Link>
+                </div>
+            </section>
+
+        </div>
     );
 }

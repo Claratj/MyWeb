@@ -41,20 +41,22 @@
     &-title {
         text-align: center;
         font-size: 1.3rem;
+        padding-top: 1.5rem;
     } 
 
     &-description, &-technologies {
         text-align: center;
+        padding: 0;
     }
     
     &-links {
-        align-items: flex-end;
+        align-items: center;
         justify-content: center;
         list-style: none;
         & ul {
             @include flex(space-evenly)
             & li {
-                padding: 1rem;
+                padding: 0 1rem;
             }
         }
     }

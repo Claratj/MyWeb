@@ -17,9 +17,7 @@
 
 .technologies {
     flex: 1;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    @include flex(center);
     flex-wrap: wrap;
     max-width: 480px;
     margin: auto;

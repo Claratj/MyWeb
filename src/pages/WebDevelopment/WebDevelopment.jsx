@@ -6,7 +6,6 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 
-import './WebDevelopment.scss';
 import Projects from '../../data/Projects.json';
 
 library.add(fab);
@@ -50,8 +49,8 @@ export function WebDevelopment() {
                 </div>
                 <div>
                     <span> Git |</span>
-                    <span> GitLab</span>
-                    <span> Trello |</span>
+                    <span> GitLab |</span>
+                    <span> Trello | </span>
 
                 </div>
                 <div>

@@ -15,8 +15,9 @@ footer {
     padding-top: 1rem;
     @include flex(space-between);
 
-    & .icon-twitter, .icon-gitlab, .icon-in, .icon-mail {
+    & .icon-twitter, .icon-git, .icon-in, .icon-paper-plane {
         font-size: 1.8rem;
+        margin: 0 0.5rem;
         color: $color-purple;
 
         &:hover {

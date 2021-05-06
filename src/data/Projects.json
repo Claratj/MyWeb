@@ -61,7 +61,7 @@
         "id": "5",
         "title": "Cinema Blog",
         "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619694150/blog_cine_jfyemh.png",
-        "description": "",
+        "description": "Project of a film blog by querying an API.",
         "technologies": [
             "API | ",
             "JavaScript | ",

@@ -92,7 +92,9 @@
 }
 
 .links {
-    font-size: Mulish-SemiBold;
+    font-family: Mulish-SemiBold;
+    color: $color-purple;
+    letter-spacing: 0.7px;
     display: flex;
     justify-content: center;
     align-items: center;

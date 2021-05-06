@@ -43,7 +43,9 @@ export default function Intro() {
             }}
                 whileTap={{ scale: 1 }}
                 className="hex" />
+            <div className="waves">
 
+            </div>
         </div>
     )
 }

@@ -2,7 +2,9 @@
 @import '../../styles/settings/variables.settings';
 
 .header {
-    background-color: transparent;
+    // background-color: transparent;
+    background: linear-gradient(0deg, rgba(170,216,208,1) 0%, rgba(198,227,222,0.908000700280112) 36%, rgba(234,242,241,0.31976540616246496) 82%, rgba(255,255,255,0) 100%);    color: $color-purple;
+
     width: 100%;
     height: 80px;
     position: fixed;

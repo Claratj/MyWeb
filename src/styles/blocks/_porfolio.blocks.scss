@@ -92,13 +92,15 @@
 }
 
 .links {
-    color: black;
+    font-size: Mulish-SemiBold;
     display: flex;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: center;
     & span {
-        font-size: 20px;
+        font-size: 24px;
     }
     @include tabletView {
         color: white;
     }
+        
 }

@@ -24,34 +24,42 @@
 
     
     & figure {
-        width: 180px;
-        height: 350px;
-        margin: 1rem 0.5rem;
-        border-radius:8px;
-        overflow: hidden;
+        width: 80%;
+        margin: 0 auto;
 
-        & img {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            transform: scale(1);
-            transition: all 0.3s ease-in-out;
-            &:hover {
-                transform: scale(1.05);
-            }
-        }
     }
+    
 
     @include tabletView {
+        &-grid {
+            @include flex(space-between);
+        }
+
+        & figure {
+            width: 180px;
+            height: 350px;
+            margin: 1rem 0.5rem;
+            border-radius:8px;
+            overflow: hidden;
+
+            & img {
+                width: 100%;
+                height: 350px;
+                object-fit: cover;
+                transform: scale(1);
+                transition: all 0.3s ease-in-out;
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+        }
         
     }
 
     @include desktopView {
         width: 50%;
         
-        &-grid {
-            @include flex(space-between);
-        }
+        
 
         & figure {
             width: 32%;

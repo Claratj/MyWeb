@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: '#{$icomoon-font-family}';
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?6u9egj');
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?6u9egj#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?6u9egj') format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?6u9egj') format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?6u9egj##{$icomoon-font-family}') format('svg');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?mxl98s');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?mxl98s#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?mxl98s') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?mxl98s') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?mxl98s##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -27,6 +27,86 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-caret-down {
+  &:before {
+    content: $icon-caret-down; 
+  }
+}
+.icon-caret-left {
+  &:before {
+    content: $icon-caret-left; 
+  }
+}
+.icon-caret-right {
+  &:before {
+    content: $icon-caret-right; 
+  }
+}
+.icon-caret-up {
+  &:before {
+    content: $icon-caret-up; 
+  }
+}
+.icon-rounded-down {
+  &:before {
+    content: $icon-rounded-down; 
+  }
+}
+.icon-rounded-left {
+  &:before {
+    content: $icon-rounded-left; 
+  }
+}
+.icon-rounded-right {
+  &:before {
+    content: $icon-rounded-right; 
+  }
+}
+.icon-rounded-up {
+  &:before {
+    content: $icon-rounded-up; 
+  }
+}
+.icon-simple-left {
+  &:before {
+    content: $icon-simple-left; 
+  }
+}
+.icon-simple-right {
+  &:before {
+    content: $icon-simple-right; 
+  }
+}
+.icon-telegram {
+  &:before {
+    content: $icon-telegram; 
+  }
+}
+.icon-rounded-down1 {
+  &:before {
+    content: $icon-rounded-down1; 
+  }
+}
+.icon-rounded-left1 {
+  &:before {
+    content: $icon-rounded-left1; 
+  }
+}
+.icon-rounded-right1 {
+  &:before {
+    content: $icon-rounded-right1; 
+  }
+}
+.icon-rounded-up1 {
+  &:before {
+    content: $icon-rounded-up1; 
+  }
+}
+.icon-paper-plane {
+  &:before {
+    content: $icon-paper-plane; 
+  }
+}
 .icon-cross-sign {
   &:before {
     content: $icon-cross-sign; 

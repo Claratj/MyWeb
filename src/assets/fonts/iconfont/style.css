@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?6u9egj');
-  src:  url('fonts/icomoon.eot?6u9egj#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?6u9egj') format('truetype'),
-    url('fonts/icomoon.woff?6u9egj') format('woff'),
-    url('fonts/icomoon.svg?6u9egj#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?mxl98s');
+  src:  url('fonts/icomoon.eot?mxl98s#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?mxl98s') format('truetype'),
+    url('fonts/icomoon.woff?mxl98s') format('woff'),
+    url('fonts/icomoon.svg?mxl98s#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,54 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-caret-down:before {
+  content: "\ea67";
+}
+.icon-caret-left:before {
+  content: "\ea68";
+}
+.icon-caret-right:before {
+  content: "\ea69";
+}
+.icon-caret-up:before {
+  content: "\ea6a";
+}
+.icon-rounded-down:before {
+  content: "\ea99";
+}
+.icon-rounded-left:before {
+  content: "\ea9d";
+}
+.icon-rounded-right:before {
+  content: "\eaa0";
+}
+.icon-rounded-up:before {
+  content: "\eaa1";
+}
+.icon-simple-left:before {
+  content: "\eab5";
+}
+.icon-simple-right:before {
+  content: "\eab8";
+}
+.icon-telegram:before {
+  content: "\ed75";
+}
+.icon-rounded-down1:before {
+  content: "\ea9a";
+}
+.icon-rounded-left1:before {
+  content: "\ea9e";
+}
+.icon-rounded-right1:before {
+  content: "\eaa2";
+}
+.icon-rounded-up1:before {
+  content: "\eaa3";
+}
+.icon-paper-plane:before {
+  content: "\efb4";
+}
 .icon-cross-sign:before {
   content: "\e91a";
 }

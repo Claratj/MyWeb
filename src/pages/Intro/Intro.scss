@@ -85,6 +85,7 @@
     // background-color: $color-mint;
     // box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
     transition: 700ms;
+    z-index: -1;
   }
   
   .waves::before,

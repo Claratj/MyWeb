@@ -2,14 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { ProjectList } from '../../shared/ProjectList/ProjectList';
 import { Link } from 'react-router-dom';
 
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fab } from '@fortawesome/free-brands-svg-icons';
-import { fas } from '@fortawesome/free-solid-svg-icons';
+import { motion } from 'framer-motion';
 
 import Projects from '../../data/Projects.json';
 
-library.add(fab);
-library.add(fas);
+
 
 export function WebDevelopment() {
 
@@ -23,7 +20,7 @@ export function WebDevelopment() {
 
     return (
 
-        <div className="main">
+        <motion.div className="main" initial={{ x: "10000vw" }} animate={{ x:  0}} transition={{ duration: 1.2 }}>
             <h2 className="section-title">Web Developer</h2>
             <h3 className="section-subtitle">Technologies I work with</h3>
             <section className="technologies">
@@ -64,6 +61,6 @@ export function WebDevelopment() {
                     <span>More please!</span>
                 </button>
             </Link>
-        </div>
+        </motion.div>
     );
 }

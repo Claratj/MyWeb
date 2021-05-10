@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import { motion } from 'framer-motion';
+import AOS from 'aos';
 
 
 import { Header } from '../../core/Header/Header';
@@ -11,29 +12,41 @@ import { About } from '../About/About';
 import { Footer } from '../../core/Footer/Footer';
 
 
-// import './Home.scss';
+import 'aos/dist/aos.css';
+import './Home.scss';
+
 
 export function Home() {
-    const [lastYPos, setLastYPos] = useState(0);
-    const [shouldShowActions, setShouldShowActions] = useState(false);
+    // const [lastYPos, setLastYPos] = useState(0);
+    // const [shouldShowActions, setShouldShowActions] = useState(false);
 
-
-
-    useEffect(() => {
-        function handleScroll(e) {
-            const yPos = window.scrollY;
-            const isScrollingUp = yPos > lastYPos;
-
-            setShouldShowActions(isScrollingUp);
-            setLastYPos(yPos);
+    AOS.init(
+        {
+            offset: 400,
+            duration: 1000,
         }
+    );
 
-        window.addEventListener("scroll", handleScroll, false);
 
-        return () => {
-            window.removeEventListener("scroll", handleScroll, false);
-        };
-    }, [[lastYPos]])
+    // useEffect(() => {
+    //     function handleScroll(e) {
+    //         const yPos = window.scrollY;
+    //         const isScrollingUp = yPos > lastYPos;
+
+    //         console.log(isScrollingUp);
+
+    //         setShouldShowActions(isScrollingUp);
+    //         setLastYPos(yPos);
+
+    //         console.log(shouldShowActions);
+    //     }
+
+    //     window.addEventListener("scroll", handleScroll, false);
+
+    //     return () => {
+    //         window.removeEventListener("scroll", handleScroll, false);
+    //     };
+    // }, [[lastYPos]])
 
 
     const variants = {
@@ -55,9 +68,6 @@ export function Home() {
     }
 
 
-
-
-
     return (
         <div>
             <Header />
@@ -65,17 +75,18 @@ export function Home() {
                 <motion.section variants={variants} initial="hidden" animate="visible" >
                     <Intro />
                 </motion.section>
-                <motion.section initial={{ x: "-1000vw" }} animate={{ x: shouldShowActions ? 0 : "-2000" }} transition={{ duration: 1.5, type: 'spring', stiffness: 500 }} id="about">
+                <section data-aos="zoom-out-up" id="about">
                     <About />
-                </motion.section>
-                <motion.section initial={{ x: "10000vw" }} animate={{ x: shouldShowActions ? 0 : "10000" }} transition={{ duration: 1.2 }} id="web">
+                </section>
+                <section data-aos="fade-up-right" id="web">
                     <WebDevelopment />
-                </motion.section>
-                <motion.section id="graphic" initial={{  }} animate={{ y: shouldShowActions ? 0 : "1000" }} transition={{ duration: 1.2 }} id="creative">
+                </section>
+                <section data-aos="fade-up-left" id="creative">
                     <Creative />
-                </motion.section>
+                </section>
             </main>
             <Footer />
+
         </div>
     );
 }

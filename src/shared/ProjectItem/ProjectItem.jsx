@@ -6,7 +6,6 @@ export function ProjectItem(props) {
     const { key, photo, title, description, technologies, githubUrl, webUrl } = props;
 
 
-    console.log(technologies);
 
 
     return (

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { ProjectList } from '../../shared/ProjectList/ProjectList';
 import { Link } from 'react-router-dom';
 
-import { motion } from 'framer-motion';
 
 import Projects from '../../data/Projects.json';
 
@@ -20,7 +19,7 @@ export function WebDevelopment() {
 
     return (
 
-        <motion.div className="main" initial={{ x: "10000vw" }} animate={{ x:  0}} transition={{ duration: 1.2 }}>
+        <div className="main">
             <h2 className="section-title">Web Developer</h2>
             <h3 className="section-subtitle">Technologies I work with</h3>
             <section className="technologies">
@@ -61,6 +60,6 @@ export function WebDevelopment() {
                     <span>More please!</span>
                 </button>
             </Link>
-        </motion.div>
+        </div>
     );
 }

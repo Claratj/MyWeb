@@ -5,32 +5,30 @@ import {
     useLocation
 } from "react-router-dom";
 
-import { AnimatePresence } from 'framer-motion';
 
 import { Home } from '../../pages/Home/Home';
 import GraphicPorfolio from '../../pages/Creative/GraphicPorfolio/GraphicPorfolio';
 import PhotographyPorfolio from '../../pages/Creative/PhotographyPorfolio/PhotographyPorfolio';
 import WebPorfolio from '../../pages/WebDevelopment/WebPorfolio/WebPorfolio';
+import PorfolioNavigation from '../../shared/PorfolioNavigation/PorfolioNavigation';
 
 export function Routes() {
     const location = useLocation();
 
     return (
-        <AnimatePresence>
-            <Switch location={location} key={location.key}>
-                <Route path="/web">
-                    <WebPorfolio />
-                </Route>
-                <Route path="/photography">
-                    <PhotographyPorfolio />
-                </Route>
-                <Route path="/graphic">
-                    <GraphicPorfolio />
-                </Route>
-                <Route path="/">
-                    <Home />
-                </Route>
-            </Switch>
-        </AnimatePresence>
+        <Switch location={location} key={location.key}>
+            <Route path="/web">
+                <PorfolioNavigation />
+            </Route>
+            <Route path="/photography">
+                <PorfolioNavigation />
+            </Route>
+            <Route path="/graphic">
+                <PorfolioNavigation />
+            </Route>
+            <Route path="/">
+                <Home />
+            </Route>
+        </Switch>
     )
 }

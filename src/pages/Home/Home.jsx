@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import { motion } from 'framer-motion';
 import AOS from 'aos';
@@ -13,12 +13,10 @@ import { Footer } from '../../core/Footer/Footer';
 
 
 import 'aos/dist/aos.css';
-import './Home.scss';
+// import './Home.scss';
 
 
 export function Home() {
-    // const [lastYPos, setLastYPos] = useState(0);
-    // const [shouldShowActions, setShouldShowActions] = useState(false);
 
     AOS.init(
         {
@@ -26,27 +24,6 @@ export function Home() {
             duration: 1000,
         }
     );
-
-
-    // useEffect(() => {
-    //     function handleScroll(e) {
-    //         const yPos = window.scrollY;
-    //         const isScrollingUp = yPos > lastYPos;
-
-    //         console.log(isScrollingUp);
-
-    //         setShouldShowActions(isScrollingUp);
-    //         setLastYPos(yPos);
-
-    //         console.log(shouldShowActions);
-    //     }
-
-    //     window.addEventListener("scroll", handleScroll, false);
-
-    //     return () => {
-    //         window.removeEventListener("scroll", handleScroll, false);
-    //     };
-    // }, [[lastYPos]])
 
 
     const variants = {

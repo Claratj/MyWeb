@@ -82,7 +82,7 @@ export function Header() {
                     <motion.li className="option" onClick={closeMobileMenu}
                         whileHover={{ scale: 1.2 }}
                         transition={{ type: 'spring', stiffness: 500 }}>
-                        <LinkScroll to="graphic" smooth={true} duration={1000}>Creative</LinkScroll>
+                        <LinkScroll to="creative" smooth={true} duration={1000}>Creative</LinkScroll>
                     </motion.li>
                 }
 

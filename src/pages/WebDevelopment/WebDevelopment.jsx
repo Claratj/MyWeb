@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { ProjectList } from '../../shared/ProjectList/ProjectList';
 import { Link } from 'react-router-dom';
 
+import Button from '../../shared/Button/Button';
+
 
 import Projects from '../../data/Projects.json';
 
@@ -16,6 +18,8 @@ export function WebDevelopment() {
     useEffect(() => {
         setProjects(Projects);
     }, []);
+
+    const btnMore = true;
 
     return (
 
@@ -55,11 +59,8 @@ export function WebDevelopment() {
                 </div>
             </section>
             <ProjectList projects={projects} showLess={showLess} />
-            <Link to="/web">
-                <button className="btn-more">
-                    <span>More please!</span>
-                </button>
-            </Link>
+
+            <Button text={'More please!'} path={"/web"} />
         </div>
     );
 }

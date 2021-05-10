@@ -11,6 +11,7 @@ import './About.scss';
 export function About() {
 
 
+
     return (
         <div className="main">
             <div className="main-about" id="about">
@@ -18,7 +19,7 @@ export function About() {
                     initial={{ x: '-100vw' }}
                     animate={{ x: 0 }}
                     transition={{
-                        delay: 0.3,
+                        delay: 1,
                         duration: 1.5,
                         type: 'spring',
                         stiffness: 120
@@ -38,7 +39,7 @@ export function About() {
                     initial={{ x: '100vw' }}
                     animate={{ x: 0 }}
                     transition={{
-                        delay: 0.3,
+                        delay: 1,
                         duration: 1.5,
                         type: 'spring',
                         stiffness: 120

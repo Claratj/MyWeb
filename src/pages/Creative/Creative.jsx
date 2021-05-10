@@ -6,6 +6,7 @@ import GraphicDesign from '../../data/GraphicDesign.json';
 
 
 import './Creative.scss';
+import Button from '../../shared/Button/Button';
 
 
 export function Creative() {
@@ -48,13 +49,7 @@ export function Creative() {
                         }))
                         }
                     </div>
-
-
-                    <Link to="/photography">
-                        <button className="btn-more">
-                            <span>More please!</span>
-                        </button>
-                    </Link>
+                    <Button text={'More please!'} path={"/photography"} />
                 </div>
 
 
@@ -71,13 +66,7 @@ export function Creative() {
                         }))
                         }
                     </div>
-
-
-                    <Link to="/graphic">
-                        <button className="btn-more">
-                            <span>More please!</span>
-                        </button>
-                    </Link>
+                    <Button text={'More please!'} path={"/graphic"} />
                 </div>
             </section>
 

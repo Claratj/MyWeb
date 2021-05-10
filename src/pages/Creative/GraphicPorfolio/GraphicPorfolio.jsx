@@ -22,7 +22,7 @@ export default function GraphicPorfolio() {
 
     let showLess = false;
     return (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.5 }} exit={{ opacity: 0 }}>
             <div className="main-creative">
                 <div>
                     <h2 className="section-title">Graphic Design</h2>

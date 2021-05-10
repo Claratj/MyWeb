@@ -20,8 +20,8 @@ export function Home() {
 
     AOS.init(
         {
-            offset: 400,
-            duration: 1000,
+            offset: 600,
+            duration: 800,
         }
     );
 

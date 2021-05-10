@@ -1,10 +1,13 @@
 import React from 'react';
 
+import { motion } from 'framer-motion';
+
 import { ProjectItem } from '../ProjectItem/ProjectItem';
 
 
+
+
 export function ProjectList(props) {
-    // console.log(props.showLess);
 
     let showLess = props.showLess;
     let lessProjects = '';
@@ -38,7 +41,23 @@ export function ProjectList(props) {
 
     }
 
-
+    const variants = {
+        hidden: {
+            opacity: 0
+        },
+        visible: {
+            opacity: 1,
+            transition: {
+                duration: 0.5
+            }
+        },
+        exit: {
+            y: -"100vh",
+            transition: {
+                ease: 'easeInOut'
+            }
+        }
+    }
 
     return (
         <>
@@ -47,9 +66,9 @@ export function ProjectList(props) {
                     {lessProjects}
                 </section>
             }
-            <section className="project">
+            <motion.section className="project" variants={variants} initial="hidden" animate="visible" exit="exit">
                 {projectItem}
-            </section>
+            </motion.section>
         </>
     )
 }

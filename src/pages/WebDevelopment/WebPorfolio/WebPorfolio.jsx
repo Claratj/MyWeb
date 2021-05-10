@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import { motion } from 'framer-motion';
+
 import { Header } from '../../../core/Header/Header';
 import { Footer } from '../../../core/Footer/Footer';
 
@@ -14,6 +16,8 @@ export default function WebPorfolio() {
         setProjects(Projects);
     }, []);
     let showLess = false;
+
+    
 
     return (
         <div>

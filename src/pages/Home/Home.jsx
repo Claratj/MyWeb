@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-// import AOS from 'aos';
 import { motion } from 'framer-motion';
-// import { Link } from 'react-scroll';
 
 
 import { Header } from '../../core/Header/Header';
@@ -13,19 +11,13 @@ import { About } from '../About/About';
 import { Footer } from '../../core/Footer/Footer';
 
 
-// import 'aos/dist/aos.css';
 // import './Home.scss';
 
 export function Home() {
     const [lastYPos, setLastYPos] = useState(0);
     const [shouldShowActions, setShouldShowActions] = useState(false);
 
-    // AOS.init(
-    //     {
-    //         offset: 400,
-    //         duration: 1000,
-    //     }
-    // );
+
 
     useEffect(() => {
         function handleScroll(e) {
@@ -51,7 +43,7 @@ export function Home() {
         visible: {
             opacity: 1,
             transition: {
-                duration: 1.3
+                duration: 1.5
             },
             exit: {
                 y: '-100vh',
@@ -73,13 +65,13 @@ export function Home() {
                 <motion.section variants={variants} initial="hidden" animate="visible" >
                     <Intro />
                 </motion.section>
-                <motion.section initial={{ x: "-100vw" }} animate={{ x: shouldShowActions ? 0 : "-2000" }} transition={{ duration: 1 }} id="about">
+                <motion.section initial={{ x: "-1000vw" }} animate={{ x: shouldShowActions ? 0 : "-2000" }} transition={{ duration: 1.5, type: 'spring', stiffness: 500 }} id="about">
                     <About />
                 </motion.section>
                 <motion.section initial={{ x: "10000vw" }} animate={{ x: shouldShowActions ? 0 : "10000" }} transition={{ duration: 1.2 }} id="web">
                     <WebDevelopment />
                 </motion.section>
-                <motion.section id="graphic">
+                <motion.section id="graphic" initial={{  }} animate={{ y: shouldShowActions ? 0 : "1000" }} transition={{ duration: 1.2 }} id="creative">
                     <Creative />
                 </motion.section>
             </main>

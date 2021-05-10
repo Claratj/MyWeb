@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Link as LinkScroll } from 'react-scroll';
 
-import { motion } from 'framer-motion';
+import { motion, useMotionValue } from 'framer-motion';
 
 
 
@@ -42,7 +42,7 @@ export function Header() {
             y: 0,
             transition: {
                 type: 'spring',
-                stiffness: 950
+                stiffness: 500
             }
         }
     }
@@ -56,7 +56,7 @@ export function Header() {
         >
             <motion.figure className="figure"
                 whileHover={{ scale: 1.2 }}
-                transition={{ type: 'spring', stiffness: 500 }}>
+                transition={{ type: 'spring', stiffness: 200 }}>
                 {location.pathname === "/photography" || location.pathname === "/web" || location.pathname === "/graphic" ? (<Link to="/"><img src={Logo1} alt="logo" /></Link>) : (<LinkScroll to="intro" smooth={true} duration={1000}><img src={Logo1} alt="logo" /></LinkScroll>)
                 }
             </motion.figure>

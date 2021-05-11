@@ -110,7 +110,7 @@
     {
         "id": "9",
         "title": "Bacardi Drop",
-        "photo": "",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1620748524/bacardi_mockup_imsge5.png",
         "description": "Animation technical test.",
         "technologies": [
             "Html | ",

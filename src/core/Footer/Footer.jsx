@@ -1,10 +1,12 @@
 import React from 'react';
 
+import { motion } from 'framer-motion';
+
 import './Footer.scss';
 
 export function Footer() {
     return (
-        <footer>
+        <motion.footer initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.3 }} exit={{ opacity: 0 }}>
             <nav className="rrss">
                 <a href="https://twitter.com/cofclarividence"><span className="icon-twitter" /></a>
                 <a href="https://gitlab.com/Claratj"><span className="icon-git" /></a>
@@ -12,6 +14,6 @@ export function Footer() {
                 <a href="mailto:clara@claratoloba.com"><span className="icon-paper-plane" /></a>
             </nav>
             <p className="">Made by Clara <span className="icon-copy" /> 2021</p>
-        </footer>
+        </motion.footer>
     )
 }

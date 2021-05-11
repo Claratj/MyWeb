@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Link as LinkScroll } from 'react-scroll';
 
-import { motion, useMotionValue } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 
 
@@ -42,7 +42,7 @@ export function Header() {
             y: 0,
             transition: {
                 type: 'spring',
-                stiffness: 500
+                stiffness: 800
             }
         }
     }

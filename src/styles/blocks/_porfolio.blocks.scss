@@ -5,9 +5,12 @@
         font-size: 2.5rem;
         text-align: center;
         padding:0 1.2rem;
+        -webkit-animation: tracking-in-expand 1s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+        animation: tracking-in-expand 1s cubic-bezier(0.680, -0.550, 0.265, 1.550);
         @include tabletView {
             font-size: 3rem;
         }
+    
     }
     &-subtitle {
         margin-top: 2rem;
@@ -99,3 +102,29 @@
     }
         
 }
+
+
+@-webkit-keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }

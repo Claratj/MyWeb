@@ -10,17 +10,22 @@ import Photography from '../../../data/Photography.json';
 
 
 export default function PhotographyPorfolio() {
-
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
+
         setProjects(Photography);
     }, []);
+
+
+
+
+    // setTimeout();
 
     const showLess = false;
 
     return (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.5 }} exit={{ opacity: 0 }}>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.3 }} exit={{ opacity: 0 }}>
             <div className="main-creative">
                 <div>
                     <h2 className="section-title">Photography</h2>

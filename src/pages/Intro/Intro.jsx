@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import lottie from 'lottie-web';
 import { motion } from 'framer-motion';
@@ -7,8 +7,16 @@ import './Intro.scss';
 
 export default function Intro() {
 
+    const animation = useRef();
+
     useEffect(() => {
-        
+        lottie.loadAnimation({
+            container: animation.current,
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            animationData: require('../../assets/Animations/scroll.json')
+        })
     }, [])
 
 
@@ -21,7 +29,8 @@ export default function Intro() {
                     <span className="">Clara</span><br /><span>Toloba</span>
                 </h2> */}
             </div>
-            <div className="triangle">
+            <div className="animation" ref={animation}></div>
+            <div className="circle">
             </div>
             <div className="waves">
             </div>

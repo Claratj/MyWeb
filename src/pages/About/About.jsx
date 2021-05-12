@@ -10,30 +10,7 @@ import './About.scss';
 
 export function About() {
 
-    // anime.timeline({ loop: true })
-    //    .add({
-    //         targets: '.ml8 .letters-left',
-    //         scale: [0, 1],
-    //         duration: 1200,
-    //         offset: '-=550'
-    //     }).add({
-    //         targets: '.ml8 .bang',
-    //         scale: [0, 1],
-    //         rotateZ: [45, 15],
-    //         duration: 1200,
-    //         offset: '-=1000'
-    //     }).add({
-    //         targets: '.ml8',
-    //         opacity: 0,
-    //         duration: 1000,
-    //         easing: "easeOutExpo",
-    //         delay: 1400
-    //     });
-
-
-
-
-
+   
     return (
         <div className="main">
             <div className="main-about" id="about">

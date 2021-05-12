@@ -18,7 +18,6 @@
     border-radius: 100%;
     
     @include tabletView {
-      // flex: 2;
       margin-top: 0;
       width: 37rem;
       height: 37rem;
@@ -31,6 +30,7 @@
     text-align: center;
     padding: 2rem 0 0;
     margin: 0;
+    @include titleSection($color-purple, 6)
     
     @include tabletView {
       font-size: 4rem;
@@ -65,12 +65,4 @@
 
 }
 
-
-// More About me 
-.c-chronology {
-  flex: 2;
-}
-
-
-//animation 
 

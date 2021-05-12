@@ -10,6 +10,28 @@ import './About.scss';
 
 export function About() {
 
+    // anime.timeline({ loop: true })
+    //    .add({
+    //         targets: '.ml8 .letters-left',
+    //         scale: [0, 1],
+    //         duration: 1200,
+    //         offset: '-=550'
+    //     }).add({
+    //         targets: '.ml8 .bang',
+    //         scale: [0, 1],
+    //         rotateZ: [45, 15],
+    //         duration: 1200,
+    //         offset: '-=1000'
+    //     }).add({
+    //         targets: '.ml8',
+    //         opacity: 0,
+    //         duration: 1000,
+    //         easing: "easeOutExpo",
+    //         delay: 1400
+    //     });
+
+
+
 
 
     return (
@@ -27,7 +49,10 @@ export function About() {
                     }} />
                 <figure className="about-figure">
                     <img className="about-figure_img" src={img} alt="About me portrait" />
-                    <h2 className="about-figure_txt">Hi! <br /> I'm Clara</h2>
+                    <h2 className="about-figure_txt">
+                        <span className="">Hi!</span>
+                        <br />
+                        <span className="">I'm Clara</span> </h2>
                 </figure>
                 <div className="about-description">
                     <p>Based in Madrid, I'm a Web Developer focused on both Front-end and Back-end technologies.</p>

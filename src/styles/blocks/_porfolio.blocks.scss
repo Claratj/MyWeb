@@ -7,9 +7,11 @@
         padding:0 1.2rem;
         -webkit-animation: tracking-in-expand 1s cubic-bezier(0.680, -0.550, 0.265, 1.550);
         animation: tracking-in-expand 1s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+        @include titleSection($color-purple, 10);
         @include tabletView {
             font-size: 3rem;
         }
+
     
     }
     &-subtitle {

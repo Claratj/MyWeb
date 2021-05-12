@@ -43,3 +43,16 @@
     border-bottom: 1px solid $color;
 
 }
+
+@mixin titleSection($color, $number) {
+    color: mix(#fff, $color, 5%);
+    font-size: calc(1rem + $number vw);  
+    text-shadow:
+    0.005em 0.005em 0 mix(#fff, $color, 60%),
+    0.01em 0.01em 0 mix(#fff, $color, 62%), 
+    0.015em 0.015em mix(#fff, $color, 64%), 
+    0.02em 0.02em 0 mix(#fff, $color, 66%), 
+    0.025em 0.025em 0 mix(#fff, $color, 68%),
+    0.03em 0.03em 0 mix(#fff, $color, 70%),
+    0.035em 0.035em 0 mix(#fff, $color, 72%);
+}

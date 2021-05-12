@@ -1,35 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
+import lottie from 'lottie-web';
 import { motion } from 'framer-motion';
 
 import './Intro.scss';
 
 export default function Intro() {
 
-    const introElements = {
-
-    }
-
+    useEffect(() => {
+        
+    }, [])
 
 
     return (
         <div className="main intro" id="intro">
             <div className="intro-txt" >
-                <motion.h2 className="">Hola caracola</motion.h2>
+                <h1 className="intro-title">Hola Caracola!</h1>
+                <p>Welcome to my website. </p>
+                {/* <h2>
+                    <span className="">Clara</span><br /><span>Toloba</span>
+                </h2> */}
             </div>
-            {/* <motion.div drag="x"
-                dragConstraints={{ left: -200, right: 100 }}
-                whileHover={{ scale: 12 }}
-                whileTap={{ scale: 1 }}
-                transition={{
-                    type: 'spring',
-                    stiffness: 300
-                }}
-                className="circle" /> */}
-
-
+            <div className="triangle">
+            </div>
             <div className="waves">
-
             </div>
         </div>
     )

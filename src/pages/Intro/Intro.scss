@@ -1,79 +1,64 @@
 @import '../../styles/settings/variables.settings';
 
 
+
 .intro {
   position: relative;
   height: 100vh;
+
+  &-title {
+    color: mix(#fff, $color-b-orange, 5%);
+    font-size: calc(1rem + 10vw);  
+    font-weight: 900;
+    text-align: center;
+    text-shadow: 
+      // -0.0075em 0.0075em 0 mix(#fff, $color-purple, 94%),
+      0.005em 0.005em 0 mix(#fff, $color-b-orange, 60%),
+      0.01em 0.01em 0 mix(#fff, $color-b-orange, 62%), 
+      0.015em 0.015em mix(#fff,$color-b-orange, 64%), 
+      0.02em 0.02em 0 mix(#fff, $color-b-orange, 66%), 
+      0.025em 0.025em 0 mix(#fff, $color-b-orange, 68%),
+      0.03em 0.03em 0 mix(#fff, $color-b-orange, 70%),
+      0.035em 0.035em 0 mix(#fff, $color-b-orange, 72%);
+  }
     &-txt {
         position: absolute;
-        top: 50%;
+        top: 40%;
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 200;
         h2 {
-            font-size: 4rem;
-            font-family: Montserrat-Bold;
+            font-size: 8rem;
+            font-family: MontserratAlt-Bold;
+            color: $color-purple;
+
+            // writing-mode: vertical-lr;
+            // text-align: center;
+            line-height: .9;
         }
         
     }
 }
 
 
-.circle {
-    width: 100px;
-    height: 100px;
-    background-color: #bb4d00;
-    border-radius: 50%;
-    position: absolute;
-    top: 20%;
-    left: 10%;
-}
+// .rotate {
+//   transform: rotate(180deg);
+// }
 
 .triangle {
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 100px solid $color-green-blue;
-    position: absolute;
-    right: 20%;
-    bottom: 10%;
-  }
-
-
-  .hex {
-    margin-top: 30px;
-    width: 104px;
-    height: 60px;
-    background-color: $color-deep-blue;
-    border-color: $color-deep-blue;
-    position: relative;
-    display: inline-block;
-    position: absolute;
-    top: 15%;
-    right: 30%;
+  position: absolute;
+  top: -840px;
+  left: -750px;
+  background-color: white;
+  // background-color: blue;
+  border-radius: 50%;
+  z-index: 5;
+  height: 1800px;
+  width: 1600px;
+  // transform: rotate(45deg);
 }
 
-.hex:before {
-    content: " ";
-    width: 0; height: 0;
-    border-bottom: 30px solid;
-    border-color: inherit;
-    border-left: 52px solid transparent;
-    border-right: 52px solid transparent;
-    position: absolute;
-    top: -30px;
-}
-.hex:after {
-    content: "";
-    width: 0;
-    position: absolute;
-    bottom: -30px;
-    border-top: 30px solid;
-    border-color: inherit;
-    border-left: 52px solid transparent;
-    border-right: 52px solid transparent;
-}
+
 
 
 .waves {

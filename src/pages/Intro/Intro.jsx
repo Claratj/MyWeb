@@ -24,10 +24,7 @@ export default function Intro() {
         <div className="main intro" id="intro">
             <div className="intro-txt" >
                 <h1 className="intro-title">Hola Caracola!</h1>
-                <p>Welcome to my website. </p>
-                {/* <h2>
-                    <span className="">Clara</span><br /><span>Toloba</span>
-                </h2> */}
+                <p>Welcome to my website.</p>
             </div>
             <div className="animation" ref={animation}></div>
             <div className="circle">

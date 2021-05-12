@@ -23,13 +23,13 @@
   }
     &-txt {
         position: absolute;
-        top: 40%;
+        top: 48%;
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 200;
-        h2 {
-            font-size: 8rem;
-            font-family: MontserratAlt-Bold;
+        p {
+            font-size: 2rem;
+            text-align: center;
             color: $color-purple;
 
             // writing-mode: vertical-lr;
@@ -41,21 +41,16 @@
 }
 
 
-// .rotate {
-//   transform: rotate(180deg);
-// }
 
 .circle {
   position: absolute;
   top: -840px;
   left: -750px;
   background-color: white;
-  // background-color: blue;
   border-radius: 50%;
   z-index: 5;
   height: 1800px;
   width: 1600px;
-  // transform: rotate(45deg);
 }
 
 .animation {

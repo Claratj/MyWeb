@@ -62,12 +62,17 @@ export function Header() {
             </motion.figure>
 
             <ul className={click ? "nav-options active" : "nav-options"}>
-                <motion.li className="option" onClick={closeMobileMenu}
-                    whileHover={{ scale: 1.2 }}
-                    transition={{ type: 'spring', stiffness: 500 }}>
-                    {location.pathname === "/photography" || location.pathname === "/web" || location.pathname === "/graphic" ? <Link to="/">About</Link> :
-                        <LinkScroll to="about" smooth={true} duration={1000}>About</LinkScroll>}
-                </motion.li>
+
+                {location.pathname === "/" &&
+
+                    <motion.li className="option" onClick={closeMobileMenu}
+                        whileHover={{ scale: 1.2 }}
+                        transition={{ type: 'spring', stiffness: 500 }}>
+                        <LinkScroll to="about" smooth={true} duration={1000}>About</LinkScroll>
+                    </motion.li>
+                }
+
+
 
                 {location.pathname !== "/web" &&
                     <motion.li className="option" onClick={closeMobileMenu}

@@ -13,13 +13,9 @@ export default function CreativeGallery(props) {
 
     const location = useLocation();
 
-    let srcPhoto = '';
-    let altPhoto = '';
-
     const biggerImage = (photo) => {
         setBigger(true);
         setImageToShow(photo);
-        // console.log(props.photography[0].photo)
     }
 
     const reset = () => {

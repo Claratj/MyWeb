@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { motion } from 'framer-motion';
 import AOS from 'aos';
@@ -18,12 +18,16 @@ import 'aos/dist/aos.css';
 
 export function Home() {
 
-    AOS.init(
-        {
-            offset: 600,
-            duration: 800,
-        }
-    );
+    useEffect(() => {
+        AOS.init(
+            {
+                offset: 600,
+                duration: 800,
+            }
+        );
+
+    }, [])
+
 
 
     const variants = {

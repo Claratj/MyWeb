@@ -79,7 +79,7 @@ export function Header() {
                         whileHover={{ scale: 1.2 }}
                         transition={{ type: 'spring', stiffness: 500 }}>
                         {location.pathname === "/photography" || location.pathname === "/graphic" ? <Link to="/web">Web Developer</Link> :
-                            <LinkScroll to="web" smooth={true} duration={1000}>Web Developer</LinkScroll>}
+                            <LinkScroll to="web" smooth={true} duration={1000}>Web Development</LinkScroll>}
                     </motion.li>
                 }
 

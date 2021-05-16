@@ -1,7 +1,8 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, Component } from 'react';
 
 import lottie from 'lottie-web';
-import { motion } from 'framer-motion';
+import ReactTooltip from "react-tooltip";
+
 
 import './Intro.scss';
 
@@ -26,7 +27,13 @@ export default function Intro() {
                 <h1 className="intro-title">Hola Caracola!</h1>
                 <p>Welcome to my website.</p>
             </div>
-            <div className="animation" ref={animation}></div>
+
+
+
+            <div className="animation" data-tip="React-tooltip" ref={animation} ></div>
+
+            <ReactTooltip place="right" type="warning" effect="solid"><span>Scroll time!</span></ReactTooltip>
+
             <div className="circle">
             </div>
             <div className="waves">

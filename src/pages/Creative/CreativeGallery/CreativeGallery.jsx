@@ -25,7 +25,6 @@ export default function CreativeGallery(props) {
     const showNext = (e) => {
         e.stopPropagation();
         let currentIndex = props.projects.indexOf(imageToShow);
-        console.log(currentIndex);
         if (currentIndex >= props.projects.length - 1) {
             setBigger(false);
         } else {

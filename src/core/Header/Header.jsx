@@ -18,6 +18,7 @@ export function Header() {
 
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
+    
     const changeNav = () => {
 
         if (window.scrollY >= 80) {

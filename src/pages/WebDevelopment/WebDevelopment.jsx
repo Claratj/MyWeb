@@ -21,8 +21,8 @@ export function WebDevelopment() {
 
     return (
 
-        <div className="main">
-            <h2 className="section-title">Web Developer</h2>
+        <div className="main" >
+            <h2 className="section-title">Web Development</h2>
             <h3 className="section-subtitle">Technologies I work with</h3>
             <section className="technologies">
                 <div>

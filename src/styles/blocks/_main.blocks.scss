@@ -3,8 +3,6 @@
 
 
 .main, .main-about {
-    width: 100%;
-    height: 100%;
     display: flex;
     align-items: center;  
     flex-direction: column;
@@ -13,45 +11,12 @@
 
 
 .main {
+    width: 100%;
+    height: 100%;
     &-about {
         text-align: center;
         position: relative;
 
-        & .icon-quote-left,.icon-quote-right {
-            color: $color-light-orange;
-            position: absolute;
-            opacity: 0.5;
-            z-index: 3;
-            font-size: 8rem;
-        }
-        & .icon-quote-left {
-            top: -1rem;
-            left: 1rem;
-        }
-        & .icon-quote-right {
-            bottom: 0;
-            right: 1rem;
-        }
-
-
-        @include desktopLargeView {
-            width: 70%;
-            height: 80vh;
-            margin: 0 auto;
-            padding-top: 5rem;
-            flex-direction: unset;
-            & .icon-quote-left,.icon-quote-right   {
-                font-size: 12rem;
-            }
-            & .icon-quote-left {
-                  top:0;
-                  left: 0;
-              }
-              & .icon-quote-right {
-                  bottom: 0;
-                  right: 0;
-              }
-        }
     }
     &-gallery {
         width: 100%;
@@ -61,10 +26,21 @@
     }
     &-creative {
         padding-top: 80px;
-        
-        @include desktopView {
-            width: 70%;
-            margin: 0 auto;
-        }
     }
 }
+
+@include desktopView {
+    .main-creative {
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+
+
+@include desktopLargeView {
+     .main-about {
+        width: 70%;
+        // height: 80vh;
+        flex-direction: unset;
+     }
+ }

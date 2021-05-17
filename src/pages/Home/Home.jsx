@@ -21,8 +21,10 @@ export function Home() {
     useEffect(() => {
         AOS.init(
             {
-                offset: 600,
-                duration: 700,
+                offset: 400,
+                duration: 1000,
+                easing: 'ease',
+                anchorPlacement: 'top-bottom'
             }
         );
 
@@ -37,7 +39,7 @@ export function Home() {
         visible: {
             opacity: 1,
             transition: {
-                duration: 1.5
+                duration: 1.3
             },
             exit: {
                 y: '-100vh',
@@ -57,12 +59,12 @@ export function Home() {
                     <Hero />
                 </motion.section>
                 <section data-aos="zoom-out-up" id="about">
-                    <About data-aos="zoom-out-up" id="about" />
+                    <About />
                 </section>
-                <section data-aos="fade-up-right" id="web">
+                <section data-aos="zoom-in-up" id="web">
                     <WebDevelopment />
                 </section>
-                <section data-aos="fade-up-left" id="creative">
+                <section data-aos="zoom-in-down" id="creative">
                     <Creative />
                 </section>
             </main>

@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core';
-
+import { motion } from 'framer-motion';
 
 import './CreativeGallery.scss';
 
@@ -18,7 +18,7 @@ export default function CreativeGallery(props) {
         setImageToShow(photo);
     }
 
-    const reset = () => {
+    const close = () => {
         setBigger(false);
     }
 
@@ -64,7 +64,23 @@ export default function CreativeGallery(props) {
 
     const classes = useStyles();
 
-
+    const variants = {
+        hidden: {
+            opacity: 0
+        },
+        visible: {
+            opacity: 1,
+            transition: {
+                duration: 0.5
+            },
+            exit: {
+                y: '-100vh',
+                transition: {
+                    ease: 'easeInOut'
+                }
+            }
+        }
+    }
 
 
     return (
@@ -117,11 +133,11 @@ export default function CreativeGallery(props) {
 
                 </Grid>
                 {bigger ?
-                    <div id="carousel" >
+                    <motion.div id="carousel" variants={variants} initial="hidden" animate="visible">
                         <button className="carousel-btn" onClick={showPrev} ><span className="icon-caret-left" /></button>
-                        <img src={imageToShow.photo} id="carousel-img" onClick={reset} />
+                        <img src={imageToShow.photo} id="carousel-img" onClick={close} />
                         <button className="carousel-btn" onClick={showNext}><span className="icon-caret-right" /></button>
-                    </div>
+                    </motion.div>
                     : ""
                 }
 

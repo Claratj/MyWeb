@@ -10,10 +10,10 @@ import './About.scss';
 
 export function About() {
 
-   
+
     return (
         <div className="main">
-            <div className="main-about" id="about">
+            <div className="main-about">
                 <motion.span className="icon-quote-left"
                     initial={{ x: '-100vw' }}
                     animate={{ x: 0 }}
@@ -25,7 +25,9 @@ export function About() {
 
                     }} />
                 <figure className="about-figure">
-                    <img className="about-figure_img" src={img} alt="About me portrait" />
+                    <div className="about-figure-img_container">
+                        <img src={img} alt="About me portrait" />
+                    </div>
                     <h2 className="about-figure_txt">
                         <span className="">Hi!</span>
                         <br />

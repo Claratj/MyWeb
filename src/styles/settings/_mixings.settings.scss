@@ -22,6 +22,11 @@
         @content;
     }
 }
+@mixin desktopXLView {
+    @media all and (min-width: 1400px) {
+        @content;
+    }
+}
 
 
 @mixin flex($value) {

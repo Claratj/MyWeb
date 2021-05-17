@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 import Photography from '../../data/Photography.json';
 import GraphicDesign from '../../data/GraphicDesign.json';

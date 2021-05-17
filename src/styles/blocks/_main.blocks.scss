@@ -8,14 +8,11 @@
     display: flex;
     align-items: center;  
     flex-direction: column;
+    padding-top: 80px;
 }
 
 
 .main {
-    padding-top: 100px;
-
-  
-    
     &-about {
         text-align: center;
         position: relative;

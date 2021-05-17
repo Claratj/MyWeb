@@ -41,6 +41,7 @@
             margin: 1rem 0.5rem;
             border-radius:8px;
             overflow: hidden;
+            border-radius: 10px;
 
             & img {
                 width: 100%;
@@ -58,13 +59,8 @@
 
     @include desktopView {
         width: 50%;
-        
-        
-
         & figure {
             width: 32%;
-            height: 350px;
-            border-radius: 10px;
         }
 
     }

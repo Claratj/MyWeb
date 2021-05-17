@@ -4,7 +4,7 @@ import lottie from 'lottie-web';
 import ReactTooltip from "react-tooltip";
 
 
-import './Intro.scss';
+import './Hero.scss';
 
 export default function Intro() {
 

@@ -13,7 +13,6 @@
     font-weight: 900;
     text-align: center;
     text-shadow: 
-      // -0.0075em 0.0075em 0 mix(#fff, $color-purple, 94%),
       0.005em 0.005em 0 mix(#fff, $color-b-orange, 60%),
       0.01em 0.01em 0 mix(#fff, $color-b-orange, 62%), 
       0.015em 0.015em mix(#fff,$color-b-orange, 64%), 
@@ -32,8 +31,6 @@
             font-size: 2rem;
             text-align: center;
             color: $color-purple;
-            // writing-mode: vertical-lr;
-            // text-align: center;
             line-height: .9;
         }
         
@@ -98,7 +95,6 @@
 
   .circle {
     top: -50%;
-    // top: -540px;
     left: -750px;
     height: 150vh;
     width: 1300px;

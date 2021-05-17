@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ProjectList } from '../../shared/ProjectList/ProjectList';
-import { Link } from 'react-router-dom';
 
 import Button from '../../shared/Button/Button';
-
 
 import Projects from '../../data/Projects.json';
 

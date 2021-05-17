@@ -5,7 +5,7 @@ import AOS from 'aos';
 
 
 import { Header } from '../../core/Header/Header';
-import Intro from '../Intro/Intro';
+import Hero from '../Hero/Hero';
 import { WebDevelopment } from '../WebDevelopment/WebDevelopment';
 import { Creative } from '../Creative/Creative';
 import { About } from '../About/About';
@@ -52,12 +52,12 @@ export function Home() {
     return (
         <div>
             <Header />
-            <main className="home-content">
+            <main>
                 <motion.section variants={variants} initial="hidden" animate="visible" >
-                    <Intro />
+                    <Hero />
                 </motion.section>
                 <section data-aos="zoom-out-up" id="about">
-                    <About />
+                    <About data-aos="zoom-out-up" id="about" />
                 </section>
                 <section data-aos="fade-up-right" id="web">
                     <WebDevelopment />

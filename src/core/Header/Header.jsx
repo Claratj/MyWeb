@@ -58,7 +58,7 @@ export function Header() {
             <motion.figure className="figure"
                 whileHover={{ scale: 1.2 }}
                 transition={{ type: 'spring', stiffness: 200 }}>
-                {location.pathname === "/photography" || location.pathname === "/web" || location.pathname === "/graphic" ? (<Link to="/"><img src={Logo1} alt="logo" /></Link>) : (<Scroll to="intro" smooth={true} duration={500}  spy={true}><img src={Logo1} alt="logo" /></Scroll>)
+                {location.pathname === "/photography" || location.pathname === "/web" || location.pathname === "/graphic" ? (<Link to="/"><img src={Logo1} alt="logo" /></Link>) : (<Scroll to="intro" smooth={true} duration={500} ><img src={Logo1} alt="logo" /></Scroll>)
                 }
             </motion.figure>
 
@@ -69,7 +69,7 @@ export function Header() {
                     <motion.li className="option" onClick={closeMobileMenu}
                         whileHover={{ scale: 1.2 }}
                         transition={{ type: 'spring', stiffness: 500 }}>
-                        <Scroll to="about" spy={true} smooth={true}  duration={500}>About</Scroll>
+                        <Scroll to="about" smooth={true}  duration={500}>About</Scroll>
                     </motion.li>
                 }
 
@@ -80,7 +80,7 @@ export function Header() {
                         whileHover={{ scale: 1.2 }}
                         transition={{ type: 'spring', stiffness: 500 }}>
                         {location.pathname === "/photography" || location.pathname === "/graphic" ? <Link to="/web">Web Development</Link> :
-                            <Scroll to="web" spy={true} smooth={true} duration={500}>Web Development</Scroll>}
+                            <Scroll to="web" smooth={true} duration={500}>Web Development</Scroll>}
                     </motion.li>
                 }
 
@@ -88,7 +88,7 @@ export function Header() {
                     <motion.li className="option" onClick={closeMobileMenu}
                         whileHover={{ scale: 1.2 }}
                         transition={{ type: 'spring', stiffness: 500 }}>
-                        <Scroll to="creative" spy={true} smooth={true} duration={500}>Creative</Scroll>
+                        <Scroll to="creative" smooth={true} duration={500}>Creative</Scroll>
                     </motion.li>
                 }
 

@@ -25,6 +25,9 @@
         @include flex(space-between);
 
     }
+    &-creative {
+        padding-top: 5.5rem;
+    }
 
 }
 
@@ -32,10 +35,9 @@
     .home-section {
         width: 100%;
         height: 100vh;
+        @include flex(center);
     }
-    // .main, .main-about {
-    //     height: 100vh;
-    // }
+
     .main-creative {
         width: 70%;
         margin: 0 auto;

@@ -123,7 +123,7 @@
     {
         "id": "10",
         "title": "This Web",
-        "photo": "",
+        "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1621957118/myweb-mockuo_l5b37l.png",
         "description": "Platform to showcase my portfolio.",
         "technologies": [
             "Html | ",
@@ -131,6 +131,6 @@
             "JavaScript | ",
             "React "
         ],
-        "githubUrl": ""
+        "githubUrl": "https://gitlab.com/Claratj/myweb"
     }
 ]

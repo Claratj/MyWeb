@@ -18,7 +18,7 @@ export function Header() {
 
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
-    
+
     const changeNav = () => {
 
         if (window.scrollY >= 80) {
@@ -79,7 +79,7 @@ export function Header() {
                     <motion.li className="option" onClick={closeMobileMenu}
                         whileHover={{ scale: 1.2 }}
                         transition={{ type: 'spring', stiffness: 500 }}>
-                        {location.pathname === "/photography" || location.pathname === "/graphic" ? <Link to="/web">Web Developer</Link> :
+                        {location.pathname === "/photography" || location.pathname === "/graphic" ? <Link to="/web">Web Development</Link> :
                             <LinkScroll to="web" smooth={true} duration={1000}>Web Development</LinkScroll>}
                     </motion.li>
                 }

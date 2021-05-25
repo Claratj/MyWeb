@@ -20,7 +20,7 @@ export function WebDevelopment() {
 
     return (
 
-        <div className="main" >
+        <div className="main">
             <h2 className="section-title">Web Development</h2>
             <h3 className="section-subtitle">Technologies I work with</h3>
             <section className="technologies">

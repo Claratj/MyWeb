@@ -2,11 +2,13 @@
 @import '../settings/variables.settings';
 
 
+
+
 .main, .main-about {
     display: flex;
     align-items: center;  
     flex-direction: column;
-    padding-top: 120px;
+    padding-top: 80px;
 }
 
 
@@ -20,16 +22,20 @@
     }
     &-gallery {
         width: 100%;
-        // margin: 0 auto;
         @include flex(space-between);
 
     }
-    &-creative {
-        padding-top: 80px;
-    }
+
 }
 
 @include desktopView {
+    .home-section {
+        width: 100%;
+        height: 100vh;
+    }
+    // .main, .main-about {
+    //     height: 100vh;
+    // }
     .main-creative {
         width: 70%;
         margin: 0 auto;
@@ -40,7 +46,6 @@
 @include desktopLargeView {
      .main-about {
         width: 70%;
-        // height: 80vh;
         flex-direction: unset;
      }
  }

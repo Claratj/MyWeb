@@ -6,7 +6,6 @@ import cv from '../../download/cv.pdf';
 
 export default function Button(props) {
 
-    console.log(props);
 
     let text = props.text;
     let path = props.path;

@@ -58,13 +58,13 @@ export function Home() {
                 <motion.section variants={variants} initial="hidden" animate="visible" >
                     <Hero />
                 </motion.section>
-                <section data-aos="zoom-out-up" id="about">
+                <section className="home-section" data-aos="zoom-out-up" id="about">
                     <About />
                 </section>
-                <section data-aos="zoom-in-up" id="web">
+                <section className="home-section" data-aos="zoom-in-up" id="web">
                     <WebDevelopment />
                 </section>
-                <section data-aos="zoom-in-down" id="creative">
+                <section className="home-section" data-aos="zoom-in-down" id="creative">
                     <Creative />
                 </section>
             </main>

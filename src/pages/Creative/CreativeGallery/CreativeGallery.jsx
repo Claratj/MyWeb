@@ -135,7 +135,7 @@ export default function CreativeGallery(props) {
                 {bigger ?
                     <motion.div id="carousel" variants={variants} initial="hidden" animate="visible">
                         <button className="carousel-btn" onClick={showPrev} ><span className="icon-caret-left" /></button>
-                        <img src={imageToShow.photo} id="carousel-img" onClick={close} />
+                        <img src={imageToShow.photo} id="carousel-img" onClick={close} alt="portfolio" />
                         <button className="carousel-btn" onClick={showNext}><span className="icon-caret-right" /></button>
                     </motion.div>
                     : ""

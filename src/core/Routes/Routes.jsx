@@ -7,9 +7,6 @@ import {
 
 
 import { Home } from '../../pages/Home/Home';
-import GraphicPorfolio from '../../pages/Creative/GraphicPorfolio/GraphicPorfolio';
-import PhotographyPorfolio from '../../pages/Creative/PhotographyPorfolio/PhotographyPorfolio';
-import WebPorfolio from '../../pages/WebDevelopment/WebPorfolio/WebPorfolio';
 import PorfolioNavigation from '../../shared/PorfolioNavigation/PorfolioNavigation';
 
 export function Routes() {

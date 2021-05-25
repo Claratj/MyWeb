@@ -17,7 +17,6 @@ export function WebDevelopment() {
         setProjects(Projects);
     }, []);
 
-    const btnMore = true;
 
     return (
 

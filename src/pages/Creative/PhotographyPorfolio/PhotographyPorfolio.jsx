@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 
 import { motion } from 'framer-motion';
 
-import { Header } from '../../../core/Header/Header';
-import { Footer } from '../../../core/Footer/Footer';
 import CreativeGallery from '../CreativeGallery/CreativeGallery';
 
 import Photography from '../../../data/Photography.json';

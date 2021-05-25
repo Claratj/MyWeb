@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, Component } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import lottie from 'lottie-web';
 import ReactTooltip from "react-tooltip";

@@ -69,7 +69,7 @@ export function Header() {
                     <motion.li className="option" onClick={closeMobileMenu}
                         whileHover={{ scale: 1.2 }}
                         transition={{ type: 'spring', stiffness: 500 }}>
-                        <LinkScroll to="about" smooth={true} duration={1000}>About</LinkScroll>
+                        <LinkScroll to="about" spy={true} smooth={true} offset={50} duration={500}>About</LinkScroll>
                     </motion.li>
                 }
 
@@ -80,7 +80,7 @@ export function Header() {
                         whileHover={{ scale: 1.2 }}
                         transition={{ type: 'spring', stiffness: 500 }}>
                         {location.pathname === "/photography" || location.pathname === "/graphic" ? <Link to="/web">Web Development</Link> :
-                            <LinkScroll to="web" smooth={true} duration={1000}>Web Development</LinkScroll>}
+                            <LinkScroll to="web" spy={true} smooth={true} offset={50} duration={500}>Web Development</LinkScroll>}
                     </motion.li>
                 }
 
@@ -88,7 +88,7 @@ export function Header() {
                     <motion.li className="option" onClick={closeMobileMenu}
                         whileHover={{ scale: 1.2 }}
                         transition={{ type: 'spring', stiffness: 500 }}>
-                        <LinkScroll to="creative" smooth={true} duration={1000}>Creative</LinkScroll>
+                        <LinkScroll to="creative"spy={true} smooth={true} offset={50} duration={500}>Creative</LinkScroll>
                     </motion.li>
                 }
 

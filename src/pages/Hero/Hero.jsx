@@ -18,7 +18,7 @@ export default function Intro() {
             autoplay: true,
             animationData: require('../../assets/Animations/scroll.json')
         })
-    }, [])
+    }, []);
 
 
     return (

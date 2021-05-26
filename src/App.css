@@ -1,16 +1,6 @@
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  width: 100%;
-} */
-
 body{
-  /* height: 100%;
-  width: 100%; */
+
   font-family: var(--font-family-base);
-  /* color: white; */
-  /* overflow: hidden; */
 
 }
 .App {

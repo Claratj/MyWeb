@@ -22,7 +22,6 @@ export function Home() {
             {
                 duration: 1000,
                 easing: 'ease',
-                // anchorPlacement: 'top-bottom'
             }
         );
 

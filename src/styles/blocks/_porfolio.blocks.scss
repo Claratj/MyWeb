@@ -68,7 +68,7 @@
         justify-content: center;
         list-style: none;
         & ul {
-            @include flex(space-evenly)
+            @include flex(space-evenly);
             & li {
                 padding: 0 1rem;
             }

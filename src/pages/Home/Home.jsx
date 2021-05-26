@@ -13,7 +13,6 @@ import { Footer } from '../../core/Footer/Footer';
 
 
 import 'aos/dist/aos.css';
-// import './Home.scss';
 
 
 export function Home() {
@@ -21,10 +20,9 @@ export function Home() {
     useEffect(() => {
         AOS.init(
             {
-                offset: 400,
                 duration: 1000,
                 easing: 'ease',
-                anchorPlacement: 'top-bottom'
+                // anchorPlacement: 'top-bottom'
             }
         );
 

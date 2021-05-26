@@ -55,7 +55,9 @@ export function WebDevelopment() {
                     <span> Scrum</span>
                 </div>
             </section>
-            <ProjectList projects={projects} showLess={showLess} />
+            <div className="main-projects">
+                <ProjectList projects={projects} showLess={showLess} />
+            </div>
 
             <Button text={'More please!'} path={"/web"} />
         </div>

@@ -26,7 +26,7 @@
 
     }
     &-creative {
-        padding-top: 5.5rem;
+        padding-top: 5.1rem;
     }
 
 }
@@ -34,8 +34,14 @@
 @include desktopView {
     .home-section {
         width: 100%;
-        height: 100vh;
+        height: 100%;
         @include flex(center);
+    }
+    .main {
+        padding-top: 100px;
+        &-projects {
+            height: 40vh;
+        }
     }
 
     .main-creative {

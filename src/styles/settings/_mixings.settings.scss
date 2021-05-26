@@ -51,7 +51,7 @@
 
 @mixin titleSection($color, $number) {
     color: mix(#fff, $color, 5%);
-    font-size: calc(1rem + $number vw);  
+    font-size: calc(1rem + #{$number vw});  
     text-shadow:
     0.005em 0.005em 0 mix(#fff, $color, 60%),
     0.01em 0.01em 0 mix(#fff, $color, 62%), 

@@ -25,7 +25,7 @@ export default function Intro() {
         <div className="main intro" id="intro">
             <div className="intro-txt" >
                 <h1 className="intro-title">Hola Caracola!</h1>
-                <p>Welcome to my website.</p>
+                <p>Welcome to my website</p>
             </div>
 
 

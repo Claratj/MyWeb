@@ -1,0 +1,170 @@
+:root {
+  --font-family-base: Mulish;
+  --font-family-titles: Montserrat-Bold;
+  --font-family-subtitles: Montserrat-SemiBold;
+  --font-family-description: Montserrat-ExtraLight;
+}
+
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf);
+}
+
+@font-face {
+  font-family: Montserrat-SemiBold;
+  src: url(../../assets/fonts/Montserrat/Montserrat-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: Montserrat-ExtraLight;
+  src: url(../../assets/fonts/Montserrat/Montserrat-ExtraLight.ttf);
+}
+
+@font-face {
+  font-family: Mulish;
+  src: url(../../assets/fonts/Mulish/Mulish-ExtraLight.ttf);
+}
+
+@font-face {
+  font-family: Mulish-SemiBold;
+  src: url(../../assets/fonts/Mulish/Mulish-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: MontserratAlt-Bold;
+  src: url(../../assets/fonts/MontserratAlt/MontserratAlternates-Bold.ttf);
+}
+
+@font-face {
+  font-family: MontserratAlt-SemiBold;
+  src: url(../../assets/fonts/MontserratAlt/MontserratAlternates-SemiBold.ttf);
+}
+
+.gallery {
+  padding-top: 56px;
+  width: 90%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.img-container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+.img-container:hover .content-overlay {
+  opacity: 1;
+  border-radius: 8px;
+}
+
+.content-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.content-overlay p, .content-overlay h3 {
+  text-align: center;
+  color: white;
+  padding: 0 2rem;
+}
+
+.content-overlay h3 {
+  font-size: 20px;
+  width: 230px;
+  padding-bottom: 0.5rem;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #f1861f;
+}
+
+.img-grid {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+}
+
+#carousel-img {
+  height: 80vh;
+  max-width: 90vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#carousel {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.carousel-btn {
+  cursor: pointer;
+  outline: none;
+  border: 1.8px solid #f1861f;
+  background-color: transparent;
+  border-radius: 50px;
+  height: 60px;
+  width: 60px;
+  margin: 0 5rem;
+}
+
+.icon-caret-left, .icon-caret-right {
+  color: white;
+  font-size: 20px;
+}
+
+.img-bigger {
+  position: absolute;
+  top: 6.5rem;
+  height: 100vh;
+  margin: 0 auto;
+  z-index: 5;
+}
+/*# sourceMappingURL=CreativeGallery.css.map */

@@ -1,10 +1,8 @@
+@charset "UTF-8";
 @font-face {
-  font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?mxl98s');
-  src:  url('fonts/icomoon.eot?mxl98s#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?mxl98s') format('truetype'),
-    url('fonts/icomoon.woff?mxl98s') format('woff'),
-    url('fonts/icomoon.svg?mxl98s#icomoon') format('svg');
+  font-family: "icomoon";
+  src: url("fonts/icomoon.eot?mxl98s");
+  src: url("fonts/icomoon.eot?mxl98s#iefix") format("embedded-opentype"), url("fonts/icomoon.ttf?mxl98s") format("truetype"), url("fonts/icomoon.woff?mxl98s") format("woff"), url("fonts/icomoon.svg?mxl98s#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -12,145 +10,187 @@
 
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
+  font-family: "icomoon" !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .icon-caret-down:before {
-  content: "\ea67";
+  content: "";
 }
+
 .icon-caret-left:before {
-  content: "\ea68";
+  content: "";
 }
+
 .icon-caret-right:before {
-  content: "\ea69";
+  content: "";
 }
+
 .icon-caret-up:before {
-  content: "\ea6a";
+  content: "";
 }
+
 .icon-rounded-down:before {
-  content: "\ea99";
+  content: "";
 }
+
 .icon-rounded-left:before {
-  content: "\ea9d";
+  content: "";
 }
+
 .icon-rounded-right:before {
-  content: "\eaa0";
+  content: "";
 }
+
 .icon-rounded-up:before {
-  content: "\eaa1";
+  content: "";
 }
+
 .icon-simple-left:before {
-  content: "\eab5";
+  content: "";
 }
+
 .icon-simple-right:before {
-  content: "\eab8";
+  content: "";
 }
+
 .icon-telegram:before {
-  content: "\ed75";
+  content: "";
 }
+
 .icon-rounded-down1:before {
-  content: "\ea9a";
+  content: "";
 }
+
 .icon-rounded-left1:before {
-  content: "\ea9e";
+  content: "";
 }
+
 .icon-rounded-right1:before {
-  content: "\eaa2";
+  content: "";
 }
+
 .icon-rounded-up1:before {
-  content: "\eaa3";
+  content: "";
 }
+
 .icon-paper-plane:before {
-  content: "\efb4";
+  content: "";
 }
+
 .icon-cross-sign:before {
-  content: "\e91a";
+  content: "";
 }
+
 .icon-ps:before {
-  content: "\e912";
+  content: "";
 }
+
 .icon-ai:before {
-  content: "\e913";
+  content: "";
 }
+
 .icon-id:before {
-  content: "\e914";
+  content: "";
 }
+
 .icon-lr:before {
-  content: "\e915";
+  content: "";
 }
+
 .icon-gitlab:before {
-  content: "\e900";
+  content: "";
 }
+
 .icon-copy:before {
-  content: "\e916";
+  content: "";
 }
+
 .icon-mail:before {
-  content: "\e917";
+  content: "";
 }
+
 .icon-ing:before {
-  content: "\e918";
+  content: "";
 }
+
 .icon-in:before {
-  content: "\e919";
+  content: "";
 }
+
 .icon-quote-right:before {
-  content: "\e910";
+  content: "";
 }
+
 .icon-quote-left:before {
-  content: "\e911";
+  content: "";
 }
+
 .icon-twitter:before {
-  content: "\e901";
+  content: "";
 }
+
 .icon-whatsapp:before {
-  content: "\e902";
+  content: "";
 }
+
 .icon-rocket:before {
-  content: "\e903";
+  content: "";
 }
+
 .icon-planet:before {
-  content: "\e904";
+  content: "";
 }
+
 .icon-angular:before {
-  content: "\e905";
+  content: "";
 }
+
 .icon-vuejs:before {
-  content: "\e906";
+  content: "";
 }
+
 .icon-git:before {
-  content: "\e907";
+  content: "";
 }
+
 .icon-sass:before {
-  content: "\e908";
+  content: "";
 }
+
 .icon-bxl-nodejs:before {
-  content: "\e909";
+  content: "";
 }
+
 .icon-react:before {
-  content: "\e90a";
+  content: "";
 }
+
 .icon-up:before {
-  content: "\e90b";
+  content: "";
 }
+
 .icon-down:before {
-  content: "\e90c";
+  content: "";
 }
+
 .icon-chevron-up:before {
-  content: "\e90d";
+  content: "";
 }
+
 .icon-chevron-down:before {
-  content: "\e90e";
+  content: "";
 }
+
 .icon-menu:before {
-  content: "\e90f";
+  content: "";
 }
+/*# sourceMappingURL=style.css.map */

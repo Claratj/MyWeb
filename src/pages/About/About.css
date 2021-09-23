@@ -1,0 +1,151 @@
+:root {
+  --font-family-base: Mulish;
+  --font-family-titles: Montserrat-Bold;
+  --font-family-subtitles: Montserrat-SemiBold;
+  --font-family-description: Montserrat-ExtraLight;
+}
+
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf);
+}
+
+@font-face {
+  font-family: Montserrat-SemiBold;
+  src: url(../../assets/fonts/Montserrat/Montserrat-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: Montserrat-ExtraLight;
+  src: url(../../assets/fonts/Montserrat/Montserrat-ExtraLight.ttf);
+}
+
+@font-face {
+  font-family: Mulish;
+  src: url(../../assets/fonts/Mulish/Mulish-ExtraLight.ttf);
+}
+
+@font-face {
+  font-family: Mulish-SemiBold;
+  src: url(../../assets/fonts/Mulish/Mulish-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: MontserratAlt-Bold;
+  src: url(../../assets/fonts/MontserratAlt/MontserratAlternates-Bold.ttf);
+}
+
+@font-face {
+  font-family: MontserratAlt-SemiBold;
+  src: url(../../assets/fonts/MontserratAlt/MontserratAlternates-SemiBold.ttf);
+}
+
+.about-figure-img_container {
+  display: inline-block;
+  position: relative;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.about-figure-img_container img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: auto;
+}
+
+@media all and (min-width: 576px) {
+  .about-figure-img_container {
+    width: 37rem;
+    height: 37rem;
+  }
+  .about-figure-img_container img {
+    margin-top: 0;
+  }
+}
+
+.about-figure_txt {
+  font-family: Montserrat-Bold;
+  font-size: 3rem;
+  text-align: center;
+  padding: 2rem 0 0;
+  margin: 0;
+  color: #682150;
+  font-size: calc(6vw + 1rem);
+  text-shadow: 0.005em 0.005em 0 #bfa1b5, 0.01em 0.01em 0 #c3a6b9, 0.015em 0.015em #c6abbd, 0.02em 0.02em 0 #c9afc0, 0.025em 0.025em 0 #ccb4c4, 0.03em 0.03em 0 #cfb9c8, 0.035em 0.035em 0 #d2bdcb;
+}
+
+.about-description {
+  padding: 0 2rem 4rem;
+}
+
+.icon-quote-left, .icon-quote-right {
+  color: #f1861f;
+  position: absolute;
+  opacity: 0.5;
+  z-index: 3;
+  font-size: 18vh;
+}
+
+.icon-quote-left {
+  top: 8%;
+  left: 1.2%;
+}
+
+.icon-quote-right {
+  bottom: 0;
+  right: 1.2%;
+}
+
+@media all and (min-width: 992px) {
+  .about-figure {
+    margin: auto 0;
+    position: relative;
+  }
+  .about-figure-img_container {
+    width: 30rem;
+    height: 30rem;
+  }
+  .about-figure_txt {
+    font-size: 4rem;
+    position: absolute;
+    z-index: 2;
+    top: 4rem;
+    left: 0;
+    text-align: center;
+  }
+  .about-description {
+    margin: 0 auto;
+    font-family: Montserrat;
+    font-size: 1.3vw;
+    text-align: center;
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .about-description {
+    padding: 3rem;
+  }
+  .icon-quote-left, .icon-quote-right {
+    font-size: 20vh;
+  }
+  .icon-quote-left {
+    top: 2%;
+    left: 0;
+  }
+  .icon-quote-right {
+    bottom: 4%;
+    right: 0;
+  }
+}
+
+@media all and (min-width: 1400px) {
+  .about-figure-img_container {
+    width: 37rem;
+    height: 37rem;
+  }
+}
+/*# sourceMappingURL=About.css.map */

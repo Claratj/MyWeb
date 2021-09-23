@@ -109,8 +109,6 @@ export function Header() {
 
             </ul>
 
-
-
             <motion.div className="mobile-menu" onClick={handleClick}
                 variants={containerVariants}
                 initial="hidden"

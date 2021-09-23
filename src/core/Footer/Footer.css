@@ -1,0 +1,89 @@
+:root {
+  --font-family-base: Mulish;
+  --font-family-titles: Montserrat-Bold;
+  --font-family-subtitles: Montserrat-SemiBold;
+  --font-family-description: Montserrat-ExtraLight;
+}
+
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf);
+}
+
+@font-face {
+  font-family: Montserrat-SemiBold;
+  src: url(../../assets/fonts/Montserrat/Montserrat-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: Montserrat-ExtraLight;
+  src: url(../../assets/fonts/Montserrat/Montserrat-ExtraLight.ttf);
+}
+
+@font-face {
+  font-family: Mulish;
+  src: url(../../assets/fonts/Mulish/Mulish-ExtraLight.ttf);
+}
+
+@font-face {
+  font-family: Mulish-SemiBold;
+  src: url(../../assets/fonts/Mulish/Mulish-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: MontserratAlt-Bold;
+  src: url(../../assets/fonts/MontserratAlt/MontserratAlternates-Bold.ttf);
+}
+
+@font-face {
+  font-family: MontserratAlt-SemiBold;
+  src: url(../../assets/fonts/MontserratAlt/MontserratAlternates-SemiBold.ttf);
+}
+
+footer {
+  width: 100vw;
+  height: 180px;
+  padding-top: 3rem;
+  background: -webkit-gradient(linear, left bottom, left top, from(#aad8d0), color-stop(36%, rgba(198, 227, 222, 0.908001)), color-stop(82%, rgba(234, 242, 241, 0.319765)), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(0deg, #aad8d0 0%, rgba(198, 227, 222, 0.908001) 36%, rgba(234, 242, 241, 0.319765) 82%, rgba(255, 255, 255, 0) 100%);
+  color: #601547;
+  font-family: Montserrat-SemiBold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.rrss {
+  padding-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.rrss .icon-twitter, .rrss .icon-git, .rrss .icon-in, .rrss .icon-paper-plane {
+  font-size: 1.8rem;
+  margin: 0 0.5rem;
+  color: #601547;
+}
+
+.rrss .icon-twitter:hover, .rrss .icon-git:hover, .rrss .icon-in:hover, .rrss .icon-paper-plane:hover {
+  color: #e43f12;
+  cursor: pointer;
+}
+/*# sourceMappingURL=Footer.css.map */

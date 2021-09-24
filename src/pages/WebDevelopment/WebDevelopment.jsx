@@ -32,7 +32,7 @@ export function WebDevelopment() {
                     <span> Bootstrap</span>
                 </div>
                 <div>
-                    <span>Javascript (ES6) |</span>
+                    <span>Javascript |</span>
                     <span> Angular |</span>
                     <span> React |</span>
                     <span> Vue |</span>

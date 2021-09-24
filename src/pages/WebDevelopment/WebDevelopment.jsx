@@ -28,13 +28,15 @@ export function WebDevelopment() {
                     <span>HTML |</span>
                     <span> Css3 |</span>
                     <span> SaSS |</span>
-                    <span> Flexbox |</span>
+                    <span> TailwindCss |</span>
                     <span> Bootstrap</span>
                 </div>
                 <div>
                     <span>Javascript (ES6) |</span>
                     <span> Angular |</span>
                     <span> React |</span>
+                    <span> Vue |</span>
+                    <span> Nuxt |</span>
                     <span> servicios API </span>
                 </div>
                 <div>
@@ -47,6 +49,7 @@ export function WebDevelopment() {
                 <div>
                     <span> Git |</span>
                     <span> GitLab |</span>
+                    <span> Jira |</span>
                     <span> Trello | </span>
 
                 </div>

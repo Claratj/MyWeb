@@ -10,7 +10,7 @@ import { About } from "../About/About";
 
 import "aos/dist/aos.css";
 
-export function Home() {
+export default function Home() {
   useEffect(() => {
     AOS.init({
       duration: 1000,

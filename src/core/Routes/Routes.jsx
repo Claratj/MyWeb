@@ -1,31 +1,17 @@
-import React from 'react';
-import {
-    Switch,
-    Route,
-    useLocation
-} from "react-router-dom";
-
-
-import { Home } from '../../pages/Home/Home';
-import PorfolioNavigation from '../../shared/PorfolioNavigation/PorfolioNavigation';
+import React from "react";
+import { Route } from "react-router-dom";
+import { Home } from "../../pages/Home/Home";
+import WebPortfolio from "../../pages/WebDevelopment/WebPorfolio/WebPorfolio";
+import PhotographyPortfolio from "../../pages/Creative/PhotographyPorfolio/PhotographyPorfolio";
+import GraphicPortfolio from "../../pages/Creative/GraphicPorfolio/GraphicPorfolio";
 
 export function Routes() {
-    const location = useLocation();
-
-    return (
-        <Switch location={location} key={location.key}>
-            <Route path="/web">
-                <PorfolioNavigation />
-            </Route>
-            <Route path="/photography">
-                <PorfolioNavigation />
-            </Route>
-            <Route path="/graphic">
-                <PorfolioNavigation />
-            </Route>
-            <Route path="/">
-                <Home />
-            </Route>
-        </Switch>
-    )
+  return (
+    <Routes>
+      <Route path="/web" element={<WebPortfolio />} />
+      <Route path="/photography" element={<PhotographyPortfolio />} />
+      <Route path="/graphic" element={<GraphicPortfolio />} />
+      <Route path="/" element={<Home />} />
+    </Routes>
+  );
 }

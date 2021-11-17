@@ -9,7 +9,7 @@ import GraphicDesign from '../../../data/GraphicDesign.json';
 
 
 
-export default function GraphicPorfolio() {
+export default function GraphicPortfolio() {
 
     const [projects, setProjects] = useState([]);
 

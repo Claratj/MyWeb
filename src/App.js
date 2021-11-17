@@ -1,21 +1,19 @@
-import React from 'react';
-import {
-  BrowserRouter as Router
-} from "react-router-dom";
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
 
-import './App.css';
-
-import { Routes } from './core/Routes/Routes';
+import "./App.css";
+import { Footer } from "./core/Footer/Footer";
+import { Header } from "./core/Header/Header";
+import { Routes } from "./core/Routes/Routes";
 
 function App() {
-
-
   return (
-    <Router>
-      <div className="App">
-    <Routes></Routes>
-      </div>
-     </Router>
+    <BrowserRouter>
+      <Routes>
+        <Header />
+        <Footer />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

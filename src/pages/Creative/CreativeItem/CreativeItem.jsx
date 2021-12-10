@@ -5,7 +5,6 @@ import './CreativeItem.scss';
 export default function CreativeItem(props) {
 
     const { key, title, photo, description } = props;
-    console.log(title);
 
     // switch (title) {
     //     case (title === "Envy" && title === "Gluttony" && title === "Pride" && title === "Black bird"):

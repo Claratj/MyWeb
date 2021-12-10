@@ -32,11 +32,9 @@ export function About() {
     useEffect(() => {
         if (inView) {
             controls.start("visible");
-            console.log('estoy visible');
         }
         else if (!inView) {
             controls.start('hidden');
-            console.log('me he escondido');
         }
     }, [controls, inView]);
 

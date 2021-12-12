@@ -53,6 +53,6 @@ export default function DisplayIntro({ value }: IField) {
         </div>
       );
     default:
-      return <p>No coincido con ningún caso</p>;
+      return <p></p>;
   }
 }

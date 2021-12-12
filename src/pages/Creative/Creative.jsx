@@ -1,7 +1,6 @@
 import React from "react";
 
 import "./Creative.scss";
-import Button from "../../shared/Button/Button";
 import DisplayIntro from "./components/DisplayIntro";
 
 export function Creative() {

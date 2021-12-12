@@ -27,24 +27,24 @@ export function ProjectList() {
   };
 
   switch (showLess) {
-    case showLess === true:
+    case true:
       return (
         <section className="project">
           {projects.slice(0, 4).map((project) => (
             <ProjectItem
-              key={project?.id}
-              photo={project?.photo}
-              title={project?.title}
-              description={project?.description}
-              technologies={project?.technologies}
-              githubUrl={project?.githubUrl}
-              webUrl={project?.webUrl}
+              key={project.id}
+              photo={project.photo}
+              title={project.title}
+              description={project.description}
+              technologies={project.technologies}
+              githubUrl={project.githubUrl}
+              webUrl={project.webUrl}
             />
           ))}
         </section>
       );
 
-    case showLess === false:
+    case false:
       return (
         <motion.section
           className="project"

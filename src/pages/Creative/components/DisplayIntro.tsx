@@ -21,8 +21,8 @@ export default function DisplayIntro({ value }: IField) {
               return (
                 <figure>
                   <img
-                    src={project?.photo}
-                    alt={project?.title}
+                    src={project.photo}
+                    alt={project.title}
                     className="img-grid"
                   />
                 </figure>
@@ -41,8 +41,8 @@ export default function DisplayIntro({ value }: IField) {
               return (
                 <figure>
                   <img
-                    src={project?.photo}
-                    alt={project?.title}
+                    src={project.photo}
+                    alt={project.title}
                     className="img-grid"
                   />
                 </figure>

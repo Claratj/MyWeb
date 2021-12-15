@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 
-import { motion } from "framer-motion";
-import AOS from "aos";
+import { motion, useAnimation } from "framer-motion";
 
 import { Header } from "../../core/Header/Header";
 import Hero from "../Hero/Hero";
@@ -10,15 +9,8 @@ import { Creative } from "../Creative/Creative";
 import { About } from "../About/About";
 import { Footer } from "../../core/Footer/Footer";
 
-import "aos/dist/aos.css";
-
 export function Home() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      easing: "ease",
-    });
-  }, []);
+  useEffect(() => {}, []);
 
   const variants = {
     hidden: {
@@ -39,23 +31,23 @@ export function Home() {
   };
 
   return (
-    <div>
+    <motion.div variants={variants} initial="hidden" animate="visible">
       <Header />
       <main>
-        <motion.section variants={variants} initial="hidden" animate="visible">
+        <motion.section>
           <Hero />
         </motion.section>
-        <section className="home-section" data-aos="zoom-out-up" id="about">
+        <section className="home-section" id="about">
           <About />
         </section>
-        <section className="home-section" data-aos="zoom-in-up" id="web">
+        <section className="home-section" id="web">
           <WebDevelopment />
         </section>
-        <section className="home-section" data-aos="zoom-in-down" id="creative">
+        <section className="home-section" id="creative">
           <Creative />
         </section>
       </main>
       <Footer />
-    </div>
+    </motion.div>
   );
 }

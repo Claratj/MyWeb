@@ -8,9 +8,20 @@ import { WebDevelopment } from "../WebDevelopment/WebDevelopment";
 import { Creative } from "../Creative/Creative";
 import { About } from "../About/About";
 import { Footer } from "../../core/Footer/Footer";
+import { useInView } from "react-intersection-observer";
 
 export function Home() {
-  useEffect(() => {}, []);
+  // const { inView, ref } = useInView();
+  // const animationControl = useAnimation();
+
+  // console.log(inView);
+
+  // useEffect(() => {
+  //   if (inView) {
+  //     animationControl.start({ x: 0, transition: { delay: 0.7 } });
+  //   }
+  //   animationControl.set({ x: "-100vw", transition: { delay: 0.3 } });
+  // }, [inView]);
 
   const variants = {
     hidden: {
@@ -34,10 +45,10 @@ export function Home() {
     <motion.div variants={variants} initial="hidden" animate="visible">
       <Header />
       <main>
-        <motion.section>
+        <section>
           <Hero />
-        </motion.section>
-        <section className="home-section" id="about">
+        </section>
+        <section id="about" className="home-section">
           <About />
         </section>
         <section className="home-section" id="web">

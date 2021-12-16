@@ -13,7 +13,7 @@ export function WebDevelopment() {
     inView
       ? controlContainer.start({
           x: 0,
-          transition: { delay: 0.5 },
+          transition: { delay: 0.7 },
         })
       : controlContainer.set({ x: "100vw", transition: { delay: 0.3 } });
   }, [inView]);

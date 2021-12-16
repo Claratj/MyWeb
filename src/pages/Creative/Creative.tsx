@@ -10,19 +10,18 @@ export function Creative() {
   const { inView, ref } = useInView();
 
   useEffect(() => {
-    if (inView) {
-      controlContainer.start({
-        x: 0,
-        transition: { delay: 0.5, delayChildren: 1 },
-      });
-    }
-    controlContainer.set({ x: "-100vw", transition: { delay: 0.3 } });
+    inView
+      ? controlContainer.start({
+          x: 0,
+          transition: { delay: 0.7, delayChildren: 1 },
+        })
+      : controlContainer.set({ x: "-100vw", transition: { delay: 0.3 } });
   }, [inView]);
   return (
     <div ref={ref}>
       <motion.div
         initial={{
-          x: "100vw",
+          x: "-1000vw",
         }}
         animate={controlContainer}
         className="main"

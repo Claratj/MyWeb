@@ -13,7 +13,7 @@ export function Footer() {
     if (inView) {
       controlContainer.start({
         opacity: 1,
-        transition: { delay: 0.5, delayChildren: 1 },
+        transition: { delay: 0.5, type: "tween" },
       });
     }
     controlContainer.set({ opacity: 0, transition: { delay: 0.3 } });

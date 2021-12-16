@@ -67,6 +67,6 @@ export function ProjectList() {
         </motion.section>
       );
     default:
-      break;
+      return <></>;
   }
 }

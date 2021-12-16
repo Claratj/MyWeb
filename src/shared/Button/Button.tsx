@@ -5,7 +5,7 @@ import cv from "../../download/cv.pdf";
 
 interface IButtonProps {
   text: string;
-  path: string;
+  path?: string;
 }
 
 export default function Button(props: IButtonProps) {
@@ -18,7 +18,7 @@ export default function Button(props: IButtonProps) {
       );
     case "More please!":
       return (
-        <Link to={props.path}>
+        <Link to={props.path as string}>
           <button className="btn-more">
             <span>{props.text}</span>
           </button>

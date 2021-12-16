@@ -1,28 +1,15 @@
-import React, { useEffect } from "react";
+import React from "react";
 
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 
-import { Header } from "../../core/Header/Header";
-import Hero from "../Hero/Hero";
-import { WebDevelopment } from "../WebDevelopment/WebDevelopment";
-import { Creative } from "../Creative/Creative";
-import { About } from "../About/About";
-import { Footer } from "../../core/Footer/Footer";
-import { useInView } from "react-intersection-observer";
+import { Header } from "../core/Header/Header";
+import Hero from "./Hero/Hero";
+import { WebDevelopment } from "./WebDevelopment/WebDevelopment";
+import { Creative } from "./Creative/Creative";
+import { About } from "./About/About";
+import { Footer } from "../core/Footer/Footer";
 
 export function Home() {
-  // const { inView, ref } = useInView();
-  // const animationControl = useAnimation();
-
-  // console.log(inView);
-
-  // useEffect(() => {
-  //   if (inView) {
-  //     animationControl.start({ x: 0, transition: { delay: 0.7 } });
-  //   }
-  //   animationControl.set({ x: "-100vw", transition: { delay: 0.3 } });
-  // }, [inView]);
-
   const variants = {
     hidden: {
       opacity: 0,

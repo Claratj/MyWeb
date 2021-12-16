@@ -9,15 +9,17 @@ import Button from "../../shared/Button/Button";
 import "./About.scss";
 
 export function About() {
-  const controls = useAnimation();
-
+  const controlContainer = useAnimation();
   const { inView, ref } = useInView();
 
   useEffect(() => {
     if (inView) {
-      controls.start({ x: 0, transition: { delay: 0.7 } });
+      controlContainer.start({
+        x: 0,
+        transition: { delay: 0.5, delayChildren: 1 },
+      });
     }
-    controls.set({ x: "-100vw", transition: { delay: 0.3 } });
+    controlContainer.set({ x: "-100vw", transition: { delay: 0.3 } });
   }, [inView]);
 
   //   No está funcionando quotes:
@@ -52,10 +54,10 @@ export function About() {
         initial={{
           x: "100vw",
         }}
-        animate={controls}
+        animate={controlContainer}
       >
-        <motion.div className="main-about">
-          <span className="icon-quote-left" />
+        <div className="main-about">
+          <motion.span className="icon-quote-left" />
 
           <figure className="about-figure">
             <div className="about-figure-img_container">
@@ -86,8 +88,8 @@ export function About() {
             </p>
           </div>
           <span className="icon-quote-right" />
-        </motion.div>
-        <Button text={"CV Download"} />
+        </div>
+        <Button text="CV Download" />
       </motion.div>
     </div>
   );

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import { motion, useAnimation } from "framer-motion";
+import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 import img from "../../assets/img/foto-linkedin.jpg";
@@ -16,9 +16,13 @@ export function About() {
     inView
       ? controlContainer.start({
           x: 0,
-          transition: { delay: 0.7, delayChildren: 1 },
+          transition: {
+            delay: 0.7,
+            when: "beforeChildren",
+            staggerChildren: 0.4,
+          },
         })
-      : controlContainer.set({ x: "-100vw", transition: { delay: 0.3 } });
+      : controlContainer.set({ x: "-100vw" });
   }, [inView]);
 
   //   No está funcionando quotes:
@@ -26,26 +30,19 @@ export function About() {
   //     triggerOnce: false,
   //     rootMargin: "-100px 0px",
   //   });
-  //   const quotes = {
-  //     hidden: {
-  //       x: "-100vw",
-  //     },
-  //     visible: {
-  //       x: 0,
-  //       transition: {
-  //         duration: 1.5,
-  //         type: "spring",
-  //         stiffness: 120,
-  //       },
-  //     },
-  //   };
-  //   useEffect(() => {
-  //     if (inView) {
-  //       controls.start("visible");
-  //     } else if (!inView) {
-  //       controls.start("hidden");
-  //     }
-  //   }, [controls, inView]);
+  const quotes = {
+    hidden: {
+      x: "-100vw",
+    },
+    visible: {
+      x: 0,
+      transition: {
+        duration: 1.5,
+        type: "spring",
+        stiffness: 120,
+      },
+    },
+  };
 
   return (
     <div className="main" ref={ref}>
@@ -56,7 +53,12 @@ export function About() {
         animate={controlContainer}
       >
         <div className="main-about">
-          <motion.span className="icon-quote-left" />
+          <motion.span
+            variants={quotes}
+            initial="hidden"
+            animate="visible"
+            className="icon-quote-left"
+          />
 
           <figure className="about-figure">
             <div className="about-figure-img_container">
@@ -86,7 +88,12 @@ export function About() {
               development together with the user experience point of view.
             </p>
           </div>
-          <span className="icon-quote-right" />
+          <motion.span
+            variants={quotes}
+            initial="hidden"
+            animate="visible"
+            className="icon-quote-right"
+          />
         </div>
         <Button text="CV Download" />
       </motion.div>

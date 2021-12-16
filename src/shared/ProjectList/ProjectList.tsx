@@ -4,9 +4,11 @@ import { motion } from "framer-motion";
 
 import { ProjectItem } from "../ProjectItem/ProjectItem";
 import useWebDev from "../../pages/WebDevelopment/useWebDev";
+import { useLocation } from "react-router-dom";
 
 export function ProjectList() {
-  const { projects, showLess } = useWebDev();
+  const { projects } = useWebDev();
+  const location = useLocation();
 
   const variants = {
     hidden: {
@@ -26,8 +28,8 @@ export function ProjectList() {
     },
   };
 
-  switch (showLess) {
-    case true:
+  switch (location.pathname) {
+    case "/":
       return (
         <section className="project">
           {projects.slice(0, 4).map((project) => (
@@ -44,7 +46,7 @@ export function ProjectList() {
         </section>
       );
 
-    case false:
+    case "/web":
       return (
         <motion.section
           className="project"

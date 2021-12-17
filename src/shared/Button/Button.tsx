@@ -58,7 +58,7 @@ export default function Button(props: IButtonProps) {
             whileHover="animation"
             className="btn-more"
           >
-            <span>{props.text}</span>
+            <motion.span variants={txtBtnVariants}>{props.text}</motion.span>
           </motion.button>
         </Link>
       );

@@ -1,96 +1,85 @@
-@import '../settings/variables.settings';
-@import '../settings/mixings.settings';
-
+@import "../settings/variables.settings";
+@import "../settings/mixings.settings";
 
 .btn-more,
-.btn-more-hover { 
-    margin: 0 auto;
-    outline: none;
-    text-decoration: none;
-    border-radius: 50px;
-    @include flex(center);
-    cursor: pointer;
-    text-transform: uppercase;
-    height: 60px;
-    width: 210px;
-    opacity: 1;
-    background-color: #ffffff;
-    border: 1px solid $color-light-orange;
-    margin-top: 1.5rem;
-    span{
-        font-family: Montserrat-Bold;
-        font-size: 12px;
-        letter-spacing: 0.7px;
+.btn-more-hover {
+  margin: 0 auto;
+  outline: none;
+  text-decoration: none;
+  border-radius: 50px;
+  @include flex(center);
+  cursor: pointer;
+  text-transform: uppercase;
+  height: 60px;
+  width: 210px;
+  opacity: 1;
+  background-color: #ffffff;
+  border: 1px solid $color-light-orange;
+  margin-top: 1.5rem;
+  span {
+    font-family: Montserrat-Bold;
+    font-size: 12px;
+    letter-spacing: 0.7px;
+  }
+  &:hover {
+    // animation: rotate 0.7s ease-in-out both;
+    & span {
+      // animation: storm 0.7s ease-in-out both;
+      // animation-delay: 0.06s;
     }
-    &:hover {
-        animation: rotate 0.7s ease-in-out both;
-        & span {
-            animation: storm 0.7s ease-in-out both;
-            animation-delay: 0.06s;
-        }
-
-    }
+  }
 }
 
-
-
-.btn-more { 
-    background-color: #ffffff;
-    border: 1px solid $color-light-orange;
-    span{
-        color: $color-b-orange;
-    }
+.btn-more {
+  background-color: #ffffff;
+  border: 1px solid $color-light-orange;
+  span {
+    color: $color-b-orange;
+  }
 }
 
 .btn-more-hover {
-    
-    background-color: transparent;
-    border: 1.5px solid $color-light-orange;
+  background-color: transparent;
+  border: 1.5px solid $color-light-orange;
 
-    span{
-        color: $color-light-orange;
-        color: white;
-    }
-    
-    
+  span {
+    color: $color-light-orange;
+    color: white;
+  }
 }
 
+// @keyframes rotate {
+//   0% {
+//     transform: rotate(0deg) translate3d(0, 0, 0);
+//   }
+//   25% {
+//     transform: rotate(3deg) translate3d(0, 0, 0);
+//   }
+//   50% {
+//     transform: rotate(-3deg) translate3d(0, 0, 0);
+//   }
+//   75% {
+//     transform: rotate(1deg) translate3d(0, 0, 0);
+//   }
+//   100% {
+//     transform: rotate(0deg) translate3d(0, 0, 0);
+//   }
+// }
 
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg) translate3d(0, 0, 0);
-    }
-    25% {
-        transform: rotate(3deg) translate3d(0, 0, 0);
-    }
-    50% {
-        transform: rotate(-3deg) translate3d(0, 0, 0);
-    }
-    75% {
-        transform: rotate(1deg) translate3d(0, 0, 0);
-    }
-    100% {
-        transform: rotate(0deg) translate3d(0, 0, 0);
-
-    }
-
-}
-  
-@keyframes storm {
-
-    0% {
-        transform: translate3d( 0, 0, 0) translateZ(0);
-    }
-    25% {
-        transform: translate3d( 4px, 0, 0) translateZ(0);
-    }
-    50% {
-        transform: translate3d( -3px, 0, 0) translateZ(0);
-    }
-    75% {
-        transform: translate3d( 2px, 0, 0) translateZ(0);
-    }
-    100% {
-        transform: translate3d( 0, 0, 0) translateZ(0);
-    }
-}
+// @keyframes storm {
+//   0% {
+//     transform: translate3d(0, 0, 0) translateZ(0);
+//   }
+//   25% {
+//     transform: translate3d(4px, 0, 0) translateZ(0);
+//   }
+//   50% {
+//     transform: translate3d(-3px, 0, 0) translateZ(0);
+//   }
+//   75% {
+//     transform: translate3d(2px, 0, 0) translateZ(0);
+//   }
+//   100% {
+//     transform: translate3d(0, 0, 0) translateZ(0);
+//   }
+// }

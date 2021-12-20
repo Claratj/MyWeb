@@ -1,0 +1,18 @@
+@import "../../styles/settings/mixings.settings";
+@import "../../styles/settings/variables.settings";
+
+.error_container {
+  width: 100vw;
+  height: 100vh;
+  background-color: $color-mint;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 18px;
+  font-weight: 600;
+}
+.error--txt {
+  text-align: center;
+  padding: 1rem 2rem;
+}

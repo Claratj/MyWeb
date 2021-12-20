@@ -1,90 +1,87 @@
-@import '../settings/mixings.settings';
-@import '../settings/variables.settings';
+@import "../settings/mixings.settings";
+@import "../settings/variables.settings";
 
-.flip-card{
-    width: 350px;
-    margin: 1rem;
-    perspective: 1000px;
+.flip-card {
+  width: 350px;
+  margin: 1rem;
+  perspective: 1000px;
+  @include flex(center);
+
+  &-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-front,
+  &-back {
+    border-radius: 8px;
     @include flex(center);
+  }
 
+  &-front {
+    height: 215px;
+    width: 320px;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.062),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.066), 0 100px 80px rgba(0, 0, 0, 0.01);
+    }
+  }
+
+  &-back {
+    width: 90%;
+    margin-top: 2rem;
+  }
+
+  @include tabletView {
+    width: 380px;
+    height: 280px;
+    flex-wrap: wrap;
+    font-size: 16px;
+    margin: 2rem;
+
+    &-back {
+      height: 215px;
+      width: 100%;
+      padding: 1rem 2rem;
+      margin-top: 0;
+    }
+
+    &:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    h5 {
+      font-family: Montserrat-Bold;
+      font-size: 20px;
+      @include underlineTitle(230px, $color-light-orange);
+    }
     &-inner {
-       display: flex;
-       flex-direction: column;
-       align-items: center;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
     }
-    
-    
-    &-front, &-back {
-        border-radius: 8px;
-        @include flex(center);
-    }
-
-    &-front {
-        height: 215px;
-        width: 320px;
-
-        & img {
-            width: 100%;
-            height: 100%;
-            border-radius: 8px;
-            box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-                        0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.062),
-                        0 41.8px 33.4px rgba(0, 0, 0, 0.066), 0 100px 80px rgba(0, 0, 0, 0.01);
-        }
+    &-front,
+    &-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
     }
 
     &-back {
-        width: 90%;
-        margin-top: 2rem;
+      background-color: $color-green-blue;
+      color: white;
+      transform: rotateY(180deg);
     }
-
-    @include tabletView {
-        width: 380px;
-        height: 280px;
-        flex-wrap: wrap;
-        font-size: 16px;
-        margin: 2rem;
-
-        &-back {
-            height: 215px;
-            width: 100%;
-            padding: 1rem 2rem;
-            margin-top: 0;
-        }
-
-        &:hover .flip-card-inner{
-            transform: rotateY(180deg);
-        }
-        h5 {
-            font-family: Montserrat-Bold;
-            font-size: 20px;
-            @include underlineTitle(230px, $color-light-orange);
-
-        }
-       &-inner {
-           width: 100%;
-           height: 100%;
-            position: relative;
-            text-align: center;
-            transition: transform 0.6s;
-            transform-style: preserve-3d;
-            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-       }
-       &-front,
-       &-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-       }
-
-       &-back {
-           background-color: $color-green-blue;
-           color: white;
-           transform: rotateY(180deg);
-       }
-    }
-    
+  }
 }
-

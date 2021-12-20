@@ -1,8 +1,8 @@
-@import '../../styles/settings/mixings.settings';
-@import '../../styles/settings/variables.settings';
+@import "../../styles/settings/mixings.settings";
+@import "../../styles/settings/variables.settings";
 
 //Home
-.about-figure{
+.about-figure {
   &-img_container {
     display: inline-block;
     position: relative;
@@ -27,13 +27,11 @@
   }
 
   &_txt {
-    font-family: Montserrat-Bold;
     font-size: 3rem;
     text-align: center;
     padding: 2rem 0 0;
     margin: 0;
     @include titleSection($color-purple, 6);
-    
   }
 }
 
@@ -44,14 +42,14 @@
 
 //Quotes
 
-.icon-quote-left,.icon-quote-right {
+.icon-quote-left,
+.icon-quote-right {
   color: $color-light-orange;
   position: absolute;
   opacity: 0.5;
   z-index: 3;
   font-size: 18vh;
-
-}  
+}
 
 .icon-quote-left {
   top: 8%;
@@ -62,7 +60,6 @@
   bottom: 0;
   right: 1.2%;
 }
-
 
 @include desktopView {
   .about-figure {
@@ -85,7 +82,6 @@
   }
   .about-description {
     margin: 0 auto;
-    font-family: Montserrat;
     font-size: 1.3vw;
     text-align: center;
   }
@@ -95,18 +91,18 @@
   .about-description {
     padding: 3rem;
   }
-  .icon-quote-left,.icon-quote-right   {
+  .icon-quote-left,
+  .icon-quote-right {
     font-size: 20vh;
-  } 
+  }
   .icon-quote-left {
-    top:2%;
+    top: 2%;
     left: 0;
   }
   .icon-quote-right {
     bottom: 4%;
     right: 0;
   }
-
 }
 
 @include desktopXLView {

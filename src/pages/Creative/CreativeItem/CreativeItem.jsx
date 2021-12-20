@@ -5,22 +5,6 @@ import './CreativeItem.scss';
 export default function CreativeItem(props) {
 
     const { key, title, photo, description } = props;
-    console.log(title);
-
-    // switch (title) {
-    //     case (title === "Envy" && title === "Gluttony" && title === "Pride" && title === "Black bird"):
-    //         flexGrow = "flex";
-    //         break;
-
-    //     case (title === "Lust" || title === "Irbis" || title === "Prometheus II"):
-    //         flexGrow = "flex2";
-    //         break;
-
-    //     case (title === "Flamingo"):
-    //         flexGrow = "flex3";
-
-    //     default: break;
-    // }
 
     return (
         <div className="gridWrapper" key={key}>

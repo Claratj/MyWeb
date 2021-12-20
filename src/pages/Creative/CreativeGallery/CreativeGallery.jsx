@@ -58,8 +58,6 @@ export default function CreativeGallery(props) {
             flexWrap: 'wrap',
             justifyContent: 'space-around',
         }
-
-
     }));
 
     const classes = useStyles();

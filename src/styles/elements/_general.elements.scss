@@ -1,0 +1,36 @@
+@import '../settings/variables.settings';
+@import '../settings/mixings.settings';
+
+html{
+    scroll-behavior: smooth;
+}
+
+ul {
+    list-style: unset;
+    padding: 0;
+}
+
+li {
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5 {
+    margin-block-end: 0;
+    margin-block-start: 0;
+}
+
+h1, h2  {
+    font-family: Montserrat-Bold;
+}
+
+h3, h4, h5 {
+    font-family: Montserrat-SemiBold;
+}
+
+section {
+    height: 100%;
+}

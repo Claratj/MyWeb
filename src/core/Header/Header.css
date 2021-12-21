@@ -1,0 +1,175 @@
+:root {
+  --font-family-base: Mulish;
+  --font-family-titles: Montserrat-Bold;
+  --font-family-subtitles: Montserrat-SemiBold;
+  --font-family-description: Montserrat-ExtraLight;
+}
+
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf);
+}
+
+@font-face {
+  font-family: Montserrat-SemiBold;
+  src: url(../../assets/fonts/Montserrat/Montserrat-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: Montserrat-ExtraLight;
+  src: url(../../assets/fonts/Montserrat/Montserrat-ExtraLight.ttf);
+}
+
+@font-face {
+  font-family: Mulish;
+  src: url(../../assets/fonts/Mulish/Mulish-ExtraLight.ttf);
+}
+
+@font-face {
+  font-family: Mulish-SemiBold;
+  src: url(../../assets/fonts/Mulish/Mulish-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: MontserratAlt-Bold;
+  src: url(../../assets/fonts/MontserratAlt/MontserratAlternates-Bold.ttf);
+}
+
+@font-face {
+  font-family: MontserratAlt-SemiBold;
+  src: url(../../assets/fonts/MontserratAlt/MontserratAlternates-SemiBold.ttf);
+}
+
+.header {
+  background-color: transparent;
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header.active {
+  background-color: white;
+}
+
+.figure {
+  width: 4.3rem;
+  height: 4.3rem;
+  margin-left: 2rem;
+  padding: 0 0 0 0.1rem;
+  cursor: pointer;
+}
+
+.figure img {
+  width: 4.2rem;
+}
+
+.nav-options {
+  padding-left: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style-type: none;
+}
+
+.nav-options li {
+  padding: 0 3rem;
+  font-family: Montserrat-SemiBold;
+  color: #601547;
+}
+
+.nav-options li:hover {
+  cursor: pointer;
+  color: #e43f12;
+}
+
+@media all and (max-width: 576px) {
+  .nav-options {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    right: -100%;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    list-style-type: none;
+    grid-gap: 0px;
+  }
+  .nav-options.active {
+    background: #aad8d0;
+    color: #601547;
+    top: 63px;
+    left: 0;
+    opacity: 1;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    z-index: 1;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    padding-left: 0px;
+  }
+}
+
+.mobile-menu {
+  display: none;
+}
+
+@media all and (max-width: 576px) {
+  .mobile-menu {
+    display: block;
+    padding: 0 2rem;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .option {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 10vw;
+    padding: 30px 0px;
+  }
+}
+
+.icon-up, .icon-menu {
+  font-size: 24px;
+}
+
+.icon-menu {
+  color: #601547;
+}
+
+.icon-up {
+  color: #e43f12;
+}
+/*# sourceMappingURL=Header.css.map */

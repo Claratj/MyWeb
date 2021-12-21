@@ -1,24 +1,98 @@
+@import '../../styles/settings/mixings.settings';
+@import '../../styles/settings/variables.settings';
+
 .header {
-    width: 100vw;
-    height: 6rem;
-    // background-color: blue;
-    padding: 0 10rem;
-
-    // background-color: transparent;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    // flex-direction: row;
-    &__link {
-        text-decoration: none;
+    background-color: transparent;
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    @include flex(space-between);
+    
+    &.active {
+        background-color: white;
     }
-    &__link-active {
-        text-decoration-line: underline;
+   
+}
+
+.figure {
+    width: 4.3rem;
+    height: 4.3rem;
+    margin-left: 2rem;
+    padding: 0 0 0 0.1rem ;
+    cursor: pointer;
+    img {
+        width: 4.2rem;
     }
+  
 
 }
 
-// @media (max-width: ){
+.nav-options {
+    padding-left: 25px;
+    @include flex(flex-end);
+    list-style-type: none;
 
-// }
+    & li {
+        padding: 0 3rem;
+        font-family: Montserrat-SemiBold;
+        color: $color-purple;
+        &:hover {
+            cursor: pointer;
+            color: $color-b-orange;
+        }
+    }
+
+    @include mobileView {
+        display: flex;
+        width: 100%;
+        position: absolute;
+        top: 80px;
+        right: -100%;
+        opacity: 0;
+        transition: all 0.5s ease;
+        flex-direction: column;
+        list-style-type: none;
+        grid-gap: 0px;
+        &.active {
+            background: $color-mint;
+            color: $color-purple;
+            top: 63px;
+            left: 0;
+            opacity: 1;
+            transition: all 0.5s ease;
+            z-index: 1;
+            align-content: center;
+            padding-left: 0px;
+        }
+    }
+}
+.mobile-menu {
+    display: none;
+    @include mobileView {
+        display: block;
+        padding: 0 2rem;
+    }
+}
+@include mobileView {
+    .option {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 10vw;
+        padding: 30px 0px;
+    }
+}
+
+.icon-up, .icon-menu {
+    font-size: 24px;
+}
+.icon-menu {
+    color: $color-purple;
+}
+.icon-up {
+    color: $color-b-orange;
+}
+

@@ -1,0 +1,113 @@
+[
+  {
+    "id": "1",
+    "title": "Lucky App",
+    "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619694149/app-lucky_ff0nqb.png",
+    "description": "A Full Stack MERN app where you can register, select differents available animals for adoptions, or save different available animals to adoption as favorite",
+    "technologies": [
+      "MongoDB | ",
+      "ExpressJS | ",
+      "React | ",
+      "NodeJS | ",
+      "Sass "
+    ],
+    "githubUrl": "https://gitlab.com/Claratj/Lucky",
+    "webUrl": "https://lucky-app.netlify.app/"
+  },
+  {
+    "id": "2",
+    "title": "CRM",
+    "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1633945239/CRM_pkcsz5.png",
+    "description": "An example of a crm for an orthodontic company with Vue.",
+    "technologies": ["Vue | ", "API | ", "Html | ", "Css | ", "JavaScript "],
+    "githubUrl": "https://gitlab.com/Claratj/secret-aligner-test",
+    "webUrl": "https://crm-layout.netlify.app/"
+  },
+  {
+    "id": "3",
+    "title": "Game of Thrones",
+    "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619694150/got_w7fwxr.png",
+    "description": "A React project consuming a public API",
+    "technologies": [
+      "React | ",
+      "API | ",
+      "Html | ",
+      "Sass | ",
+      "Css | ",
+      "JavaScript "
+    ],
+    "githubUrl": "https://gitlab.com/Claratj/project-react-got",
+    "webUrl": "https://react-got-app.netlify.app/"
+  },
+  {
+    "id": "4",
+    "title": "Shopeame",
+    "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619694138/shopeame_tyq5gl.png",
+    "description": " A Full Stack app with Angular where you can post you can sell your products. The app lets you add products, remove them or edit them.",
+    "technologies": ["Angular | ", "API | ", "Sass | ", "Css "],
+    "githubUrl": "",
+    "webUrl": "..."
+  },
+  {
+    "id": "5",
+    "title": "Rol Game",
+    "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619694150/rol-vanilla_ujmniy.png",
+    "description": "A desktop app based mainly in Vanilla Js, with the minimum of HTML and lots of CSS. A fun exercise to put into practise all the JavaScript bases.",
+    "technologies": ["Html | ", "Css | ", "JavaScript "],
+    "githubUrl": "https://gitlab.com/Claratj/rol_game",
+    "webUrl": "..."
+  },
+  {
+    "id": "6",
+    "title": "Cinema Blog",
+    "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619694150/blog_cine_jfyemh.png",
+    "description": "Project of a film blog by querying an API.",
+    "technologies": ["API | ", "JavaScript | ", "Html | ", "Css "],
+    "githubUrl": "https://gitlab.com/Claratj/cinema-blog",
+    "webUrl": "..."
+  },
+  {
+    "id": "7",
+    "title": "Coffee Blog",
+    "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619694150/blog-cafe_adnc6r.png",
+    "description": "Exercise of recreating a design.",
+    "technologies": ["Html | ", "Css "],
+    "githubUrl": "",
+    "webUrl": "https://htmlcss-blogcafe.netlify.app/"
+  },
+  {
+    "id": "8",
+    "title": "Real State",
+    "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619694149/bienes_ewyqcc.png",
+    "description": "A simple excercise in pure Html and Css reacreating a design.",
+    "technologies": ["Html | ", "Css "],
+    "githubUrl": "",
+    "webUrl": "https://htmlcss-bienes.netlify.app/"
+  },
+  {
+    "id": "9",
+    "title": "Web Design",
+    "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1619694150/web_design_v1zne8.png",
+    "description": "Exercise of recreating a design.",
+    "technologies": ["Html | ", "Css "],
+    "githubUrl": "",
+    "webUrl": "https://web-design-html-css.netlify.app/"
+  },
+  {
+    "id": "10",
+    "title": "Bacardi Drop",
+    "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1620748524/bacardi_mockup_imsge5.png",
+    "description": "Animation technical test.",
+    "technologies": ["Html | ", "Css | ", "JavaScript "],
+    "githubUrl": "https://gitlab.com/Claratj/drop_bacardi",
+    "webUrl": "https://drop-ex-bacardi.netlify.app/"
+  },
+  {
+    "id": "11",
+    "title": "This Web",
+    "photo": "https://res.cloudinary.com/dpqichyzo/image/upload/v1621957118/myweb-mockuo_l5b37l.png",
+    "description": "Platform to showcase my portfolio.",
+    "technologies": ["Html | ", "Css | ", "JavaScript | ", "React "],
+    "githubUrl": "https://gitlab.com/Claratj/myweb"
+  }
+]

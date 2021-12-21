@@ -1,0 +1,63 @@
+@mixin mobileView {
+  @media all and (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin tabletView {
+    @media all and (min-width: 576px) {
+      @content;
+    }
+  }
+
+
+@mixin desktopView {
+    @media all and (min-width: 992px) {
+        @content;
+    }
+}
+
+@mixin desktopLargeView {
+    @media all and (min-width: 1200px) {
+        @content;
+    }
+}
+@mixin desktopXLView {
+    @media all and (min-width: 1400px) {
+        @content;
+    }
+}
+
+
+@mixin flex($value) {
+    display: flex;
+    justify-content: $value;
+    align-items: center;
+}
+
+
+@mixin flexGrow($number) {
+    flex: $number;
+}  
+
+@mixin underlineTitle($width, $color) {
+    width: $width;
+    padding-bottom: 0.5rem;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    border-bottom: 1px solid $color;
+
+}
+
+@mixin titleSection($color, $number) {
+    color: mix(#fff, $color, 5%);
+    font-size: calc(#{$number}vw + 1rem);  
+    text-shadow:
+    0.005em 0.005em 0 mix(#fff, $color, 60%),
+    0.01em 0.01em 0 mix(#fff, $color, 62%), 
+    0.015em 0.015em mix(#fff, $color, 64%), 
+    0.02em 0.02em 0 mix(#fff, $color, 66%), 
+    0.025em 0.025em 0 mix(#fff, $color, 68%),
+    0.03em 0.03em 0 mix(#fff, $color, 70%),
+    0.035em 0.035em 0 mix(#fff, $color, 72%);
+}

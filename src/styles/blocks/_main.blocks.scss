@@ -1,0 +1,53 @@
+@import "../settings/mixings.settings";
+@import "../settings/variables.settings";
+
+.main,
+.main-about {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 80px;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  &-about {
+    text-align: center;
+    position: relative;
+  }
+  &-gallery {
+    width: 100%;
+    @include flex(space-between);
+  }
+  &-creative {
+    padding-top: 5.1rem;
+  }
+}
+
+@include desktopView {
+  .home-section {
+    width: 100%;
+    height: 100%;
+    @include flex(center);
+  }
+  .main {
+    padding-top: 100px;
+    &-projects {
+      height: 40%;
+    }
+  }
+
+  .main-creative {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+@include desktopLargeView {
+  .main-about {
+    width: 70%;
+    flex-direction: unset;
+    margin: 0 auto;
+  }
+}

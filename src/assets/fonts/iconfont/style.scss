@@ -1,0 +1,245 @@
+@import "variables";
+
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?mxl98s');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?mxl98s#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?mxl98s') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?mxl98s') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?mxl98s##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-caret-down {
+  &:before {
+    content: $icon-caret-down; 
+  }
+}
+.icon-caret-left {
+  &:before {
+    content: $icon-caret-left; 
+  }
+}
+.icon-caret-right {
+  &:before {
+    content: $icon-caret-right; 
+  }
+}
+.icon-caret-up {
+  &:before {
+    content: $icon-caret-up; 
+  }
+}
+.icon-rounded-down {
+  &:before {
+    content: $icon-rounded-down; 
+  }
+}
+.icon-rounded-left {
+  &:before {
+    content: $icon-rounded-left; 
+  }
+}
+.icon-rounded-right {
+  &:before {
+    content: $icon-rounded-right; 
+  }
+}
+.icon-rounded-up {
+  &:before {
+    content: $icon-rounded-up; 
+  }
+}
+.icon-simple-left {
+  &:before {
+    content: $icon-simple-left; 
+  }
+}
+.icon-simple-right {
+  &:before {
+    content: $icon-simple-right; 
+  }
+}
+.icon-telegram {
+  &:before {
+    content: $icon-telegram; 
+  }
+}
+.icon-rounded-down1 {
+  &:before {
+    content: $icon-rounded-down1; 
+  }
+}
+.icon-rounded-left1 {
+  &:before {
+    content: $icon-rounded-left1; 
+  }
+}
+.icon-rounded-right1 {
+  &:before {
+    content: $icon-rounded-right1; 
+  }
+}
+.icon-rounded-up1 {
+  &:before {
+    content: $icon-rounded-up1; 
+  }
+}
+.icon-paper-plane {
+  &:before {
+    content: $icon-paper-plane; 
+  }
+}
+.icon-cross-sign {
+  &:before {
+    content: $icon-cross-sign; 
+  }
+}
+.icon-ps {
+  &:before {
+    content: $icon-ps; 
+  }
+}
+.icon-ai {
+  &:before {
+    content: $icon-ai; 
+  }
+}
+.icon-id {
+  &:before {
+    content: $icon-id; 
+  }
+}
+.icon-lr {
+  &:before {
+    content: $icon-lr; 
+  }
+}
+.icon-gitlab {
+  &:before {
+    content: $icon-gitlab; 
+  }
+}
+.icon-copy {
+  &:before {
+    content: $icon-copy; 
+  }
+}
+.icon-mail {
+  &:before {
+    content: $icon-mail; 
+  }
+}
+.icon-ing {
+  &:before {
+    content: $icon-ing; 
+  }
+}
+.icon-in {
+  &:before {
+    content: $icon-in; 
+  }
+}
+.icon-quote-right {
+  &:before {
+    content: $icon-quote-right; 
+  }
+}
+.icon-quote-left {
+  &:before {
+    content: $icon-quote-left; 
+  }
+}
+.icon-twitter {
+  &:before {
+    content: $icon-twitter; 
+  }
+}
+.icon-whatsapp {
+  &:before {
+    content: $icon-whatsapp; 
+  }
+}
+.icon-rocket {
+  &:before {
+    content: $icon-rocket; 
+  }
+}
+.icon-planet {
+  &:before {
+    content: $icon-planet; 
+  }
+}
+.icon-angular {
+  &:before {
+    content: $icon-angular; 
+  }
+}
+.icon-vuejs {
+  &:before {
+    content: $icon-vuejs; 
+  }
+}
+.icon-git {
+  &:before {
+    content: $icon-git; 
+  }
+}
+.icon-sass {
+  &:before {
+    content: $icon-sass; 
+  }
+}
+.icon-bxl-nodejs {
+  &:before {
+    content: $icon-bxl-nodejs; 
+  }
+}
+.icon-react {
+  &:before {
+    content: $icon-react; 
+  }
+}
+.icon-up {
+  &:before {
+    content: $icon-up; 
+  }
+}
+.icon-down {
+  &:before {
+    content: $icon-down; 
+  }
+}
+.icon-chevron-up {
+  &:before {
+    content: $icon-chevron-up; 
+  }
+}
+.icon-chevron-down {
+  &:before {
+    content: $icon-chevron-down; 
+  }
+}
+.icon-menu {
+  &:before {
+    content: $icon-menu; 
+  }
+}
+

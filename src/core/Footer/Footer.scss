@@ -1,0 +1,30 @@
+@import '../../styles/settings/mixings.settings';
+@import '../../styles/settings/variables.settings';
+
+footer {
+    width: 100vw;
+    height: 180px;
+    padding-top: 3rem;
+    background: linear-gradient(0deg, rgba(170,216,208,1) 0%, rgba(198,227,222,0.908000700280112) 36%, rgba(234,242,241,0.31976540616246496) 82%, rgba(255,255,255,0) 100%);    color: $color-purple;
+    font-family: Montserrat-SemiBold;
+    @include flex(center);
+    flex-direction: column;
+}
+
+.rrss {
+    padding-top: 1rem;
+    @include flex(space-between);
+
+    & .icon-twitter, .icon-git, .icon-in, .icon-paper-plane {
+        font-size: 1.8rem;
+        margin: 0 0.5rem;
+        color: $color-purple;
+
+        &:hover {
+            color: $color-b-orange;
+            cursor: pointer;
+        }
+    }
+
+}
+

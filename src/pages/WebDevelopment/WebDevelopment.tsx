@@ -39,16 +39,15 @@ export function WebDevelopment() {
           </div>
           <div>
             <span>Javascript |</span>
-            <span> Angular |</span>
+            <span> Typescript |</span>
             <span> React |</span>
             <span> Vue |</span>
             <span> Nuxt |</span>
+            <span> Angular |</span>
             <span> servicios API </span>
           </div>
           <div>
-            <span> PHP |</span>
             <span> NodeJS |</span>
-            <span> Symfony |</span>
             <span> MongoDB |</span>
             <span> MySQL |</span>
           </div>
@@ -56,6 +55,7 @@ export function WebDevelopment() {
             <span> Git |</span>
             <span> GitLab |</span>
             <span> Jira |</span>
+            <span> Asana |</span>
             <span> Trello | </span>
           </div>
           <div>

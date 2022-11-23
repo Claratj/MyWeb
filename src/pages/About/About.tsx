@@ -25,25 +25,6 @@ export function About() {
       : controlContainer.set({ x: "-100vw" });
   }, [inView]);
 
-  //   No está funcionando quotes:
-  //   const { ref, inView } = useInView({
-  //     triggerOnce: false,
-  //     rootMargin: "-100px 0px",
-  //   });
-  const quotes = {
-    hidden: {
-      x: "-100vw",
-    },
-    visible: {
-      x: 0,
-      transition: {
-        duration: 1.5,
-        type: "spring",
-        stiffness: 120,
-      },
-    },
-  };
-
   return (
     <div className="main" ref={ref}>
       <motion.div
@@ -53,10 +34,7 @@ export function About() {
         animate={controlContainer}
       >
         <div className="main-about">
-          <motion.span
-            variants={quotes}
-            initial="hidden"
-            animate="visible"
+          <span
             className="icon-quote-left"
           />
 
@@ -72,8 +50,7 @@ export function About() {
           </figure>
           <div className="about-description">
             <p>
-              Based in Madrid, I'm a Web Developer focused on Front-end
-              technologies.
+              Based in Madrid, I'm a Frontend Developer.
             </p>
             <p>
               I don't know if I found coding or coding found me. I started my
@@ -88,10 +65,7 @@ export function About() {
               development together with the user experience point of view.
             </p>
           </div>
-          <motion.span
-            variants={quotes}
-            initial="hidden"
-            animate="visible"
+          <span
             className="icon-quote-right"
           />
         </div>

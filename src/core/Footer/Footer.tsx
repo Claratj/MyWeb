@@ -28,9 +28,6 @@ export function Footer() {
         animate={controlContainer}
       >
         <nav className="rrss">
-          <a href="https://twitter.com/cofclarividence">
-            <span className="icon-twitter" />
-          </a>
           <a href="https://gitlab.com/Claratj">
             <span className="icon-git" />
           </a>

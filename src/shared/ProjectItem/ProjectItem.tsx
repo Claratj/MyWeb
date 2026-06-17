@@ -19,7 +19,7 @@ export function ProjectItem(props: IItem) {
       <div className="flip-card-inner">
         <div className="flip-card-front">
           <img
-            src={process.env.PUBLIC_URL + photo}
+            src={photo}
             alt={title}
             className="project-img"
           ></img>

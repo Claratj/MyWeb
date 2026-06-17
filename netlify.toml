@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# SPA fallback: let react-router (BrowserRouter) handle client-side routes
+# so deep links like /web or /photography don't 404 on reload.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

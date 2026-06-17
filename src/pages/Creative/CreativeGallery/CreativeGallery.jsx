@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { makeStyles } from '@material-ui/core/styles';
-import { Grid } from '@material-ui/core';
+import { Grid } from '@mui/material';
 import { motion } from 'framer-motion';
 
 import './CreativeGallery.scss';
@@ -46,21 +45,14 @@ export default function CreativeGallery(props) {
 
 
 
-    const useStyles = makeStyles((theme) => ({
-        root: {
-            overflow: 'hidden',
-        },
-        grid: {
-            width: '100%',
-            margin: '0px',
-            overflow: 'hidden',
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'space-around',
-        }
-    }));
-
-    const classes = useStyles();
+    const gridSx = {
+        width: '100%',
+        margin: '0px',
+        overflow: 'hidden',
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around',
+    };
 
     const variants = {
         hidden: {
@@ -87,12 +79,12 @@ export default function CreativeGallery(props) {
             <div className="gallery">
 
 
-                <Grid container spacing={2} className={classes.grid}>
+                <Grid container spacing={2} sx={gridSx}>
 
                     {location.pathname === "/photography" &&
                         props.projects.map((project, k) => {
                             return (
-                                <Grid item key={k} xs={project.cols} md={project.colsXs} >
+                                <Grid key={k} size={{ xs: project.cols, md: project.colsXs }} >
                                     <figure className="img-container" >
                                         <img src={project.photo} alt={project.title} className="img-grid" />
                                         <div className="content-overlay">
@@ -112,7 +104,7 @@ export default function CreativeGallery(props) {
                     {location.pathname === "/graphic" &&
                         props.projects.map((project => {
                             return (
-                                <Grid item key={project.id} xs={project.cols} md={project.colsXs} >
+                                <Grid key={project.id} size={{ xs: project.cols, md: project.colsXs }} >
                                     <figure key={project.id} className="img-container" >
                                         <img key={project.id} src={project.photo} alt={project.title} className="img-grid" />
                                         <div className="content-overlay">

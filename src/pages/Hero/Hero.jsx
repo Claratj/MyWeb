@@ -1,23 +1,27 @@
 import React, { useEffect, useRef } from 'react';
 
 import lottie from 'lottie-web';
-import ReactTooltip from "react-tooltip";
+import { Tooltip } from "react-tooltip";
+import "react-tooltip/dist/react-tooltip.css";
 
+import scrollAnimation from '../../assets/Animations/scroll.json';
 
 import './Hero.scss';
 
 export default function Intro() {
 
-    const animation = useRef();
+    const animation = useRef(null);
 
     useEffect(() => {
-        lottie.loadAnimation({
+        const instance = lottie.loadAnimation({
             container: animation.current,
             renderer: 'svg',
             loop: true,
             autoplay: true,
-            animationData: require('../../assets/Animations/scroll.json')
-        })
+            animationData: scrollAnimation
+        });
+
+        return () => instance.destroy();
     }, []);
 
 
@@ -30,9 +34,9 @@ export default function Intro() {
 
 
 
-            <div className="animation" data-tip="React-tooltip" ref={animation} ></div>
+            <div className="animation" data-tooltip-id="scroll-tip" data-tooltip-content="Scroll time!" ref={animation} ></div>
 
-            <ReactTooltip place="right" type="warning" effect="solid"><span>Scroll time!</span></ReactTooltip>
+            <Tooltip id="scroll-tip" place="right" />
 
             <div className="circle">
             </div>

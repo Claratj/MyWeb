@@ -1,0 +1,118 @@
+/* ==========================================================================
+   Design tokens — claratoloba.com
+   Single source of truth. Components consume these custom properties only;
+   no raw hex values live in component CSS.
+   ========================================================================== */
+
+:root {
+  /* --- Brand palette (raw) ------------------------------------------------ */
+  --c-terracotta: #e5491e; /* primary / CTA            */
+  --c-amber: #f1861f; /* accent / links           */
+  --c-amber-soft: #f0ad4e; /* secondary accent         */
+  --c-plum: #5a1545; /* headings                 */
+  --c-magenta: #aa1355; /* eyebrows                 */
+  --c-ink: #1a1416; /* body text                */
+  --c-cream: #faf9f5; /* background               */
+  --c-teal: #0f6e6d; /* card surface             */
+  --c-sage: #aad8d0; /* soft surface / accents   */
+
+  /* tints & shades derived from the palette (kept here so they stay traceable) */
+  --c-cream-2: #f3f0e7; /* subtle alt background  */
+  --c-ink-70: rgba(26, 20, 22, 0.7); /* muted body text       */
+  --c-ink-55: rgba(26, 20, 22, 0.55); /* captions              */
+  --c-line: rgba(26, 20, 22, 0.12); /* hairline borders        */
+  --c-plum-12: rgba(90, 21, 69, 0.12);
+  --c-teal-ink: #0a4f4e; /* darker teal for contrast on sage */
+
+  /* Accessible derivatives (WCAG AA): the raw brand hues are kept above for
+     accents/large text; these deeper/lighter variants are used wherever AA
+     for small text demands it. */
+  --c-terracotta-cta: #cf3f17; /* filled CTA bg → white text = 4.8:1   */
+  --c-terracotta-cta-hover: #b5330d; /* darker on hover  = 6.1:1       */
+  --c-terracotta-ink: #c2380f; /* warm link text on cream = 5.2:1     */
+  --c-terracotta-ink-hover: #922b12; /* link hover on cream = 7.7:1    */
+  --c-sage-light: #cde8e2; /* meta text on teal card = 4.7:1          */
+  --c-amber-label: #ffdfa0; /* eyebrow label on teal card = 4.7:1     */
+
+  /* --- Semantic colour roles --------------------------------------------- */
+  --color-bg: var(--c-cream);
+  --color-bg-alt: var(--c-cream-2);
+  --color-surface: var(--c-cream);
+  --color-surface-invert: var(--c-plum);
+  --color-card: var(--c-teal);
+  --color-text: var(--c-ink);
+  --color-text-muted: var(--c-ink-70);
+  --color-text-caption: var(--c-ink-55);
+  --color-text-on-dark: var(--c-cream);
+  --color-heading: var(--c-plum);
+  --color-eyebrow: var(--c-magenta);
+  --color-primary: var(--c-terracotta); /* brand accent / large text */
+  --color-cta: var(--c-terracotta-cta); /* filled button surface (AA) */
+  --color-cta-hover: var(--c-terracotta-cta-hover);
+  --color-link: var(--c-terracotta-ink); /* inline text links (AA on cream) */
+  --color-link-hover: var(--c-terracotta-ink-hover);
+  --color-border: var(--c-line);
+  --color-focus: var(--c-magenta);
+
+  /* --- Typography --------------------------------------------------------- */
+  --font-display: "Montserrat", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Mulish", system-ui, -apple-system, sans-serif;
+
+  /* fluid type scale (min → max via clamp) — kept compact and editorial */
+  --fs-eyebrow: 0.75rem; /* 12px */
+  --fs-caption: 0.8125rem; /* 13px */
+  --fs-body: 0.9375rem; /* 15px */
+  --fs-body-lg: clamp(1rem, 0.25vw + 0.95rem, 1.0625rem); /* ~16–17px */
+  --fs-h4: clamp(1rem, 0.4vw + 0.9rem, 1.1875rem); /* ~16–19px */
+  --fs-h3: clamp(1.1875rem, 0.7vw + 1rem, 1.5rem); /* ~19–24px */
+  --fs-h2: clamp(1.5rem, 1.6vw + 1.05rem, 2.125rem); /* ~24–34px */
+  --fs-h1: clamp(2rem, 3.4vw + 1rem, 3.25rem); /* ~32–52px */
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  --lh-tight: 1.05;
+  --lh-snug: 1.2;
+  --lh-normal: 1.6;
+  --tracking-eyebrow: 0.14em;
+  --tracking-tight: -0.02em;
+
+  /* --- Spacing scale (8px base) ------------------------------------------ */
+  --space-1: 0.25rem; /* 4  */
+  --space-2: 0.5rem; /* 8  */
+  --space-3: 0.75rem; /* 12 */
+  --space-4: 1rem; /* 16 */
+  --space-5: 1.5rem; /* 24 */
+  --space-6: 2rem; /* 32 */
+  --space-7: 3rem; /* 48 */
+  --space-8: 4rem; /* 64 */
+  --space-9: 6rem; /* 96 */
+  --space-10: 8rem; /* 128 */
+
+  /* --- Radii -------------------------------------------------------------- */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 100px;
+
+  /* --- Elevation ---------------------------------------------------------- */
+  --shadow-sm: 0 1px 2px rgba(26, 20, 22, 0.06), 0 2px 6px rgba(26, 20, 22, 0.05);
+  --shadow-md: 0 8px 24px rgba(26, 20, 22, 0.1);
+  --shadow-lg: 0 18px 48px rgba(90, 21, 69, 0.18);
+
+  /* --- Layout ------------------------------------------------------------- */
+  --container-max: 1140px;
+  --container-pad: clamp(1.25rem, 4vw, 3rem);
+  --section-gap: clamp(4rem, 9vw, 8rem);
+
+  /* --- Motion ------------------------------------------------------------- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 140ms;
+  --dur-base: 240ms;
+  --dur-slow: 520ms;
+
+  --z-nav: 100;
+}

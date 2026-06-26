@@ -157,9 +157,9 @@
 /* On phones the watermark quotes are shrunk so they don't swamp the copy. */
 @media (max-width: 600px) {
   .q1 {
-    font-size: 150px;
+    font-size: 210px;
   }
   .q2 {
-    font-size: 120px;
+    font-size: 175px;
   }
 }

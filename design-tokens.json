@@ -21,20 +21,31 @@
       "ink-70": { "$value": "rgba(26, 20, 22, 0.7)", "$description": "muted body text" },
       "ink-55": { "$value": "rgba(26, 20, 22, 0.55)", "$description": "captions" },
       "line": { "$value": "rgba(26, 20, 22, 0.12)", "$description": "hairline borders" },
-      "plum-12": { "$value": "rgba(90, 21, 69, 0.12)" },
       "teal-ink": { "$value": "#0A4F4E", "$description": "darker teal for contrast on sage" },
+      "white": { "$value": "#FFF", "$description": "pure white surface (distinct from cream)" },
       "terracotta-cta": { "$value": "#CF3F17", "$description": "filled CTA bg → white text = 4.8:1 (AA)" },
       "terracotta-cta-hover": { "$value": "#B5330D", "$description": "CTA hover = 6.1:1" },
       "terracotta-ink": { "$value": "#C2380F", "$description": "link/button text on cream = 5.2:1 (AA)" },
       "terracotta-ink-hover": { "$value": "#922B12", "$description": "link hover on cream = 7.7:1" },
       "sage-light": { "$value": "#CDE8E2", "$description": "meta text on teal card = 4.7:1 (AA)" },
-      "amber-label": { "$value": "#FFDFA0", "$description": "eyebrow label on teal card = 4.7:1 (AA)" }
+      "amber-label": { "$value": "#FFDFA0", "$description": "eyebrow label on teal card = 4.7:1 (AA)" },
+      "cream-05": { "$value": "rgba(250, 249, 245, 0.05)", "$description": "cream @5% — translucent fill on dark" },
+      "cream-14": { "$value": "rgba(250, 249, 245, 0.14)", "$description": "cream @14% — chip fill on teal" },
+      "cream-22": { "$value": "rgba(250, 249, 245, 0.22)", "$description": "cream @22% — chip border on teal" },
+      "cream-92": { "$value": "rgba(250, 249, 245, 0.92)", "$description": "cream @92% — body text on dark = ~5:1 (AA)" },
+      "teal-50": { "$value": "rgba(15, 110, 109, 0.5)", "$description": "teal @50% — pulse ring start" },
+      "teal-18": { "$value": "rgba(15, 110, 109, 0.18)", "$description": "teal @18% — soft glow" },
+      "teal-0": { "$value": "rgba(15, 110, 109, 0)", "$description": "teal @0% — gradient/glow end" },
+      "sage-22": { "$value": "rgba(170, 216, 208, 0.22)", "$description": "sage @22% — hero glow" },
+      "sage-16": { "$value": "rgba(170, 216, 208, 0.16)", "$description": "sage @16% — strip glow" },
+      "sage-0": { "$value": "rgba(170, 216, 208, 0)", "$description": "sage @0% — gradient/glow end" },
+      "amber-18": { "$value": "rgba(241, 134, 31, 0.18)", "$description": "amber @18% — hero glow" },
+      "amber-0": { "$value": "rgba(241, 134, 31, 0)", "$description": "amber @0% — gradient/glow end" }
     },
     "semantic": {
       "$description": "Role-based tokens. Components should consume these, not the raw values.",
       "bg": { "$value": "{color.brand.cream}" },
       "bg-alt": { "$value": "{color.derived.cream-2}" },
-      "surface": { "$value": "{color.brand.cream}" },
       "surface-invert": { "$value": "{color.brand.plum}" },
       "card": { "$value": "{color.brand.teal}" },
       "text": { "$value": "{color.brand.ink}" },
@@ -61,7 +72,6 @@
     "weight": {
       "$type": "fontWeight",
       "regular": { "$value": 400 },
-      "medium": { "$value": 500 },
       "semibold": { "$value": 600 },
       "bold": { "$value": 700 },
       "extrabold": { "$value": 800 }
@@ -100,14 +110,11 @@
     "5": { "$value": "1.5rem", "$description": "24px" },
     "6": { "$value": "2rem", "$description": "32px" },
     "7": { "$value": "3rem", "$description": "48px" },
-    "8": { "$value": "4rem", "$description": "64px" },
-    "9": { "$value": "6rem", "$description": "96px" },
-    "10": { "$value": "8rem", "$description": "128px" }
+    "8": { "$value": "4rem", "$description": "64px" }
   },
   "radius": {
     "$type": "dimension",
     "sm": { "$value": "8px" },
-    "md": { "$value": "12px" },
     "lg": { "$value": "20px" },
     "pill": { "$value": "100px" }
   },
@@ -124,6 +131,17 @@
     },
     "lg": {
       "$value": { "offsetX": "0", "offsetY": "18px", "blur": "48px", "spread": "0", "color": "rgba(90, 21, 69, 0.18)" }
+    },
+    "nav": {
+      "$value": { "offsetX": "0", "offsetY": "8px", "blur": "28px", "spread": "0", "color": "rgba(26, 20, 22, 0.06)" },
+      "$description": "soft shadow on scrolled nav"
+    },
+    "on-dark": {
+      "$value": { "offsetX": "0", "offsetY": "6px", "blur": "18px", "spread": "0", "color": "rgba(0, 0, 0, 0.18)" },
+      "$description": "button on dark (plum) surfaces"
+    },
+    "on-dark-hover": {
+      "$value": { "offsetX": "0", "offsetY": "10px", "blur": "24px", "spread": "0", "color": "rgba(0, 0, 0, 0.26)" }
     }
   },
   "layout": {
@@ -140,8 +158,7 @@
     "duration": {
       "$type": "duration",
       "fast": { "$value": "140ms" },
-      "base": { "$value": "240ms" },
-      "slow": { "$value": "520ms" }
+      "base": { "$value": "240ms" }
     }
   },
   "z": {

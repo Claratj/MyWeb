@@ -1,0 +1,26 @@
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-eyebrow);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-eyebrow);
+}
+
+/* amber label for use on dark bands (e.g. the plum contact section) */
+.onDark {
+  color: var(--c-amber-label);
+}
+
+/* short rule before the label */
+.eyebrow::before {
+  content: "";
+  inline-size: 1.75rem;
+  block-size: 2px;
+  background: currentColor;
+  border-radius: 2px;
+}

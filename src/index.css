@@ -1,0 +1,4 @@
+/* Style entrypoint — order matters: tokens → fonts → base */
+@import "./styles/tokens.css";
+@import "./styles/fonts.css";
+@import "./styles/global.css";

@@ -1,0 +1,101 @@
+/* Recovered from `main` (.btn-more): white pill, amber border, terracotta
+   uppercase label, no hover colour change. Width is min-width (not the fixed
+   210px) + padding so longer labels than the original don't overflow. */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 210px;
+  height: 60px;
+  padding-inline: 1.75rem;
+  border-radius: 50px;
+  background-color: #ffffff;
+  border: 1px solid #f1861f;
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: 12px;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  line-height: 1;
+  color: #e43f12;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* sizes — `lg` is the original 60px; `md`/`sm`/`xs` are lighter adaptations for the nav */
+.xs {
+  height: 38px;
+  min-width: 0;
+  padding-inline: 1rem;
+  font-size: 11px;
+}
+.sm {
+  height: 44px;
+  min-width: 0;
+  padding-inline: 1.25rem;
+}
+.md {
+  height: 48px;
+  min-width: 0;
+  padding-inline: 1.4rem;
+}
+.lg {
+  height: 60px;
+}
+
+/* solid — optional filled-terracotta variant for high-emphasis CTAs (AA) */
+.solid {
+  background-color: var(--color-cta);
+  border-color: var(--color-cta);
+  color: #fff;
+}
+.solid:hover {
+  background-color: var(--color-cta-hover);
+  border-color: var(--color-cta-hover);
+}
+
+/* ghost — optional borderless tertiary action */
+.ghost {
+  min-width: 0;
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--color-heading);
+}
+.ghost:hover {
+  color: var(--color-primary);
+}
+
+/* outline — secundario: pastilla con contorno plum, claramente clicable pero subordinado */
+.outline {
+  background-color: transparent;
+  border-color: var(--c-plum);
+  color: var(--color-heading);
+}
+.outline:hover {
+  background-color: var(--c-plum);
+  border-color: var(--c-plum);
+  color: var(--c-cream);
+  box-shadow: var(--shadow-md);
+}
+
+/* onDark — variante en negativo para superficies oscuras (banda plum de contacto) */
+.onDark {
+  background-color: rgba(250, 249, 245, 0.05);
+  border-color: var(--c-amber);
+  border-width: 1.75px;
+  color: var(--c-amber-label);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+.onDark:hover {
+  background-color: var(--c-amber);
+  border-color: var(--c-amber);
+  color: var(--c-ink);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.26);
+}

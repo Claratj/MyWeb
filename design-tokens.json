@@ -1,0 +1,151 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "$description": "Design tokens for claratoloba.com. Source of truth: src/styles/tokens.css. Warm, mature-but-distinctive identity for a Frontend Engineer · Design Systems. Semantic tokens reference brand/derived tokens via {group.name} aliases.",
+  "color": {
+    "$type": "color",
+    "brand": {
+      "$description": "Raw brand palette. Use for accents and large text.",
+      "terracotta": { "$value": "#E5491E", "$description": "primary / CTA accent" },
+      "amber": { "$value": "#F1861F", "$description": "accents / links / button borders" },
+      "amber-soft": { "$value": "#F0AD4E", "$description": "secondary accent" },
+      "plum": { "$value": "#5A1545", "$description": "headings" },
+      "magenta": { "$value": "#AA1355", "$description": "eyebrows" },
+      "ink": { "$value": "#1A1416", "$description": "body text" },
+      "cream": { "$value": "#FAF9F5", "$description": "background" },
+      "teal": { "$value": "#0F6E6D", "$description": "card surface" },
+      "sage": { "$value": "#AAD8D0", "$description": "soft surface / accents" }
+    },
+    "derived": {
+      "$description": "Tints, shades and WCAG-AA-safe variants derived from the brand palette.",
+      "cream-2": { "$value": "#F3F0E7", "$description": "subtle alt background" },
+      "ink-70": { "$value": "rgba(26, 20, 22, 0.7)", "$description": "muted body text" },
+      "ink-55": { "$value": "rgba(26, 20, 22, 0.55)", "$description": "captions" },
+      "line": { "$value": "rgba(26, 20, 22, 0.12)", "$description": "hairline borders" },
+      "plum-12": { "$value": "rgba(90, 21, 69, 0.12)" },
+      "teal-ink": { "$value": "#0A4F4E", "$description": "darker teal for contrast on sage" },
+      "terracotta-cta": { "$value": "#CF3F17", "$description": "filled CTA bg → white text = 4.8:1 (AA)" },
+      "terracotta-cta-hover": { "$value": "#B5330D", "$description": "CTA hover = 6.1:1" },
+      "terracotta-ink": { "$value": "#C2380F", "$description": "link/button text on cream = 5.2:1 (AA)" },
+      "terracotta-ink-hover": { "$value": "#922B12", "$description": "link hover on cream = 7.7:1" },
+      "sage-light": { "$value": "#CDE8E2", "$description": "meta text on teal card = 4.7:1 (AA)" },
+      "amber-label": { "$value": "#FFDFA0", "$description": "eyebrow label on teal card = 4.7:1 (AA)" }
+    },
+    "semantic": {
+      "$description": "Role-based tokens. Components should consume these, not the raw values.",
+      "bg": { "$value": "{color.brand.cream}" },
+      "bg-alt": { "$value": "{color.derived.cream-2}" },
+      "surface": { "$value": "{color.brand.cream}" },
+      "surface-invert": { "$value": "{color.brand.plum}" },
+      "card": { "$value": "{color.brand.teal}" },
+      "text": { "$value": "{color.brand.ink}" },
+      "text-muted": { "$value": "{color.derived.ink-70}" },
+      "text-caption": { "$value": "{color.derived.ink-55}" },
+      "text-on-dark": { "$value": "{color.brand.cream}" },
+      "heading": { "$value": "{color.brand.plum}" },
+      "eyebrow": { "$value": "{color.brand.magenta}" },
+      "primary": { "$value": "{color.brand.terracotta}", "$description": "brand accent / large text" },
+      "cta": { "$value": "{color.derived.terracotta-cta}", "$description": "filled button surface (AA with white text)" },
+      "cta-hover": { "$value": "{color.derived.terracotta-cta-hover}" },
+      "link": { "$value": "{color.derived.terracotta-ink}", "$description": "inline text links (AA on cream)" },
+      "link-hover": { "$value": "{color.derived.terracotta-ink-hover}" },
+      "border": { "$value": "{color.derived.line}" },
+      "focus": { "$value": "{color.brand.magenta}" }
+    }
+  },
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "display": { "$value": ["Montserrat", "Segoe UI", "system-ui", "sans-serif"], "$description": "display / headings; weights 600/700/800" },
+      "body": { "$value": ["Mulish", "system-ui", "-apple-system", "sans-serif"], "$description": "body; weights 400/500/600/700" }
+    },
+    "weight": {
+      "$type": "fontWeight",
+      "regular": { "$value": 400 },
+      "medium": { "$value": 500 },
+      "semibold": { "$value": 600 },
+      "bold": { "$value": 700 },
+      "extrabold": { "$value": 800 }
+    },
+    "size": {
+      "$type": "dimension",
+      "$description": "Compact, editorial fluid scale. Fluid values are clamp() strings (min → preferred → max).",
+      "eyebrow": { "$value": "0.75rem", "$description": "12px" },
+      "caption": { "$value": "0.8125rem", "$description": "13px" },
+      "body": { "$value": "0.9375rem", "$description": "15px" },
+      "body-lg": { "$value": "clamp(1rem, 0.25vw + 0.95rem, 1.0625rem)", "$description": "~16–17px" },
+      "h4": { "$value": "clamp(1rem, 0.4vw + 0.9rem, 1.1875rem)", "$description": "~16–19px" },
+      "h3": { "$value": "clamp(1.1875rem, 0.7vw + 1rem, 1.5rem)", "$description": "~19–24px" },
+      "h2": { "$value": "clamp(1.5rem, 1.6vw + 1.05rem, 2.125rem)", "$description": "~24–34px" },
+      "h1": { "$value": "clamp(2rem, 3.4vw + 1rem, 3.25rem)", "$description": "~32–52px" }
+    },
+    "lineHeight": {
+      "$type": "number",
+      "tight": { "$value": 1.05 },
+      "snug": { "$value": 1.2 },
+      "normal": { "$value": 1.6 }
+    },
+    "letterSpacing": {
+      "$type": "dimension",
+      "eyebrow": { "$value": "0.14em" },
+      "tight": { "$value": "-0.02em" }
+    }
+  },
+  "space": {
+    "$type": "dimension",
+    "$description": "8px base scale.",
+    "1": { "$value": "0.25rem", "$description": "4px" },
+    "2": { "$value": "0.5rem", "$description": "8px" },
+    "3": { "$value": "0.75rem", "$description": "12px" },
+    "4": { "$value": "1rem", "$description": "16px" },
+    "5": { "$value": "1.5rem", "$description": "24px" },
+    "6": { "$value": "2rem", "$description": "32px" },
+    "7": { "$value": "3rem", "$description": "48px" },
+    "8": { "$value": "4rem", "$description": "64px" },
+    "9": { "$value": "6rem", "$description": "96px" },
+    "10": { "$value": "8rem", "$description": "128px" }
+  },
+  "radius": {
+    "$type": "dimension",
+    "sm": { "$value": "8px" },
+    "md": { "$value": "12px" },
+    "lg": { "$value": "20px" },
+    "pill": { "$value": "100px" }
+  },
+  "shadow": {
+    "$type": "shadow",
+    "sm": {
+      "$value": [
+        { "offsetX": "0", "offsetY": "1px", "blur": "2px", "spread": "0", "color": "rgba(26, 20, 22, 0.06)" },
+        { "offsetX": "0", "offsetY": "2px", "blur": "6px", "spread": "0", "color": "rgba(26, 20, 22, 0.05)" }
+      ]
+    },
+    "md": {
+      "$value": { "offsetX": "0", "offsetY": "8px", "blur": "24px", "spread": "0", "color": "rgba(26, 20, 22, 0.1)" }
+    },
+    "lg": {
+      "$value": { "offsetX": "0", "offsetY": "18px", "blur": "48px", "spread": "0", "color": "rgba(90, 21, 69, 0.18)" }
+    }
+  },
+  "layout": {
+    "$type": "dimension",
+    "container-max": { "$value": "1140px" },
+    "container-pad": { "$value": "clamp(1.25rem, 4vw, 3rem)" },
+    "section-gap": { "$value": "clamp(4rem, 9vw, 8rem)" }
+  },
+  "motion": {
+    "easing": {
+      "$type": "cubicBezier",
+      "out": { "$value": [0.22, 1, 0.36, 1] }
+    },
+    "duration": {
+      "$type": "duration",
+      "fast": { "$value": "140ms" },
+      "base": { "$value": "240ms" },
+      "slow": { "$value": "520ms" }
+    }
+  },
+  "z": {
+    "$type": "number",
+    "nav": { "$value": 100 }
+  }
+}

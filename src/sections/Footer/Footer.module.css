@@ -1,0 +1,88 @@
+.footer {
+  padding-block: var(--space-7);
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4) var(--space-6);
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.logo {
+  display: block;
+  inline-size: 2.25rem;
+  block-size: 2.25rem;
+}
+
+.copyright {
+  margin: 0;
+  font-size: var(--fs-caption);
+  color: var(--color-text-muted);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+}
+
+.links a {
+  color: var(--color-text);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-caption);
+}
+.links a:hover {
+  color: var(--color-primary);
+}
+
+/* the signature easter-egg */
+.shell {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-caption);
+  color: var(--color-eyebrow);
+  cursor: default;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+.shell:hover span {
+  display: inline-block;
+  animation: wave 1.2s var(--ease-out) infinite;
+  transform-origin: 70% 70%;
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-12deg);
+  }
+  75% {
+    transform: rotate(12deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shell:hover span {
+    animation: none;
+  }
+}
+
+@media (max-width: 680px) {
+  .inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

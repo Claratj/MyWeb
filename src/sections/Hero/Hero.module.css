@@ -47,6 +47,8 @@
   pointer-events: none;
   user-select: none;
   z-index: -1;
+  /* pivot at the top edge so the glyph swings like a hanging pendulum */
+  transform-origin: 50% 0;
 }
 /* Static placement + tilt; scroll parallax (framer-motion) drives their drift. */
 .q1 {
@@ -105,5 +107,23 @@
   .grid {
     grid-template-columns: 1fr;
     gap: var(--space-7);
+  }
+
+  /* Stacked: the full-width card would bury the amber quote. Float it up so it
+     peeks out of the gap above the card instead of hiding fully behind it. */
+  .q2 {
+    top: 38%;
+    bottom: auto;
+    right: 4%;
+  }
+}
+
+/* On phones the watermark quotes are shrunk so they don't swamp the copy. */
+@media (max-width: 600px) {
+  .q1 {
+    font-size: 150px;
+  }
+  .q2 {
+    font-size: 120px;
   }
 }

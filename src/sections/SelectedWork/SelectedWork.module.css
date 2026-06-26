@@ -38,5 +38,6 @@
   .grid {
     grid-template-columns: 1fr;
     max-width: 560px;
+    margin-inline: auto;
   }
 }

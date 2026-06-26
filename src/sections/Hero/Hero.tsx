@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { Button } from "../../components/Button/Button";
 import { Eyebrow } from "../../components/Eyebrow/Eyebrow";
@@ -7,28 +8,46 @@ import styles from "./Hero.module.css";
 
 export function Hero() {
   const reduce = useReducedMotion();
+  // Below the grid breakpoint the layout stacks and the quotes overlap the copy,
+  // so we freeze their drift and tilt there as well as under reduced-motion.
+  const [stacked, setStacked] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 880px)");
+    const update = () => setStacked(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+  const off = reduce || stacked;
+
   const { scrollY } = useScroll();
   // Decorative layers drift at different speeds to give the hero scroll depth.
-  const q1Y = useTransform(scrollY, (v) => (reduce ? 0 : v * 0.45));
-  const q2Y = useTransform(scrollY, (v) => (reduce ? 0 : v * -0.38));
-  const panelY = useTransform(scrollY, (v) => (reduce ? 0 : v * -0.22));
+  const q1Y = useTransform(scrollY, (v) => (off ? 0 : v * 0.45));
+  const q2Y = useTransform(scrollY, (v) => (off ? 0 : v * -0.38));
+  const panelY = useTransform(scrollY, (v) => (off ? 0 : v * -0.22));
 
   return (
     <section className={styles.hero} aria-labelledby="hero-title">
       <motion.span
         className={`${styles.quote} ${styles.q1}`}
-        style={reduce ? { y: q1Y, rotate: -4 } : { y: q1Y }}
-        animate={reduce ? undefined : { rotate: [-4, 2, -4] }}
-        transition={{ duration: 7, ease: "easeInOut", repeat: Infinity }}
+        style={{ y: q1Y }}
+        initial={reduce ? false : { rotate: -18 }}
+        animate={{ rotate: -4 }}
+        transition={
+          reduce ? { duration: 0 } : { type: "spring", stiffness: 30, damping: 4.5, mass: 1.6 }
+        }
         aria-hidden="true"
       >
         &#8220;
       </motion.span>
       <motion.span
         className={`${styles.quote} ${styles.q2}`}
-        style={reduce ? { y: q2Y, rotate: 6 } : { y: q2Y }}
-        animate={reduce ? undefined : { rotate: [6, -3, 6] }}
-        transition={{ duration: 9, ease: "easeInOut", repeat: Infinity }}
+        style={{ y: q2Y }}
+        initial={reduce ? false : { rotate: 20 }}
+        animate={{ rotate: 6 }}
+        transition={
+          reduce ? { duration: 0 } : { type: "spring", stiffness: 26, damping: 4, mass: 1.7 }
+        }
         aria-hidden="true"
       >
         &#8221;

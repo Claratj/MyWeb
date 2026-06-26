@@ -9,9 +9,7 @@ export function Footer() {
       <div className={`container ${styles.inner}`}>
         <div className={styles.left}>
           <img className={styles.logo} src={logo} alt="" width={36} height={36} />
-          <p className={styles.copyright}>
-            © {year} Clara Toloba · Frontend Engineer · Design Systems
-          </p>
+          <p className={styles.copyright}>© {year} Clara Toloba</p>
         </div>
 
         <nav className={styles.links} aria-label="Footer">

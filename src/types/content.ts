@@ -9,7 +9,7 @@ export type CaseStudy = {
   problem: string;
   /** What Clara owned. */
   contribution: string;
-  /** Outcome — use a clear placeholder when the metric isn't filled in yet. */
+  /** Outcome of the work. */
   result: string;
   stack: string[];
   /** Optional accent token name, e.g. "--c-teal", to tint the card. */

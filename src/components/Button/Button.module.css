@@ -1,6 +1,5 @@
-/* Recovered from `main` (.btn-more): white pill, amber border, terracotta
-   uppercase label, no hover colour change. Width is min-width (not the fixed
-   210px) + padding so longer labels than the original don't overflow. */
+/* Brand pill button: white fill, amber border, terracotta uppercase label,
+   no hover colour change. min-width + padding so longer labels don't overflow. */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -29,7 +28,7 @@
   gap: var(--space-2);
 }
 
-/* sizes — `lg` is the original 60px; `md`/`sm`/`xs` are lighter adaptations for the nav */
+/* sizes — lg is the full 60px pill; md/sm/xs are lighter variants for the nav */
 .xs {
   height: 38px;
   min-width: 0;

@@ -8,8 +8,7 @@ import styles from "./Hero.module.css";
 export function Hero() {
   const reduce = useReducedMotion();
   const { scrollY } = useScroll();
-  // Decorative layers drift at different speeds for scroll depth.
-  // NOTE: exaggerated for tuning — spec speeds are 0.14 / -0.11 / -0.06.
+  // Decorative layers drift at different speeds to give the hero scroll depth.
   const q1Y = useTransform(scrollY, (v) => (reduce ? 0 : v * 0.45));
   const q2Y = useTransform(scrollY, (v) => (reduce ? 0 : v * -0.38));
   const panelY = useTransform(scrollY, (v) => (reduce ? 0 : v * -0.22));
@@ -37,7 +36,7 @@ export function Hero() {
       <div className={`container ${styles.grid}`}>
         <div className={styles.copy}>
           <Reveal delay={0}>
-            <Eyebrow>Frontend Engineer — Design Systems</Eyebrow>
+            <Eyebrow>Frontend Engineer · Design Systems</Eyebrow>
           </Reveal>
 
           <Reveal delay={0.08}>
@@ -50,7 +49,7 @@ export function Hero() {
           <Reveal delay={0.16}>
             <p className={styles.sub}>
               Frontend engineer with six years in product UI and a design background I
-              never left behind. I work in the space between design and engineering —
+              never left behind. I work in the space between design and engineering,
               tokenising systems and getting them adopted in React, TypeScript and Vue.
             </p>
           </Reveal>

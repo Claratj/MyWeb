@@ -1,10 +1,18 @@
-/** Trust strip — tools Clara works with day to day (all backed by the CV). */
-export const stack: string[] = [
+/** Trust strip — the day-to-day core stack and the AI workflow. */
+export const coreStack: string[] = [
   "React",
   "TypeScript",
   "Vite",
   "Storybook",
-  "Figma MCP",
   "Tailwind CSS",
   "Design tokens",
+];
+
+export const aiStack: string[] = [
+  "Claude Code",
+  "Figma MCP",
+  "Agent Skills",
+  "Custom audit agents",
+  "AI-assisted scaffolding",
+  "AI code review",
 ];

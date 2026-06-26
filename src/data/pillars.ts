@@ -5,16 +5,21 @@ export const pillars: Pillar[] = [
   {
     id: "eye",
     title: "Designer's eye",
-    body: "I came up through graphic design and art direction, so I read an interface the way a designer does — spacing, hierarchy, type — and I hold the built UI to the original intent.",
+    body: "I came up through graphic design and art direction, so I read an interface the way a designer does. I pay attention to spacing, hierarchy and type, and I hold the built UI to the original intent.",
   },
   {
     id: "rigor",
     title: "Engineer's rigor",
-    body: "Product UI in React and TypeScript, architected to last: feature-based structure, atomic components, and a real testing habit with Cypress and Jest on data-heavy products.",
+    body: "Product UI in React and TypeScript, architected to last. Feature-based structure, atomic components, and a real testing habit with Cypress and Jest on data-heavy products.",
   },
   {
     id: "bridge",
     title: "The bridge: tokens & systems",
-    body: "I push design systems to be tokenised and actually adopted in code — keeping Figma and the codebase in sync with design tokens, Storybook and a Figma MCP integration. I lean on AI to scaffold components and tests, review code and document the system — where it cuts busywork and design–code drift, never where it replaces judgment.",
+    body: "I push design systems to be tokenised and actually adopted in code. I keep Figma and the codebase in sync with design tokens, Storybook and a Figma MCP integration, so design and engineering stop drifting apart.",
+  },
+  {
+    id: "ai",
+    title: "AI in the loop",
+    body: "I don't just use AI, I build the tooling around it: custom Claude Code agents, slash commands and skills that scaffold components, generate tests, review PRs and keep Figma tokens in sync with code. The repetitive work gets automated. The architecture and the judgment calls stay mine.",
   },
 ];

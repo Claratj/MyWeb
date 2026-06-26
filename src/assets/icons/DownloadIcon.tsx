@@ -1,8 +1,6 @@
 /**
- * Lucide `download` glyph as an inline currentColor SVG. The brand's icomoon
- * font has no true download (tray) icon — only arrows — so this is the official
- * substitution (documented in the DS ICONOGRAPHY guide). Stroke weight 2.5 to
- * match the Montserrat-bold label. Inherits the button's colour and font-size.
+ * Download glyph as an inline currentColor SVG. Stroke weight 2.5 to match the
+ * bold label; inherits the button's colour and font-size.
  */
 export function DownloadIcon() {
   return (

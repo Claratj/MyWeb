@@ -21,7 +21,7 @@ export function SelectedWork() {
 
         <div className={styles.grid}>
           {work.map((study, i) => (
-            <Reveal key={study.id} from="scale" delay={i * 0.09}>
+            <Reveal key={study.id} from="lift" delay={i * 0.09}>
               <CaseCard study={study} />
             </Reveal>
           ))}

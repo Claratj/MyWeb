@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 
-export type RevealEffect = "up" | "left" | "right" | "scale" | "fade" | "blur";
+export type RevealEffect = "up" | "left" | "right" | "scale" | "fade" | "blur" | "lift";
 
 type RevealProps = {
   children: ReactNode;
@@ -19,6 +19,7 @@ const hidden: Record<RevealEffect, Record<string, number | string>> = {
   scale: { opacity: 0, scale: 0.92 },
   fade: { opacity: 0 },
   blur: { opacity: 0, filter: "blur(10px)", y: 16 },
+  lift: { opacity: 0, y: 40, scale: 0.97 },
 };
 
 const shown = { opacity: 1, x: 0, y: 0, scale: 1, filter: "blur(0px)" };

@@ -6,7 +6,7 @@
     "brand": {
       "$description": "Raw brand palette. Use for accents and large text.",
       "terracotta": { "$value": "#E5491E", "$description": "primary / CTA accent" },
-      "amber": { "$value": "#F1861F", "$description": "accents / links / button borders" },
+      "amber": { "$value": "#F1861F", "$description": "accent / links" },
       "amber-soft": { "$value": "#F0AD4E", "$description": "secondary accent" },
       "plum": { "$value": "#5A1545", "$description": "headings" },
       "magenta": { "$value": "#AA1355", "$description": "eyebrows" },

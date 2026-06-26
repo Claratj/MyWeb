@@ -15,8 +15,8 @@
   max-block-size: 720px;
   background: radial-gradient(
     circle,
-    rgba(241, 134, 31, 0.18),
-    rgba(241, 134, 31, 0) 62%
+    var(--c-amber-18),
+    var(--c-amber-0) 62%
   );
   z-index: -1;
 }
@@ -32,8 +32,8 @@
   max-block-size: 560px;
   background: radial-gradient(
     circle,
-    rgba(170, 216, 208, 0.22),
-    rgba(170, 216, 208, 0) 64%
+    var(--c-sage-22),
+    var(--c-sage-0) 64%
   );
   z-index: -1;
 }

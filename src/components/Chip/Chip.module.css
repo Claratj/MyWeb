@@ -18,7 +18,7 @@
 
 /* solid — sits on the teal card surface */
 .solid {
-  background-color: rgba(250, 249, 245, 0.14);
+  background-color: var(--c-cream-14);
   color: var(--color-text-on-dark);
-  border: 1px solid rgba(250, 249, 245, 0.22);
+  border: 1px solid var(--c-cream-22);
 }

@@ -9,7 +9,7 @@
   position: absolute;
   inset: 0;
   background: radial-gradient(ellipse 70% 120% at 50% 50%,
-    rgba(170, 216, 208, 0.16), rgba(170, 216, 208, 0) 70%);
+    var(--c-sage-16), var(--c-sage-0) 70%);
   pointer-events: none;
 }
 .inner {
@@ -44,7 +44,7 @@
   block-size: 0.5rem;
   border-radius: 50%;
   background: var(--c-teal);
-  box-shadow: 0 0 0 3px rgba(15, 110, 109, 0.18);
+  box-shadow: 0 0 0 3px var(--c-teal-18);
 }
 .list {
   display: flex;
@@ -61,7 +61,7 @@
   padding: 0.5rem 1rem;
   border-radius: var(--radius-pill);
   border: 1px solid var(--color-border);
-  background: #fff;
+  background: var(--c-white);
   font-family: var(--font-display);
   font-weight: var(--fw-semibold);
   font-size: var(--fs-caption);
@@ -71,6 +71,6 @@
 }
 .chipAi {
   border-color: var(--c-sage);
-  background: color-mix(in srgb, var(--c-sage) 30%, #fff);
+  background: color-mix(in srgb, var(--c-sage) 30%, var(--c-white));
   color: var(--c-teal-ink);
 }

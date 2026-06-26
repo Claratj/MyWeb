@@ -12,7 +12,7 @@
   background-color: color-mix(in srgb, var(--color-bg) 70%, transparent);
   backdrop-filter: saturate(160%) blur(18px);
   -webkit-backdrop-filter: saturate(160%) blur(18px);
-  box-shadow: 0 8px 28px rgba(26, 20, 22, 0.06);
+  box-shadow: var(--shadow-nav);
 }
 
 .inner {

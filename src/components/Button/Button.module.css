@@ -8,8 +8,8 @@
   height: 60px;
   padding-inline: 1.75rem;
   border-radius: 50px;
-  background-color: #ffffff;
-  border: 1px solid #f1861f;
+  background-color: var(--c-white);
+  border: 1px solid var(--c-amber);
   font-family: var(--font-display);
   font-weight: var(--fw-bold);
   font-size: 12px;
@@ -53,7 +53,7 @@
 .solid {
   background-color: var(--color-cta);
   border-color: var(--color-cta);
-  color: #fff;
+  color: var(--c-white);
 }
 .solid:hover {
   background-color: var(--color-cta-hover);
@@ -86,15 +86,15 @@
 
 /* onDark — variante en negativo para superficies oscuras (banda plum de contacto) */
 .onDark {
-  background-color: rgba(250, 249, 245, 0.05);
+  background-color: var(--c-cream-05);
   border-color: var(--c-amber);
   border-width: 1.75px;
   color: var(--c-amber-label);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  box-shadow: var(--shadow-on-dark);
 }
 .onDark:hover {
   background-color: var(--c-amber);
   border-color: var(--c-amber);
   color: var(--c-ink);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.26);
+  box-shadow: var(--shadow-on-dark-hover);
 }

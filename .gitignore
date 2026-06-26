@@ -15,6 +15,11 @@
 # vercel
 .vercel
 
+# claude code (machine-specific / local, not for sharing)
+.claude/settings.local.json
+CLAUDE.local.md
+*.local.*
+
 # misc
 .DS_Store
 .env.local

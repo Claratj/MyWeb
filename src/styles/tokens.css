@@ -17,12 +17,28 @@
   --c-sage: #aad8d0; /* soft surface / accents   */
 
   /* tints & shades derived from the palette (kept here so they stay traceable) */
+  --c-white: #fff; /* pure white surface (distinct from cream) */
   --c-cream-2: #f3f0e7; /* subtle alt background  */
   --c-ink-70: rgba(26, 20, 22, 0.7); /* muted body text       */
   --c-ink-55: rgba(26, 20, 22, 0.55); /* captions              */
   --c-line: rgba(26, 20, 22, 0.12); /* hairline borders        */
-  --c-plum-12: rgba(90, 21, 69, 0.12);
   --c-teal-ink: #0a4f4e; /* darker teal for contrast on sage */
+
+  /* alpha variants — the exact rgba of the brand hues, for gradients, glows and
+     translucent overlays. Value-preserving tokenisation of literals that used to
+     live in component CSS; the numbers match the source rgba exactly. */
+  --c-cream-05: rgba(250, 249, 245, 0.05);
+  --c-cream-14: rgba(250, 249, 245, 0.14);
+  --c-cream-22: rgba(250, 249, 245, 0.22);
+  --c-cream-92: rgba(250, 249, 245, 0.92);
+  --c-teal-50: rgba(15, 110, 109, 0.5);
+  --c-teal-18: rgba(15, 110, 109, 0.18);
+  --c-teal-0: rgba(15, 110, 109, 0);
+  --c-sage-22: rgba(170, 216, 208, 0.22);
+  --c-sage-16: rgba(170, 216, 208, 0.16);
+  --c-sage-0: rgba(170, 216, 208, 0);
+  --c-amber-18: rgba(241, 134, 31, 0.18);
+  --c-amber-0: rgba(241, 134, 31, 0);
 
   /* Accessible derivatives (WCAG AA): the raw brand hues are kept above for
      accents/large text; these deeper/lighter variants are used wherever AA
@@ -37,7 +53,6 @@
   /* --- Semantic colour roles --------------------------------------------- */
   --color-bg: var(--c-cream);
   --color-bg-alt: var(--c-cream-2);
-  --color-surface: var(--c-cream);
   --color-surface-invert: var(--c-plum);
   --color-card: var(--c-teal);
   --color-text: var(--c-ink);
@@ -69,7 +84,6 @@
   --fs-h1: clamp(2rem, 3.4vw + 1rem, 3.25rem); /* ~32–52px */
 
   --fw-regular: 400;
-  --fw-medium: 500;
   --fw-semibold: 600;
   --fw-bold: 700;
   --fw-extrabold: 800;
@@ -89,12 +103,9 @@
   --space-6: 2rem; /* 32 */
   --space-7: 3rem; /* 48 */
   --space-8: 4rem; /* 64 */
-  --space-9: 6rem; /* 96 */
-  --space-10: 8rem; /* 128 */
 
   /* --- Radii -------------------------------------------------------------- */
   --radius-sm: 8px;
-  --radius-md: 12px;
   --radius-lg: 20px;
   --radius-pill: 100px;
 
@@ -102,6 +113,9 @@
   --shadow-sm: 0 1px 2px rgba(26, 20, 22, 0.06), 0 2px 6px rgba(26, 20, 22, 0.05);
   --shadow-md: 0 8px 24px rgba(26, 20, 22, 0.1);
   --shadow-lg: 0 18px 48px rgba(90, 21, 69, 0.18);
+  --shadow-nav: 0 8px 28px rgba(26, 20, 22, 0.06); /* soft shadow on scrolled nav */
+  --shadow-on-dark: 0 6px 18px rgba(0, 0, 0, 0.18); /* button on dark (plum) surfaces */
+  --shadow-on-dark-hover: 0 10px 24px rgba(0, 0, 0, 0.26);
 
   /* --- Layout ------------------------------------------------------------- */
   --container-max: 1140px;
@@ -112,7 +126,6 @@
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --dur-fast: 140ms;
   --dur-base: 240ms;
-  --dur-slow: 520ms;
 
   --z-nav: 100;
 }

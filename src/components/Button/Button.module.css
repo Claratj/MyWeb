@@ -1,6 +1,5 @@
-/* Recovered from `main` (.btn-more): white pill, amber border, terracotta
-   uppercase label, no hover colour change. Width is min-width (not the fixed
-   210px) + padding so longer labels than the original don't overflow. */
+/* Brand pill button: white fill, amber border, terracotta uppercase label,
+   no hover colour change. min-width + padding so longer labels don't overflow. */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -9,15 +8,15 @@
   height: 60px;
   padding-inline: 1.75rem;
   border-radius: 50px;
-  background-color: #ffffff;
-  border: 1px solid #f1861f;
+  background-color: var(--c-white);
+  border: 1px solid var(--c-amber);
   font-family: var(--font-display);
   font-weight: var(--fw-bold);
   font-size: 12px;
   letter-spacing: 0.7px;
   text-transform: uppercase;
   line-height: 1;
-  color: #e43f12;
+  color: var(--color-cta);
   text-decoration: none;
   cursor: pointer;
   white-space: nowrap;
@@ -29,7 +28,7 @@
   gap: var(--space-2);
 }
 
-/* sizes — `lg` is the original 60px; `md`/`sm`/`xs` are lighter adaptations for the nav */
+/* sizes — lg is the full 60px pill; md/sm/xs are lighter variants for the nav */
 .xs {
   height: 38px;
   min-width: 0;
@@ -54,7 +53,7 @@
 .solid {
   background-color: var(--color-cta);
   border-color: var(--color-cta);
-  color: #fff;
+  color: var(--c-white);
 }
 .solid:hover {
   background-color: var(--color-cta-hover);
@@ -87,15 +86,15 @@
 
 /* onDark — variante en negativo para superficies oscuras (banda plum de contacto) */
 .onDark {
-  background-color: rgba(250, 249, 245, 0.05);
+  background-color: var(--c-cream-05);
   border-color: var(--c-amber);
   border-width: 1.75px;
   color: var(--c-amber-label);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  box-shadow: var(--shadow-on-dark);
 }
 .onDark:hover {
   background-color: var(--c-amber);
   border-color: var(--c-amber);
   color: var(--c-ink);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.26);
+  box-shadow: var(--shadow-on-dark-hover);
 }

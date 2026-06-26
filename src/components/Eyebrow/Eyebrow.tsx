@@ -9,7 +9,7 @@ type EyebrowProps = {
   tone?: "default" | "onDark";
 };
 
-/** Small uppercase magenta label that sits above headings. */
+/** Small uppercase label that sits above headings. */
 export function Eyebrow({ children, as: Tag = "p", className, tone = "default" }: EyebrowProps) {
   return (
     <Tag

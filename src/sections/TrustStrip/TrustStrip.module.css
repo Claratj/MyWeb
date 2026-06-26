@@ -1,17 +1,36 @@
 .strip {
-  padding-block: var(--space-7);
+  position: relative;
+  padding-block: var(--space-8);
   background-color: var(--color-bg);
+  overflow: hidden;
 }
-
+.strip::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 120% at 50% 50%,
+    var(--c-sage-16), var(--c-sage-0) 70%);
+  pointer-events: none;
+}
 .inner {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: var(--space-4) var(--space-6);
+  gap: var(--space-5);
 }
-
+.group { display: flex; flex-direction: column; align-items: center; gap: var(--space-4); }
+.rule {
+  inline-size: 64px;
+  block-size: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+}
 .label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
   margin: 0;
   font-size: var(--fs-eyebrow);
   font-weight: var(--fw-bold);
@@ -19,21 +38,39 @@
   text-transform: uppercase;
   color: var(--color-text-caption);
 }
-
+.labelAi { color: var(--c-teal-ink); }
+.spark {
+  inline-size: 0.5rem;
+  block-size: 0.5rem;
+  border-radius: 50%;
+  background: var(--c-teal);
+  box-shadow: 0 0 0 3px var(--c-teal-18);
+}
 .list {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: var(--space-3) var(--space-6);
-  max-width: 56ch;
+  gap: var(--space-3);
+  max-width: 60ch;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
-
-.item {
+.chip {
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  background: var(--c-white);
   font-family: var(--font-display);
-  font-weight: var(--fw-bold);
-  font-size: var(--fs-h4);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-caption);
+  letter-spacing: 0.01em;
   color: var(--color-heading);
+  box-shadow: var(--shadow-sm);
+}
+.chipAi {
+  border-color: var(--c-sage);
+  background: color-mix(in srgb, var(--c-sage) 30%, var(--c-white));
+  color: var(--c-teal-ink);
 }

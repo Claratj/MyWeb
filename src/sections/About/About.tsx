@@ -26,7 +26,7 @@ export function About() {
           <p>
             I'm a frontend developer with six years in the field and a design background I
             never fully left behind. I started out in graphic design and art direction,
-            then moved into code — so I tend to think about how an interface is built and
+            then moved into code, so I tend to think about how an interface is built and
             how it looks at the same time.
           </p>
           <p>

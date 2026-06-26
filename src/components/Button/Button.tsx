@@ -29,7 +29,7 @@ type ButtonAsLink = CommonProps &
 
 type ButtonProps = ButtonAsButton | ButtonAsLink;
 
-/* Exact wobble from `main`: the button rotates and the label drifts on hover. */
+/* Wobble on hover: the button rotates while the label drifts. */
 const btnVariants: Variants = {
   rest: { rotate: 0 },
   animation: {
@@ -46,8 +46,8 @@ const textVariants: Variants = {
 };
 
 /**
- * Original brand button (recovered from `main`): white pill, amber border,
- * terracotta uppercase label, playful "storm" wobble on hover. No hover fill.
+ * Brand button: white pill, amber border, terracotta uppercase label, with a
+ * playful wobble on hover and no hover fill.
  * Renders an <a> when `href` is set, otherwise a <button>.
  */
 export function Button({

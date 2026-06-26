@@ -1,7 +1,7 @@
 import logo from "../../assets/img/logo1-01.svg";
 import styles from "./Footer.module.css";
 
-const year = "2026"; // TODO Clara: pin or compute on build if you prefer.
+const year = "2026";
 
 export function Footer() {
   return (

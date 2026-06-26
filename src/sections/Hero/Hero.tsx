@@ -50,7 +50,7 @@ export function Hero() {
             <p className={styles.sub}>
               Frontend engineer with six years in product UI and a design background I
               never left behind. I work in the space between design and engineering,
-              tokenising systems and getting them adopted in React, TypeScript and Vue.
+              tokenising systems and getting them adopted in React and TypeScript.
             </p>
           </Reveal>
 

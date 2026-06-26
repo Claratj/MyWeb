@@ -13,6 +13,7 @@ export const aiStack: string[] = [
   "Figma MCP",
   "Agent Skills",
   "Custom audit agents",
+  "WCAG audits",
   "AI-assisted scaffolding",
   "AI code review",
 ];

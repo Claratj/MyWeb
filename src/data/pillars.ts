@@ -10,7 +10,7 @@ export const pillars: Pillar[] = [
   {
     id: "rigor",
     title: "Engineer's rigor",
-    body: "Product UI in React and TypeScript, architected to last. Feature-based structure, atomic components, and a real testing habit with Cypress and Jest on data-heavy products.",
+    body: "Product UI in React and TypeScript, architected to last. Feature-based structure, atomic components, and a real habit for testing and accessibility, with Cypress, Jest and WCAG audits on data-heavy products.",
   },
   {
     id: "bridge",

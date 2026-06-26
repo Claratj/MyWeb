@@ -28,7 +28,7 @@ export function Nav() {
   return (
     <header className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}>
       <div className={`container ${styles.inner}`}>
-        <a href="#top" className={styles.brand} aria-label="Clara Toloba — home">
+        <a href="#top" className={styles.brand} aria-label="Clara Toloba, home">
           <motion.img
             className={styles.logo}
             src={logo}

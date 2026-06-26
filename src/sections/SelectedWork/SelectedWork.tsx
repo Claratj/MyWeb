@@ -14,8 +14,8 @@ export function SelectedWork() {
             Systems and product UI, shipped
           </h2>
           <p className={styles.intro}>
-            Three places where design and engineering had to meet — problem, what I owned,
-            and the result.
+            Three places where design and engineering had to meet. Each one: the problem,
+            what I owned, and the result.
           </p>
         </Reveal>
 

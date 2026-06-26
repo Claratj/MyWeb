@@ -1,0 +1,109 @@
+.hero {
+  position: relative;
+  padding-block: clamp(3rem, 7vw, 6rem) var(--section-gap);
+  overflow: hidden;
+}
+
+/* warm radial glow behind the hero */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -20% -10% auto auto;
+  inline-size: 60vw;
+  block-size: 60vw;
+  max-inline-size: 720px;
+  max-block-size: 720px;
+  background: radial-gradient(
+    circle,
+    rgba(241, 134, 31, 0.18),
+    rgba(241, 134, 31, 0) 62%
+  );
+  z-index: -1;
+}
+
+/* second, cooler glow gives the cream hero depth */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: auto auto -30% -16%;
+  inline-size: 46vw;
+  block-size: 46vw;
+  max-inline-size: 560px;
+  max-block-size: 560px;
+  background: radial-gradient(
+    circle,
+    rgba(170, 216, 208, 0.22),
+    rgba(170, 216, 208, 0) 64%
+  );
+  z-index: -1;
+}
+
+/* animated decorative quotation marks — low-opacity watermarks, hidden from AT */
+.quote {
+  position: absolute;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  line-height: 0.7;
+  pointer-events: none;
+  user-select: none;
+  z-index: -1;
+}
+/* Static placement + tilt; scroll parallax (framer-motion) drives their drift. */
+.q1 {
+  top: 24px;
+  left: 28px;
+  font-size: 280px;
+  color: var(--c-sage);
+  opacity: 0.5;
+}
+.q2 {
+  bottom: 16px;
+  right: 7%;
+  font-size: 230px;
+  color: var(--c-amber-soft);
+  opacity: 0.4;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4.5rem);
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-5);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--fs-h1);
+}
+
+.accent {
+  color: var(--color-primary);
+}
+
+.sub {
+  margin: 0;
+  max-width: 46ch;
+  font-size: var(--fs-body-lg);
+  color: var(--color-text-muted);
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+@media (max-width: 880px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-7);
+  }
+}

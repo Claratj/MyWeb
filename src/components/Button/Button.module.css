@@ -16,7 +16,7 @@
   letter-spacing: 0.7px;
   text-transform: uppercase;
   line-height: 1;
-  color: #e43f12;
+  color: var(--color-cta);
   text-decoration: none;
   cursor: pointer;
   white-space: nowrap;

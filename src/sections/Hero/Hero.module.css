@@ -53,14 +53,15 @@
 /* Static placement + tilt; scroll parallax (framer-motion) drives their drift. */
 .q1 {
   top: 24px;
-  left: 28px;
+  /* On wide screens, hug the centred content block instead of the viewport edge */
+  left: max(28px, calc(50% - var(--container-max) / 2 - 1.5rem));
   font-size: 280px;
   color: var(--c-sage);
   opacity: 0.5;
 }
 .q2 {
   bottom: 16px;
-  right: 7%;
+  right: max(7%, calc(50% - var(--container-max) / 2 - 1.5rem));
   font-size: 230px;
   color: var(--c-amber-soft);
   opacity: 0.4;

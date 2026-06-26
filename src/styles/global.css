@@ -16,6 +16,9 @@
 html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
+  /* offset in-page anchor jumps by the sticky nav so targets (incl. #top via the
+     logo) aren't tucked underneath it */
+  scroll-padding-top: 5.5rem;
 }
 
 body {

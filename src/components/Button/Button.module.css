@@ -1,4 +1,4 @@
-/* Brand pill button: white fill, amber border, terracotta uppercase label,
+/* Brand pill button: transparent fill, amber border, terracotta uppercase label,
    no hover colour change. min-width + padding so longer labels don't overflow. */
 .btn {
   display: inline-flex;
@@ -8,7 +8,7 @@
   height: 60px;
   padding-inline: 1.75rem;
   border-radius: 50px;
-  background-color: var(--c-white);
+  background-color: transparent;
   border: 1px solid var(--c-amber);
   font-family: var(--font-display);
   font-weight: var(--fw-bold);

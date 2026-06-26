@@ -86,6 +86,7 @@ export function Hero() {
         </div>
 
         <Reveal from="right" delay={0.2} className={styles.visual}>
+          <p className={styles.peek}>A peek at the system</p>
           <motion.div style={{ y: panelY }}>
             <TokenComposition />
           </motion.div>

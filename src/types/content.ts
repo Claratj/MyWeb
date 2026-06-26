@@ -4,7 +4,7 @@ export type CaseStudy = {
   id: string;
   company: string;
   role: string;
-  period: string;
+  period?: string;
   /** The challenge / context. */
   problem: string;
   /** What Clara owned. */

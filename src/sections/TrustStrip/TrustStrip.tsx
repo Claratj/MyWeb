@@ -17,7 +17,7 @@ export function TrustStrip() {
   return (
     <section className={styles.strip} aria-label="Tools and technologies">
       <div className={`container ${styles.inner}`}>
-        <p className={styles.label}>Working day to day with</p>
+        <p className={styles.label}>Core stack, day to day</p>
         <motion.ul
           className={styles.list}
           role="list"

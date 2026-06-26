@@ -15,6 +15,6 @@ export const pillars: Pillar[] = [
   {
     id: "bridge",
     title: "The bridge: tokens & systems",
-    body: "I push design systems to be tokenised and actually adopted in code — keeping Figma and the codebase in sync with design tokens, Storybook and Figma MCP, so design and engineering stop drifting apart.",
+    body: "I push design systems to be tokenised and actually adopted in code — keeping Figma and the codebase in sync with design tokens, Storybook and a Figma MCP integration. I lean on AI to scaffold components and tests, review code and document the system — where it cuts busywork and design–code drift, never where it replaces judgment.",
   },
 ];

@@ -64,7 +64,7 @@ export function Nav() {
             <Badge dot>Available · Remote</Badge>
             <Button
               href="/clara_toloba_cv.pdf"
-              size="sm"
+              size="xs"
               iconRight={<DownloadIcon />}
               target="_blank"
               rel="noopener"

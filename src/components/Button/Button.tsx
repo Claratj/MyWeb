@@ -9,7 +9,7 @@ import {
 import styles from "./Button.module.css";
 
 type Variant = "primary" | "solid" | "ghost" | "outline" | "onDark";
-type Size = "sm" | "md" | "lg";
+type Size = "xs" | "sm" | "md" | "lg";
 
 type CommonProps = {
   variant?: Variant;

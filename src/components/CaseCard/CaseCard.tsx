@@ -13,7 +13,7 @@ export function CaseCard({ study }: CaseCardProps) {
   return (
     <article className={styles.card}>
       <header className={styles.header}>
-        <span className={styles.period}>{period}</span>
+        {period && <span className={styles.period}>{period}</span>}
         <h3 className={styles.company}>{company}</h3>
         <p className={styles.role}>{role}</p>
       </header>

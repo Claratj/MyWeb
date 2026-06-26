@@ -2,10 +2,9 @@
 export const stack: string[] = [
   "React",
   "TypeScript",
-  "Vue.js",
-  "Next.js",
-  "Storybook",
-  "Figma",
-  "Tailwind CSS",
   "Vite",
+  "Storybook",
+  "Figma MCP",
+  "Tailwind CSS",
+  "Design tokens",
 ];

@@ -1,6 +1,6 @@
 import { Eyebrow } from "../../components/Eyebrow/Eyebrow";
 import { Reveal } from "../../components/Reveal/Reveal";
-import photo from "../../assets/img/foto-linkedin.jpg";
+import photo from "../../assets/img/clara-about.png";
 import styles from "./About.module.css";
 
 export function About() {
@@ -11,8 +11,8 @@ export function About() {
           <img
             className={styles.photo}
             src={photo}
-            width={320}
-            height={320}
+            width={500}
+            height={333}
             loading="lazy"
             alt="Clara Toloba"
           />

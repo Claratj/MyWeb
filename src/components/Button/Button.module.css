@@ -29,7 +29,13 @@
   gap: var(--space-2);
 }
 
-/* sizes — `lg` is the original 60px; `md`/`sm` are lighter adaptations for the nav */
+/* sizes — `lg` is the original 60px; `md`/`sm`/`xs` are lighter adaptations for the nav */
+.xs {
+  height: 38px;
+  min-width: 0;
+  padding-inline: 1rem;
+  font-size: 11px;
+}
 .sm {
   height: 44px;
   min-width: 0;

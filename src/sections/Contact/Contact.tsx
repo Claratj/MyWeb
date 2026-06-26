@@ -8,7 +8,7 @@ export function Contact() {
   return (
     <section id="contact" className={`section ${styles.contact}`} aria-labelledby="contact-title">
       <Reveal from="blur" className={`container ${styles.inner}`}>
-        <Eyebrow>Contact</Eyebrow>
+        <Eyebrow tone="onDark">Contact</Eyebrow>
         <h2 id="contact-title" className={styles.title}>
           Let's build a system worth adopting
         </h2>

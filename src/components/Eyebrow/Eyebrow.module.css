@@ -11,6 +11,11 @@
   color: var(--color-eyebrow);
 }
 
+/* amber label for use on dark bands (e.g. the plum contact section) */
+.onDark {
+  color: var(--c-amber-label);
+}
+
 /* short rule before the label */
 .eyebrow::before {
   content: "";

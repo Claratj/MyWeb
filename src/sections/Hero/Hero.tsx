@@ -60,16 +60,17 @@ export function Hero() {
 
           <Reveal delay={0.08}>
             <h1 id="hero-title" className={styles.title}>
-              I build <span className={styles.accent}>design systems</span> that scale
-              across frameworks
+              I build <span className={styles.accent}>design systems</span> that hold up
+              in code
             </h1>
           </Reveal>
 
           <Reveal delay={0.16}>
             <p className={styles.sub}>
-              Frontend engineer with six years in product UI and a design background I
-              never left behind. I work in the space between design and engineering,
-              tokenising systems and getting them adopted in React and TypeScript.
+              Frontend engineer with six years in product UI. I trained as an art
+              director, so I care that a system looks right, and also that something
+              stops it drifting: tokens generated from Figma, and a lint rule that
+              fails the build when someone bypasses them.
             </p>
           </Reveal>
 
@@ -86,7 +87,9 @@ export function Hero() {
         </div>
 
         <Reveal from="right" delay={0.2} className={styles.visual}>
-          <p className={styles.peek}>A peek at the system</p>
+          <p className={styles.peek} aria-hidden="true">
+            A peek at the system
+          </p>
           <motion.div style={{ y: panelY }}>
             <TokenComposition />
           </motion.div>

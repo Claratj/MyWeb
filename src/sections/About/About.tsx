@@ -26,14 +26,16 @@ export function About() {
           <p>
             I'm a frontend developer with six years in the field and a design
             background I never fully left behind. I started out in graphic
-            design and art direction, then moved into code, so I tend to think
+            design and art direction, then moved into code, so I think
             about how an interface is built and how it looks at the same time.
           </p>
           <p>
             Most of my work is product UI and design systems in React and
             TypeScript. I've built and shipped design systems with Storybook
-            and design tokens, and I get up to speed on large, data-heavy
-            products fairly quickly.
+            and design tokens. At Sermes CRO I was the only frontend developer on a
+            clinical trial management system, so the architecture, the design
+            system and the accessibility work were mine end to end. I'm based in
+            Madrid and work in CET.
           </p>
         </Reveal>
       </div>

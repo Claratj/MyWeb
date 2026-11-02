@@ -15,15 +15,16 @@ export function Footer() {
         <nav className={styles.links} aria-label="Footer">
           <a href="mailto:clara@claratoloba.com">Email</a>
           <a href="https://www.linkedin.com/in/claratoloba" target="_blank" rel="noopener">
-            LinkedIn
+            LinkedIn <span className="visually-hidden">(opens in new tab)</span>
           </a>
           <a href="/clara_toloba_cv.pdf" target="_blank" rel="noopener">
-            CV
+            CV <span className="visually-hidden">(PDF, opens in new tab)</span>
           </a>
         </nav>
 
         <p className={styles.shell} title="Hi there 👋">
-          Hola Caracola <span aria-hidden="true">🐚</span>
+          Hola Caracola <span aria-hidden="true">🐚</span>{" "}
+          <span className="visually-hidden">(Hi there)</span>
         </p>
       </div>
     </footer>

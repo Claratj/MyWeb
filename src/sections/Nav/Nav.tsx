@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Badge } from "../../components/Badge/Badge";
 import { Button } from "../../components/Button/Button";
@@ -17,6 +17,7 @@ export function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const reduce = useReducedMotion();
+  const toggleRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -24,6 +25,17 @@ export function Nav() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      setOpen(false);
+      toggleRef.current?.focus();
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [open]);
 
   return (
     <header className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}>
@@ -39,6 +51,20 @@ export function Nav() {
             transition={{ type: "spring", stiffness: 300, damping: 12 }}
           />
         </a>
+
+        <button
+          ref={toggleRef}
+          type="button"
+          className={styles.toggle}
+          aria-expanded={open}
+          aria-controls="primary-menu"
+          onClick={() => setOpen((v) => !v)}
+        >
+          <span className="visually-hidden">Menu</span>
+          <span className={`${styles.bar} ${open ? styles.barTop : ""}`} aria-hidden="true" />
+          <span className={`${styles.bar} ${open ? styles.barMid : ""}`} aria-hidden="true" />
+          <span className={`${styles.bar} ${open ? styles.barBot : ""}`} aria-hidden="true" />
+        </button>
 
         <nav
           id="primary-menu"
@@ -69,23 +95,10 @@ export function Nav() {
               target="_blank"
               rel="noopener"
             >
-              CV
+              CV <span className="visually-hidden">(PDF, opens in new tab)</span>
             </Button>
           </div>
         </nav>
-
-        <button
-          type="button"
-          className={styles.toggle}
-          aria-expanded={open}
-          aria-controls="primary-menu"
-          onClick={() => setOpen((v) => !v)}
-        >
-          <span className="visually-hidden">{open ? "Close menu" : "Open menu"}</span>
-          <span className={`${styles.bar} ${open ? styles.barTop : ""}`} aria-hidden="true" />
-          <span className={`${styles.bar} ${open ? styles.barMid : ""}`} aria-hidden="true" />
-          <span className={`${styles.bar} ${open ? styles.barBot : ""}`} aria-hidden="true" />
-        </button>
       </div>
     </header>
   );

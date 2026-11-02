@@ -15,9 +15,13 @@
 # vercel
 .vercel
 
-# claude code (machine-specific / local, not for sharing)
-.claude/settings.local.json
+# AI workflow (skills, agents, instructions: local only, not for sharing)
+.claude/
+.agents/
+.codex/
+CLAUDE.md
 CLAUDE.local.md
+AGENTS.md
 *.local.*
 
 # misc

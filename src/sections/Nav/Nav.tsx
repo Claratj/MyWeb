@@ -40,6 +40,19 @@ export function Nav() {
           />
         </a>
 
+        <button
+          type="button"
+          className={styles.toggle}
+          aria-expanded={open}
+          aria-controls="primary-menu"
+          onClick={() => setOpen((v) => !v)}
+        >
+          <span className="visually-hidden">{open ? "Close menu" : "Open menu"}</span>
+          <span className={`${styles.bar} ${open ? styles.barTop : ""}`} aria-hidden="true" />
+          <span className={`${styles.bar} ${open ? styles.barMid : ""}`} aria-hidden="true" />
+          <span className={`${styles.bar} ${open ? styles.barBot : ""}`} aria-hidden="true" />
+        </button>
+
         <nav
           id="primary-menu"
           className={`${styles.menu} ${open ? styles.menuOpen : ""}`}
@@ -73,19 +86,6 @@ export function Nav() {
             </Button>
           </div>
         </nav>
-
-        <button
-          type="button"
-          className={styles.toggle}
-          aria-expanded={open}
-          aria-controls="primary-menu"
-          onClick={() => setOpen((v) => !v)}
-        >
-          <span className="visually-hidden">{open ? "Close menu" : "Open menu"}</span>
-          <span className={`${styles.bar} ${open ? styles.barTop : ""}`} aria-hidden="true" />
-          <span className={`${styles.bar} ${open ? styles.barMid : ""}`} aria-hidden="true" />
-          <span className={`${styles.bar} ${open ? styles.barBot : ""}`} aria-hidden="true" />
-        </button>
       </div>
     </header>
   );

@@ -114,13 +114,16 @@
     box-shadow: var(--shadow-md);
     transform: translateY(-12px);
     opacity: 0;
+    visibility: hidden; /* keeps closed-menu links out of the tab order */
     pointer-events: none;
     transition: transform var(--dur-base) var(--ease-out),
-      opacity var(--dur-base) var(--ease-out);
+      opacity var(--dur-base) var(--ease-out),
+      visibility var(--dur-base) var(--ease-out);
   }
   .menuOpen {
     transform: translateY(0);
     opacity: 1;
+    visibility: visible;
     pointer-events: auto;
   }
 

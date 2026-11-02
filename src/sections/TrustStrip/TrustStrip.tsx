@@ -8,11 +8,22 @@ const item: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] } },
 };
 
-function ChipRow({ items, ai, reduce }: { items: string[]; ai?: boolean; reduce: boolean | null }) {
+function ChipRow({
+  items,
+  ai,
+  reduce,
+  labelledBy,
+}: {
+  items: string[];
+  ai?: boolean;
+  reduce: boolean | null;
+  labelledBy: string;
+}) {
   return (
     <motion.ul
       className={styles.list}
       role="list"
+      aria-labelledby={labelledBy}
       variants={reduce ? undefined : container}
       initial={reduce ? false : "hidden"}
       whileInView={reduce ? undefined : "visible"}
@@ -37,16 +48,18 @@ export function TrustStrip() {
     <section className={styles.strip} aria-label="Tools and technologies">
       <div className={`container ${styles.inner}`}>
         <div className={styles.group}>
-          <p className={styles.label}>Core stack, day to day</p>
-          <ChipRow items={coreStack} reduce={reduce} />
+          <p id="core-stack-label" className={styles.label}>
+            Core stack, day to day
+          </p>
+          <ChipRow items={coreStack} reduce={reduce} labelledBy="core-stack-label" />
         </div>
         <span className={styles.rule} aria-hidden="true" />
         <div className={styles.group}>
-          <p className={`${styles.label} ${styles.labelAi}`}>
+          <p id="ai-stack-label" className={`${styles.label} ${styles.labelAi}`}>
             <span className={styles.spark} aria-hidden="true" />
             AI in my workflow
           </p>
-          <ChipRow items={aiStack} ai reduce={reduce} />
+          <ChipRow items={aiStack} ai reduce={reduce} labelledBy="ai-stack-label" />
         </div>
       </div>
     </section>

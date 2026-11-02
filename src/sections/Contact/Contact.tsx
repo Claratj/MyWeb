@@ -28,7 +28,7 @@ export function Contact() {
             target="_blank"
             rel="noopener"
           >
-            LinkedIn
+            LinkedIn <span className="visually-hidden">(opens in new tab)</span>
           </Button>
         </div>
 

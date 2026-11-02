@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<!--
+  ═══════════════════════════════════════════════════════════════
+  CV DE CLARA TOLOBA (GENERAL, EN) — CÓMO EDITARLO
+  ═══════════════════════════════════════════════════════════════
+  QUÉ TOCAR: solo el texto ENTRE etiquetas. Ej: <li>ESTE texto</li>
+  No borres las etiquetas.
+
+  DÓNDE (busca con Cmd+F):
+    • "class=subtitle"    → título bajo tu nombre
+    • "class=summary"     → perfil
+    • <li> ... </li>      → cada logro / punto
+    • "class=job-period"  → fechas de cada trabajo
+    • "class=skill-value" → competencias
+
+  PARA SACAR EL PDF:
+    1. Doble clic → se abre en el navegador
+    2. Cmd+P → Guardar como PDF
+    3. Márgenes: PREDETERMINADO   |   Activa: Gráficos de fondo
+    4. Guardar como clara_toloba_cv.pdf
+  Colores y fuentes no se tocan (sección <style> más abajo).
+  ═══════════════════════════════════════════════════════════════
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Clara Toloba, CV</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+  @page {
+    size: A4;
+    margin: 16mm 18mm;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --vino: #5C2859;
+    --rojo: #C04040;
+    --texto: #2b2b2b;
+    --gris: #6b6b6b;
+    --fondo: #FFFFFF;
+  }
+
+  html {
+    background: var(--fondo);
+  }
+
+  body {
+    background: var(--fondo);
+    font-family: 'Source Sans 3', sans-serif;
+    color: var(--texto);
+    font-size: 10.2pt;
+    line-height: 1.45;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    background: var(--fondo);
+  }
+
+  /* ---------- HEADER ---------- */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 34pt;
+    color: var(--vino);
+    line-height: 1;
+    letter-spacing: -0.5px;
+  }
+
+  .name .dot {
+    color: var(--rojo);
+  }
+
+  .subtitle {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 700;
+    font-size: 11pt;
+    color: var(--texto);
+    margin-top: 8px;
+  }
+
+  .contact {
+    text-align: right;
+    font-size: 9.5pt;
+    line-height: 1.55;
+    padding-top: 6px;
+  }
+
+  .contact a, .contact span {
+    color: var(--rojo);
+    text-decoration: none;
+    display: block;
+  }
+
+  .contact .phone {
+    color: var(--rojo);
+  }
+
+  /* ---------- DIVIDER under header ---------- */
+  .header-rule {
+    border: none;
+    border-top: 2px solid var(--rojo);
+    margin: 14px 0 18px;
+  }
+
+  /* ---------- SECTION TITLE with tick ---------- */
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 700;
+    font-size: 9pt;
+    letter-spacing: 2.5px;
+    color: var(--vino);
+    text-transform: uppercase;
+    margin: 20px 0 10px;
+  }
+
+  .section-title::before {
+    content: "";
+    width: 22px;
+    height: 2px;
+    background: var(--rojo);
+    flex: 0 0 auto;
+  }
+
+  .section-title:first-of-type {
+    margin-top: 4px;
+  }
+
+  /* ---------- SUMMARY ---------- */
+  .summary {
+    font-size: 10.5pt;
+    line-height: 1.6;
+    color: var(--texto);
+  }
+
+  /* ---------- EXPERIENCE ---------- */
+  .job {
+    margin-bottom: 14px;
+    break-inside: avoid;
+  }
+
+  .job-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .job-title {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 11pt;
+    color: var(--texto);
+  }
+
+  .job-title .company {
+    font-weight: 700;
+    color: var(--vino);
+  }
+
+  .job-title .role {
+    font-weight: 700;
+    color: var(--texto);
+  }
+
+  .job-period {
+    font-size: 9pt;
+    font-weight: 700;
+    color: var(--gris);
+    white-space: nowrap;
+    padding-left: 12px;
+  }
+
+  .job-meta {
+    font-style: italic;
+    font-size: 9.5pt;
+    color: var(--gris);
+    margin: 2px 0 6px;
+  }
+
+  ul.bullets {
+    list-style: none;
+    margin: 4px 0 0;
+  }
+
+  ul.bullets li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 5px;
+    line-height: 1.45;
+  }
+
+  ul.bullets li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--rojo);
+  }
+
+  .earlier {
+    font-size: 10pt;
+    line-height: 1.5;
+    color: var(--texto);
+    margin-top: 4px;
+  }
+
+  .earlier .label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 700;
+    font-size: 8.5pt;
+    letter-spacing: 1.5px;
+    color: var(--vino);
+    text-transform: uppercase;
+    margin-right: 6px;
+  }
+
+  /* ---------- TWO-COLUMN GRIDS ---------- */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 32px;
+  }
+
+  .skill-group, .edu-item {
+    margin-bottom: 10px;
+    break-inside: avoid;
+  }
+
+  .skill-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 700;
+    font-size: 8.5pt;
+    letter-spacing: 1.2px;
+    color: var(--vino);
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+
+  .skill-value {
+    font-size: 10pt;
+    color: var(--texto);
+    line-height: 1.4;
+  }
+
+  .skill-full {
+    grid-column: 1 / -1;
+  }
+
+  /* ---------- EDUCATION ---------- */
+  .edu-program {
+    font-weight: 700;
+    font-size: 10.5pt;
+    color: var(--texto);
+  }
+
+  .edu-detail {
+    font-size: 9pt;
+    color: var(--gris);
+    line-height: 1.45;
+    margin-top: 1px;
+  }
+
+  .edu-full {
+    grid-column: 1 / -1;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div>
+      <div class="name">Clara Toloba<span class="dot">.</span></div>
+      <div class="subtitle">Frontend Developer · Product UI &amp; Design Systems</div>
+    </div>
+    <div class="contact">
+      <a href="mailto:clara@claratoloba.com">clara@claratoloba.com</a>
+      <span class="phone">+34 685 421 350</span>
+      <a href="https://linkedin.com/in/claratoloba">linkedin.com/in/claratoloba</a>
+      <a href="https://claratoloba.com">claratoloba.com</a>
+    </div>
+  </div>
+
+  <hr class="header-rule">
+
+  <!-- SUMMARY -->
+  <div class="section-title">Profile</div>
+  <p class="summary">
+    Frontend developer with six years building product in React and TypeScript, and a design
+    background I never left behind: I started in graphic design and art direction, so I think
+    about how an interface is built and how it looks at the same time. I work closely with
+    Product Design across the UX/UI to frontend flow, building and maintaining the design system
+    and co-owning components and definitions of done on both sides of the handoff, and I take
+    features end to end, from design to production. I use the AI ecosystem (Claude Code, MCP)
+    with judgement, to propose better workflows rather than just run the existing ones: the
+    repetitive work gets automated, while architecture and decisions stay mine.
+  </p>
+
+  <!-- EXPERIENCE -->
+  <div class="section-title">Experience</div>
+
+  <div class="job">
+    <div class="job-head">
+      <div class="job-title"><span class="company">Sermes CRO</span> · <span class="role">Frontend Developer</span></div>
+      <div class="job-period">Jun 2025 – Aug 2026</div>
+    </div>
+    <div class="job-meta">Sole frontend developer on a Clinical Trial Management System (CTMS) · React 18, TypeScript, Vite</div>
+    <ul class="bullets">
+      <li>Turned UX/UI designs into clean, reusable and accessible components, breaking the interface down into atomic pieces as the foundation of a design system the team can maintain.</li>
+      <li>Built and maintained the design system with Figma tokens synced to code through an MCP integration, co-leading naming, components and consistency criteria between design and frontend.</li>
+      <li>Restructured the frontend architecture around Domain-Driven Design and hexagonal layers, keeping business logic apart from the UI and external services so it could scale and stay maintainable.</li>
+      <li>Developed data-heavy interfaces (grids with server-side pagination, filtering and sorting; multi-step forms; stateful workflows), working with backend on API contracts.</li>
+      <li>Created Claude Code agents and slash commands that scaffold components, generate tests and review PRs, automating repetitive work while keeping architecture deliberate.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <div class="job-title"><span class="company">Impulsum Studio</span> · <span class="role">Frontend Developer</span></div>
+      <div class="job-period">May 2024 – Feb 2025</div>
+    </div>
+    <ul class="bullets">
+      <li>Rebuilt a conversion-critical onboarding flow with state machines (XState), improving metrics and reducing the load on the support team.</li>
+      <li>Developed and optimised landing pages in Next.js with Contentful, with attention to performance and experience; all covered with Cypress and Jest.</li>
+      <li>Contributed to Composer (cmpsr.dev), an open-source tool for composing components.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <div class="job-title"><span class="company">John Deere</span> · <span class="role">Frontend Developer</span></div>
+      <div class="job-period">Apr 2023 – Apr 2024</div>
+    </div>
+    <ul class="bullets">
+      <li>Maintained and extended a large internal platform in TypeScript, React and Redux, in an agile, multi-team environment.</li>
+      <li>Improved reliability with Cypress tests and a round of frontend performance work, collaborating closely with backend teams on API integration.</li>
+      <li>Built responsive layouts with Sass and CSS Modules, keeping consistency and code quality in a complex codebase.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <div class="job-title"><span class="company">Apto Payments</span> · <span class="role">Frontend Developer</span></div>
+      <div class="job-period">Oct 2021 – Nov 2022</div>
+    </div>
+    <ul class="bullets">
+      <li>Developed and maintained the core of a fintech platform in React: card management and account flows, with account and card data kept up to date through TanStack Query polling.</li>
+      <li>Launched a second platform from scratch in Vue.js, integrating several third-party financial APIs.</li>
+      <li>Wrote a multi-framework design system in React and Vue, documented in Storybook and used across both products.</li>
+      <li>Set up testing practices with Jest and Cypress and built the documentation with Docusaurus and ReDoc.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <div class="job-title"><span class="company">The Seed Squad</span> · <span class="role">Frontend Developer</span></div>
+      <div class="job-period">Jul 2021 – Sep 2021</div>
+    </div>
+    <ul class="bullets">
+      <li>Built a CRM from scratch in Nuxt.js and Tailwind CSS, connected to a Directus backend via REST and GraphQL.</li>
+    </ul>
+  </div>
+
+  <p class="earlier">
+    <span class="label">Earlier</span>Marketing &amp; Design Manager (Artecristal, 2019–2020) · Graphic designer and photographer (Artesolar, 2018–2019) · Graphic designer and illustrator (Wonder Photo Shop · Fujifilm, 2018).
+  </p>
+
+  <!-- TECHNICAL SKILLS -->
+  <div class="section-title">Technical skills</div>
+  <div class="grid-2">
+    <div class="skill-group">
+      <div class="skill-label">Frontend</div>
+      <div class="skill-value">React 18, TypeScript, Next.js, Vue.js, Nuxt, Vite, modern CSS</div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-label">Product &amp; Design Systems</div>
+      <div class="skill-value">Product design, UX/UI handoff, Storybook, Tailwind CSS, Figma tokens, Radix UI, accessibility (WCAG)</div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-label">State &amp; Data</div>
+      <div class="skill-value">TanStack Query (polling), Redux, XState, REST, GraphQL</div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-label">Testing &amp; Quality</div>
+      <div class="skill-value">Jest, Cypress, React Testing Library, clean code, Agile/Scrum, Git</div>
+    </div>
+    <div class="skill-group skill-full">
+      <div class="skill-label">AI &amp; Agentic Tooling</div>
+      <div class="skill-value">Claude Code · Model Context Protocol (Figma MCP) · Agent Skills · Subagents · custom audit agents · AI-assisted scaffolding · AI code review</div>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section-title">Education</div>
+  <div class="grid-2">
+    <div class="edu-item edu-full">
+      <div class="edu-program">Master's in AI-Assisted Software Development (in progress)</div>
+      <div class="edu-detail">BIG school · 2026 · LLMs, RAG, multi-agent systems, clean architecture, testing and CI/CD</div>
+    </div>
+    <div class="edu-item edu-full">
+      <div class="edu-program">AI &amp; Claude Certifications</div>
+      <div class="edu-detail">Anthropic Academy · 2026 · AI Fluency: Framework &amp; Foundations · Claude 101 · Claude Code 101 · Claude Code in Action · Introduction to Agent Skills · Introduction to Model Context Protocol · Introduction to Subagents</div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-program">Master's in Design and Art Direction</div>
+      <div class="edu-detail">EsDesign · Universidad Internacional de Valencia · 2018–2019</div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-program">Fullstack Developer Bootcamp</div>
+      <div class="edu-detail">Upgrade Hub · 2020–2021</div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-program">Epic React</div>
+      <div class="edu-detail">Kent C. Dodds · 2022</div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-program">BA in Art History</div>
+      <div class="edu-detail">Universidad Complutense de Madrid · 2011–2015</div>
+    </div>
+    <div class="edu-item edu-full">
+      <div class="edu-program">English C1</div>
+      <div class="edu-detail">International House · 2008–2016</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

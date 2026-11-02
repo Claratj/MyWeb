@@ -55,7 +55,7 @@ export function Hero() {
       <div className={`container ${styles.grid}`}>
         <div className={styles.copy}>
           <Reveal delay={0}>
-            <Eyebrow>Frontend Engineer · Design Systems</Eyebrow>
+            <Eyebrow>Frontend Engineer · Product UI &amp; Design Systems</Eyebrow>
           </Reveal>
 
           <Reveal delay={0.08}>

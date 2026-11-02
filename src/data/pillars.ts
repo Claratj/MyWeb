@@ -19,7 +19,7 @@ export const pillars: Pillar[] = [
   },
   {
     id: "ai",
-    title: "AI in the loop",
-    body: "I don't just use AI, I build the tooling around it: custom Claude Code agents, slash commands and skills that scaffold components, generate tests, review PRs and keep Figma tokens in sync with code. The repetitive work gets automated. The architecture and the judgment calls stay mine.",
+    title: "AI, with guardrails",
+    body: "I use AI every day and I put structure around it: short, path-scoped context for the agent, audits saved as reusable commands, a Playwright run to check changes in the real app, and lint rules that catch what the agent gets wrong. The architecture and the judgment calls stay mine.",
   },
 ];

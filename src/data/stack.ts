@@ -6,14 +6,15 @@ export const coreStack: string[] = [
   "Storybook",
   "Tailwind CSS",
   "Design tokens",
+  "WCAG audits",
 ];
 
 export const aiStack: string[] = [
   "Claude Code",
   "Figma MCP",
   "Agent Skills",
-  "Custom audit agents",
-  "WCAG audits",
-  "AI-assisted scaffolding",
-  "AI code review",
+  "Path-scoped rules",
+  "Audit commands",
+  "Hooks",
+  "Playwright verification",
 ];

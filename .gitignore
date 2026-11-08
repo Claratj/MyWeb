@@ -23,6 +23,10 @@ CLAUDE.md
 CLAUDE.local.md
 AGENTS.md
 *.local.*
+# Impeccable design context (product/design notes: local only)
+PRODUCT.md
+DESIGN.md
+.impeccable/
 
 # misc
 .DS_Store

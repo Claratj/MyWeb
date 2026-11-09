@@ -1,0 +1,10 @@
+.mark {
+  display: block;
+  flex: none;
+}
+.frame {
+  fill: var(--mark-frame, var(--color-heading));
+}
+.script {
+  fill: var(--mark-script, var(--color-primary));
+}

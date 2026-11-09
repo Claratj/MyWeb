@@ -1,7 +1,9 @@
 .hero {
   position: relative;
   isolation: isolate;
-  padding-block: clamp(2.25rem, 6vw, 5.5rem) clamp(2.5rem, 5vw, 4.5rem);
+  /* The sticky nav overlaps the top (see Nav), so the glow runs under it. */
+  --hero-pad-top: clamp(2.25rem, 6vw, 5.5rem);
+  padding-block: calc(var(--nav-h) + var(--hero-pad-top)) clamp(2.5rem, 5vw, 4.5rem);
   overflow: clip;
 }
 
@@ -85,7 +87,8 @@
   transform-origin: 50% 0;
 }
 .q1 {
-  top: -28px;
+  /* Hangs from just under the nav, as the mockup, not from the eyebrow. */
+  top: calc(-28px - var(--hero-pad-top));
   left: clamp(-24px, -1vw, 0px);
   z-index: -1;
   color: var(--color-quote-open);

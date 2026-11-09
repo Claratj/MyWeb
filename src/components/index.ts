@@ -6,4 +6,5 @@ export { Pillar } from "./Pillar/Pillar";
 export { ExperienceCard } from "./ExperienceCard/ExperienceCard";
 export { Reveal } from "./Reveal/Reveal";
 export { ThemeToggle } from "./ThemeToggle/ThemeToggle";
+export { Mark } from "./Mark/Mark";
 export { EdgeLabels } from "./EdgeLabels/EdgeLabels";

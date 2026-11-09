@@ -42,6 +42,7 @@
   --c-danger-subtle: #f7e3ea;
   --c-danger-on: #af1148; /* 5.72:1 on its subtle                        */
   --c-info-on-dark: #7fc9c2; /* 9.54:1 on d1                             */
+  --c-info-subtle-dark: #0e2b2a; /* on: info-on-dark · 7.90:1            */
   --c-danger-on-dark: #f37d99; /* 7.09:1 on d1                           */
 
   /* alpha variants of the brand hues, for gradients, glows and overlays */
@@ -109,6 +110,8 @@
   --color-focus: var(--c-plum); /* 2px ring, 2px offset · 13.2:1 on n1 */
   --color-decor: var(--c-sage);
   --color-accent: var(--c-teal); /* teal text/marks on bg · 9.74:1 on n1 */
+  --color-badge-bg: var(--c-info-subtle); /* availability pill */
+  --color-badge-fg: var(--c-teal); /* 9.02:1 on its fill */
   --color-selection-bg: var(--c-sage);
   --color-selection-text: var(--c-teal);
 
@@ -194,8 +197,10 @@
   --band-drop-near: 0 10px 14px rgba(11, 32, 39, 0.12);
 
   /* --- Layout ------------------------------------------------------------- */
-  --container-max: 1140px;
-  --container-pad: clamp(1.25rem, 4vw, 3rem);
+  /* 1240 box with 48px gutters (16px under 700px): 1144px of content, as the mockup. */
+  --container-max: 1240px;
+  --container-pad: 1rem;
+  --nav-h: 6.125rem; /* 30px top + 46px mark + 22px bottom */
   --section-gap: clamp(4rem, 9vw, 8rem);
 
   /* --- Motion ------------------------------------------------------------- */
@@ -229,6 +234,8 @@
   --color-border: var(--c-d3);
   --color-focus: var(--c-orange-light); /* 7.12:1 on d1, 5.94:1 on d2 */
   --color-accent: var(--c-teal-accent-light);
+  --color-badge-bg: var(--c-info-subtle-dark);
+  --color-badge-fg: var(--c-info-on-dark); /* 7.90:1 on its fill */
   --color-quote-open: var(--c-sage);
   --color-quote-close: var(--c-orange-light);
   --quote-open-opacity: 0.55;
@@ -262,6 +269,8 @@
     --color-border: var(--c-d3);
     --color-focus: var(--c-orange-light); /* 7.12:1 on d1, 5.94:1 on d2 */
     --color-accent: var(--c-teal-accent-light);
+  --color-badge-bg: var(--c-info-subtle-dark);
+  --color-badge-fg: var(--c-info-on-dark); /* 7.90:1 on its fill */
     --color-quote-open: var(--c-sage);
     --color-quote-close: var(--c-orange-light);
     --quote-open-opacity: 0.55;

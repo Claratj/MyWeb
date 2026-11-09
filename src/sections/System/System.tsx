@@ -1,7 +1,7 @@
 import { useRef, useState, type CSSProperties } from "react";
+import { Mark } from "../../components/Mark/Mark";
 import { Eyebrow } from "../../components/Eyebrow/Eyebrow";
 import { brandSwatches, contrastPairs } from "../../data/system";
-import logo from "../../assets/img/logo1-01.svg";
 import { useLeafFall } from "./useLeafFall";
 import styles from "./System.module.css";
 
@@ -109,7 +109,7 @@ export function System() {
 
         {/* 6 · the mark */}
         <div className={`${styles.blk} ${styles.plum} ${styles.b6}`}>
-          <img src={logo} alt="Clara Toloba logo" width={170} height={170} />
+          <Mark size={170} label="Clara Toloba logo" className={styles.markOnPlum} />
         </div>
 
         {/* 7 · token tiers */}

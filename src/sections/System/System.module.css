@@ -359,3 +359,9 @@
   }
   .b6 { block-size: 220px; }
 }
+
+/* The mark on plum: sage frame, light-orange script, as the mockup. */
+.markOnPlum {
+  --mark-frame: var(--c-sage);
+  --mark-script: var(--c-orange-light);
+}

@@ -1,4 +1,4 @@
-import logo from "../../assets/img/logo1-01.svg";
+import { Mark } from "../../components/Mark/Mark";
 import styles from "./Footer.module.css";
 
 const year = new Date().getFullYear();
@@ -8,7 +8,7 @@ export function Footer() {
     <footer className={styles.footer}>
       <div className={`container ${styles.inner}`}>
         <div className={styles.left}>
-          <img className={styles.logo} src={logo} alt="" width={36} height={36} />
+          <Mark size={34} />
           <p className={styles.copyright}>© {year} Clara Toloba</p>
         </div>
 

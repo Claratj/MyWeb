@@ -1,4 +1,4 @@
-/* Brand pill button: transparent fill, amber border, terracotta uppercase label,
+/* Brand pill button: transparent fill, orange border, orange-deep uppercase label,
    no hover colour change. min-width + padding so longer labels don't overflow. */
 .btn {
   display: inline-flex;
@@ -9,14 +9,14 @@
   padding-inline: 1.75rem;
   border-radius: var(--radius-pill);
   background-color: transparent;
-  border: 1px solid var(--c-amber);
+  border: 1px solid var(--color-cta); /* orange · 4.57:1 on n1 (non-text needs 3:1) */
   font-family: var(--font-display);
   font-weight: var(--fw-bold);
   font-size: var(--fs-button);
   letter-spacing: var(--tracking-button);
   text-transform: uppercase;
   line-height: 1;
-  color: var(--color-cta);
+  color: var(--color-cta-text); /* orange-deep · 6.16:1 on n1 */
   text-decoration: none;
   cursor: pointer;
   white-space: nowrap;

@@ -5,71 +5,98 @@
    ========================================================================== */
 
 :root {
-  /* --- Brand palette (raw) ------------------------------------------------ */
-  --c-terracotta: #e5491e; /* primary / CTA            */
-  --c-amber: #f1861f; /* accent / links           */
-  --c-amber-soft: #f0ad4e; /* secondary accent         */
-  --c-plum: #5a1545; /* headings                 */
-  --c-magenta: #aa1355; /* eyebrows                 */
-  --c-ink: #1a1416; /* body text                */
-  --c-cream: #faf9f5; /* background               */
-  --c-teal: #0f6e6d; /* card surface             */
-  --c-sage: #aad8d0; /* soft surface / accents   */
+  /* --- Brand palette (raw) · borrador 3 ----------------------------------
+     Three families, shared with the Embr design system (2026-11-09):
+     plum = identity · orange = action · teal = calm/surface. Status colours are
+     functional and live in components, not in the brand. */
+  --c-plum: #4d0c3e; /* headings, eyebrow, link, focus · 13.2:1 on n1     */
+  --c-orange: #c54120; /* CTA fill · white text 5.06:1                    */
+  --c-orange-deep: #a2361a; /* CTA hover + all orange text · 6.16:1 on n1 */
+  --c-orange-light: #f38362; /* the one orange on dark surfaces · 7.12:1 on d1 */
+  --c-teal: #0a4544; /* featured card, inverse surface · white 10.78:1    */
+  --c-sage: #aad8d0; /* decorative only (logo frame, photo border, quotes) */
+  --c-sage-light: #cde8e2; /* text on teal (8.34:1) and plum (11.3:1)    */
 
-  /* tints & shades derived from the palette (kept here so they stay traceable) */
-  --c-white: #fff; /* pure white surface (distinct from cream) */
-  --c-cream-2: #f3f0e7; /* subtle alt background  */
-  --c-ink-70: rgba(26, 20, 22, 0.7); /* muted body text       */
-  --c-ink-55: rgba(26, 20, 22, 0.55); /* captions              */
-  --c-line: rgba(26, 20, 22, 0.12); /* hairline borders        */
-  --c-teal-ink: #0a4f4e; /* darker teal for contrast on sage */
+  /* --- Neutrals ---------------------------------------------------------- */
+  --c-n1: #f7f2f5; /* page                                                */
+  --c-n2: #ffffff; /* surface                                             */
+  --c-n3: #0b2027; /* ink · 15.18:1 on n1                                 */
+  --c-n4: #46565b; /* ink muted · 6.92:1 on n1                            */
+  --c-n5: #d3d7d8; /* line: separators and card borders (decorative)      */
+  --c-n-alt: #ece9ec; /* subtle alt background · ink 13.95:1             */
+  --c-ink-caption: rgba(11, 32, 39, 0.62); /* captions · 4.60:1 on n1     */
+  --c-d1: #101717; /* dark page                                           */
+  --c-d2: #1d2828; /* dark surface                                        */
+  --c-d3: #5a7775; /* dark border · 3.74:1 on d1                          */
+  --c-d4: #859f9e; /* dark muted text · 6.44:1 on d1                      */
+  --c-orange-light-hover: #f7b19b; /* dark link hover · 10.13:1 on d1     */
 
-  /* alpha variants — the exact rgba of the brand hues, for gradients, glows and
-     translucent overlays. Value-preserving tokenisation of literals that used to
-     live in component CSS; the numbers match the source rgba exactly. */
-  --c-cream-05: rgba(250, 249, 245, 0.05);
-  --c-cream-14: rgba(250, 249, 245, 0.14);
-  --c-cream-22: rgba(250, 249, 245, 0.22);
-  --c-cream-92: rgba(250, 249, 245, 0.92);
-  --c-teal-50: rgba(15, 110, 109, 0.5);
-  --c-teal-18: rgba(15, 110, 109, 0.18);
-  --c-teal-0: rgba(15, 110, 109, 0);
+  /* alpha variants of the brand hues, for gradients, glows and overlays */
+  --c-n1-05: rgba(247, 242, 245, 0.05);
+  --c-n1-14: rgba(247, 242, 245, 0.14);
+  --c-n1-22: rgba(247, 242, 245, 0.22);
+  --c-n1-92: rgba(247, 242, 245, 0.92);
+  --c-teal-50: rgba(10, 69, 68, 0.5);
+  --c-teal-18: rgba(10, 69, 68, 0.18);
+  --c-teal-0: rgba(10, 69, 68, 0);
   --c-sage-22: rgba(170, 216, 208, 0.22);
   --c-sage-16: rgba(170, 216, 208, 0.16);
   --c-sage-0: rgba(170, 216, 208, 0);
-  --c-amber-18: rgba(241, 134, 31, 0.18);
-  --c-amber-0: rgba(241, 134, 31, 0);
+  --c-orange-light-18: rgba(243, 131, 98, 0.18);
+  --c-orange-light-0: rgba(243, 131, 98, 0);
 
-  /* Accessible derivatives (WCAG AA): the raw brand hues are kept above for
-     accents/large text; these deeper/lighter variants are used wherever AA
-     for small text demands it. */
-  --c-terracotta-cta: #cf3f17; /* filled CTA bg → white text = 4.8:1   */
-  --c-terracotta-cta-hover: #b5330d; /* darker on hover  = 6.1:1       */
-  --c-terracotta-ink: #c2380f; /* warm link text on cream = 5.2:1     */
-  --c-terracotta-ink-hover: #922b12; /* link hover on cream = 7.7:1    */
-  --c-sage-light: #cde8e2; /* meta text on teal card = 4.7:1          */
-  --c-amber-label: #ffdfa0; /* eyebrow label on teal card = 4.7:1     */
+  /* --- Legacy names (DEPRECATED) ------------------------------------------
+     Still consumed by component CSS. Each now points at its borrador 3
+     successor so the page renders the new palette today; migrate consumers to
+     the names above section by section, then delete this block. */
+  --c-terracotta: var(--c-orange);
+  --c-terracotta-cta: var(--c-orange);
+  --c-terracotta-cta-hover: var(--c-orange-deep);
+  --c-terracotta-ink: var(--c-orange-deep);
+  --c-terracotta-ink-hover: var(--c-plum);
+  --c-amber: var(--c-orange-light);
+  --c-amber-soft: var(--c-orange);
+  --c-amber-label: var(--c-sage-light);
+  --c-amber-18: var(--c-orange-light-18);
+  --c-amber-0: var(--c-orange-light-0);
+  --c-magenta: var(--c-plum);
+  --c-ink: var(--c-n3);
+  --c-ink-70: var(--c-n4);
+  --c-ink-55: var(--c-ink-caption);
+  --c-line: var(--c-n5);
+  --c-cream: var(--c-n1);
+  --c-cream-2: var(--c-n-alt);
+  --c-cream-05: var(--c-n1-05);
+  --c-cream-14: var(--c-n1-14);
+  --c-cream-22: var(--c-n1-22);
+  --c-cream-92: var(--c-n1-92);
+  --c-white: var(--c-n2);
+  --c-teal-ink: var(--c-teal);
 
   /* --- Semantic colour roles --------------------------------------------- */
-  --color-bg: var(--c-cream);
-  --color-bg-alt: var(--c-cream-2);
+  --color-bg: var(--c-n1);
+  --color-bg-alt: var(--c-n-alt);
+  --color-surface: var(--c-n2);
   --color-surface-invert: var(--c-plum);
   --color-card: var(--c-teal);
-  --color-text: var(--c-ink);
-  --color-text-muted: var(--c-ink-70);
-  --color-text-caption: var(--c-ink-55);
-  --color-text-on-dark: var(--c-cream);
+  --color-text: var(--c-n3);
+  --color-text-muted: var(--c-n4);
+  --color-text-caption: var(--c-ink-caption);
+  --color-text-on-dark: var(--c-n1);
+  --color-text-on-brand: var(--c-sage-light); /* labels on teal / plum   */
   --color-heading: var(--c-plum);
-  --color-eyebrow: var(--c-magenta);
-  --color-primary: var(--c-terracotta); /* brand accent / large text */
-  --color-cta: var(--c-terracotta-cta); /* filled button surface (AA) */
-  --color-cta-hover: var(--c-terracotta-cta-hover);
-  --color-link: var(--c-terracotta-ink); /* inline text links (AA on cream) */
-  --color-link-hover: var(--c-terracotta-ink-hover);
-  --color-border: var(--c-line);
-  --color-focus: var(--c-magenta);
-  --color-selection-bg: var(--c-sage); /* text selection — same pair as the Available badge */
-  --color-selection-text: var(--c-teal-ink);
+  --color-eyebrow: var(--c-plum);
+  --color-primary: var(--c-orange); /* brand accent / large text */
+  --color-cta: var(--c-orange); /* filled button surface · white 5.06:1 */
+  --color-cta-hover: var(--c-orange-deep);
+  --color-cta-text: var(--c-orange-deep); /* outline button / orange text */
+  --color-link: var(--c-plum); /* inline links · 13.2:1 on n1 */
+  --color-link-hover: var(--c-orange-deep);
+  --color-border: var(--c-n5);
+  --color-focus: var(--c-plum); /* 2px ring, 2px offset · 13.2:1 on n1 */
+  --color-decor: var(--c-sage);
+  --color-selection-bg: var(--c-sage);
+  --color-selection-text: var(--c-teal);
 
   /* --- Typography --------------------------------------------------------- */
   --font-display: "Montserrat", "Segoe UI", system-ui, sans-serif;
@@ -118,10 +145,10 @@
   --radius-pill: 100px;
 
   /* --- Elevation ---------------------------------------------------------- */
-  --shadow-sm: 0 1px 2px rgba(26, 20, 22, 0.06), 0 2px 6px rgba(26, 20, 22, 0.05);
-  --shadow-md: 0 8px 24px rgba(26, 20, 22, 0.1);
-  --shadow-lg: 0 18px 48px rgba(90, 21, 69, 0.18);
-  --shadow-nav: 0 8px 28px rgba(26, 20, 22, 0.06); /* soft shadow on scrolled nav */
+  --shadow-sm: 0 1px 2px rgba(11, 32, 39, 0.06), 0 2px 6px rgba(11, 32, 39, 0.05);
+  --shadow-md: 0 8px 24px rgba(11, 32, 39, 0.1);
+  --shadow-lg: 0 18px 48px rgba(77, 12, 62, 0.18);
+  --shadow-nav: 0 8px 28px rgba(11, 32, 39, 0.06); /* soft shadow on scrolled nav */
   --shadow-on-dark: 0 6px 18px rgba(0, 0, 0, 0.18); /* button on dark (plum) surfaces */
   --shadow-on-dark-hover: 0 10px 24px rgba(0, 0, 0, 0.26);
 
@@ -136,4 +163,23 @@
   --dur-base: 240ms;
 
   --z-nav: 100;
+}
+
+/* --- Dark theme (borrador 3) -----------------------------------------------
+   Semantic overrides only. Not wired yet: activates once <html data-theme="dark">
+   (or the prefers-color-scheme switch) lands in the global phase. */
+:root[data-theme="dark"] {
+  --color-bg: var(--c-d1);
+  --color-bg-alt: var(--c-d2);
+  --color-surface: var(--c-d2);
+  --color-text: var(--c-n1);
+  --color-text-muted: var(--c-d4);
+  --color-text-caption: var(--c-d4);
+  --color-heading: var(--c-sage-light); /* 14.03:1 on d1 */
+  --color-eyebrow: var(--c-orange-light);
+  --color-cta-text: var(--c-orange-light);
+  --color-link: var(--c-orange-light);
+  --color-link-hover: var(--c-orange-light-hover);
+  --color-border: var(--c-d3);
+  --color-focus: var(--c-orange-light); /* 7.12:1 on d1, 5.94:1 on d2 */
 }

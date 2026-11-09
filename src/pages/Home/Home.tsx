@@ -17,7 +17,7 @@ export function Home() {
       <a className="skip-link" href="#main">
         Skip to content
       </a>
-      <EdgeLabels left="Clara Toloba · Madrid" right="Available · Remote" />
+      <EdgeLabels left="Clara Toloba · Spain" right="Available · Remote" />
       <Nav />
       <main id="main">
         <span id="top" />

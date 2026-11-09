@@ -306,8 +306,7 @@
         "$value": "{color.brand.orange-light}"
       },
       "color-primary": {
-        "$value": "{color.brand.orange-light}",
-        "$description": "accent text on dark · 5.94:1 on d2"
+        "$value": "{color.brand.orange-light}"
       },
       "color-cta-text": {
         "$value": "{color.brand.orange-light}"
@@ -406,6 +405,10 @@
     "glow-4-opacity": {
       "$value": "0.15",
       "$description": "teal"
+    },
+    "glow-saturation": {
+      "$value": "1.4",
+      "$description": "a touch more colour in the hero fields"
     }
   },
   "font": {

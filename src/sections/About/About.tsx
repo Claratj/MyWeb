@@ -57,7 +57,7 @@ export function About() {
           </div>
           <figcaption className={styles.caption}>
             <span>Clara Toloba</span>
-            <span>Madrid</span>
+            <span>Spain</span>
           </figcaption>
         </figure>
 
@@ -73,7 +73,7 @@ export function About() {
           </p>
           <p>
             At Sermes CRO I was the only frontend developer on a clinical trial management system, so the architecture,
-            the design system and the accessibility work were mine end to end. Based in Madrid, CET.
+            the design system and the accessibility work were mine end to end. Based in Spain, CET.
           </p>
         </Reveal>
       </div>

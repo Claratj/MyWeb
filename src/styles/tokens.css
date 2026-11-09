@@ -53,7 +53,6 @@
   --c-sage-22: rgba(170, 216, 208, 0.22);
   --c-orange-light-18: rgba(243, 131, 98, 0.18);
 
-
   /* --- Semantic colour roles --------------------------------------------- */
   --color-bg: var(--c-n1);
   --color-bg-alt: var(--c-n-alt);
@@ -105,6 +104,7 @@
   --glow-2-opacity: 0.5; /* sage */
   --glow-3-opacity: 0.13; /* plum */
   --glow-4-opacity: 0.15; /* teal */
+  --glow-saturation: 1.4; /* a touch more colour in the hero fields */
 
   /* --- Typography --------------------------------------------------------- */
   --font-display: "Montserrat", "Segoe UI", system-ui, sans-serif;
@@ -161,7 +161,8 @@
   --radius-pill: 100px;
 
   /* --- Elevation ---------------------------------------------------------- */
-  --shadow-sm: 0 1px 2px rgba(11, 32, 39, 0.06), 0 2px 6px rgba(11, 32, 39, 0.05);
+  --shadow-sm:
+    0 1px 2px rgba(11, 32, 39, 0.06), 0 2px 6px rgba(11, 32, 39, 0.05);
   --shadow-md: 0 8px 24px rgba(11, 32, 39, 0.1);
   --shadow-lg: 0 18px 48px rgba(77, 12, 62, 0.18);
   --shadow-nav: 0 8px 28px rgba(11, 32, 39, 0.06); /* soft shadow on scrolled nav */
@@ -215,7 +216,8 @@
   --color-text-caption: var(--c-d4);
   --color-heading: var(--c-sage-light); /* 14.03:1 on d1 */
   --color-eyebrow: var(--c-orange-light);
-  --color-primary: var(--c-orange-light); /* accent text on dark · 5.94:1 on d2 */
+  /* accent text on dark · 5.94:1 on d2 */
+  --color-primary: var(--c-orange-light);
   --color-cta-text: var(--c-orange-light);
   --color-link: var(--c-orange-light);
   --color-link-hover: var(--c-orange-light-hover);
@@ -250,7 +252,8 @@
     --color-text-caption: var(--c-d4);
     --color-heading: var(--c-sage-light); /* 14.03:1 on d1 */
     --color-eyebrow: var(--c-orange-light);
-    --color-primary: var(--c-orange-light); /* accent text on dark · 5.94:1 on d2 */
+    /* accent text on dark · 5.94:1 on d2 */
+    --color-primary: var(--c-orange-light);
     --color-cta-text: var(--c-orange-light);
     --color-link: var(--c-orange-light);
     --color-link-hover: var(--c-orange-light-hover);

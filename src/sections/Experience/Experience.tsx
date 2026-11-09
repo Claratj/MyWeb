@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { motion, useMotionValueEvent, useScroll, useTransform } from "framer-motion";
+import { useEffect, useRef, useState, type ReactNode } from "react";
+import { motion, useMotionValueEvent, useScroll, useTransform, type MotionValue } from "framer-motion";
 import { ExperienceCard } from "../../components/ExperienceCard/ExperienceCard";
 import { Eyebrow } from "../../components/Eyebrow/Eyebrow";
 import { experience, sectorLegend } from "../../data/experience";
@@ -7,6 +7,29 @@ import styles from "./Experience.module.css";
 
 const TILTS = [-4, 3, -2, 2.4, 3.4];
 const PIN_QUERY = "(prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) and (min-width: 1024px)";
+/** Phones, where the track stacks (matches the 759px breakpoint in the CSS). */
+const DEAL_QUERY = "(prefers-reduced-motion: no-preference) and (max-width: 759px)";
+const easeOut = (v: number) => 1 - Math.pow(1 - v, 3);
+
+/**
+ * Phones: each card is dealt onto the stack as it scrolls in. It arrives
+ * tilted (the same alternating tilts the desktop carousel uses, tripled),
+ * lower and smaller, and lands flat by the time its top reaches 55%
+ * of the viewport. Scroll-linked, so it reverses on the way back up.
+ */
+function DealtSlide({ tilt, className, children }: { tilt: number; className: string; children: ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "start 55%"] });
+  const p: MotionValue<number> = useTransform(scrollYProgress, easeOut);
+  const rotate = useTransform(p, [0, 1], [tilt * 3, 0]);
+  const y = useTransform(p, [0, 1], [110, 0]);
+  const scale = useTransform(p, [0, 1], [0.88, 1]);
+  return (
+    <motion.div ref={ref} className={className} style={{ rotate, y, scale, transformOrigin: tilt < 0 ? "0% 100%" : "100% 100%" }}>
+      {children}
+    </motion.div>
+  );
+}
 
 /**
  * Most recent first. On mouse/trackpad desktops the section pins and vertical
@@ -19,6 +42,7 @@ export function Experience() {
   const pinRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const [pinned, setPinned] = useState(false);
+  const [dealt, setDealt] = useState(false);
   const [distance, setDistance] = useState(0);
   // Touch tablets swipe the track; phones stack it. Only a track that overflows
   // needs to be a Tab stop (keyboard scrolling); otherwise it is an empty stop.
@@ -34,9 +58,11 @@ export function Experience() {
 
   useEffect(() => {
     const mq = window.matchMedia(PIN_QUERY);
+    const deal = window.matchMedia(DEAL_QUERY);
     const layout = () => {
       const on = mq.matches;
       setPinned(on);
+      setDealt(deal.matches);
       if (on && trackRef.current && pinRef.current) {
         setDistance(Math.max(0, trackRef.current.scrollWidth - pinRef.current.clientWidth));
       }
@@ -45,9 +71,11 @@ export function Experience() {
     };
     layout();
     mq.addEventListener("change", layout);
+    deal.addEventListener("change", layout);
     window.addEventListener("resize", layout);
     return () => {
       mq.removeEventListener("change", layout);
+      deal.removeEventListener("change", layout);
       window.removeEventListener("resize", layout);
     };
   }, []);
@@ -142,11 +170,17 @@ export function Experience() {
           aria-label="Experience, most recent first"
           tabIndex={scrollable ? 0 : -1}
         >
-          {experience.map((item, i) => (
-            <div key={item.id} className={styles.slide}>
-              <ExperienceCard item={item} tilt={pinned ? TILTS[i % TILTS.length] : 0} />
-            </div>
-          ))}
+          {experience.map((item, i) =>
+            dealt ? (
+              <DealtSlide key={item.id} tilt={TILTS[i % TILTS.length]} className={styles.slide}>
+                <ExperienceCard item={item} tilt={0} />
+              </DealtSlide>
+            ) : (
+              <div key={item.id} className={styles.slide}>
+                <ExperienceCard item={item} tilt={pinned ? TILTS[i % TILTS.length] : 0} />
+              </div>
+            ),
+          )}
         </motion.div>
       </div>
     </section>

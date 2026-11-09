@@ -3,6 +3,7 @@ import { Mark } from "../../components/Mark/Mark";
 import { Eyebrow } from "../../components/Eyebrow/Eyebrow";
 import { brandSwatches, contrastPairs } from "../../data/system";
 import { useLeafFall } from "./useLeafFall";
+import { useLeafLand } from "./useLeafLand";
 import styles from "./System.module.css";
 
 /** Ten fragments of the design system behind the work: what can be shown under NDA. */
@@ -11,6 +12,7 @@ export function System() {
   const headRef = useRef<HTMLDivElement>(null);
   const [picked, setPicked] = useState<(typeof brandSwatches)[number]>(brandSwatches[1]);
   useLeafFall(stageRef, headRef);
+  useLeafLand(stageRef);
 
   return (
     <section className={styles.sys} aria-labelledby="sys-title">

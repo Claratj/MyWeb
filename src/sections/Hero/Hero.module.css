@@ -19,7 +19,9 @@
 .glow i {
   position: absolute;
   border-radius: 50%;
-  filter: blur(90px);
+  /* Saturation is applied per blob, before compositing, so the cream page and
+     the bottom fade keep their exact colour (no seam). */
+  filter: blur(90px) saturate(var(--glow-saturation));
 }
 .glow::after {
   content: "";

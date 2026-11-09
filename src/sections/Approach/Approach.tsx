@@ -1,5 +1,6 @@
 import { useRef } from "react";
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
+import { useBloom } from "../../hooks/useBloom";
 import { pillars } from "../../data/pillars";
 import { Eyebrow } from "../../components/Eyebrow/Eyebrow";
 import { Pillar } from "../../components/Pillar/Pillar";
@@ -11,12 +12,8 @@ import styles from "./Approach.module.css";
  * wrapper, so the clipped circle casts it too).
  */
 export function Approach() {
-  const reduce = useReducedMotion();
   const ref = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start 95%", "start 30%"] });
-  const clip = useTransform(scrollYProgress, (v) =>
-    reduce ? "none" : `circle(${(0.6 + v * 99.4).toFixed(2)}% at 50% 42%)`,
-  );
+  const clip = useBloom(ref);
 
   return (
     <div className={styles.lift}>

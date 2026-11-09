@@ -8,7 +8,7 @@ import {
 } from "framer-motion";
 import styles from "./Button.module.css";
 
-type Variant = "primary" | "solid" | "ghost" | "outline" | "onDark";
+type Variant = "primary" | "solid" | "ghost" | "outline" | "onDark" | "onDarkSolid";
 type Size = "xs" | "sm" | "md" | "lg";
 
 type CommonProps = {

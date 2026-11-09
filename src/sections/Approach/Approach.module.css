@@ -11,6 +11,7 @@
     radial-gradient(50% 90% at 95% -10%, color-mix(in srgb, var(--c-sage) 18%, transparent), transparent 60%),
     var(--c-teal);
   color: var(--c-n1);
+  --color-focus: var(--c-sage-light); /* plum on teal is 1.35:1 */
 }
 
 .inner {

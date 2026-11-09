@@ -86,15 +86,29 @@
 
 /* onDark — inverted variant for dark surfaces (the plum contact band) */
 .onDark {
-  background-color: var(--c-cream-05);
-  border-color: var(--c-amber);
-  border-width: 1.75px;
-  color: var(--c-amber-label);
+  background-color: var(--c-n1-05);
+  border-color: var(--c-sage-light);
+  border-width: 1.5px;
+  color: var(--c-sage-light); /* 11.3:1 on plum, 8.3:1 on teal */
   box-shadow: var(--shadow-on-dark);
 }
 .onDark:hover {
-  background-color: var(--c-amber);
-  border-color: var(--c-amber);
-  color: var(--c-ink);
+  background-color: var(--c-sage-light);
+  border-color: var(--c-sage-light);
+  color: var(--c-n3);
+  box-shadow: var(--shadow-on-dark-hover);
+}
+
+/* onDarkSolid — the one filled action on a dark band */
+.onDarkSolid {
+  background-color: var(--c-sage-light);
+  border-color: var(--c-sage-light);
+  color: var(--c-n3); /* 12.9:1 */
+  box-shadow: var(--shadow-on-dark);
+}
+.onDarkSolid:hover {
+  background-color: var(--c-n1);
+  border-color: var(--c-n1);
+  color: var(--c-n3);
   box-shadow: var(--shadow-on-dark-hover);
 }

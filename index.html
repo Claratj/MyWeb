@@ -4,7 +4,15 @@
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#FAF9F5" />
+    <meta name="theme-color" content="#F7F2F5" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#101717" media="(prefers-color-scheme: dark)" />
+    <!-- Pre-paint the stored theme so a returning dark-mode visitor never sees a light flash -->
+    <script>
+      try {
+        var t = localStorage.getItem("ct-theme");
+        if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    </script>
     <meta
       name="description"
       content="Clara Toloba, Frontend Engineer specialising in design systems and product UI. Tokens generated from Figma, lint guardrails, accessibility audits. React, TypeScript. Remote, EU/global."

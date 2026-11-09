@@ -30,6 +30,7 @@
   --c-d3: #5a7775; /* dark border · 3.74:1 on d1                          */
   --c-d4: #859f9e; /* dark muted text · 6.44:1 on d1                      */
   --c-orange-light-hover: #f7b19b; /* dark link hover · 10.13:1 on d1     */
+  --c-teal-accent-light: #63b3ad; /* teal re-lit for dark · 7.42:1 on d1 */
 
   /* alpha variants of the brand hues, for gradients, glows and overlays */
   --c-n1-05: rgba(247, 242, 245, 0.05);
@@ -95,6 +96,7 @@
   --color-border: var(--c-n5);
   --color-focus: var(--c-plum); /* 2px ring, 2px offset · 13.2:1 on n1 */
   --color-decor: var(--c-sage);
+  --color-accent: var(--c-teal); /* teal text/marks on bg · 9.74:1 on n1 */
   --color-selection-bg: var(--c-sage);
   --color-selection-text: var(--c-teal);
 
@@ -166,8 +168,12 @@
 }
 
 /* --- Dark theme (borrador 3) -----------------------------------------------
-   Semantic overrides only. Not wired yet: activates once <html data-theme="dark">
-   (or the prefers-color-scheme switch) lands in the global phase. */
+   Semantic overrides only. Applied when the visitor picks dark (data-theme set
+   by the theme toggle, pre-painted in index.html) or, with no stored choice,
+   when the OS prefers dark. Keep both blocks identical. */
+:root {
+  color-scheme: light;
+}
 :root[data-theme="dark"] {
   --color-bg: var(--c-d1);
   --color-bg-alt: var(--c-d2);
@@ -177,9 +183,32 @@
   --color-text-caption: var(--c-d4);
   --color-heading: var(--c-sage-light); /* 14.03:1 on d1 */
   --color-eyebrow: var(--c-orange-light);
+  --color-primary: var(--c-orange-light); /* accent text on dark · 5.94:1 on d2 */
   --color-cta-text: var(--c-orange-light);
   --color-link: var(--c-orange-light);
   --color-link-hover: var(--c-orange-light-hover);
   --color-border: var(--c-d3);
   --color-focus: var(--c-orange-light); /* 7.12:1 on d1, 5.94:1 on d2 */
+  --color-accent: var(--c-teal-accent-light);
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-bg: var(--c-d1);
+    --color-bg-alt: var(--c-d2);
+    --color-surface: var(--c-d2);
+    --color-text: var(--c-n1);
+    --color-text-muted: var(--c-d4);
+    --color-text-caption: var(--c-d4);
+    --color-heading: var(--c-sage-light); /* 14.03:1 on d1 */
+    --color-eyebrow: var(--c-orange-light);
+    --color-primary: var(--c-orange-light); /* accent text on dark · 5.94:1 on d2 */
+    --color-cta-text: var(--c-orange-light);
+    --color-link: var(--c-orange-light);
+    --color-link-hover: var(--c-orange-light-hover);
+    --color-border: var(--c-d3);
+    --color-focus: var(--c-orange-light); /* 7.12:1 on d1, 5.94:1 on d2 */
+    --color-accent: var(--c-teal-accent-light);
+    color-scheme: dark;
+  }
 }

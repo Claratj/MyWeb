@@ -5,3 +5,5 @@ export { Eyebrow } from "./Eyebrow/Eyebrow";
 export { Pillar } from "./Pillar/Pillar";
 export { CaseCard } from "./CaseCard/CaseCard";
 export { Reveal } from "./Reveal/Reveal";
+export { ThemeToggle } from "./ThemeToggle/ThemeToggle";
+export { EdgeLabels } from "./EdgeLabels/EdgeLabels";

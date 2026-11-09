@@ -38,7 +38,7 @@
   text-transform: uppercase;
   color: var(--color-text-caption);
 }
-.labelAi { color: var(--c-teal-ink); }
+.labelAi { color: var(--color-accent); }
 .spark {
   inline-size: 0.5rem;
   block-size: 0.5rem;
@@ -61,7 +61,7 @@
   padding: 0.5rem 1rem;
   border-radius: var(--radius-pill);
   border: 1px solid var(--color-border);
-  background: var(--c-white);
+  background: var(--color-surface);
   font-family: var(--font-display);
   font-weight: var(--fw-semibold);
   font-size: var(--fs-caption);
@@ -71,6 +71,6 @@
 }
 .chipAi {
   border-color: var(--c-sage);
-  background: color-mix(in srgb, var(--c-sage) 30%, var(--c-white));
-  color: var(--c-teal-ink);
+  background: color-mix(in srgb, var(--c-sage) 30%, var(--color-surface));
+  color: var(--color-accent);
 }

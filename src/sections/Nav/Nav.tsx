@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Badge } from "../../components/Badge/Badge";
 import { Button } from "../../components/Button/Button";
+import { ThemeToggle } from "../../components/ThemeToggle/ThemeToggle";
 import { DownloadIcon } from "../../assets/icons/DownloadIcon";
 import logo from "../../assets/img/logo1-01.svg";
 import styles from "./Nav.module.css";
@@ -88,6 +89,7 @@ export function Nav() {
           </ul>
           <div className={styles.actions}>
             <Badge dot>Available · Remote</Badge>
+            <ThemeToggle />
             <Button
               href="/clara_toloba_cv.pdf"
               size="xs"

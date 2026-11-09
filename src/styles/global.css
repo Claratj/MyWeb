@@ -23,6 +23,7 @@ html {
 
 body {
   min-height: 100vh;
+  overflow-x: clip;
   background-color: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body);
@@ -118,8 +119,8 @@ ol[role="list"] {
   top: -100%;
   z-index: calc(var(--z-nav) + 1);
   padding: var(--space-2) var(--space-4);
-  background: var(--color-primary);
-  color: var(--color-text-on-dark);
+  background: var(--color-cta);
+  color: var(--c-n2);
   border-radius: var(--radius-sm);
   font-weight: var(--fw-semibold);
   transition: top var(--dur-base) var(--ease-out);
@@ -166,4 +167,11 @@ ol[role="list"] {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Theme switch: the browser cross-fade is replaced by the circle the toggle draws */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
 }

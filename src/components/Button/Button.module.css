@@ -74,13 +74,13 @@
 /* outline — secondary: plum-bordered pill, clearly clickable but subordinate */
 .outline {
   background-color: transparent;
-  border-color: var(--c-plum);
+  border-color: var(--color-heading);
   color: var(--color-heading);
 }
 .outline:hover {
-  background-color: var(--c-plum);
-  border-color: var(--c-plum);
-  color: var(--c-cream);
+  background-color: var(--color-heading);
+  border-color: var(--color-heading);
+  color: var(--color-bg);
   box-shadow: var(--shadow-md);
 }
 

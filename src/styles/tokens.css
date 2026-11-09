@@ -189,6 +189,9 @@
   --shadow-nav: 0 8px 28px rgba(11, 32, 39, 0.06); /* soft shadow on scrolled nav */
   --shadow-on-dark: 0 6px 18px rgba(0, 0, 0, 0.18); /* button on dark (plum) surfaces */
   --shadow-on-dark-hover: 0 10px 24px rgba(0, 0, 0, 0.26);
+  /* colour bands (Approach, Contact) float above the page on a shape-following shadow */
+  --band-drop: 0 34px 44px rgba(11, 32, 39, 0.26);
+  --band-drop-near: 0 10px 14px rgba(11, 32, 39, 0.12);
 
   /* --- Layout ------------------------------------------------------------- */
   --container-max: 1140px;
@@ -238,6 +241,8 @@
   --sector-enterprise-hl: #3a4c50; /* 6.97:1 */
   --sector-fintech-hl: #8a3a22; /* 5.99:1 */
   --sector-design-hl: #6a3a5e; /* 6.82:1 */
+  --band-drop: 0 34px 48px rgba(0, 0, 0, 0.6);
+  --band-drop-near: 0 10px 14px rgba(0, 0, 0, 0.35);
   color-scheme: dark;
 }
 @media (prefers-color-scheme: dark) {
@@ -269,6 +274,8 @@
     --sector-enterprise-hl: #3a4c50; /* 6.97:1 */
     --sector-fintech-hl: #8a3a22; /* 5.99:1 */
     --sector-design-hl: #6a3a5e; /* 6.82:1 */
+    --band-drop: 0 34px 48px rgba(0, 0, 0, 0.6);
+    --band-drop-near: 0 10px 14px rgba(0, 0, 0, 0.35);
     color-scheme: dark;
   }
 }

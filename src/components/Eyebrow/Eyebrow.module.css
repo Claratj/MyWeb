@@ -8,7 +8,7 @@
   color: var(--color-eyebrow);
 }
 
-/* amber label for use on dark bands (e.g. the plum contact section) */
+/* label on dark bands (teal Approach, plum Contact): sage light, 8.3–11.3:1 */
 .onDark {
-  color: var(--c-amber-label);
+  color: var(--c-sage-light);
 }

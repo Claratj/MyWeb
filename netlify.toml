@@ -1,5 +1,6 @@
 [build]
-  command = "npm run build"
+  # Type errors or a failing test stop the deploy before anything ships.
+  command = "npm run typecheck && npm test && npm run build"
   publish = "dist"
 
 [build.environment]

@@ -100,6 +100,18 @@
   --color-selection-bg: var(--c-sage);
   --color-selection-text: var(--c-teal);
 
+  /* --- Hero ornaments ----------------------------------------------------
+     Decorative (aria-hidden), but kept at 3:1 so they read: teal 3.0–4.3:1 and
+     orange 3.1–3.7:1 over the hero glows in light. */
+  --color-quote-open: var(--c-teal);
+  --color-quote-close: var(--c-orange);
+  --quote-open-opacity: 0.7;
+  --quote-close-opacity: 0.9;
+  --glow-1-opacity: 0.22; /* orange */
+  --glow-2-opacity: 0.5; /* sage */
+  --glow-3-opacity: 0.13; /* plum */
+  --glow-4-opacity: 0.15; /* teal */
+
   /* --- Typography --------------------------------------------------------- */
   --font-display: "Montserrat", "Segoe UI", system-ui, sans-serif;
   --font-body: "Mulish", system-ui, -apple-system, sans-serif;
@@ -190,6 +202,14 @@
   --color-border: var(--c-d3);
   --color-focus: var(--c-orange-light); /* 7.12:1 on d1, 5.94:1 on d2 */
   --color-accent: var(--c-teal-accent-light);
+  --color-quote-open: var(--c-sage);
+  --color-quote-close: var(--c-orange-light);
+  --quote-open-opacity: 0.55;
+  --quote-close-opacity: 0.6;
+  --glow-1-opacity: 0.3;
+  --glow-2-opacity: 0.2;
+  --glow-3-opacity: 0.8;
+  --glow-4-opacity: 0.85;
   color-scheme: dark;
 }
 @media (prefers-color-scheme: dark) {
@@ -209,6 +229,14 @@
     --color-border: var(--c-d3);
     --color-focus: var(--c-orange-light); /* 7.12:1 on d1, 5.94:1 on d2 */
     --color-accent: var(--c-teal-accent-light);
+    --color-quote-open: var(--c-sage);
+    --color-quote-close: var(--c-orange-light);
+    --quote-open-opacity: 0.55;
+    --quote-close-opacity: 0.6;
+    --glow-1-opacity: 0.3;
+    --glow-2-opacity: 0.2;
+    --glow-3-opacity: 0.8;
+    --glow-4-opacity: 0.85;
     color-scheme: dark;
   }
 }

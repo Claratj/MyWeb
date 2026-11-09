@@ -1,100 +1,147 @@
 .hero {
   position: relative;
-  padding-block: clamp(3rem, 7vw, 6rem) var(--section-gap);
-  overflow: hidden;
+  isolation: isolate;
+  padding-block: clamp(2.25rem, 6vw, 5.5rem) clamp(2.5rem, 5vw, 4.5rem);
+  overflow: clip;
 }
 
-/* warm radial glow behind the hero */
-.hero::before {
+/* Four soft colour fields from the brand families — the hero's depth. */
+/* Fills the hero and fades into the page at its bottom edge, so the section
+   ends without a seam. */
+.glow {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+}
+.glow i {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+}
+.glow::after {
   content: "";
   position: absolute;
-  inset: -20% -10% auto auto;
-  inline-size: 60vw;
-  block-size: 60vw;
-  max-inline-size: 720px;
-  max-block-size: 720px;
-  background: radial-gradient(
-    circle,
-    var(--c-amber-18),
-    var(--c-amber-0) 62%
-  );
-  z-index: -1;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, var(--color-bg) 100%);
+}
+.g1 {
+  inline-size: 900px;
+  block-size: 560px;
+  top: -260px;
+  left: 10%;
+  background: var(--c-orange);
+  opacity: var(--glow-1-opacity);
+}
+.g2 {
+  inline-size: 640px;
+  block-size: 460px;
+  top: -220px;
+  right: -6%;
+  background: var(--c-sage);
+  opacity: var(--glow-2-opacity);
+}
+.g3 {
+  inline-size: 620px;
+  block-size: 420px;
+  top: 80px;
+  left: -14%;
+  background: var(--c-plum);
+  opacity: var(--glow-3-opacity);
+}
+.g4 {
+  inline-size: 700px;
+  block-size: 460px;
+  top: 20px;
+  right: 2%;
+  background: var(--c-teal);
+  opacity: var(--glow-4-opacity);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .g1,
+  .g2 {
+    animation: breathe 16s ease-in-out infinite alternate;
+  }
+}
+@keyframes breathe {
+  to {
+    transform: translate(40px, 30px) scale(1.08);
+  }
 }
 
-/* second, cooler glow gives the cream hero depth */
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: auto auto -30% -16%;
-  inline-size: 46vw;
-  block-size: 46vw;
-  max-inline-size: 560px;
-  max-block-size: 560px;
-  background: radial-gradient(
-    circle,
-    var(--c-sage-22),
-    var(--c-sage-0) 64%
-  );
-  z-index: -1;
+.inner {
+  position: relative;
 }
 
-/* animated decorative quotation marks — low-opacity watermarks, hidden from AT */
+/* Hanging quotes: decorative, pivot at the top edge so they swing. */
 .quote {
   position: absolute;
   font-family: var(--font-ornament);
   font-weight: 700;
   line-height: 0.7;
+  font-size: clamp(180px, 22vw, 300px);
   pointer-events: none;
   user-select: none;
-  z-index: -1;
-  /* pivot at the top edge so the glyph swings like a hanging pendulum */
   transform-origin: 50% 0;
 }
-/* Static placement + tilt; scroll parallax (framer-motion) drives their drift. */
 .q1 {
-  top: 24px;
-  /* On wide screens, hug the centred content block instead of the viewport edge */
-  left: max(28px, calc(50% - var(--container-max) / 2 - 1.5rem));
-  font-size: 280px;
-  color: var(--c-sage);
-  opacity: 0.5;
+  top: -28px;
+  left: clamp(-24px, -1vw, 0px);
+  z-index: -1;
+  color: var(--color-quote-open);
+  opacity: var(--quote-open-opacity);
 }
+/* The closing quote hangs off the end of the tagline and just touches it. */
 .q2 {
-  bottom: 16px;
-  right: max(7%, calc(50% - var(--container-max) / 2 - 1.5rem));
-  font-size: 230px;
-  color: var(--c-amber-soft);
-  opacity: 0.4;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  align-items: center;
-  gap: clamp(2rem, 5vw, 4.5rem);
+  z-index: -1;
+  top: calc(100% - 0.1em);
+  right: -0.3em;
+  color: var(--color-quote-close);
+  opacity: var(--quote-close-opacity);
 }
 
 .copy {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: var(--space-5);
 }
 
+.availHero {
+  display: none;
+}
+
 .title {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
   margin: 0;
-  font-size: var(--fs-h1);
+  color: var(--color-heading);
 }
-
-.accent {
-  color: var(--color-primary);
+.small {
+  font-size: clamp(1.4rem, 1.6vw + 1rem, 2.125rem);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text);
 }
-
-.sub {
-  margin: 0;
-  max-width: 46ch;
-  font-size: var(--fs-body-lg);
-  color: var(--color-text-muted);
+.end {
+  position: relative;
+  isolation: isolate;
+  align-self: flex-end;
+  text-align: right;
+}
+/* Sized by the smaller of width and height so a landscape phone keeps the CTAs in view. */
+.reveal {
+  display: block;
+  overflow: hidden;
+  block-size: clamp(2.8rem, min(14.6vw, 22svh), 12.9rem);
+}
+.big {
+  display: block;
+  font-size: clamp(3.25rem, min(17vw, 25.6svh), 15rem);
+  font-weight: var(--fw-extrabold);
+  letter-spacing: -0.055em;
+  line-height: 0.86;
+  white-space: nowrap;
 }
 
 .ctas {
@@ -104,26 +151,17 @@
   margin-top: var(--space-2);
 }
 
-/* Context label above the token panel — only shown in the stacked mobile layout */
-.peek {
-  display: none;
+@media (max-width: 900px) {
+  .availHero {
+    display: inline-flex;
+    align-self: flex-start;
+  }
 }
 
-@media (max-width: 880px) {
-  .grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-7);
-  }
-
-  /* Stacked: the full-width card would bury the amber quote. Float it up so it
-     peeks out of the gap above the card instead of hiding fully behind it. */
+@media (max-width: 760px) {
   .q2 {
-    top: 38%;
-    bottom: auto;
-    right: 4%;
+    display: none;
   }
-
-  /* full-width CTAs on mobile */
   .ctas {
     width: 100%;
   }
@@ -132,25 +170,20 @@
     width: 100%;
     min-width: 0;
   }
-
-  /* contextual eyebrow above the token panel */
-  .peek {
-    display: block;
-    margin: 0 0 var(--space-3);
-    font-size: var(--fs-eyebrow);
-    font-weight: var(--fw-bold);
-    letter-spacing: var(--tracking-eyebrow);
-    text-transform: uppercase;
-    color: var(--color-text-caption);
-  }
 }
 
-/* On phones the watermark quotes are shrunk so they don't swamp the copy. */
-@media (max-width: 600px) {
+/* Short landscape screens: role, headline and CTAs share the first view. */
+@media (orientation: landscape) and (max-height: 500px) {
   .q1 {
-    font-size: 210px;
+    display: none;
   }
-  .q2 {
-    font-size: 175px;
+  .copy {
+    gap: var(--space-3);
+  }
+  .reveal {
+    block-size: clamp(2.8rem, 15svh, 12.9rem);
+  }
+  .big {
+    font-size: clamp(3.25rem, 17.5svh, 15rem);
   }
 }

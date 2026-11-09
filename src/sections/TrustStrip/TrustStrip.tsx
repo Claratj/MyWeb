@@ -1,67 +1,45 @@
-import { motion, useReducedMotion, type Variants } from "framer-motion";
-import { coreStack, aiStack } from "../../data/stack";
+import { useState } from "react";
+import { stack } from "../../data/stack";
 import styles from "./TrustStrip.module.css";
 
-const container: Variants = { hidden: {}, visible: { transition: { staggerChildren: 0.06 } } };
-const item: Variants = {
-  hidden: { opacity: 0, y: 12 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] } },
-};
-
-function ChipRow({
-  items,
-  ai,
-  reduce,
-  labelledBy,
-}: {
-  items: string[];
-  ai?: boolean;
-  reduce: boolean | null;
-  labelledBy: string;
-}) {
-  return (
-    <motion.ul
-      className={styles.list}
-      role="list"
-      aria-labelledby={labelledBy}
-      variants={reduce ? undefined : container}
-      initial={reduce ? false : "hidden"}
-      whileInView={reduce ? undefined : "visible"}
-      viewport={{ once: true, amount: 0.4 }}
-    >
-      {items.map((t) => (
-        <motion.li
-          key={t}
-          className={`${styles.chip} ${ai ? styles.chipAi : ""}`}
-          variants={reduce ? undefined : item}
-        >
-          {t}
-        </motion.li>
-      ))}
-    </motion.ul>
-  );
-}
-
+/**
+ * The stack as a slow marquee. The list is rendered twice so the loop is
+ * seamless; the copy is hidden from assistive tech. Moving content gets a real
+ * pause control (WCAG 2.2.2) — hover and focus pause it too. Under reduced
+ * motion it is a static, wrapped list.
+ */
 export function TrustStrip() {
-  const reduce = useReducedMotion();
+  const [paused, setPaused] = useState(false);
+  const items = stack.map((t) => <li key={t}>{t}</li>);
+
   return (
-    <section className={styles.strip} aria-label="Tools and technologies">
-      <div className={`container ${styles.inner}`}>
-        <div className={styles.group}>
-          <p id="core-stack-label" className={styles.label}>
-            Core stack, day to day
-          </p>
-          <ChipRow items={coreStack} reduce={reduce} labelledBy="core-stack-label" />
-        </div>
-        <span className={styles.rule} aria-hidden="true" />
-        <div className={styles.group}>
-          <p id="ai-stack-label" className={`${styles.label} ${styles.labelAi}`}>
-            <span className={styles.spark} aria-hidden="true" />
-            AI in my workflow
-          </p>
-          <ChipRow items={aiStack} ai reduce={reduce} labelledBy="ai-stack-label" />
-        </div>
+    <section className={styles.strip} aria-labelledby="stack-label">
+      <h2 id="stack-label" className="visually-hidden">
+        Stack
+      </h2>
+      <div className={`${styles.marquee} ${paused ? styles.paused : ""}`}>
+        <ul role="list">{items}</ul>
+        <ul role="list" aria-hidden="true">
+          {items}
+        </ul>
       </div>
+      <button
+        type="button"
+        className={styles.pause}
+        aria-pressed={paused}
+        onClick={() => setPaused((p) => !p)}
+      >
+        <span className="visually-hidden">{paused ? "Play" : "Pause"} the stack ticker</span>
+        {paused ? (
+          <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
+            <path d="M2 1l7 4-7 4z" fill="currentColor" />
+          </svg>
+        ) : (
+          <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
+            <path d="M2 1h2v8H2zM6 1h2v8H6z" fill="currentColor" />
+          </svg>
+        )}
+      </button>
     </section>
   );
 }

@@ -1,20 +1,25 @@
-/** Trust strip — the day-to-day core stack and the AI workflow. */
-export const coreStack: string[] = [
+/** Trust strip — the tools behind the work, in the order they read best. */
+export const stack: string[] = [
   "React",
   "TypeScript",
   "Vite",
-  "Storybook",
-  "Tailwind CSS",
+  "Tailwind",
+  "Radix UI",
   "Design tokens",
-  "WCAG audits",
-];
-
-export const aiStack: string[] = [
-  "Claude Code",
-  "Figma MCP",
-  "Agent Skills",
-  "Path-scoped rules",
-  "Audit commands",
-  "Hooks",
-  "Playwright verification",
+  "Storybook",
+  "TanStack Query",
+  "Redux",
+  "GraphQL",
+  "react-hook-form",
+  "DevExtreme",
+  "Vue.js",
+  "Next.js",
+  "XState",
+  "Jest",
+  "Playwright",
+  "React Testing Library",
+  "Cypress",
+  "WCAG",
+  "DDD · Hexagonal",
+  "Claude Code · MCP",
 ];

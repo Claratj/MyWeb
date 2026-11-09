@@ -98,6 +98,12 @@ ol[role="list"] {
   padding: 0;
 }
 
+/* Branded text selection instead of the browser default blue */
+::selection {
+  background-color: var(--color-selection-bg);
+  color: var(--color-selection-text);
+}
+
 /* Accessible focus: visible ring for keyboard users only */
 :focus-visible {
   outline: 3px solid var(--color-focus);

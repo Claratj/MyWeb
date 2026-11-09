@@ -7,13 +7,13 @@
   min-width: 210px;
   height: 60px;
   padding-inline: 1.75rem;
-  border-radius: 50px;
+  border-radius: var(--radius-pill);
   background-color: transparent;
   border: 1px solid var(--c-amber);
   font-family: var(--font-display);
   font-weight: var(--fw-bold);
-  font-size: 12px;
-  letter-spacing: 0.7px;
+  font-size: var(--fs-button);
+  letter-spacing: var(--tracking-button);
   text-transform: uppercase;
   line-height: 1;
   color: var(--color-cta);
@@ -33,7 +33,7 @@
   height: 38px;
   min-width: 0;
   padding-inline: 1rem;
-  font-size: 11px;
+  font-size: var(--fs-button-xs);
 }
 .sm {
   height: 44px;
@@ -71,7 +71,7 @@
   color: var(--color-primary);
 }
 
-/* outline — secundario: pastilla con contorno plum, claramente clicable pero subordinado */
+/* outline — secondary: plum-bordered pill, clearly clickable but subordinate */
 .outline {
   background-color: transparent;
   border-color: var(--c-plum);
@@ -84,7 +84,7 @@
   box-shadow: var(--shadow-md);
 }
 
-/* onDark — variante en negativo para superficies oscuras (banda plum de contacto) */
+/* onDark — inverted variant for dark surfaces (the plum contact band) */
 .onDark {
   background-color: var(--c-cream-05);
   border-color: var(--c-amber);

@@ -46,8 +46,8 @@ const textVariants: Variants = {
 };
 
 /**
- * Brand button: white pill, amber border, terracotta uppercase label, with a
- * playful wobble on hover and no hover fill.
+ * Brand button: transparent pill, amber border, terracotta uppercase label, with
+ * a playful wobble on hover and no hover fill (primary variant).
  * Renders an <a> when `href` is set, otherwise a <button>.
  */
 export function Button({

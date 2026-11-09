@@ -60,14 +60,17 @@
       "link": { "$value": "{color.derived.terracotta-ink}", "$description": "inline text links (AA on cream)" },
       "link-hover": { "$value": "{color.derived.terracotta-ink-hover}" },
       "border": { "$value": "{color.derived.line}" },
-      "focus": { "$value": "{color.brand.magenta}" }
+      "focus": { "$value": "{color.brand.magenta}" },
+      "selection-bg": { "$value": "{color.brand.sage}" },
+      "selection-text": { "$value": "{color.derived.teal-ink}" }
     }
   },
   "font": {
     "family": {
       "$type": "fontFamily",
       "display": { "$value": ["Montserrat", "Segoe UI", "system-ui", "sans-serif"], "$description": "display / headings; weights 600/700/800" },
-      "body": { "$value": ["Mulish", "system-ui", "-apple-system", "sans-serif"], "$description": "body; weights 400/500/600/700" }
+      "body": { "$value": ["Mulish", "system-ui", "-apple-system", "sans-serif"], "$description": "body; weights 400/500/600/700" },
+      "ornament": { "$value": ["Georgia", "Times New Roman", "serif"], "$description": "hero quotation-mark watermarks only" }
     },
     "weight": {
       "$type": "fontWeight",
@@ -86,7 +89,9 @@
       "h4": { "$value": "clamp(1rem, 0.4vw + 0.9rem, 1.1875rem)", "$description": "~16–19px" },
       "h3": { "$value": "clamp(1.1875rem, 0.7vw + 1rem, 1.5rem)", "$description": "~19–24px" },
       "h2": { "$value": "clamp(1.5rem, 1.6vw + 1.05rem, 2.125rem)", "$description": "~24–34px" },
-      "h1": { "$value": "clamp(2rem, 3.4vw + 1rem, 3.25rem)", "$description": "~32–52px" }
+      "h1": { "$value": "clamp(2rem, 3.4vw + 1rem, 3.25rem)", "$description": "~32–52px" },
+      "button": { "$value": "0.75rem", "$description": "12px — pill button label" },
+      "button-xs": { "$value": "0.6875rem", "$description": "11px — xs nav pill label" }
     },
     "lineHeight": {
       "$type": "number",
@@ -97,7 +102,8 @@
     "letterSpacing": {
       "$type": "dimension",
       "eyebrow": { "$value": "0.14em" },
-      "tight": { "$value": "-0.02em" }
+      "tight": { "$value": "-0.02em" },
+      "button": { "$value": "0.7px" }
     }
   },
   "space": {

@@ -37,8 +37,8 @@
 
 .specimenDisplay {
   font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 52px;
+  font-weight: var(--fw-extrabold);
+  font-size: 52px; /* fixed specimen size, matches the h1 max */
   line-height: 1;
   color: var(--color-heading);
 }
@@ -53,6 +53,6 @@
 }
 
 .specimenMeta span {
-  font-size: 13px;
+  font-size: var(--fs-caption);
   color: var(--color-text-muted);
 }

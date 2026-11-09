@@ -1,7 +1,7 @@
 import logo from "../../assets/img/logo1-01.svg";
 import styles from "./Footer.module.css";
 
-const year = "2026";
+const year = new Date().getFullYear();
 
 export function Footer() {
   return (

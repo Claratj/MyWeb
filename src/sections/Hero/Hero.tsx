@@ -1,52 +1,11 @@
-import { useEffect, useRef, type PointerEvent } from "react";
-import {
-  animate,
-  motion,
-  useMotionValue,
-  useReducedMotion,
-  useScroll,
-  useSpring,
-  useTransform,
-  useVelocity,
-  type MotionValue,
-} from "framer-motion";
+import { useRef, type PointerEvent } from "react";
+import { motion, useReducedMotion, useScroll, useTransform, useVelocity } from "framer-motion";
+import { nudgeQuotesNear, usePendulum } from "../../hooks/usePendulum";
 import { Badge } from "../../components/Badge/Badge";
 import { Button } from "../../components/Button/Button";
 import { Eyebrow } from "../../components/Eyebrow/Eyebrow";
 import { Reveal } from "../../components/Reveal/Reveal";
 import styles from "./Hero.module.css";
-
-/** A quote that hangs from its top edge: it swings in on load, swings again
- *  with scroll velocity and when the pointer brushes past, then settles. */
-function usePendulum(base: number, entryFrom: number, direction: 1 | -1, scrollVelocity: MotionValue<number>) {
-  const reduce = useReducedMotion();
-  const entry = useMotionValue(reduce ? 0 : entryFrom - base);
-  const nudge = useMotionValue(0);
-  const nudgeSpring = useSpring(nudge, { stiffness: 120, damping: 5 });
-  const swing = useSpring(
-    useTransform(scrollVelocity, [-2400, 0, 2400], [-18 * direction, 0, 18 * direction], { clamp: true }),
-    { stiffness: 110, damping: 7 },
-  );
-
-  useEffect(() => {
-    if (reduce) return;
-    const controls = animate(entry, 0, { type: "spring", stiffness: 30, damping: 4.5, mass: 1.6 });
-    return () => controls.stop();
-  }, [entry, reduce]);
-
-  const rotate = useTransform<number, number>([entry, swing, nudgeSpring], ([e, s, n]) =>
-    reduce ? base : base + e + s + n,
-  );
-
-  /** Give the quote a push in the direction the pointer is travelling. */
-  const push = (dx: number) => {
-    if (reduce) return;
-    nudge.set(Math.max(-16, Math.min(16, dx * 0.6)));
-    requestAnimationFrame(() => nudge.set(0));
-  };
-
-  return { rotate, push };
-}
 
 export function Hero() {
   const reduce = useReducedMotion();
@@ -76,22 +35,10 @@ export function Hero() {
     if (event.pointerType !== "mouse") return;
     const dx = event.clientX - lastX.current;
     lastX.current = event.clientX;
-    for (const [el, quote] of [
+    nudgeQuotesNear(event, dx, [
       [q1Ref.current, q1],
       [q2Ref.current, q2],
-    ] as const) {
-      if (!el) continue;
-      const r = el.getBoundingClientRect();
-      const pad = 40;
-      if (
-        event.clientX > r.left - pad &&
-        event.clientX < r.right + pad &&
-        event.clientY > r.top - pad &&
-        event.clientY < r.bottom + pad
-      ) {
-        quote.push(dx);
-      }
-    }
+    ]);
   };
 
   return (

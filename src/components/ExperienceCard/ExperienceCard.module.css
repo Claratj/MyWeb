@@ -12,7 +12,7 @@
   border-radius: var(--radius-lg);
   border-top: 4px solid rgb(var(--sec));
   transform: rotate(var(--tilt));
-  transition: transform 0.25s var(--ease-out);
+  transition: transform var(--dur-card) var(--ease-out);
 }
 .card[data-sector="enterprise"] { --sec: var(--sector-enterprise); --hl: var(--sector-enterprise-hl); }
 .card[data-sector="fintech"] { --sec: var(--sector-fintech); --hl: var(--sector-fintech-hl); }
@@ -39,7 +39,7 @@
     radial-gradient(60% 90% at -5% -10%, var(--c-teal-50), transparent 60%),
     var(--c-plum);
   box-shadow: var(--shadow-lg);
-  color: var(--c-sage-light);
+  color: var(--color-text-on-brand);
 }
 
 .top {
@@ -57,7 +57,7 @@
   color: var(--color-heading);
 }
 .when {
-  font-size: 0.75rem;
+  font-size: var(--fs-eyebrow);
   font-weight: var(--fw-semibold);
   color: var(--color-text-muted);
 }
@@ -89,13 +89,13 @@
   margin: 0;
   font-size: 1.375rem;
   font-weight: var(--fw-extrabold);
-  letter-spacing: -0.02em;
+  letter-spacing: var(--tracking-tight);
 }
 .role {
   font-size: 0.72rem;
   font-weight: var(--fw-bold);
   line-height: 1.3;
-  letter-spacing: 0.2em;
+  letter-spacing: var(--tracking-label);
   text-transform: uppercase;
   color: var(--color-text-muted);
 }
@@ -116,7 +116,7 @@
   font-weight: var(--fw-bold);
 }
 .chips li {
-  padding: 4px 10px;
+  padding: var(--space-1) 10px;
   border-radius: var(--radius-pill);
   border: 1px solid var(--color-border);
   background: var(--color-bg);
@@ -129,7 +129,7 @@
 .featured .sector span,
 .featured .role,
 .featured .summary {
-  color: var(--c-sage-light);
+  color: var(--color-text-on-brand);
 }
 .featured .sector {
   border-color: color-mix(in srgb, var(--c-sage-light) 30%, transparent);
@@ -144,7 +144,7 @@
 .featured .chips li {
   border-color: transparent;
   background: var(--c-n1-14);
-  color: var(--c-sage-light);
+  color: var(--color-text-on-brand);
 }
 
 @media (prefers-reduced-motion: reduce) {

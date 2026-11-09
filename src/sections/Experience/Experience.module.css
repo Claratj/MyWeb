@@ -18,7 +18,7 @@
   margin-top: var(--space-3);
   font-size: clamp(2rem, 3vw + 1rem, 3.25rem);
   font-weight: var(--fw-extrabold);
-  letter-spacing: -0.035em;
+  letter-spacing: var(--tracking-display);
   line-height: 1.02;
 }
 .note {
@@ -36,9 +36,9 @@
   list-style: none;
   font-family: var(--font-display);
   font-weight: var(--fw-bold);
-  font-size: 0.65625rem;
+  font-size: var(--fs-tag);
   line-height: 1;
-  letter-spacing: 0.18em;
+  letter-spacing: var(--tracking-tag);
   text-transform: uppercase;
   color: var(--color-text-muted);
 }
@@ -50,7 +50,7 @@
 .legend i {
   inline-size: 22px;
   block-size: 9px;
-  border-radius: 2px;
+  border-radius: var(--radius-2xs);
   background: var(--sector-health-hl);
 }
 .legend [data-sector="enterprise"] i { background: var(--sector-enterprise-hl); }
@@ -63,8 +63,8 @@
   gap: 0.875rem;
   font-family: var(--font-display);
   font-weight: var(--fw-bold);
-  font-size: 0.6875rem;
-  letter-spacing: 0.2em;
+  font-size: var(--fs-label);
+  letter-spacing: var(--tracking-label);
   text-transform: uppercase;
   color: var(--color-text-muted);
 }
@@ -72,7 +72,7 @@
   position: relative;
   inline-size: min(240px, 40vw);
   block-size: 2px;
-  border-radius: 2px;
+  border-radius: var(--radius-2xs);
   background: var(--color-border);
   overflow: hidden;
 }
@@ -125,7 +125,7 @@
     gap: 1.25rem;
     overflow: visible;
     scroll-snap-type: none;
-    padding: 1.5rem var(--container-pad) 2.5rem;
+    padding: var(--space-5) var(--container-pad) 2.5rem;
   }
   .slide {
     flex: none;

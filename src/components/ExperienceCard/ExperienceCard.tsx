@@ -1,9 +1,9 @@
-import { useRef, type PointerEvent } from "react";
-import type { Experience } from "../../types/content";
+import { useRef, type CSSProperties, type PointerEvent } from "react";
+import type { ExperienceEntry } from "../../types/content";
 import styles from "./ExperienceCard.module.css";
 
 type ExperienceCardProps = {
-  item: Experience;
+  item: ExperienceEntry;
   /** Resting tilt in degrees; the carousel straightens it as the card reaches the centre. */
   tilt?: number;
 };
@@ -28,7 +28,7 @@ export function ExperienceCard({ item, tilt = 0 }: ExperienceCardProps) {
       ref={ref}
       className={`${styles.card} ${featured ? styles.featured : styles.plain}`}
       data-sector={sector}
-      style={{ "--tilt": `${tilt}deg` } as React.CSSProperties}
+      style={{ "--tilt": `${tilt}deg` } as CSSProperties}
       onPointerMove={onPointerMove}
       onPointerLeave={onPointerLeave}
     >

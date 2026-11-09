@@ -1,7 +1,7 @@
-import type { Experience } from "../types/content";
+import type { ExperienceEntry, Sector } from "../types/content";
 
 /** Experience, most recent first. Client detail stays under NDA: sector and scope, not screenshots. */
-export const experience: Experience[] = [
+export const experience: ExperienceEntry[] = [
   {
     id: "sermes",
     label: "Latest",
@@ -73,4 +73,4 @@ export const sectorLegend = [
   { sector: "enterprise", name: "Enterprise" },
   { sector: "fintech", name: "Fintech" },
   { sector: "design", name: "Design" },
-] as const;
+] as const satisfies ReadonlyArray<{ sector: Sector; name: string }>;

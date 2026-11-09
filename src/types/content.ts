@@ -2,7 +2,7 @@
 
 export type Sector = "health" | "enterprise" | "fintech" | "design";
 
-export type Experience = {
+export type ExperienceEntry = {
   id: string;
   /** Position in the timeline: "Latest", "Previous", "Before code"… */
   label: string;
@@ -26,6 +26,12 @@ export type Pillar = {
   body: string;
 };
 
-export type Tech = {
-  name: string;
+/** A foreground/background pair in the System WCAG fragment. `fg`/`bg` are CSS
+ *  values (normally a token var()); the retired rust is a literal on purpose. */
+export type ContrastPair = {
+  label: string;
+  ratio: string;
+  fg: string;
+  bg: string;
+  fails?: boolean;
 };

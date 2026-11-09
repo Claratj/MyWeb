@@ -32,7 +32,7 @@
 .xs {
   height: 38px;
   min-width: 0;
-  padding-inline: 1rem;
+  padding-inline: var(--space-4);
   font-size: var(--fs-button-xs);
 }
 .sm {
@@ -53,7 +53,7 @@
 .solid {
   background-color: var(--color-cta);
   border-color: var(--color-cta);
-  color: var(--c-white);
+  color: var(--color-on-cta);
 }
 .solid:hover {
   background-color: var(--color-cta-hover);
@@ -89,7 +89,7 @@
   background-color: var(--c-n1-05);
   border-color: var(--c-sage-light);
   border-width: 1.5px;
-  color: var(--c-sage-light); /* 11.3:1 on plum, 8.3:1 on teal */
+  color: var(--color-text-on-brand); /* 11.3:1 on plum, 8.3:1 on teal */
   box-shadow: var(--shadow-on-dark);
 }
 .onDark:hover {

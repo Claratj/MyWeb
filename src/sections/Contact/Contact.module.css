@@ -54,7 +54,7 @@
   gap: 0.625rem;
   margin: 0;
   font-size: var(--fs-caption);
-  color: var(--c-sage-light);
+  color: var(--color-text-on-brand);
 }
 .mailrow code {
   font: 600 0.875rem ui-monospace, Menlo, monospace;
@@ -70,12 +70,12 @@
   border-radius: var(--radius-pill);
   border: 1px solid var(--c-sage-light);
   background: transparent;
-  color: var(--c-sage-light);
+  color: var(--color-text-on-brand);
   font: 700 0.6875rem/1 var(--font-display);
-  letter-spacing: 0.14em;
+  letter-spacing: var(--tracking-eyebrow);
   text-transform: uppercase;
   cursor: pointer;
-  transition: background-color 0.15s, color 0.15s;
+  transition: background-color var(--dur-hover), color var(--dur-hover);
 }
 .copy:hover {
   background: color-mix(in srgb, var(--c-sage-light) 12%, transparent);

@@ -4,9 +4,9 @@ import { Button } from "../../components/Button/Button";
 import { Mark } from "../../components/Mark/Mark";
 import { ThemeToggle } from "../../components/ThemeToggle/ThemeToggle";
 import { DownloadIcon } from "../../assets/icons/DownloadIcon";
+import { CV_URL } from "../../data/links";
 import styles from "./Nav.module.css";
 
-const CV_HREF = "/clara_toloba_cv.pdf";
 
 const links = [
   { href: "#experience", label: "Experience" },
@@ -25,6 +25,7 @@ export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const toggleRef = useRef<HTMLButtonElement>(null);
   const innerRef = useRef<HTMLDivElement>(null);
+  const menuRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -35,6 +36,26 @@ export function Nav() {
 
   useEffect(() => {
     if (!open) return;
+    // DOM order puts the links before the menu button, so move focus into the
+    // card on open; otherwise Tab from the button would skip to the hero.
+    // (Only below 900px: on desktop the links are always visible.)
+    // Retried per frame: under reduced motion the global 0.01ms transition
+    // override makes the links' inherited visibility flip a few frames late,
+    // and a hidden link cannot take focus.
+    let raf = 0;
+    const focusFirst = (tries: number) => {
+      const menu = menuRef.current;
+      const first = menu?.querySelector<HTMLElement>("a");
+      if (!menu || !first || getComputedStyle(menu).position !== "absolute") return;
+      first.focus();
+      if (document.activeElement !== first && tries > 0) raf = requestAnimationFrame(() => focusFirst(tries - 1));
+    };
+    raf = requestAnimationFrame(() => focusFirst(10));
+    const onFocusIn = (event: FocusEvent) => {
+      const t = event.target as Node;
+      if (!menuRef.current?.contains(t) && !toggleRef.current?.contains(t)) setOpen(false);
+    };
+    document.addEventListener("focusin", onFocusIn);
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key !== "Escape") return;
       setOpen(false);
@@ -46,6 +67,8 @@ export function Nav() {
     document.addEventListener("keydown", onKeyDown);
     document.addEventListener("pointerdown", onPointerDown);
     return () => {
+      cancelAnimationFrame(raf);
+      document.removeEventListener("focusin", onFocusIn);
       document.removeEventListener("keydown", onKeyDown);
       document.removeEventListener("pointerdown", onPointerDown);
     };
@@ -64,6 +87,7 @@ export function Nav() {
         </a>
 
         <nav
+          ref={menuRef}
           id="primary-menu"
           className={`${styles.menu} ${open ? styles.menuOpen : ""}`}
           aria-label="Primary"
@@ -77,7 +101,7 @@ export function Nav() {
               </li>
             ))}
             <li className={styles.menuCv}>
-              <a href={CV_HREF} className={styles.link} target="_blank" rel="noopener" onClick={close}>
+              <a href={CV_URL} className={styles.link} target="_blank" rel="noopener" onClick={close}>
                 CV <span className="visually-hidden">(PDF, opens in new tab)</span>
               </a>
             </li>
@@ -90,7 +114,7 @@ export function Nav() {
           </Badge>
           <ThemeToggle />
           <Button
-            href={CV_HREF}
+            href={CV_URL}
             size="xs"
             iconRight={<DownloadIcon />}
             target="_blank"

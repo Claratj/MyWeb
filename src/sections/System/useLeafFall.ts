@@ -9,6 +9,11 @@ const QUERY = "(prefers-reduced-motion: no-preference) and (min-width: 1241px)";
  * keyframe corners). A block stays hidden while it is still above the heading.
  * Writes translate/rotate/opacity straight to the DOM in one rAF; React never
  * re-renders. Off under reduced motion and below 1241px, where the stage is a grid.
+ *
+ * Layout reads happen before any write in a frame: each block's offsetTop is
+ * cached on setup/resize (translate does not change it), so the loop never
+ * forces a reflow. Keyboard focus entering the stage lands every block at once,
+ * so a focused swatch is never invisible (WCAG 2.4.7).
  */
 export function useLeafFall(stageRef: RefObject<HTMLElement | null>, headRef: RefObject<HTMLElement | null>) {
   useEffect(() => {
@@ -19,8 +24,18 @@ export function useLeafFall(stageRef: RefObject<HTMLElement | null>, headRef: Re
     let current = 0;
     let target = 0;
     let raf = 0;
+    let offsets: number[] = [];
+    let focusInside = false;
+
+    const cacheOffsets = () => {
+      offsets = blocks.map((b) => b.offsetTop);
+    };
 
     const measure = () => {
+      if (focusInside) {
+        target = 1;
+        return;
+      }
       const r = stage.getBoundingClientRect();
       const start = innerHeight * 0.85;
       const end = innerHeight / 2 - r.height / 2;
@@ -39,7 +54,7 @@ export function useLeafFall(stageRef: RefObject<HTMLElement | null>, headRef: Re
         const x = side * 70 * Math.sin(eased * Math.PI * 2.4) * rest;
         const y = -0.5 * innerHeight * rest;
         const r = side * 24 * Math.sin(eased * Math.PI * 2.4 + 0.7) * rest;
-        const top = stageTop + b.offsetTop + y;
+        const top = stageTop + offsets[i] + y;
         const belowHead = Math.min(1, Math.max(0, (top - headBottom + 20) / 140));
         const near = Math.max(0, 1 - Math.abs(y) / 110);
         const fadeIn = Math.min(1, Math.max(0, (local - 0.06) / 0.22));
@@ -68,6 +83,7 @@ export function useLeafFall(stageRef: RefObject<HTMLElement | null>, headRef: Re
       window.removeEventListener("scroll", onScroll);
       if (mq.matches) {
         window.addEventListener("scroll", onScroll, { passive: true });
+        cacheOffsets();
         measure();
         current = target;
         apply();
@@ -77,15 +93,34 @@ export function useLeafFall(stageRef: RefObject<HTMLElement | null>, headRef: Re
     };
     const onResize = () => {
       if (!mq.matches) return;
+      cacheOffsets();
       measure();
       current = target;
       apply();
     };
 
+    const onFocusIn = () => {
+      focusInside = true;
+      if (!mq.matches) return;
+      cancelAnimationFrame(raf);
+      raf = 0;
+      target = current = 1;
+      apply();
+    };
+    const onFocusOut = (event: FocusEvent) => {
+      if (stage.contains(event.relatedTarget as Node | null)) return;
+      focusInside = false;
+      if (mq.matches) onScroll();
+    };
+
     setup();
     mq.addEventListener("change", setup);
     window.addEventListener("resize", onResize);
+    stage.addEventListener("focusin", onFocusIn);
+    stage.addEventListener("focusout", onFocusOut);
     return () => {
+      stage.removeEventListener("focusin", onFocusIn);
+      stage.removeEventListener("focusout", onFocusOut);
       cancelAnimationFrame(raf);
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onResize);

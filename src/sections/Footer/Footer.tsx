@@ -1,4 +1,5 @@
 import { Mark } from "../../components/Mark/Mark";
+import { CV_URL, EMAIL, LINKEDIN_URL } from "../../data/links";
 import styles from "./Footer.module.css";
 
 const year = new Date().getFullYear();
@@ -13,17 +14,17 @@ export function Footer() {
         </div>
 
         <nav className={styles.links} aria-label="Footer">
-          <a href="mailto:clara@claratoloba.com">Email</a>
-          <a href="https://www.linkedin.com/in/claratoloba" target="_blank" rel="noopener">
+          <a href={`mailto:${EMAIL}`}>Email</a>
+          <a href={LINKEDIN_URL} target="_blank" rel="noopener">
             LinkedIn <span className="visually-hidden">(opens in new tab)</span>
           </a>
-          <a href="/clara_toloba_cv.pdf" target="_blank" rel="noopener">
+          <a href={CV_URL} target="_blank" rel="noopener">
             CV <span className="visually-hidden">(PDF, opens in new tab)</span>
           </a>
         </nav>
 
         <p className={styles.shell} title="Hi there 👋">
-          Hola Caracola <span aria-hidden="true">🐚</span>{" "}
+          <span lang="es">Hola Caracola </span><span aria-hidden="true">🐚</span>{" "}
           <span className="visually-hidden">(Hi there)</span>
         </p>
       </div>

@@ -20,6 +20,17 @@ export function Experience() {
   const trackRef = useRef<HTMLDivElement>(null);
   const [pinned, setPinned] = useState(false);
   const [distance, setDistance] = useState(0);
+  // Touch tablets swipe the track; phones stack it. Only a track that overflows
+  // needs to be a Tab stop (keyboard scrolling); otherwise it is an empty stop.
+  const [scrollable, setScrollable] = useState(false);
+  // Card centres relative to the untranslated track, measured once per layout so
+  // the scroll handler only writes (no getBoundingClientRect per frame).
+  const geom = useRef<{ trackLeft: number; centres: number[] }>({ trackLeft: 0, centres: [] });
+  // The x the track was last painted at. The tilt is computed from that position
+  // (as the original getBoundingClientRect version effectively did, since the
+  // change event fires before the new transform is painted), which keeps the
+  // resting pose of the cards exactly as designed.
+  const painted = useRef(0);
 
   useEffect(() => {
     const mq = window.matchMedia(PIN_QUERY);
@@ -29,6 +40,8 @@ export function Experience() {
       if (on && trackRef.current && pinRef.current) {
         setDistance(Math.max(0, trackRef.current.scrollWidth - pinRef.current.clientWidth));
       }
+      const track = trackRef.current;
+      setScrollable(!on && !!track && track.scrollWidth > track.clientWidth + 1);
     };
     layout();
     mq.addEventListener("change", layout);
@@ -43,14 +56,38 @@ export function Experience() {
   const x = useTransform(scrollYProgress, (v) => (pinned ? -v * distance : 0));
   const bar = useTransform(scrollYProgress, (v) => (pinned ? v : 0));
 
+  // Measure card centres after each layout change (pin on/off, new distance, resize).
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track || !pinned) return;
+    const measure = () => {
+      const t = track.getBoundingClientRect();
+      const trackLeft = t.left - x.get();
+      painted.current = x.get();
+      geom.current = {
+        trackLeft,
+        centres: Array.from(track.querySelectorAll<HTMLElement>("article")).map((card) => {
+          const r = card.getBoundingClientRect();
+          return r.left + r.width / 2 - t.left;
+        }),
+      };
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, [pinned, distance, x]);
+
   // Straighten and lift each card by its distance from the viewport centre.
-  useMotionValueEvent(x, "change", () => {
+  useMotionValueEvent(x, "change", (latest) => {
     const track = trackRef.current;
     if (!track || !pinned) return;
     const mid = window.innerWidth / 2;
+    const { trackLeft, centres } = geom.current;
+    const at = painted.current;
+    painted.current = latest;
     Array.from(track.querySelectorAll<HTMLElement>("article")).forEach((card, i) => {
-      const r = card.getBoundingClientRect();
-      const d = Math.min(1, Math.abs(r.left + r.width / 2 - mid) / (window.innerWidth * 0.55));
+      const centre = trackLeft + at + (centres[i] ?? 0);
+      const d = Math.min(1, Math.abs(centre - mid) / (window.innerWidth * 0.55));
       card.style.transform = `translateY(${(-12 * (1 - d)).toFixed(1)}px) rotate(${(TILTS[i % TILTS.length] * d).toFixed(2)}deg)`;
     });
   });
@@ -103,7 +140,7 @@ export function Experience() {
           style={{ x }}
           role="region"
           aria-label="Experience, most recent first"
-          tabIndex={pinned ? -1 : 0}
+          tabIndex={scrollable ? 0 : -1}
         >
           {experience.map((item, i) => (
             <div key={item.id} className={styles.slide}>

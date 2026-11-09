@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, type MouseEvent } from "react";
 import { flushSync } from "react-dom";
 import { useReducedMotion } from "framer-motion";
 import styles from "./ThemeToggle.module.css";
@@ -41,10 +41,10 @@ function applyTheme(theme: Theme) {
  */
 export function ThemeToggle() {
   const reduce = useReducedMotion();
-  const [theme, setTheme] = useState<Theme>("light");
+  // Lazy: read the real theme on the first render instead of rendering "light" and correcting.
+  const [theme, setTheme] = useState<Theme>(readTheme);
 
   useEffect(() => {
-    setTheme(readTheme());
     const mq = window.matchMedia(darkQuery);
     // The device switched (e.g. sunset auto-dark). If it now matches the override,
     // drop the override so the page follows the device from here on.
@@ -57,7 +57,7 @@ export function ThemeToggle() {
   }, []);
 
   const toggle = useCallback(
-    (event: React.MouseEvent<HTMLButtonElement>) => {
+    (event: MouseEvent<HTMLButtonElement>) => {
       const next: Theme = theme === "dark" ? "light" : "dark";
       const apply = () => {
         applyTheme(next);

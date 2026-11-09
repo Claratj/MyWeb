@@ -1,6 +1,5 @@
 export { Button } from "./Button/Button";
 export { Badge } from "./Badge/Badge";
-export { Chip } from "./Chip/Chip";
 export { Eyebrow } from "./Eyebrow/Eyebrow";
 export { Pillar } from "./Pillar/Pillar";
 export { ExperienceCard } from "./ExperienceCard/ExperienceCard";

@@ -5,8 +5,8 @@ import { Eyebrow } from "../../components/Eyebrow/Eyebrow";
 import { Reveal } from "../../components/Reveal/Reveal";
 import { useBloom } from "../../hooks/useBloom";
 import styles from "./Contact.module.css";
+import { EMAIL, LINKEDIN_URL } from "../../data/links";
 
-const EMAIL = "clara@claratoloba.com";
 
 /** The plum band. One filled action (email), LinkedIn as the quieter one, and the
  *  address in plain text with a copy button for anyone without a mail client. */
@@ -69,7 +69,7 @@ export function Contact() {
             <Button href={`mailto:${EMAIL}?subject=Frontend%20role`} size="lg" variant="onDarkSolid">
               Write me an email
             </Button>
-            <Button href="https://www.linkedin.com/in/claratoloba" size="lg" variant="onDark" target="_blank" rel="noopener">
+            <Button href={LINKEDIN_URL} size="lg" variant="onDark" target="_blank" rel="noopener">
               Connect on LinkedIn <span className="visually-hidden">(opens in new tab)</span>
             </Button>
           </div>

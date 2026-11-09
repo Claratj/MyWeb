@@ -1,9 +1,8 @@
 import { motion, useReducedMotion } from "framer-motion";
+import type { Pillar as PillarData } from "../../types/content";
 import styles from "./Pillar.module.css";
 
-type PillarProps = {
-  title: string;
-  body: string;
+type PillarProps = Pick<PillarData, "title" | "body"> & {
   /** Position in the row: staggers the rule being drawn. */
   order?: number;
 };

@@ -2,6 +2,7 @@ import {
   Nav,
   Hero,
   TrustStrip,
+  System,
   SelectedWork,
   Approach,
   About,
@@ -22,6 +23,7 @@ export function Home() {
         <span id="top" />
         <Hero />
         <TrustStrip />
+        <System />
         <SelectedWork />
         <Approach />
         <About />

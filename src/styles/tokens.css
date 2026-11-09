@@ -32,6 +32,18 @@
   --c-orange-light-hover: #f7b19b; /* dark link hover · 10.13:1 on d1     */
   --c-teal-accent-light: #63b3ad; /* teal re-lit for dark · 7.42:1 on d1 */
 
+  /* --- Status (functional, not brand) ------------------------------------
+     subtle fill / on-colour pairs, each 4.5:1+; dark "on" values for slate. */
+  --c-info-subtle: #e6ecec; /* on: teal · 9.02:1                         */
+  --c-success-subtle: #e6efea;
+  --c-success-on: #24603d; /* 6.36:1 on its subtle                       */
+  --c-warning-subtle: #f9f2e1;
+  --c-warning-on: #7a5a0f; /* 5.71:1 on its subtle                       */
+  --c-danger-subtle: #f7e3ea;
+  --c-danger-on: #af1148; /* 5.72:1 on its subtle                        */
+  --c-info-on-dark: #7fc9c2; /* 9.54:1 on d1                             */
+  --c-danger-on-dark: #f37d99; /* 7.09:1 on d1                           */
+
   /* alpha variants of the brand hues, for gradients, glows and overlays */
   --c-n1-05: rgba(247, 242, 245, 0.05);
   --c-n1-14: rgba(247, 242, 245, 0.14);

@@ -77,6 +77,16 @@ describe("tokens.css", () => {
     }
   });
 
+  it("the OS-dark block mirrors the data-theme=dark block exactly", () => {
+    const css = stripComments(tokensCss);
+    const decls = (body: string) =>
+      [...body.matchAll(/(--[\w-]+|color-scheme)\s*:\s*([^;]+);/g)].map((m) => `${m[1]}: ${m[2].trim()}`).sort();
+    const pinned = css.match(/:root\[data-theme="dark"\]\s*\{([\s\S]*?)\}/)?.[1] ?? "";
+    const system = css.match(/@media\s*\(prefers-color-scheme:\s*dark\)\s*\{\s*:root:not\(\[data-theme="light"\]\)\s*\{([\s\S]*?)\}/)?.[1] ?? "";
+    expect(system).not.toBe("");
+    expect(decls(system)).toEqual(decls(pinned));
+  });
+
   it("component CSS uses no raw hex colours", () => {
     const offenders = walk(src, [".module.css"]).flatMap((f) =>
       [...stripComments(readFileSync(f, "utf8")).matchAll(/#[0-9a-fA-F]{3,8}\b/g)].map(

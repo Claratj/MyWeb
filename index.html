@@ -6,11 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#F7F2F5" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#101717" media="(prefers-color-scheme: dark)" />
-    <!-- Pre-paint the stored theme so a returning dark-mode visitor never sees a light flash -->
+    <!-- The page follows the device theme (prefers-color-scheme in tokens.css).
+         Pre-paint a stored override so it never flashes; an override that now
+         matches the device is dropped, so the page follows the OS again. -->
     <script>
       try {
         var t = localStorage.getItem("ct-theme");
-        if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+        var sys = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        if (t === sys) localStorage.removeItem("ct-theme");
+        else if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
       } catch (e) {}
     </script>
     <meta

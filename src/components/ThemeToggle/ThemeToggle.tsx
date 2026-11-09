@@ -8,16 +8,36 @@ type Theme = "light" | "dark";
 const STORAGE_KEY = "ct-theme";
 const darkQuery = "(prefers-color-scheme: dark)";
 
-function readTheme(): Theme {
-  const set = document.documentElement.getAttribute("data-theme");
-  if (set === "light" || set === "dark") return set;
+function systemTheme(): Theme {
   return window.matchMedia(darkQuery).matches ? "dark" : "light";
 }
 
+function readTheme(): Theme {
+  const set = document.documentElement.getAttribute("data-theme");
+  if (set === "light" || set === "dark") return set;
+  return systemTheme();
+}
+
+/** Pin `theme` as an override, or clear the override when it matches the device,
+ *  so the page goes back to following the OS (and its later changes). */
+function applyTheme(theme: Theme) {
+  const root = document.documentElement;
+  const followSystem = theme === systemTheme();
+  if (followSystem) root.removeAttribute("data-theme");
+  else root.setAttribute("data-theme", theme);
+  try {
+    if (followSystem) localStorage.removeItem(STORAGE_KEY);
+    else localStorage.setItem(STORAGE_KEY, theme);
+  } catch {
+    /* storage blocked: the choice lasts for this page view only */
+  }
+}
+
 /**
- * Light/dark switch. The choice is one attribute on <html> (data-theme); every
- * colour re-resolves through the semantic tokens. index.html pre-paints the
- * stored choice so there is no flash. With no stored choice the OS preference wins.
+ * Light/dark switch. By default the page follows the device (prefers-color-scheme),
+ * live. Picking the opposite theme pins it as an override (data-theme on <html>,
+ * stored); picking the device's theme again drops the override. index.html
+ * pre-paints a stored override so there is no flash.
  */
 export function ThemeToggle() {
   const reduce = useReducedMotion();
@@ -26,7 +46,12 @@ export function ThemeToggle() {
   useEffect(() => {
     setTheme(readTheme());
     const mq = window.matchMedia(darkQuery);
-    const onChange = () => setTheme(readTheme());
+    // The device switched (e.g. sunset auto-dark). If it now matches the override,
+    // drop the override so the page follows the device from here on.
+    const onChange = () => {
+      if (document.documentElement.getAttribute("data-theme") === systemTheme()) applyTheme(systemTheme());
+      setTheme(readTheme());
+    };
     mq.addEventListener("change", onChange);
     return () => mq.removeEventListener("change", onChange);
   }, []);
@@ -35,12 +60,7 @@ export function ThemeToggle() {
     (event: React.MouseEvent<HTMLButtonElement>) => {
       const next: Theme = theme === "dark" ? "light" : "dark";
       const apply = () => {
-        document.documentElement.setAttribute("data-theme", next);
-        try {
-          localStorage.setItem(STORAGE_KEY, next);
-        } catch {
-          /* storage blocked: the choice lasts for this page view only */
-        }
+        applyTheme(next);
         flushSync(() => setTheme(next));
       };
 

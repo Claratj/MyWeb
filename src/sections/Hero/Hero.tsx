@@ -150,7 +150,7 @@ export function Hero() {
 
           <Reveal delay={0.24}>
             <div className={styles.ctas}>
-              <Button href="#work" size="lg">
+              <Button href="#experience" size="lg">
                 See experience
               </Button>
               <Button href="#contact" size="lg" variant="outline">

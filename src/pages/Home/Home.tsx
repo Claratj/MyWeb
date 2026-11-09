@@ -3,7 +3,7 @@ import {
   Hero,
   TrustStrip,
   System,
-  SelectedWork,
+  Experience,
   Approach,
   About,
   Contact,
@@ -24,7 +24,7 @@ export function Home() {
         <Hero />
         <TrustStrip />
         <System />
-        <SelectedWork />
+        <Experience />
         <Approach />
         <About />
         <Contact />

@@ -112,6 +112,18 @@
   --color-selection-bg: var(--c-sage);
   --color-selection-text: var(--c-teal);
 
+  /* --- Sector colour code (Experience) -----------------------------------
+     sec = card edge/glow (rgb triplet for alpha), hl = highlighter stroke under
+     the sector word: mid-tones, plum word stays >= 4.3:1 on each. */
+  --sector-health: 10, 69, 68;
+  --sector-enterprise: 70, 86, 91;
+  --sector-fintech: 197, 65, 32;
+  --sector-design: 77, 12, 62;
+  --sector-health-hl: #3fa095; /* plum on it 4.64:1 */
+  --sector-enterprise-hl: #859f9e; /* 5.18:1 */
+  --sector-fintech-hl: #f38362; /* 5.73:1 */
+  --sector-design-hl: #b07aa2; /* 4.28:1 (40px bold: large text, 3:1 floor) */
+
   /* --- Hero ornaments ----------------------------------------------------
      Decorative (aria-hidden), but kept at 3:1 so they read: teal 3.0–4.3:1 and
      orange 3.1–3.7:1 over the hero glows in light. */
@@ -222,6 +234,10 @@
   --glow-2-opacity: 0.2;
   --glow-3-opacity: 0.8;
   --glow-4-opacity: 0.85;
+  --sector-health-hl: #24605a; /* sage-light word on it 5.61:1 */
+  --sector-enterprise-hl: #3a4c50; /* 6.97:1 */
+  --sector-fintech-hl: #8a3a22; /* 5.99:1 */
+  --sector-design-hl: #6a3a5e; /* 6.82:1 */
   color-scheme: dark;
 }
 @media (prefers-color-scheme: dark) {
@@ -249,6 +265,10 @@
     --glow-2-opacity: 0.2;
     --glow-3-opacity: 0.8;
     --glow-4-opacity: 0.85;
+    --sector-health-hl: #24605a; /* sage-light word on it 5.61:1 */
+    --sector-enterprise-hl: #3a4c50; /* 6.97:1 */
+    --sector-fintech-hl: #8a3a22; /* 5.99:1 */
+    --sector-design-hl: #6a3a5e; /* 6.82:1 */
     color-scheme: dark;
   }
 }

@@ -8,7 +8,7 @@ import logo from "../../assets/img/logo1-01.svg";
 import styles from "./Nav.module.css";
 
 const links = [
-  { href: "#work", label: "Work" },
+  { href: "#experience", label: "Experience" },
   { href: "#approach", label: "Approach" },
   { href: "#about", label: "About" },
   { href: "#contact", label: "Contact" },

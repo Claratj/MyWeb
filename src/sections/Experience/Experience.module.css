@@ -120,6 +120,10 @@
 
 /* Phones: stack, so a skimming reader scrolls once with no sideways swipe */
 @media (max-width: 759px) {
+  /* The dealt cards rotate in from past the edge: keep that inside the section. */
+  .xp {
+    overflow-x: clip;
+  }
   .track {
     flex-direction: column;
     gap: 1.25rem;

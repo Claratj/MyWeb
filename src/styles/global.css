@@ -19,6 +19,11 @@ html {
   /* offset in-page anchor jumps by the sticky nav so targets (incl. #top via the
      logo) aren't tucked underneath it */
   scroll-padding-top: 5.5rem;
+  /* With overflow set on <html>, <body>'s own overflow-x: clip below really clips
+     instead of being handed to the viewport. Without this, motion that briefly
+     pokes past the edge (dealt cards, slide-in reveals) widened the page and iOS
+     let it pan sideways. clip, not hidden, so the sticky nav keeps working. */
+  overflow-x: clip;
 }
 
 body {

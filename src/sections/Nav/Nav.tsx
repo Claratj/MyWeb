@@ -109,7 +109,7 @@ export function Nav() {
         </nav>
 
         <div className={styles.actions}>
-          <Badge dot className={styles.avail}>
+          <Badge status="info" dot className={styles.avail}>
             Available · Remote
           </Badge>
           <ThemeToggle />

@@ -56,7 +56,7 @@ export function Contact() {
         aria-labelledby="contact-title"
       >
         <Reveal from="up" className={`container ${styles.inner}`}>
-          <Eyebrow tone="onDark">Contact</Eyebrow>
+          <Eyebrow tone="inverse">Contact</Eyebrow>
           <h2 id="contact-title" className={styles.title}>
             I think about how an interface is built and how it looks at the same time.
           </h2>
@@ -66,10 +66,10 @@ export function Contact() {
           </p>
 
           <div className={styles.actions}>
-            <Button href={`mailto:${EMAIL}?subject=Frontend%20role`} size="lg" variant="onDarkSolid">
+            <Button href={`mailto:${EMAIL}?subject=Frontend%20role`} size="lg" variant="inverse-solid">
               Write me an email
             </Button>
-            <Button href={LINKEDIN_URL} size="lg" variant="onDark" target="_blank" rel="noopener">
+            <Button href={LINKEDIN_URL} size="lg" variant="inverse" target="_blank" rel="noopener">
               Connect on LinkedIn <span className="visually-hidden">(opens in new tab)</span>
             </Button>
           </div>

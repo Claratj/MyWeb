@@ -26,9 +26,9 @@ describe("Button", () => {
     const { rerender } = render(<Button>Go</Button>);
     let el = screen.getByRole("button");
     expect(el).toHaveClass("btn", "primary", "md");
-    rerender(<Button variant="onDarkSolid" size="lg" className="extra">Go</Button>);
+    rerender(<Button variant="inverse-solid" size="lg" className="extra">Go</Button>);
     el = screen.getByRole("button");
-    expect(el).toHaveClass("btn", "onDarkSolid", "lg", "extra");
+    expect(el).toHaveClass("btn", "inverse-solid", "lg", "extra");
     expect(el).not.toHaveClass("primary");
   });
 

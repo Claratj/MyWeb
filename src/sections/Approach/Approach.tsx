@@ -26,7 +26,7 @@ export function Approach() {
       >
         <div className={`container ${styles.inner}`}>
           <div>
-            <Eyebrow tone="onDark">Approach</Eyebrow>
+            <Eyebrow tone="inverse">Approach</Eyebrow>
             <h2 id="approach-title" className={styles.title}>
               Designer's eye, engineer's rigor
             </h2>

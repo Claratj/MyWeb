@@ -9,6 +9,6 @@
 }
 
 /* label on dark bands (teal Approach, plum Contact): sage light, 8.3–11.3:1 */
-.onDark {
+.inverse {
   color: var(--color-text-on-brand);
 }

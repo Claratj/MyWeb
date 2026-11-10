@@ -61,7 +61,7 @@ export function Hero() {
         </motion.span>
 
         <motion.div className={styles.copy} style={{ opacity: fade }}>
-          <Badge dot className={styles.availHero}>
+          <Badge status="info" dot className={styles.availHero}>
             Available · Remote
           </Badge>
           <Reveal delay={0}>

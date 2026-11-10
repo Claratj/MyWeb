@@ -11,7 +11,8 @@
   white-space: nowrap;
 }
 
-.available {
+/* Embr soft info: info-subtle fill, teal text (dark values via the badge tokens). */
+.info {
   background-color: var(--color-badge-bg);
   color: var(--color-badge-fg);
 }

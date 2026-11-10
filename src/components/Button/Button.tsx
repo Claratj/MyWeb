@@ -8,7 +8,8 @@ import {
 } from "framer-motion";
 import styles from "./Button.module.css";
 
-type Variant = "primary" | "solid" | "ghost" | "outline" | "onDark" | "onDarkSolid";
+/** Embr names (solid, outline, ghost, inverse, inverse-solid) plus the site's own `primary`. */
+type Variant = "primary" | "solid" | "ghost" | "outline" | "inverse" | "inverse-solid";
 type Size = "xs" | "sm" | "md" | "lg";
 
 type CommonProps = {

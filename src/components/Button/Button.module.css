@@ -84,29 +84,29 @@
   box-shadow: var(--shadow-md);
 }
 
-/* onDark — inverted variant for dark surfaces (the plum contact band) */
-.onDark {
+/* inverse — outline action on the inverse surfaces (teal Approach, plum Contact). Embr name. */
+.inverse {
   background-color: var(--c-n1-05);
   border-color: var(--c-sage-light);
   border-width: 1.5px;
   color: var(--color-text-on-brand); /* 11.3:1 on plum, 8.3:1 on teal */
   box-shadow: var(--shadow-on-dark);
 }
-.onDark:hover {
+.inverse:hover {
   background-color: var(--c-sage-light);
   border-color: var(--c-sage-light);
   color: var(--c-n3);
   box-shadow: var(--shadow-on-dark-hover);
 }
 
-/* onDarkSolid — the one filled action on a dark band */
-.onDarkSolid {
+/* inverse-solid — the one filled action on an inverse surface. Embr name. */
+.inverse-solid {
   background-color: var(--c-sage-light);
   border-color: var(--c-sage-light);
   color: var(--c-n3); /* 12.9:1 */
   box-shadow: var(--shadow-on-dark);
 }
-.onDarkSolid:hover {
+.inverse-solid:hover {
   background-color: var(--c-n1);
   border-color: var(--c-n1);
   color: var(--c-n3);

@@ -1,66 +1,26 @@
-import { motion, useReducedMotion, type Variants } from "framer-motion";
-import { coreStack, aiStack } from "../../data/stack";
+import { stack } from "../../data/stack";
 import styles from "./TrustStrip.module.css";
 
-const container: Variants = { hidden: {}, visible: { transition: { staggerChildren: 0.06 } } };
-const item: Variants = {
-  hidden: { opacity: 0, y: 12 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] } },
-};
-
-function ChipRow({
-  items,
-  ai,
-  reduce,
-  labelledBy,
-}: {
-  items: string[];
-  ai?: boolean;
-  reduce: boolean | null;
-  labelledBy: string;
-}) {
-  return (
-    <motion.ul
-      className={styles.list}
-      role="list"
-      aria-labelledby={labelledBy}
-      variants={reduce ? undefined : container}
-      initial={reduce ? false : "hidden"}
-      whileInView={reduce ? undefined : "visible"}
-      viewport={{ once: true, amount: 0.4 }}
-    >
-      {items.map((t) => (
-        <motion.li
-          key={t}
-          className={`${styles.chip} ${ai ? styles.chipAi : ""}`}
-          variants={reduce ? undefined : item}
-        >
-          {t}
-        </motion.li>
-      ))}
-    </motion.ul>
-  );
-}
-
+/**
+ * The stack as a slow marquee. The list is rendered twice so the loop is
+ * seamless; the copy is hidden from assistive tech. Hover pauses it; under
+ * reduced motion it is a static, wrapped list. No pause button (a deliberate
+ * design decision): WCAG 2.2.2 is not met for pointer-less or touch users who
+ * keep motion on.
+ */
 export function TrustStrip() {
-  const reduce = useReducedMotion();
+  const items = stack.map((t) => <li key={t}>{t}</li>);
+
   return (
-    <section className={styles.strip} aria-label="Tools and technologies">
-      <div className={`container ${styles.inner}`}>
-        <div className={styles.group}>
-          <p id="core-stack-label" className={styles.label}>
-            Core stack, day to day
-          </p>
-          <ChipRow items={coreStack} reduce={reduce} labelledBy="core-stack-label" />
-        </div>
-        <span className={styles.rule} aria-hidden="true" />
-        <div className={styles.group}>
-          <p id="ai-stack-label" className={`${styles.label} ${styles.labelAi}`}>
-            <span className={styles.spark} aria-hidden="true" />
-            AI in my workflow
-          </p>
-          <ChipRow items={aiStack} ai reduce={reduce} labelledBy="ai-stack-label" />
-        </div>
+    <section className={styles.strip} aria-labelledby="stack-label">
+      <h2 id="stack-label" className="visually-hidden">
+        Stack
+      </h2>
+      <div className={styles.marquee}>
+        <ul role="list">{items}</ul>
+        <ul role="list" aria-hidden="true">
+          {items}
+        </ul>
       </div>
     </section>
   );

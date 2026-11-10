@@ -1,0 +1,154 @@
+/* Sector code rides on the top edge, the glow and the highlighter under the
+   sector word; the word itself stays in the heading colour, so colour is never
+   the only signal. */
+.card {
+  --sec: var(--sector-health);
+  --hl: var(--sector-health-hl);
+  block-size: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: 1.75rem;
+  border-radius: var(--radius-lg);
+  border-top: 4px solid rgb(var(--sec));
+  transform: rotate(var(--tilt));
+  transition: transform var(--dur-card) var(--ease-out);
+}
+.card[data-sector="enterprise"] { --sec: var(--sector-enterprise); --hl: var(--sector-enterprise-hl); }
+.card[data-sector="fintech"] { --sec: var(--sector-fintech); --hl: var(--sector-fintech-hl); }
+.card[data-sector="design"] { --sec: var(--sector-design); --hl: var(--sector-design-hl); }
+
+/* Plain cards: a sector-coloured glow, a sage pool, a top highlight and a pointer light */
+.plain {
+  border-inline: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  background:
+    radial-gradient(260px circle at var(--mx, 50%) var(--my, -20%), rgba(var(--sec), var(--spot, 0)), transparent 70%),
+    radial-gradient(120% 70% at 100% 0%, rgba(var(--sec), 0.16), transparent 55%),
+    radial-gradient(90% 55% at 0% 100%, var(--c-sage-22), transparent 60%),
+    var(--color-surface);
+  box-shadow: inset 0 1px 0 var(--c-n1-14), var(--shadow-sm), var(--shadow-lg);
+  color: var(--color-text);
+}
+
+/* Featured (latest) card: plum with depth */
+.featured {
+  border-top-color: var(--c-info-on-dark);
+  background:
+    radial-gradient(70% 110% at 105% 105%, rgba(var(--sector-fintech), 0.35), transparent 60%),
+    radial-gradient(60% 90% at -5% -10%, var(--c-teal-50), transparent 60%),
+    var(--c-plum);
+  box-shadow: var(--shadow-lg);
+  color: var(--color-text-on-brand);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-3);
+}
+.label {
+  font-family: var(--font-body);
+  font-size: var(--fs-eyebrow);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-heading);
+}
+.when {
+  font-size: var(--fs-eyebrow);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-muted);
+}
+
+.sector {
+  padding-block: 1.25rem;
+  border-block: 1px solid var(--color-border);
+}
+.sector b {
+  display: inline-block;
+  padding-inline: 0.12em;
+  margin-inline-start: -0.12em;
+  font-family: var(--font-display);
+  font-weight: var(--fw-extrabold);
+  font-size: 2.5rem;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--color-heading);
+  background: linear-gradient(to bottom, transparent 34%, var(--hl) 34%, var(--hl) 76%, transparent 76%);
+}
+.sector span {
+  display: block;
+  margin-top: 6px;
+  font-size: var(--fs-caption);
+  color: var(--color-text-muted);
+}
+
+.company {
+  margin: 0;
+  font-size: 1.375rem;
+  font-weight: var(--fw-extrabold);
+  letter-spacing: var(--tracking-tight);
+}
+.role {
+  font-size: 0.72rem;
+  font-weight: var(--fw-bold);
+  line-height: 1.3;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.summary {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  margin-top: auto;
+  padding: 0;
+  list-style: none;
+  font-size: 0.72rem;
+  font-weight: var(--fw-bold);
+}
+.chips li {
+  padding: var(--space-1) 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Featured: everything reads on plum */
+.featured .label,
+.featured .when,
+.featured .sector span,
+.featured .role,
+.featured .summary {
+  color: var(--color-text-on-brand);
+}
+.featured .sector {
+  border-color: color-mix(in srgb, var(--c-sage-light) 30%, transparent);
+}
+.featured .sector b,
+.featured .company {
+  color: var(--c-n1);
+}
+.featured .sector b {
+  --hl: color-mix(in srgb, var(--sector-health-hl) 85%, transparent);
+}
+.featured .chips li {
+  border-color: transparent;
+  background: var(--c-n1-14);
+  color: var(--color-text-on-brand);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transform: none;
+  }
+}

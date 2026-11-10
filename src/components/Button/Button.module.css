@@ -1,4 +1,4 @@
-/* Brand pill button: transparent fill, amber border, terracotta uppercase label,
+/* Brand pill button: transparent fill, orange border, orange-deep uppercase label,
    no hover colour change. min-width + padding so longer labels don't overflow. */
 .btn {
   display: inline-flex;
@@ -7,16 +7,16 @@
   min-width: 210px;
   height: 60px;
   padding-inline: 1.75rem;
-  border-radius: 50px;
+  border-radius: var(--radius-pill);
   background-color: transparent;
-  border: 1px solid var(--c-amber);
+  border: 1px solid var(--color-cta); /* orange · 4.57:1 on n1 (non-text needs 3:1) */
   font-family: var(--font-display);
   font-weight: var(--fw-bold);
-  font-size: 12px;
-  letter-spacing: 0.7px;
+  font-size: var(--fs-button);
+  letter-spacing: var(--tracking-button);
   text-transform: uppercase;
   line-height: 1;
-  color: var(--color-cta);
+  color: var(--color-cta-text); /* orange-deep · 6.16:1 on n1 */
   text-decoration: none;
   cursor: pointer;
   white-space: nowrap;
@@ -32,8 +32,8 @@
 .xs {
   height: 38px;
   min-width: 0;
-  padding-inline: 1rem;
-  font-size: 11px;
+  padding-inline: var(--space-4);
+  font-size: var(--fs-button-xs);
 }
 .sm {
   height: 44px;
@@ -53,7 +53,7 @@
 .solid {
   background-color: var(--color-cta);
   border-color: var(--color-cta);
-  color: var(--c-white);
+  color: var(--color-on-cta);
 }
 .solid:hover {
   background-color: var(--color-cta-hover);
@@ -71,30 +71,44 @@
   color: var(--color-primary);
 }
 
-/* outline — secundario: pastilla con contorno plum, claramente clicable pero subordinado */
+/* outline — secondary: plum-bordered pill, clearly clickable but subordinate */
 .outline {
   background-color: transparent;
-  border-color: var(--c-plum);
+  border-color: var(--color-heading);
   color: var(--color-heading);
 }
 .outline:hover {
-  background-color: var(--c-plum);
-  border-color: var(--c-plum);
-  color: var(--c-cream);
+  background-color: var(--color-heading);
+  border-color: var(--color-heading);
+  color: var(--color-bg);
   box-shadow: var(--shadow-md);
 }
 
-/* onDark — variante en negativo para superficies oscuras (banda plum de contacto) */
-.onDark {
-  background-color: var(--c-cream-05);
-  border-color: var(--c-amber);
-  border-width: 1.75px;
-  color: var(--c-amber-label);
+/* inverse — outline action on the inverse surfaces (teal Approach, plum Contact). Embr name. */
+.inverse {
+  background-color: var(--c-n1-05);
+  border-color: var(--c-sage-light);
+  border-width: 1.5px;
+  color: var(--color-text-on-brand); /* 11.3:1 on plum, 8.3:1 on teal */
   box-shadow: var(--shadow-on-dark);
 }
-.onDark:hover {
-  background-color: var(--c-amber);
-  border-color: var(--c-amber);
-  color: var(--c-ink);
+.inverse:hover {
+  background-color: var(--c-sage-light);
+  border-color: var(--c-sage-light);
+  color: var(--c-n3);
+  box-shadow: var(--shadow-on-dark-hover);
+}
+
+/* inverse-solid — the one filled action on an inverse surface. Embr name. */
+.inverse-solid {
+  background-color: var(--c-sage-light);
+  border-color: var(--c-sage-light);
+  color: var(--c-n3); /* 12.9:1 */
+  box-shadow: var(--shadow-on-dark);
+}
+.inverse-solid:hover {
+  background-color: var(--c-n1);
+  border-color: var(--c-n1);
+  color: var(--c-n3);
   box-shadow: var(--shadow-on-dark-hover);
 }

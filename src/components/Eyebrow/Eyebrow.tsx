@@ -5,15 +5,15 @@ type EyebrowProps = {
   children: ReactNode;
   as?: ElementType;
   className?: string;
-  /** "onDark" switches the label to amber for contrast on dark bands. */
-  tone?: "default" | "onDark";
+  /** "inverse" switches the label to sage-light for the teal and plum bands (Embr name). */
+  tone?: "default" | "inverse";
 };
 
 /** Small uppercase label that sits above headings. */
 export function Eyebrow({ children, as: Tag = "p", className, tone = "default" }: EyebrowProps) {
   return (
     <Tag
-      className={[styles.eyebrow, tone === "onDark" && styles.onDark, className]
+      className={[styles.eyebrow, tone === "inverse" && styles.inverse, className]
         .filter(Boolean)
         .join(" ")}
     >

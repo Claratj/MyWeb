@@ -23,6 +23,7 @@ html {
 
 body {
   min-height: 100vh;
+  overflow-x: clip;
   background-color: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body);
@@ -98,11 +99,17 @@ ol[role="list"] {
   padding: 0;
 }
 
+/* Branded text selection instead of the browser default blue */
+::selection {
+  background-color: var(--color-selection-bg);
+  color: var(--color-selection-text);
+}
+
 /* Accessible focus: visible ring for keyboard users only */
 :focus-visible {
   outline: 3px solid var(--color-focus);
   outline-offset: 2px;
-  border-radius: 2px;
+  border-radius: var(--radius-2xs);
 }
 
 /* Skip link — first focusable element */
@@ -112,8 +119,8 @@ ol[role="list"] {
   top: -100%;
   z-index: calc(var(--z-nav) + 1);
   padding: var(--space-2) var(--space-4);
-  background: var(--color-primary);
-  color: var(--color-text-on-dark);
+  background: var(--color-cta);
+  color: var(--c-n2);
   border-radius: var(--radius-sm);
   font-weight: var(--fw-semibold);
   transition: top var(--dur-base) var(--ease-out);
@@ -128,7 +135,8 @@ ol[role="list"] {
   width: 100%;
   max-width: var(--container-max);
   margin-inline: auto;
-  padding-inline: var(--container-pad);
+  padding-inline: max(var(--container-pad), env(safe-area-inset-left, 0px))
+    max(var(--container-pad), env(safe-area-inset-right, 0px));
 }
 
 .section {
@@ -160,4 +168,11 @@ ol[role="list"] {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Theme switch: the browser cross-fade is replaced by the circle the toggle draws */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
 }

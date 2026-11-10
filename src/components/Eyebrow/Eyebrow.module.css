@@ -1,7 +1,4 @@
 .eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
   margin: 0;
   font-family: var(--font-body);
   font-size: var(--fs-eyebrow);
@@ -11,16 +8,7 @@
   color: var(--color-eyebrow);
 }
 
-/* amber label for use on dark bands (e.g. the plum contact section) */
-.onDark {
-  color: var(--c-amber-label);
-}
-
-/* short rule before the label */
-.eyebrow::before {
-  content: "";
-  inline-size: 1.75rem;
-  block-size: 2px;
-  background: currentColor;
-  border-radius: 2px;
+/* label on dark bands (teal Approach, plum Contact): sage light, 8.3–11.3:1 */
+.inverse {
+  color: var(--color-text-on-brand);
 }

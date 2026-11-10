@@ -1,0 +1,28 @@
+/* Round icon button; the icon shows the theme you will switch to. */
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 2.375rem;
+  block-size: 2.375rem;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-heading);
+  cursor: pointer;
+  transition: border-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+.toggle:hover {
+  border-color: var(--color-heading);
+}
+.toggle svg {
+  display: block;
+}
+
+@media (pointer: coarse) {
+  .toggle {
+    inline-size: 2.75rem;
+    block-size: 2.75rem;
+  }
+}

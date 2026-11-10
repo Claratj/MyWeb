@@ -1,0 +1,134 @@
+.xp {
+  padding-block: clamp(3rem, 5vw, 5rem) clamp(2rem, 4vw, 3.5rem);
+}
+.pin {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-5);
+}
+.title {
+  margin-top: var(--space-3);
+  font-size: clamp(2rem, 3vw + 1rem, 3.25rem);
+  font-weight: var(--fw-extrabold);
+  letter-spacing: var(--tracking-display);
+  line-height: 1.02;
+}
+.note {
+  margin-top: var(--space-3);
+  font-size: var(--fs-caption);
+  color: var(--color-text-muted);
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) 1.25rem;
+  margin: 0.875rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-tag);
+  line-height: 1;
+  letter-spacing: var(--tracking-tag);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+.legend i {
+  inline-size: 22px;
+  block-size: 9px;
+  border-radius: var(--radius-2xs);
+  background: var(--sector-health-hl);
+}
+.legend [data-sector="enterprise"] i { background: var(--sector-enterprise-hl); }
+.legend [data-sector="fintech"] i { background: var(--sector-fintech-hl); }
+.legend [data-sector="design"] i { background: var(--sector-design-hl); }
+
+.progress {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.bar {
+  position: relative;
+  inline-size: min(240px, 40vw);
+  block-size: 2px;
+  border-radius: var(--radius-2xs);
+  background: var(--color-border);
+  overflow: hidden;
+}
+.bar i {
+  position: absolute;
+  inset: 0;
+  background: var(--color-heading);
+  transform-origin: 0 50%;
+}
+
+/* Native track: horizontal swipe with snap */
+.track {
+  display: flex;
+  gap: 1.75rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: max(var(--container-pad), calc((100% - var(--container-max)) / 2 + var(--container-pad)));
+  padding: 2.5rem max(var(--container-pad), calc((100% - var(--container-max)) / 2 + var(--container-pad))) 3.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-heading) transparent;
+}
+.slide {
+  flex: 0 0 min(400px, 84vw);
+  scroll-snap-align: start;
+}
+
+/* Pinned: the section is tall, the inner frame sticks and the track moves by transform */
+.pinned {
+  padding: 0;
+}
+.pinned .pin {
+  position: sticky;
+  top: 0;
+  block-size: 100vh;
+  justify-content: center;
+  overflow: hidden;
+  padding-block: clamp(2rem, 6vh, 4.5rem);
+}
+.pinned .track {
+  overflow: visible;
+  scroll-snap-type: none;
+  will-change: transform;
+  padding-bottom: 2.5rem;
+}
+
+/* Phones: stack, so a skimming reader scrolls once with no sideways swipe */
+@media (max-width: 759px) {
+  .track {
+    flex-direction: column;
+    gap: 1.25rem;
+    overflow: visible;
+    scroll-snap-type: none;
+    padding: var(--space-5) var(--container-pad) 2.5rem;
+  }
+  .slide {
+    flex: none;
+    inline-size: 100%;
+  }
+}

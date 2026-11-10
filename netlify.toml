@@ -1,12 +1,12 @@
 [build]
-  command = "npm run build"
+  # Type errors or a failing test stop the deploy before anything ships.
+  command = "npm run typecheck && npm test && npm run build"
   publish = "dist"
 
 [build.environment]
   NODE_VERSION = "22"
 
-# SPA fallback: let react-router (BrowserRouter) handle client-side routes
-# so deep links like /web or /photography don't 404 on reload.
+# SPA fallback: any unknown path serves the single page instead of a 404.
 [[redirects]]
   from = "/*"
   to = "/index.html"

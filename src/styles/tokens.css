@@ -5,69 +5,106 @@
    ========================================================================== */
 
 :root {
-  /* --- Brand palette (raw) ------------------------------------------------ */
-  --c-terracotta: #e5491e; /* primary / CTA            */
-  --c-amber: #f1861f; /* accent / links           */
-  --c-amber-soft: #f0ad4e; /* secondary accent         */
-  --c-plum: #5a1545; /* headings                 */
-  --c-magenta: #aa1355; /* eyebrows                 */
-  --c-ink: #1a1416; /* body text                */
-  --c-cream: #faf9f5; /* background               */
-  --c-teal: #0f6e6d; /* card surface             */
-  --c-sage: #aad8d0; /* soft surface / accents   */
+  /* --- Brand palette (raw) · borrador 3 ----------------------------------
+     Three families, shared with the Embr design system (2026-11-09):
+     plum = identity · orange = action · teal = calm/surface. Status colours are
+     functional and live in components, not in the brand. */
+  --c-plum: #4d0c3e; /* headings, eyebrow, link, focus · 13.2:1 on n1     */
+  --c-orange: #c54120; /* CTA fill · white text 5.06:1                    */
+  --c-orange-deep: #a2361a; /* CTA hover + all orange text · 6.16:1 on n1 */
+  --c-orange-light: #f38362; /* the one orange on dark surfaces · 7.12:1 on d1 */
+  --c-teal: #0a4544; /* featured card, inverse surface · white 10.78:1    */
+  --c-sage: #aad8d0; /* decorative only (logo frame, photo border, quotes) */
+  --c-sage-light: #cde8e2; /* text on teal (8.34:1) and plum (11.3:1)    */
 
-  /* tints & shades derived from the palette (kept here so they stay traceable) */
-  --c-white: #fff; /* pure white surface (distinct from cream) */
-  --c-cream-2: #f3f0e7; /* subtle alt background  */
-  --c-ink-70: rgba(26, 20, 22, 0.7); /* muted body text       */
-  --c-ink-55: rgba(26, 20, 22, 0.55); /* captions              */
-  --c-line: rgba(26, 20, 22, 0.12); /* hairline borders        */
-  --c-teal-ink: #0a4f4e; /* darker teal for contrast on sage */
+  /* --- Neutrals ---------------------------------------------------------- */
+  --c-n1: #f7f2f5; /* page                                                */
+  --c-n2: #ffffff; /* surface                                             */
+  --c-n3: #0b2027; /* ink · 15.18:1 on n1                                 */
+  --c-n4: #46565b; /* ink muted · 6.92:1 on n1                            */
+  --c-n5: #d3d7d8; /* line: separators and card borders (decorative)      */
+  --c-n-alt: #ece9ec; /* subtle alt background · ink 13.95:1             */
+  --c-ink-caption: rgba(11, 32, 39, 0.62); /* captions · 4.60:1 on n1     */
+  --c-d1: #101717; /* dark page                                           */
+  --c-d2: #1d2828; /* dark surface                                        */
+  --c-d3: #5a7775; /* dark border · 3.74:1 on d1                          */
+  --c-d4: #859f9e; /* dark muted text · 6.44:1 on d1                      */
+  --c-orange-light-hover: #f7b19b; /* dark link hover · 10.13:1 on d1     */
+  --c-teal-accent-light: #63b3ad; /* teal re-lit for dark · 7.42:1 on d1 */
 
-  /* alpha variants — the exact rgba of the brand hues, for gradients, glows and
-     translucent overlays. Value-preserving tokenisation of literals that used to
-     live in component CSS; the numbers match the source rgba exactly. */
-  --c-cream-05: rgba(250, 249, 245, 0.05);
-  --c-cream-14: rgba(250, 249, 245, 0.14);
-  --c-cream-22: rgba(250, 249, 245, 0.22);
-  --c-cream-92: rgba(250, 249, 245, 0.92);
-  --c-teal-50: rgba(15, 110, 109, 0.5);
-  --c-teal-18: rgba(15, 110, 109, 0.18);
-  --c-teal-0: rgba(15, 110, 109, 0);
+  /* --- Status (functional, not brand) ------------------------------------
+     subtle fill / on-colour pairs, each 4.5:1+; dark "on" values for slate. */
+  --c-info-subtle: #e6ecec; /* on: teal · 9.02:1                         */
+  --c-success-subtle: #e6efea;
+  --c-success-on: #24603d; /* 6.36:1 on its subtle                       */
+  --c-warning-subtle: #f9f2e1;
+  --c-warning-on: #7a5a0f; /* 5.71:1 on its subtle                       */
+  --c-danger-subtle: #f7e3ea;
+  --c-danger-on: #af1148; /* 5.72:1 on its subtle                        */
+  --c-info-on-dark: #7fc9c2; /* 9.54:1 on d1                             */
+  --c-info-subtle-dark: #0e2b2a; /* on: info-on-dark · 7.90:1            */
+  --c-danger-on-dark: #f37d99; /* 7.09:1 on d1                           */
+
+  /* alpha variants of the brand hues, for gradients, glows and overlays */
+  --c-n1-05: rgba(247, 242, 245, 0.05);
+  --c-n1-14: rgba(247, 242, 245, 0.14);
+  --c-n1-92: rgba(247, 242, 245, 0.92);
+  --c-teal-50: rgba(10, 69, 68, 0.5);
   --c-sage-22: rgba(170, 216, 208, 0.22);
-  --c-sage-16: rgba(170, 216, 208, 0.16);
-  --c-sage-0: rgba(170, 216, 208, 0);
-  --c-amber-18: rgba(241, 134, 31, 0.18);
-  --c-amber-0: rgba(241, 134, 31, 0);
-
-  /* Accessible derivatives (WCAG AA): the raw brand hues are kept above for
-     accents/large text; these deeper/lighter variants are used wherever AA
-     for small text demands it. */
-  --c-terracotta-cta: #cf3f17; /* filled CTA bg → white text = 4.8:1   */
-  --c-terracotta-cta-hover: #b5330d; /* darker on hover  = 6.1:1       */
-  --c-terracotta-ink: #c2380f; /* warm link text on cream = 5.2:1     */
-  --c-terracotta-ink-hover: #922b12; /* link hover on cream = 7.7:1    */
-  --c-sage-light: #cde8e2; /* meta text on teal card = 4.7:1          */
-  --c-amber-label: #ffdfa0; /* eyebrow label on teal card = 4.7:1     */
+  --c-orange-light-18: rgba(243, 131, 98, 0.18);
 
   /* --- Semantic colour roles --------------------------------------------- */
-  --color-bg: var(--c-cream);
-  --color-bg-alt: var(--c-cream-2);
+  --color-bg: var(--c-n1);
+  --color-bg-alt: var(--c-n-alt);
+  --color-surface: var(--c-n2);
   --color-surface-invert: var(--c-plum);
-  --color-card: var(--c-teal);
-  --color-text: var(--c-ink);
-  --color-text-muted: var(--c-ink-70);
-  --color-text-caption: var(--c-ink-55);
-  --color-text-on-dark: var(--c-cream);
+  --color-text: var(--c-n3);
+  --color-text-muted: var(--c-n4);
+  --color-text-caption: var(--c-ink-caption);
+  --color-text-on-dark: var(--c-n1);
+  --color-text-on-brand: var(--c-sage-light); /* labels on teal / plum   */
   --color-heading: var(--c-plum);
-  --color-eyebrow: var(--c-magenta);
-  --color-primary: var(--c-terracotta); /* brand accent / large text */
-  --color-cta: var(--c-terracotta-cta); /* filled button surface (AA) */
-  --color-cta-hover: var(--c-terracotta-cta-hover);
-  --color-link: var(--c-terracotta-ink); /* inline text links (AA on cream) */
-  --color-link-hover: var(--c-terracotta-ink-hover);
-  --color-border: var(--c-line);
-  --color-focus: var(--c-magenta);
+  --color-eyebrow: var(--c-plum);
+  --color-primary: var(--c-orange); /* brand accent / large text */
+  --color-cta: var(--c-orange); /* filled button surface · white 5.06:1 */
+  --color-cta-hover: var(--c-orange-deep);
+  --color-on-cta: var(--c-n2); /* label on a filled CTA · 5.06:1 */
+  --color-cta-text: var(--c-orange-deep); /* outline button / orange text */
+  --color-link: var(--c-plum); /* inline links · 13.2:1 on n1 */
+  --color-link-hover: var(--c-orange-deep);
+  --color-border: var(--c-n5);
+  --color-focus: var(--c-plum); /* 3px ring, 2px offset · 13.2:1 on n1 */
+  --color-decor: var(--c-sage);
+  --color-accent: var(--c-teal); /* teal text/marks on bg · 9.74:1 on n1 */
+  --color-badge-bg: var(--c-info-subtle); /* availability pill */
+  --color-badge-fg: var(--c-teal); /* 9.02:1 on its fill */
+  --color-selection-bg: var(--c-sage);
+  --color-selection-text: var(--c-teal);
+
+  /* --- Sector colour code (Experience) -----------------------------------
+     sec = card edge/glow (rgb triplet for alpha), hl = highlighter stroke under
+     the sector word: mid-tones, plum word stays >= 4.3:1 on each. */
+  --sector-health: 10, 69, 68;
+  --sector-enterprise: 70, 86, 91;
+  --sector-fintech: 197, 65, 32;
+  --sector-design: 77, 12, 62;
+  --sector-health-hl: #3fa095; /* plum on it 4.64:1 */
+  --sector-enterprise-hl: #859f9e; /* 5.18:1 */
+  --sector-fintech-hl: #f38362; /* 5.73:1 */
+  --sector-design-hl: #b07aa2; /* 4.28:1 (40px bold: large text, 3:1 floor) */
+
+  /* --- Hero ornaments ----------------------------------------------------
+     Decorative (aria-hidden), but kept at 3:1 so they read: teal 3.0–4.3:1 and
+     orange 3.1–3.7:1 over the hero glows in light. */
+  --color-quote-open: var(--c-teal);
+  --color-quote-close: var(--c-orange);
+  --quote-open-opacity: 0.7;
+  --quote-close-opacity: 0.9;
+  --glow-1-opacity: 0.22; /* orange */
+  --glow-2-opacity: 0.5; /* sage */
+  --glow-3-opacity: 0.13; /* plum */
+  --glow-4-opacity: 0.15; /* teal */
+  --glow-saturation: 1.4; /* a touch more colour in the hero fields */
 
   /* --- Typography --------------------------------------------------------- */
   --font-display: "Montserrat", "Segoe UI", system-ui, sans-serif;
@@ -82,6 +119,13 @@
   --fs-h3: clamp(1.1875rem, 0.7vw + 1rem, 1.5rem); /* ~19–24px */
   --fs-h2: clamp(1.5rem, 1.6vw + 1.05rem, 2.125rem); /* ~24–34px */
   --fs-h1: clamp(2rem, 3.4vw + 1rem, 3.25rem); /* ~32–52px */
+  --fs-button: 0.75rem; /* 12px — pill button label */
+  --fs-button-xs: 0.6875rem; /* 11px — xs nav pill label */
+  --fs-label: 0.6875rem; /* 11px — uppercase labels: ticker, edge labels, legends */
+  --fs-tag: 0.65625rem; /* 10.5px — small uppercase tags */
+
+  /* decorative serif for the hero quotation-mark watermarks only */
+  --font-ornament: Georgia, "Times New Roman", serif;
 
   --fw-regular: 400;
   --fw-semibold: 600;
@@ -93,6 +137,10 @@
   --lh-normal: 1.6;
   --tracking-eyebrow: 0.14em;
   --tracking-tight: -0.02em;
+  --tracking-display: -0.035em; /* section titles */
+  --tracking-label: 0.2em; /* uppercase labels */
+  --tracking-tag: 0.18em; /* small uppercase tags */
+  --tracking-button: 0.7px;
 
   /* --- Spacing scale (8px base) ------------------------------------------ */
   --space-1: 0.25rem; /* 4  */
@@ -105,27 +153,129 @@
   --space-8: 4rem; /* 64 */
 
   /* --- Radii -------------------------------------------------------------- */
+  --radius-2xs: 2px;
+  --radius-xs: 4px;
   --radius-sm: 8px;
+  --radius-md: 10px;
   --radius-lg: 20px;
   --radius-pill: 100px;
 
   /* --- Elevation ---------------------------------------------------------- */
-  --shadow-sm: 0 1px 2px rgba(26, 20, 22, 0.06), 0 2px 6px rgba(26, 20, 22, 0.05);
-  --shadow-md: 0 8px 24px rgba(26, 20, 22, 0.1);
-  --shadow-lg: 0 18px 48px rgba(90, 21, 69, 0.18);
-  --shadow-nav: 0 8px 28px rgba(26, 20, 22, 0.06); /* soft shadow on scrolled nav */
+  --shadow-sm:
+    0 1px 2px rgba(11, 32, 39, 0.06), 0 2px 6px rgba(11, 32, 39, 0.05);
+  --shadow-md: 0 8px 24px rgba(11, 32, 39, 0.1);
+  --shadow-lg: 0 18px 48px rgba(77, 12, 62, 0.18);
+  --shadow-nav: 0 8px 28px rgba(11, 32, 39, 0.06); /* soft shadow on scrolled nav */
   --shadow-on-dark: 0 6px 18px rgba(0, 0, 0, 0.18); /* button on dark (plum) surfaces */
   --shadow-on-dark-hover: 0 10px 24px rgba(0, 0, 0, 0.26);
+  /* colour bands (Approach, Contact) float above the page on a shape-following shadow */
+  --band-drop: 0 34px 44px rgba(11, 32, 39, 0.26);
+  --band-drop-near: 0 10px 14px rgba(11, 32, 39, 0.12);
 
   /* --- Layout ------------------------------------------------------------- */
-  --container-max: 1140px;
-  --container-pad: clamp(1.25rem, 4vw, 3rem);
+  /* 1240 box with 48px gutters (16px under 700px): 1144px of content, as the mockup. */
+  --container-max: 1240px;
+  --container-pad: 1rem;
+  --nav-h: 6.125rem; /* 30px top + 46px mark + 22px bottom */
   --section-gap: clamp(4rem, 9vw, 8rem);
 
   /* --- Motion ------------------------------------------------------------- */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --dur-fast: 140ms;
   --dur-base: 240ms;
+  /* Exact values already in use, named so they can be tuned in one place. */
+  --dur-hover: 150ms; /* colour swaps on small controls */
+  --dur-quick: 200ms; /* menu card, pill states */
+  --dur-card: 250ms; /* card tilt/lift */
+  --dur-frost: 350ms; /* nav frosting on scroll */
+  --dur-slow: 400ms; /* large collage blocks */
 
   --z-nav: 100;
+}
+
+/* The gutter widens to 48px from 700px. */
+@media (min-width: 700px) {
+  :root {
+    --container-pad: 3rem;
+  }
+}
+
+/* --- Dark theme (borrador 3) -----------------------------------------------
+   Semantic overrides only. Applied when the visitor picks dark (data-theme set
+   by the theme toggle, pre-painted in index.html) or, with no stored choice,
+   when the OS prefers dark. Keep both blocks identical. */
+:root {
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --color-bg: var(--c-d1);
+  --color-bg-alt: var(--c-d2);
+  --color-surface: var(--c-d2);
+  --color-text: var(--c-n1);
+  --color-text-muted: var(--c-d4);
+  --color-text-caption: var(--c-d4);
+  --color-heading: var(--c-sage-light); /* 14.03:1 on d1 */
+  --color-eyebrow: var(--c-orange-light);
+  /* accent text on dark · 5.94:1 on d2 */
+  --color-primary: var(--c-orange-light);
+  --color-cta-text: var(--c-orange-light);
+  --color-link: var(--c-orange-light);
+  --color-link-hover: var(--c-orange-light-hover);
+  --color-border: var(--c-d3);
+  --color-focus: var(--c-orange-light); /* 7.12:1 on d1, 5.94:1 on d2 */
+  --color-accent: var(--c-teal-accent-light);
+  --color-badge-bg: var(--c-info-subtle-dark);
+  --color-badge-fg: var(--c-info-on-dark); /* 7.90:1 on its fill */
+  --color-quote-open: var(--c-sage);
+  --color-quote-close: var(--c-orange-light);
+  --quote-open-opacity: 0.55;
+  --quote-close-opacity: 0.6;
+  --glow-1-opacity: 0.3;
+  --glow-2-opacity: 0.2;
+  --glow-3-opacity: 0.8;
+  --glow-4-opacity: 0.85;
+  --sector-health-hl: #24605a; /* sage-light word on it 5.61:1 */
+  --sector-enterprise-hl: #3a4c50; /* 6.97:1 */
+  --sector-fintech-hl: #8a3a22; /* 5.99:1 */
+  --sector-design-hl: #6a3a5e; /* 6.82:1 */
+  --band-drop: 0 34px 48px rgba(0, 0, 0, 0.6);
+  --band-drop-near: 0 10px 14px rgba(0, 0, 0, 0.35);
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-bg: var(--c-d1);
+    --color-bg-alt: var(--c-d2);
+    --color-surface: var(--c-d2);
+    --color-text: var(--c-n1);
+    --color-text-muted: var(--c-d4);
+    --color-text-caption: var(--c-d4);
+    --color-heading: var(--c-sage-light); /* 14.03:1 on d1 */
+    --color-eyebrow: var(--c-orange-light);
+    /* accent text on dark · 5.94:1 on d2 */
+    --color-primary: var(--c-orange-light);
+    --color-cta-text: var(--c-orange-light);
+    --color-link: var(--c-orange-light);
+    --color-link-hover: var(--c-orange-light-hover);
+    --color-border: var(--c-d3);
+    --color-focus: var(--c-orange-light); /* 7.12:1 on d1, 5.94:1 on d2 */
+    --color-accent: var(--c-teal-accent-light);
+    --color-badge-bg: var(--c-info-subtle-dark);
+    --color-badge-fg: var(--c-info-on-dark); /* 7.90:1 on its fill */
+    --color-quote-open: var(--c-sage);
+    --color-quote-close: var(--c-orange-light);
+    --quote-open-opacity: 0.55;
+    --quote-close-opacity: 0.6;
+    --glow-1-opacity: 0.3;
+    --glow-2-opacity: 0.2;
+    --glow-3-opacity: 0.8;
+    --glow-4-opacity: 0.85;
+    --sector-health-hl: #24605a; /* sage-light word on it 5.61:1 */
+    --sector-enterprise-hl: #3a4c50; /* 6.97:1 */
+    --sector-fintech-hl: #8a3a22; /* 5.99:1 */
+    --sector-design-hl: #6a3a5e; /* 6.82:1 */
+    --band-drop: 0 34px 48px rgba(0, 0, 0, 0.6);
+    --band-drop-near: 0 10px 14px rgba(0, 0, 0, 0.35);
+    color-scheme: dark;
+  }
 }

@@ -1,7 +1,9 @@
 export { Button } from "./Button/Button";
 export { Badge } from "./Badge/Badge";
-export { Chip } from "./Chip/Chip";
 export { Eyebrow } from "./Eyebrow/Eyebrow";
 export { Pillar } from "./Pillar/Pillar";
-export { CaseCard } from "./CaseCard/CaseCard";
+export { ExperienceCard } from "./ExperienceCard/ExperienceCard";
 export { Reveal } from "./Reveal/Reveal";
+export { ThemeToggle } from "./ThemeToggle/ThemeToggle";
+export { Mark } from "./Mark/Mark";
+export { EdgeLabels } from "./EdgeLabels/EdgeLabels";

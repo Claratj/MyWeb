@@ -12,6 +12,9 @@
 /build
 /dist
 
+# TypeScript incremental build state
+*.tsbuildinfo
+
 # vercel
 .vercel
 
@@ -23,6 +26,13 @@ CLAUDE.md
 CLAUDE.local.md
 AGENTS.md
 *.local.*
+# Impeccable design context (product/design notes: local only)
+PRODUCT.md
+DESIGN.md
+.impeccable/
+# Design mockups (local only)
+claratoloba.com Mockup.html
+docs/mockup-home.html
 
 # misc
 .DS_Store

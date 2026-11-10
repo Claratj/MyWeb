@@ -1,19 +1,23 @@
 /** Shared content types — keep data files and components in sync. */
 
-export type CaseStudy = {
+export type Sector = "health" | "enterprise" | "fintech" | "design";
+
+export type ExperienceEntry = {
   id: string;
+  /** Position in the timeline: "Latest", "Previous", "Before code"… */
+  label: string;
+  period: string;
+  sector: Sector;
+  /** The sector word shown large on the card. */
+  sectorName: string;
+  /** One line of context under the sector word. */
+  sectorDetail: string;
   company: string;
-  role: string;
-  period?: string;
-  /** The challenge / context. */
-  problem: string;
-  /** What Clara owned. */
-  contribution: string;
-  /** Outcome of the work. */
-  result: string;
-  stack: string[];
-  /** Optional accent token name, e.g. "--c-teal", to tint the card. */
-  accent?: string;
+  role?: string;
+  summary: string;
+  stack?: string[];
+  /** The most recent role gets the plum card. */
+  featured?: boolean;
 };
 
 export type Pillar = {
@@ -22,6 +26,12 @@ export type Pillar = {
   body: string;
 };
 
-export type Tech = {
-  name: string;
+/** A foreground/background pair in the System WCAG fragment. `fg`/`bg` are CSS
+ *  values (normally a token var()); the retired rust is a literal on purpose. */
+export type ContrastPair = {
+  label: string;
+  ratio: string;
+  fg: string;
+  bg: string;
+  fails?: boolean;
 };

@@ -1,37 +1,104 @@
+.lift {
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(var(--band-drop)) drop-shadow(var(--band-drop-near));
+}
+
+/* Plum with depth: orange warmth low right, teal cool high left. Plum in both themes. */
 .contact {
-  background-color: var(--color-surface-invert);
-  color: var(--color-text-on-dark);
+  background:
+    radial-gradient(60% 120% at 100% 100%, rgba(var(--sector-fintech), 0.3), transparent 60%),
+    radial-gradient(50% 100% at -5% -10%, var(--c-teal-50), transparent 60%),
+    var(--c-plum);
+  color: var(--c-n1);
+  /* plum focus would vanish on plum: the band re-points the role (11.3:1) */
+  --color-focus: var(--c-sage-light);
 }
 
 .inner {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: var(--space-4);
+  align-items: flex-start;
+  gap: var(--space-6);
+  padding-block: clamp(6rem, 11vw, 10rem);
 }
 
 .title {
   margin: 0;
-  color: var(--color-text-on-dark);
-  max-width: 22ch;
+  max-width: 24ch;
+  font-size: clamp(1.8rem, 2.6vw + 1rem, 3.4rem);
+  font-weight: var(--fw-extrabold);
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--c-n1); /* 13.2:1 on plum */
 }
 
 .sub {
   margin: 0;
   max-width: 52ch;
-  font-size: var(--fs-body-lg);
-  color: var(--c-cream-92);
+  font-size: 1.0625rem;
+  color: var(--c-n1-92);
 }
 
 .actions {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: var(--space-3);
-  margin-top: var(--space-3);
 }
 
-.status {
-  margin-top: var(--space-2);
+.mailrow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.625rem;
+  margin: 0;
+  font-size: var(--fs-caption);
+  color: var(--color-text-on-brand);
+}
+.mailrow code {
+  font: 600 0.875rem ui-monospace, Menlo, monospace;
+  user-select: all;
+}
+
+.copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  block-size: 32px;
+  padding: 0 0.875rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--c-sage-light);
+  background: transparent;
+  color: var(--color-text-on-brand);
+  font: 700 0.6875rem/1 var(--font-display);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color var(--dur-hover), color var(--dur-hover);
+}
+.copy:hover {
+  background: color-mix(in srgb, var(--c-sage-light) 12%, transparent);
+}
+.done,
+.done:hover {
+  background: var(--c-sage-light);
+  color: var(--c-n3);
+}
+.done svg path {
+  stroke-dasharray: 24;
+  animation: tick 0.25s var(--ease-out) both;
+}
+@keyframes tick {
+  from {
+    stroke-dashoffset: 24;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@media (pointer: coarse) {
+  .copy {
+    block-size: 44px;
+  }
 }

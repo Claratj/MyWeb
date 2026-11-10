@@ -1,168 +1,699 @@
 {
   "$schema": "https://tr.designtokens.org/format/",
-  "$description": "Design tokens for claratoloba.com. Source of truth: src/styles/tokens.css. Warm, mature-but-distinctive identity for a Frontend Engineer · Design Systems. Semantic tokens reference brand/derived tokens via {group.name} aliases.",
+  "$description": "Design tokens for claratoloba.com. Source of truth: src/styles/tokens.css. Borrador 3 identity (plum · orange · teal) for a Frontend Engineer · Design Systems. Semantic tokens reference brand/derived tokens via {group.name} aliases.",
   "color": {
     "$type": "color",
     "brand": {
-      "$description": "Raw brand palette. Use for accents and large text.",
-      "terracotta": { "$value": "#E5491E", "$description": "primary / CTA accent" },
-      "amber": { "$value": "#F1861F", "$description": "accent / links" },
-      "amber-soft": { "$value": "#F0AD4E", "$description": "secondary accent" },
-      "plum": { "$value": "#5A1545", "$description": "headings" },
-      "magenta": { "$value": "#AA1355", "$description": "eyebrows" },
-      "ink": { "$value": "#1A1416", "$description": "body text" },
-      "cream": { "$value": "#FAF9F5", "$description": "background" },
-      "teal": { "$value": "#0F6E6D", "$description": "card surface" },
-      "sage": { "$value": "#AAD8D0", "$description": "soft surface / accents" }
+      "$description": "Borrador 3 brand palette (shared with Embr): plum = identity, orange = action, teal = calm/surface.",
+      "plum": {
+        "$value": "#4d0c3e",
+        "$description": "headings, eyebrow, link, focus"
+      },
+      "orange": {
+        "$value": "#c54120",
+        "$description": "CTA fill, white text 5.06:1"
+      },
+      "orange-deep": {
+        "$value": "#a2361a",
+        "$description": "CTA hover and all orange text, 6.16:1 on n1"
+      },
+      "orange-light": {
+        "$value": "#f38362",
+        "$description": "the one orange on dark surfaces, 7.12:1 on d1"
+      },
+      "teal": {
+        "$value": "#0a4544",
+        "$description": "featured card, inverse surface"
+      },
+      "sage": {
+        "$value": "#aad8d0",
+        "$description": "decorative only"
+      },
+      "sage-light": {
+        "$value": "#cde8e2",
+        "$description": "text on teal and plum"
+      }
     },
-    "derived": {
-      "$description": "Tints, shades and WCAG-AA-safe variants derived from the brand palette.",
-      "cream-2": { "$value": "#F3F0E7", "$description": "subtle alt background" },
-      "ink-70": { "$value": "rgba(26, 20, 22, 0.7)", "$description": "muted body text" },
-      "ink-55": { "$value": "rgba(26, 20, 22, 0.55)", "$description": "captions" },
-      "line": { "$value": "rgba(26, 20, 22, 0.12)", "$description": "hairline borders" },
-      "teal-ink": { "$value": "#0A4F4E", "$description": "darker teal for contrast on sage" },
-      "white": { "$value": "#FFF", "$description": "pure white surface (distinct from cream)" },
-      "terracotta-cta": { "$value": "#CF3F17", "$description": "filled CTA bg → white text = 4.8:1 (AA)" },
-      "terracotta-cta-hover": { "$value": "#B5330D", "$description": "CTA hover = 6.1:1" },
-      "terracotta-ink": { "$value": "#C2380F", "$description": "link/button text on cream = 5.2:1 (AA)" },
-      "terracotta-ink-hover": { "$value": "#922B12", "$description": "link hover on cream = 7.7:1" },
-      "sage-light": { "$value": "#CDE8E2", "$description": "meta text on teal card = 4.7:1 (AA)" },
-      "amber-label": { "$value": "#FFDFA0", "$description": "eyebrow label on teal card = 4.7:1 (AA)" },
-      "cream-05": { "$value": "rgba(250, 249, 245, 0.05)", "$description": "cream @5% — translucent fill on dark" },
-      "cream-14": { "$value": "rgba(250, 249, 245, 0.14)", "$description": "cream @14% — chip fill on teal" },
-      "cream-22": { "$value": "rgba(250, 249, 245, 0.22)", "$description": "cream @22% — chip border on teal" },
-      "cream-92": { "$value": "rgba(250, 249, 245, 0.92)", "$description": "cream @92% — body text on dark = ~5:1 (AA)" },
-      "teal-50": { "$value": "rgba(15, 110, 109, 0.5)", "$description": "teal @50% — pulse ring start" },
-      "teal-18": { "$value": "rgba(15, 110, 109, 0.18)", "$description": "teal @18% — soft glow" },
-      "teal-0": { "$value": "rgba(15, 110, 109, 0)", "$description": "teal @0% — gradient/glow end" },
-      "sage-22": { "$value": "rgba(170, 216, 208, 0.22)", "$description": "sage @22% — hero glow" },
-      "sage-16": { "$value": "rgba(170, 216, 208, 0.16)", "$description": "sage @16% — strip glow" },
-      "sage-0": { "$value": "rgba(170, 216, 208, 0)", "$description": "sage @0% — gradient/glow end" },
-      "amber-18": { "$value": "rgba(241, 134, 31, 0.18)", "$description": "amber @18% — hero glow" },
-      "amber-0": { "$value": "rgba(241, 134, 31, 0)", "$description": "amber @0% — gradient/glow end" }
+    "neutral": {
+      "$description": "Light N1–N5 and dark D1–D4 (D5 is n1).",
+      "n1": {
+        "$value": "#f7f2f5",
+        "$description": "page"
+      },
+      "n2": {
+        "$value": "#ffffff",
+        "$description": "surface"
+      },
+      "n3": {
+        "$value": "#0b2027",
+        "$description": "ink"
+      },
+      "n4": {
+        "$value": "#46565b",
+        "$description": "ink muted"
+      },
+      "n5": {
+        "$value": "#d3d7d8",
+        "$description": "line"
+      },
+      "n-alt": {
+        "$value": "#ece9ec",
+        "$description": "subtle alt background"
+      },
+      "ink-caption": {
+        "$value": "rgba(11, 32, 39, 0.62)",
+        "$description": "captions, 4.60:1 on n1"
+      },
+      "d1": {
+        "$value": "#101717",
+        "$description": "dark page"
+      },
+      "d2": {
+        "$value": "#1d2828",
+        "$description": "dark surface"
+      },
+      "d3": {
+        "$value": "#5a7775",
+        "$description": "dark border"
+      },
+      "d4": {
+        "$value": "#859f9e",
+        "$description": "dark muted text"
+      },
+      "orange-light-hover": {
+        "$value": "#f7b19b",
+        "$description": "dark link hover"
+      },
+      "teal-accent-light": {
+        "$value": "#63b3ad",
+        "$description": "teal re-lit for dark · 7.42:1 on d1"
+      }
+    },
+    "status": {
+      "$description": "Functional status pairs (subtle fill / on-colour), plus dark on-values. Not part of the brand look.",
+      "info-subtle": {
+        "$value": "#e6ecec",
+        "$description": "on: teal · 9.02:1"
+      },
+      "success-subtle": {
+        "$value": "#e6efea"
+      },
+      "success-on": {
+        "$value": "#24603d",
+        "$description": "6.36:1 on its subtle"
+      },
+      "warning-subtle": {
+        "$value": "#f9f2e1"
+      },
+      "warning-on": {
+        "$value": "#7a5a0f",
+        "$description": "5.71:1 on its subtle"
+      },
+      "danger-subtle": {
+        "$value": "#f7e3ea"
+      },
+      "danger-on": {
+        "$value": "#af1148",
+        "$description": "5.72:1 on its subtle"
+      },
+      "info-on-dark": {
+        "$value": "#7fc9c2",
+        "$description": "9.54:1 on d1"
+      },
+      "info-subtle-dark": {
+        "$value": "#0e2b2a",
+        "$description": "on: info-on-dark · 7.90:1"
+      },
+      "danger-on-dark": {
+        "$value": "#f37d99",
+        "$description": "7.09:1 on d1"
+      }
+    },
+    "alpha": {
+      "$description": "Alpha variants for gradients, glows and overlays.",
+      "n1-05": {
+        "$value": "rgba(247, 242, 245, 0.05)"
+      },
+      "n1-14": {
+        "$value": "rgba(247, 242, 245, 0.14)"
+      },
+      "n1-92": {
+        "$value": "rgba(247, 242, 245, 0.92)"
+      },
+      "teal-50": {
+        "$value": "rgba(10, 69, 68, 0.5)"
+      },
+      "sage-22": {
+        "$value": "rgba(170, 216, 208, 0.22)"
+      },
+      "orange-light-18": {
+        "$value": "rgba(243, 131, 98, 0.18)"
+      }
     },
     "semantic": {
-      "$description": "Role-based tokens. Components should consume these, not the raw values.",
-      "bg": { "$value": "{color.brand.cream}" },
-      "bg-alt": { "$value": "{color.derived.cream-2}" },
-      "surface-invert": { "$value": "{color.brand.plum}" },
-      "card": { "$value": "{color.brand.teal}" },
-      "text": { "$value": "{color.brand.ink}" },
-      "text-muted": { "$value": "{color.derived.ink-70}" },
-      "text-caption": { "$value": "{color.derived.ink-55}" },
-      "text-on-dark": { "$value": "{color.brand.cream}" },
-      "heading": { "$value": "{color.brand.plum}" },
-      "eyebrow": { "$value": "{color.brand.magenta}" },
-      "primary": { "$value": "{color.brand.terracotta}", "$description": "brand accent / large text" },
-      "cta": { "$value": "{color.derived.terracotta-cta}", "$description": "filled button surface (AA with white text)" },
-      "cta-hover": { "$value": "{color.derived.terracotta-cta-hover}" },
-      "link": { "$value": "{color.derived.terracotta-ink}", "$description": "inline text links (AA on cream)" },
-      "link-hover": { "$value": "{color.derived.terracotta-ink-hover}" },
-      "border": { "$value": "{color.derived.line}" },
-      "focus": { "$value": "{color.brand.magenta}" }
+      "$description": "Role-based tokens (light). Components consume these. Dark overrides are mirrored in color.dark and live in tokens.css under :root[data-theme=\"dark\"].",
+      "bg": {
+        "$value": "{color.neutral.n1}"
+      },
+      "bg-alt": {
+        "$value": "{color.neutral.n-alt}"
+      },
+      "surface": {
+        "$value": "{color.neutral.n2}"
+      },
+      "surface-invert": {
+        "$value": "{color.brand.plum}"
+      },
+      "text": {
+        "$value": "{color.neutral.n3}"
+      },
+      "text-muted": {
+        "$value": "{color.neutral.n4}"
+      },
+      "text-caption": {
+        "$value": "{color.neutral.ink-caption}"
+      },
+      "text-on-dark": {
+        "$value": "{color.neutral.n1}"
+      },
+      "text-on-brand": {
+        "$value": "{color.brand.sage-light}",
+        "$description": "labels on teal / plum"
+      },
+      "heading": {
+        "$value": "{color.brand.plum}"
+      },
+      "eyebrow": {
+        "$value": "{color.brand.plum}"
+      },
+      "primary": {
+        "$value": "{color.brand.orange}",
+        "$description": "brand accent / large text"
+      },
+      "cta": {
+        "$value": "{color.brand.orange}",
+        "$description": "filled button surface · white 5.06:1"
+      },
+      "cta-hover": {
+        "$value": "{color.brand.orange-deep}"
+      },
+      "on-cta": {
+        "$value": "{color.neutral.n2}",
+        "$description": "label on a filled CTA · 5.06:1"
+      },
+      "cta-text": {
+        "$value": "{color.brand.orange-deep}",
+        "$description": "outline button / orange text"
+      },
+      "link": {
+        "$value": "{color.brand.plum}",
+        "$description": "inline links · 13.2:1 on n1"
+      },
+      "link-hover": {
+        "$value": "{color.brand.orange-deep}"
+      },
+      "border": {
+        "$value": "{color.neutral.n5}"
+      },
+      "focus": {
+        "$value": "{color.brand.plum}",
+        "$description": "3px ring, 2px offset · 13.2:1 on n1"
+      },
+      "decor": {
+        "$value": "{color.brand.sage}"
+      },
+      "accent": {
+        "$value": "{color.brand.teal}",
+        "$description": "teal text/marks on bg · 9.74:1 on n1"
+      },
+      "badge-bg": {
+        "$value": "{color.status.info-subtle}",
+        "$description": "availability pill"
+      },
+      "badge-fg": {
+        "$value": "{color.brand.teal}",
+        "$description": "9.02:1 on its fill"
+      },
+      "selection-bg": {
+        "$value": "{color.brand.sage}"
+      },
+      "selection-text": {
+        "$value": "{color.brand.teal}"
+      },
+      "quote-open": {
+        "$value": "{color.brand.teal}"
+      },
+      "quote-close": {
+        "$value": "{color.brand.orange}"
+      }
+    },
+    "sector": {
+      "$description": "Experience sector code: rgb triplets for card edge/glow, -hl for the highlighter under the sector word.",
+      "health": {
+        "$value": "10, 69, 68"
+      },
+      "enterprise": {
+        "$value": "70, 86, 91"
+      },
+      "fintech": {
+        "$value": "197, 65, 32"
+      },
+      "design": {
+        "$value": "77, 12, 62"
+      },
+      "health-hl": {
+        "$value": "#3fa095",
+        "$description": "plum on it 4.64:1"
+      },
+      "enterprise-hl": {
+        "$value": "#859f9e",
+        "$description": "5.18:1"
+      },
+      "fintech-hl": {
+        "$value": "#f38362",
+        "$description": "5.73:1"
+      },
+      "design-hl": {
+        "$value": "#b07aa2",
+        "$description": "4.28:1 (40px bold: large text, 3:1 floor)"
+      }
+    },
+    "dark": {
+      "$description": "Dark-theme overrides (:root[data-theme=\"dark\"], mirrored for prefers-color-scheme). Values alias the primitives above.",
+      "color-bg": {
+        "$value": "{color.neutral.d1}"
+      },
+      "color-bg-alt": {
+        "$value": "{color.neutral.d2}"
+      },
+      "color-surface": {
+        "$value": "{color.neutral.d2}"
+      },
+      "color-text": {
+        "$value": "{color.neutral.n1}"
+      },
+      "color-text-muted": {
+        "$value": "{color.neutral.d4}"
+      },
+      "color-text-caption": {
+        "$value": "{color.neutral.d4}"
+      },
+      "color-heading": {
+        "$value": "{color.brand.sage-light}",
+        "$description": "14.03:1 on d1"
+      },
+      "color-eyebrow": {
+        "$value": "{color.brand.orange-light}"
+      },
+      "color-primary": {
+        "$value": "{color.brand.orange-light}"
+      },
+      "color-cta-text": {
+        "$value": "{color.brand.orange-light}"
+      },
+      "color-link": {
+        "$value": "{color.brand.orange-light}"
+      },
+      "color-link-hover": {
+        "$value": "{color.neutral.orange-light-hover}"
+      },
+      "color-border": {
+        "$value": "{color.neutral.d3}"
+      },
+      "color-focus": {
+        "$value": "{color.brand.orange-light}",
+        "$description": "7.12:1 on d1, 5.94:1 on d2"
+      },
+      "color-accent": {
+        "$value": "{color.neutral.teal-accent-light}"
+      },
+      "color-badge-bg": {
+        "$value": "{color.status.info-subtle-dark}"
+      },
+      "color-badge-fg": {
+        "$value": "{color.status.info-on-dark}",
+        "$description": "7.90:1 on its fill"
+      },
+      "color-quote-open": {
+        "$value": "{color.brand.sage}"
+      },
+      "color-quote-close": {
+        "$value": "{color.brand.orange-light}"
+      },
+      "quote-open-opacity": {
+        "$value": "0.55"
+      },
+      "quote-close-opacity": {
+        "$value": "0.6"
+      },
+      "glow-1-opacity": {
+        "$value": "0.3"
+      },
+      "glow-2-opacity": {
+        "$value": "0.2"
+      },
+      "glow-3-opacity": {
+        "$value": "0.8"
+      },
+      "glow-4-opacity": {
+        "$value": "0.85"
+      },
+      "sector-health-hl": {
+        "$value": "#24605a",
+        "$description": "sage-light word on it 5.61:1"
+      },
+      "sector-enterprise-hl": {
+        "$value": "#3a4c50",
+        "$description": "6.97:1"
+      },
+      "sector-fintech-hl": {
+        "$value": "#8a3a22",
+        "$description": "5.99:1"
+      },
+      "sector-design-hl": {
+        "$value": "#6a3a5e",
+        "$description": "6.82:1"
+      },
+      "band-drop": {
+        "$value": "0 34px 48px rgba(0, 0, 0, 0.6)"
+      },
+      "band-drop-near": {
+        "$value": "0 10px 14px rgba(0, 0, 0, 0.35)"
+      }
+    }
+  },
+  "ornament": {
+    "$description": "Hero ornaments: quote colours live in color.semantic; these are their opacities.",
+    "quote-open-opacity": {
+      "$value": "0.7"
+    },
+    "quote-close-opacity": {
+      "$value": "0.9"
+    },
+    "glow-1-opacity": {
+      "$value": "0.22",
+      "$description": "orange"
+    },
+    "glow-2-opacity": {
+      "$value": "0.5",
+      "$description": "sage"
+    },
+    "glow-3-opacity": {
+      "$value": "0.13",
+      "$description": "plum"
+    },
+    "glow-4-opacity": {
+      "$value": "0.15",
+      "$description": "teal"
+    },
+    "glow-saturation": {
+      "$value": "1.4",
+      "$description": "a touch more colour in the hero fields"
     }
   },
   "font": {
     "family": {
       "$type": "fontFamily",
-      "display": { "$value": ["Montserrat", "Segoe UI", "system-ui", "sans-serif"], "$description": "display / headings; weights 600/700/800" },
-      "body": { "$value": ["Mulish", "system-ui", "-apple-system", "sans-serif"], "$description": "body; weights 400/500/600/700" }
+      "display": {
+        "$value": [
+          "Montserrat",
+          "Segoe UI",
+          "system-ui",
+          "sans-serif"
+        ],
+        "$description": "display / headings; weights 600/700/800"
+      },
+      "body": {
+        "$value": [
+          "Mulish",
+          "system-ui",
+          "-apple-system",
+          "sans-serif"
+        ],
+        "$description": "body; weights 400/600/700"
+      },
+      "ornament": {
+        "$value": [
+          "Georgia",
+          "Times New Roman",
+          "serif"
+        ],
+        "$description": "hero quotation-mark watermarks only"
+      }
     },
     "weight": {
       "$type": "fontWeight",
-      "regular": { "$value": 400 },
-      "semibold": { "$value": 600 },
-      "bold": { "$value": 700 },
-      "extrabold": { "$value": 800 }
+      "regular": {
+        "$value": "400"
+      },
+      "semibold": {
+        "$value": "600"
+      },
+      "bold": {
+        "$value": "700"
+      },
+      "extrabold": {
+        "$value": "800"
+      }
     },
     "size": {
       "$type": "dimension",
       "$description": "Compact, editorial fluid scale. Fluid values are clamp() strings (min → preferred → max).",
-      "eyebrow": { "$value": "0.75rem", "$description": "12px" },
-      "caption": { "$value": "0.8125rem", "$description": "13px" },
-      "body": { "$value": "0.9375rem", "$description": "15px" },
-      "body-lg": { "$value": "clamp(1rem, 0.25vw + 0.95rem, 1.0625rem)", "$description": "~16–17px" },
-      "h4": { "$value": "clamp(1rem, 0.4vw + 0.9rem, 1.1875rem)", "$description": "~16–19px" },
-      "h3": { "$value": "clamp(1.1875rem, 0.7vw + 1rem, 1.5rem)", "$description": "~19–24px" },
-      "h2": { "$value": "clamp(1.5rem, 1.6vw + 1.05rem, 2.125rem)", "$description": "~24–34px" },
-      "h1": { "$value": "clamp(2rem, 3.4vw + 1rem, 3.25rem)", "$description": "~32–52px" }
+      "eyebrow": {
+        "$value": "0.75rem",
+        "$description": "12px"
+      },
+      "caption": {
+        "$value": "0.8125rem",
+        "$description": "13px"
+      },
+      "body": {
+        "$value": "0.9375rem",
+        "$description": "15px"
+      },
+      "body-lg": {
+        "$value": "clamp(1rem, 0.25vw + 0.95rem, 1.0625rem)",
+        "$description": "~16–17px"
+      },
+      "h4": {
+        "$value": "clamp(1rem, 0.4vw + 0.9rem, 1.1875rem)",
+        "$description": "~16–19px"
+      },
+      "h3": {
+        "$value": "clamp(1.1875rem, 0.7vw + 1rem, 1.5rem)",
+        "$description": "~19–24px"
+      },
+      "h2": {
+        "$value": "clamp(1.5rem, 1.6vw + 1.05rem, 2.125rem)",
+        "$description": "~24–34px"
+      },
+      "h1": {
+        "$value": "clamp(2rem, 3.4vw + 1rem, 3.25rem)",
+        "$description": "~32–52px"
+      },
+      "button": {
+        "$value": "0.75rem",
+        "$description": "12px — pill button label"
+      },
+      "button-xs": {
+        "$value": "0.6875rem",
+        "$description": "11px — xs nav pill label"
+      },
+      "label": {
+        "$value": "0.6875rem",
+        "$description": "11px — uppercase labels: ticker, edge labels, legends"
+      },
+      "tag": {
+        "$value": "0.65625rem",
+        "$description": "10.5px — small uppercase tags"
+      }
     },
     "lineHeight": {
       "$type": "number",
-      "tight": { "$value": 1.05 },
-      "snug": { "$value": 1.2 },
-      "normal": { "$value": 1.6 }
+      "tight": {
+        "$value": "1.05"
+      },
+      "snug": {
+        "$value": "1.2"
+      },
+      "normal": {
+        "$value": "1.6"
+      }
     },
     "letterSpacing": {
       "$type": "dimension",
-      "eyebrow": { "$value": "0.14em" },
-      "tight": { "$value": "-0.02em" }
+      "eyebrow": {
+        "$value": "0.14em"
+      },
+      "tight": {
+        "$value": "-0.02em"
+      },
+      "display": {
+        "$value": "-0.035em",
+        "$description": "section titles"
+      },
+      "label": {
+        "$value": "0.2em",
+        "$description": "uppercase labels"
+      },
+      "tag": {
+        "$value": "0.18em",
+        "$description": "small uppercase tags"
+      },
+      "button": {
+        "$value": "0.7px"
+      }
     }
   },
   "space": {
+    "1": {
+      "$value": "0.25rem",
+      "$description": "4px"
+    },
+    "2": {
+      "$value": "0.5rem",
+      "$description": "8px"
+    },
+    "3": {
+      "$value": "0.75rem",
+      "$description": "12px"
+    },
+    "4": {
+      "$value": "1rem",
+      "$description": "16px"
+    },
+    "5": {
+      "$value": "1.5rem",
+      "$description": "24px"
+    },
+    "6": {
+      "$value": "2rem",
+      "$description": "32px"
+    },
+    "7": {
+      "$value": "3rem",
+      "$description": "48px"
+    },
+    "8": {
+      "$value": "4rem",
+      "$description": "64px"
+    },
     "$type": "dimension",
-    "$description": "8px base scale.",
-    "1": { "$value": "0.25rem", "$description": "4px" },
-    "2": { "$value": "0.5rem", "$description": "8px" },
-    "3": { "$value": "0.75rem", "$description": "12px" },
-    "4": { "$value": "1rem", "$description": "16px" },
-    "5": { "$value": "1.5rem", "$description": "24px" },
-    "6": { "$value": "2rem", "$description": "32px" },
-    "7": { "$value": "3rem", "$description": "48px" },
-    "8": { "$value": "4rem", "$description": "64px" }
+    "$description": "8px base scale."
   },
   "radius": {
     "$type": "dimension",
-    "sm": { "$value": "8px" },
-    "lg": { "$value": "20px" },
-    "pill": { "$value": "100px" }
+    "2xs": {
+      "$value": "2px"
+    },
+    "xs": {
+      "$value": "4px"
+    },
+    "sm": {
+      "$value": "8px"
+    },
+    "md": {
+      "$value": "10px"
+    },
+    "lg": {
+      "$value": "20px"
+    },
+    "pill": {
+      "$value": "100px"
+    }
   },
   "shadow": {
     "$type": "shadow",
     "sm": {
-      "$value": [
-        { "offsetX": "0", "offsetY": "1px", "blur": "2px", "spread": "0", "color": "rgba(26, 20, 22, 0.06)" },
-        { "offsetX": "0", "offsetY": "2px", "blur": "6px", "spread": "0", "color": "rgba(26, 20, 22, 0.05)" }
-      ]
+      "$value": "0 1px 2px rgba(11, 32, 39, 0.06), 0 2px 6px rgba(11, 32, 39, 0.05)"
     },
     "md": {
-      "$value": { "offsetX": "0", "offsetY": "8px", "blur": "24px", "spread": "0", "color": "rgba(26, 20, 22, 0.1)" }
+      "$value": "0 8px 24px rgba(11, 32, 39, 0.1)"
     },
     "lg": {
-      "$value": { "offsetX": "0", "offsetY": "18px", "blur": "48px", "spread": "0", "color": "rgba(90, 21, 69, 0.18)" }
+      "$value": "0 18px 48px rgba(77, 12, 62, 0.18)"
     },
     "nav": {
-      "$value": { "offsetX": "0", "offsetY": "8px", "blur": "28px", "spread": "0", "color": "rgba(26, 20, 22, 0.06)" },
+      "$value": "0 8px 28px rgba(11, 32, 39, 0.06)",
       "$description": "soft shadow on scrolled nav"
     },
     "on-dark": {
-      "$value": { "offsetX": "0", "offsetY": "6px", "blur": "18px", "spread": "0", "color": "rgba(0, 0, 0, 0.18)" },
+      "$value": "0 6px 18px rgba(0, 0, 0, 0.18)",
       "$description": "button on dark (plum) surfaces"
     },
     "on-dark-hover": {
-      "$value": { "offsetX": "0", "offsetY": "10px", "blur": "24px", "spread": "0", "color": "rgba(0, 0, 0, 0.26)" }
+      "$value": "0 10px 24px rgba(0, 0, 0, 0.26)"
+    },
+    "band-drop": {
+      "$value": "0 34px 44px rgba(11, 32, 39, 0.26)"
+    },
+    "band-drop-near": {
+      "$value": "0 10px 14px rgba(11, 32, 39, 0.12)"
     }
   },
   "layout": {
     "$type": "dimension",
-    "container-max": { "$value": "1140px" },
-    "container-pad": { "$value": "clamp(1.25rem, 4vw, 3rem)" },
-    "section-gap": { "$value": "clamp(4rem, 9vw, 8rem)" }
+    "container-max": {
+      "$value": "1240px"
+    },
+    "container-pad": {
+      "$value": "1rem",
+      "$description": "1rem below 700px, 3rem from 700px"
+    },
+    "nav-h": {
+      "$value": "6.125rem",
+      "$description": "30px top + 46px mark + 22px bottom"
+    },
+    "section-gap": {
+      "$value": "clamp(4rem, 9vw, 8rem)"
+    }
   },
   "motion": {
     "easing": {
       "$type": "cubicBezier",
-      "out": { "$value": [0.22, 1, 0.36, 1] }
+      "out": {
+        "$value": [
+          0.22,
+          1,
+          0.36,
+          1
+        ]
+      }
     },
     "duration": {
       "$type": "duration",
-      "fast": { "$value": "140ms" },
-      "base": { "$value": "240ms" }
+      "fast": {
+        "$value": "140ms"
+      },
+      "base": {
+        "$value": "240ms"
+      },
+      "hover": {
+        "$value": "150ms",
+        "$description": "colour swaps on small controls"
+      },
+      "quick": {
+        "$value": "200ms",
+        "$description": "menu card, pill states"
+      },
+      "card": {
+        "$value": "250ms",
+        "$description": "card tilt/lift"
+      },
+      "frost": {
+        "$value": "350ms",
+        "$description": "nav frosting on scroll"
+      },
+      "slow": {
+        "$value": "400ms",
+        "$description": "large collage blocks"
+      }
     }
   },
   "z": {
     "$type": "number",
-    "nav": { "$value": 100 }
+    "nav": {
+      "$value": "100"
+    }
   }
 }

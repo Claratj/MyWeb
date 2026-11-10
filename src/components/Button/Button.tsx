@@ -8,7 +8,8 @@ import {
 } from "framer-motion";
 import styles from "./Button.module.css";
 
-type Variant = "primary" | "solid" | "ghost" | "outline" | "onDark";
+/** Embr names (solid, outline, ghost, inverse, inverse-solid) plus the site's own `primary`. */
+type Variant = "primary" | "solid" | "ghost" | "outline" | "inverse" | "inverse-solid";
 type Size = "xs" | "sm" | "md" | "lg";
 
 type CommonProps = {
@@ -46,8 +47,8 @@ const textVariants: Variants = {
 };
 
 /**
- * Brand button: white pill, amber border, terracotta uppercase label, with a
- * playful wobble on hover and no hover fill.
+ * Brand button: transparent pill, amber border, terracotta uppercase label, with
+ * a playful wobble on hover and no hover fill (primary variant).
  * Renders an <a> when `href` is set, otherwise a <button>.
  */
 export function Button({

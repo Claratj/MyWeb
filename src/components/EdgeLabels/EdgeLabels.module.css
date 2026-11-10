@@ -1,0 +1,28 @@
+/* Editorial edge labels. Only where there is room beside the container. */
+.edge {
+  position: fixed;
+  top: 50%;
+  z-index: 5;
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-label);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  writing-mode: vertical-rl;
+  pointer-events: none;
+}
+.left {
+  left: 1rem;
+  transform: translateY(-50%) rotate(180deg);
+}
+.right {
+  right: 1rem;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 1023px) {
+  .edge {
+    display: none;
+  }
+}

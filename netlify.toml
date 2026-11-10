@@ -6,8 +6,7 @@
 [build.environment]
   NODE_VERSION = "22"
 
-# SPA fallback: let react-router (BrowserRouter) handle client-side routes
-# so deep links like /web or /photography don't 404 on reload.
+# SPA fallback: any unknown path serves the single page instead of a 404.
 [[redirects]]
   from = "/*"
   to = "/index.html"

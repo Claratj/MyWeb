@@ -1,7 +1,6 @@
 import { useRef, type PointerEvent } from "react";
 import { motion, useReducedMotion, useScroll, useTransform, useVelocity } from "framer-motion";
 import { nudgeQuotesNear, usePendulum } from "../../hooks/usePendulum";
-import { Badge } from "../../components/Badge/Badge";
 import { Button } from "../../components/Button/Button";
 import { Eyebrow } from "../../components/Eyebrow/Eyebrow";
 import { Reveal } from "../../components/Reveal/Reveal";
@@ -61,9 +60,6 @@ export function Hero() {
         </motion.span>
 
         <motion.div className={styles.copy} style={{ opacity: fade }}>
-          <Badge status="info" dot className={styles.availHero}>
-            Available · Remote
-          </Badge>
           <Reveal delay={0}>
             <Eyebrow>Frontend Engineer · Product UI &amp; Design Systems</Eyebrow>
           </Reveal>

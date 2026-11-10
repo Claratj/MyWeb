@@ -27,6 +27,7 @@
   --c-ink-caption: rgba(11, 32, 39, 0.62); /* captions · 4.60:1 on n1     */
   --c-d1: #101717; /* dark page                                           */
   --c-d2: #1d2828; /* dark surface                                        */
+  --c-d2-5: #2a3737; /* dark alt/hover step · 1.23:1 vs d2, as in Embr     */
   --c-d3: #5a7775; /* dark border · 3.74:1 on d1                          */
   --c-d4: #859f9e; /* dark muted text · 6.44:1 on d1                      */
   --c-orange-light-hover: #f7b19b; /* dark link hover · 10.13:1 on d1     */
@@ -209,7 +210,7 @@
 }
 :root[data-theme="dark"] {
   --color-bg: var(--c-d1);
-  --color-bg-alt: var(--c-d2);
+  --color-bg-alt: var(--c-d2-5);
   --color-surface: var(--c-d2);
   --color-text: var(--c-n1);
   --color-text-muted: var(--c-d4);
@@ -245,7 +246,7 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --color-bg: var(--c-d1);
-    --color-bg-alt: var(--c-d2);
+    --color-bg-alt: var(--c-d2-5);
     --color-surface: var(--c-d2);
     --color-text: var(--c-n1);
     --color-text-muted: var(--c-d4);

@@ -131,6 +131,10 @@
     },
     "alpha": {
       "$description": "Alpha variants for gradients, glows and overlays.",
+      "d2-5": {
+        "$value": "#2a3737",
+        "$description": "dark alt/hover step · 1.23:1 vs d2, as in Embr"
+      },
       "n1-05": {
         "$value": "rgba(247, 242, 245, 0.05)"
       },
@@ -284,7 +288,7 @@
         "$value": "{color.neutral.d1}"
       },
       "color-bg-alt": {
-        "$value": "{color.neutral.d2}"
+        "$value": "{color.alpha.d2-5}"
       },
       "color-surface": {
         "$value": "{color.neutral.d2}"

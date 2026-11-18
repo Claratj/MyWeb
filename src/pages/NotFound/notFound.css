@@ -1,0 +1,248 @@
+/* ==========================================================================
+   404 page (/404.html). A static, JS-free echo of the hero: same tokens,
+   fonts, colour fields, hanging quotes and pill buttons. Class names are
+   prefixed nf- because this is plain CSS, not a module.
+   Tokens only, no hex (same rule as component CSS).
+   ========================================================================== */
+@import "../../styles/tokens.css";
+@import "../../styles/fonts.css";
+@import "../../styles/global.css";
+
+.nf {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  overflow: clip;
+}
+
+/* Header: just the brand, like the nav's left side. */
+.nf-header {
+  padding-block: 30px 22px;
+}
+.nf-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--color-heading);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: var(--fw-extrabold);
+  letter-spacing: -0.01em;
+}
+.nf-mark {
+  flex: none;
+}
+.nf-mark-frame {
+  fill: var(--color-heading);
+}
+.nf-mark-script {
+  fill: var(--color-primary);
+}
+
+/* The hero's four colour fields, breathing slowly. */
+.nf-glow {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+}
+.nf-glow i {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px) saturate(var(--glow-saturation));
+}
+.nf-glow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 45%, var(--color-bg) 100%);
+}
+.nf-g1 {
+  inline-size: 900px;
+  block-size: 560px;
+  top: -260px;
+  left: 10%;
+  background: var(--c-orange);
+  opacity: var(--glow-1-opacity);
+}
+.nf-g2 {
+  inline-size: 640px;
+  block-size: 460px;
+  top: -220px;
+  right: -6%;
+  background: var(--c-sage);
+  opacity: var(--glow-2-opacity);
+}
+.nf-g3 {
+  inline-size: 620px;
+  block-size: 420px;
+  top: 80px;
+  left: -14%;
+  background: var(--c-plum);
+  opacity: var(--glow-3-opacity);
+}
+.nf-g4 {
+  inline-size: 700px;
+  block-size: 460px;
+  top: 20px;
+  right: 2%;
+  background: var(--c-teal);
+  opacity: var(--glow-4-opacity);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .nf-g1,
+  .nf-g2 {
+    animation: nf-breathe 16s ease-in-out infinite alternate;
+  }
+}
+@keyframes nf-breathe {
+  to {
+    transform: translate(40px, 30px) scale(1.08);
+  }
+}
+
+/* Content, vertically centred in what's left below the header. */
+.nf-main {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-5);
+  padding-block: var(--space-7) var(--space-8);
+}
+
+.nf-eyebrow {
+  font-size: var(--fs-eyebrow);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-eyebrow);
+}
+
+/* Same three-line rhythm as the hero headline. */
+/* Shrinks to its widest line (the 404), so the tail right-aligns under the
+   number instead of drifting to the far edge of the container. */
+.nf-title {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  color: var(--color-heading);
+  font-family: var(--font-display);
+}
+.nf-small {
+  font-size: clamp(1.4rem, 1.6vw + 1rem, 2.125rem);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text);
+}
+.nf-big {
+  font-size: clamp(6rem, min(30vw, 36svh), 18rem);
+  font-weight: var(--fw-extrabold);
+  letter-spacing: -0.055em;
+  line-height: 0.86;
+  white-space: nowrap;
+}
+.nf-end {
+  position: relative;
+  isolation: isolate;
+  align-self: flex-end;
+  max-width: 22ch;
+  text-align: right;
+  font-size: clamp(1.4rem, 1.6vw + 1rem, 2.125rem);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--lh-snug);
+  color: var(--color-text);
+}
+
+/* Hanging quotes, as in the hero (static: no swing without JS). */
+.nf-quote {
+  position: absolute;
+  z-index: -1;
+  font-family: var(--font-ornament);
+  font-weight: var(--fw-bold);
+  line-height: 0.7;
+  font-size: clamp(110px, 20vw, 280px);
+  pointer-events: none;
+  user-select: none;
+}
+.nf-q1 {
+  top: var(--space-5);
+  left: clamp(-24px, -1vw, 0px);
+  color: var(--color-quote-open);
+  opacity: var(--quote-open-opacity);
+  transform: rotate(-6deg);
+}
+.nf-q2 {
+  top: calc(100% + 0.04em);
+  right: -0.15em;
+  color: var(--color-quote-close);
+  opacity: var(--quote-close-opacity);
+  transform: rotate(8deg);
+}
+
+/* Extra room above so the hanging closing quote clears the paragraph. */
+.nf-lead {
+  max-width: 40ch;
+  margin-top: var(--space-7);
+  font-size: var(--fs-body-lg);
+  color: var(--color-text-muted);
+}
+
+/* Pill buttons: the same recipe as Button (lg primary + outline). */
+.nf-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+.nf-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 210px;
+  height: 60px;
+  padding-inline: 1.75rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-cta);
+  background-color: transparent;
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-button);
+  letter-spacing: var(--tracking-button);
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--color-cta-text);
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color var(--dur-hover) ease,
+    color var(--dur-hover) ease;
+}
+/* Like Button, the primary pill keeps its colours on hover; only outline fills. */
+.nf-btn--outline {
+  border-color: var(--color-heading);
+  color: var(--color-heading);
+}
+.nf-btn--outline:hover {
+  background-color: var(--color-heading);
+  color: var(--color-bg);
+}
+
+@media (max-width: 760px) {
+  .nf-end {
+    max-width: 16ch;
+  }
+  .nf-q2 {
+    right: -0.15em;
+  }
+  .nf-btn {
+    width: 100%;
+    min-width: 0;
+  }
+}

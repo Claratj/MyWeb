@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <!-- Fonts the hero paints first: start downloading them with the HTML
          instead of waiting for the CSS to arrive. Vite rewrites the hashed urls. -->
     <link rel="preload" href="/src/assets/fonts/Montserrat/Montserrat-ExtraBold.woff2" as="font" type="font/woff2" crossorigin />
@@ -23,24 +24,55 @@
     </script>
     <meta
       name="description"
-      content="Clara Toloba, Frontend Engineer specialising in design systems and product UI. Tokens generated from Figma, lint guardrails, accessibility audits. React, TypeScript. Remote, EU/global."
+      content="Clara Toloba, Frontend Engineer for design systems and product UI: Figma tokens, lint guardrails, accessibility audits. React, TypeScript. Remote, EU."
     />
     <meta name="author" content="Clara Toloba" />
+    <link rel="canonical" href="https://www.claratoloba.com/" />
 
-    <!-- Open Graph -->
+    <!-- Open Graph / link previews (LinkedIn, Slack, WhatsApp, X) -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Clara Toloba" />
+    <meta property="og:locale" content="en_GB" />
     <meta property="og:title" content="Clara Toloba, Frontend Engineer · Product UI &amp; Design Systems" />
     <meta
       property="og:description"
       content="I build design systems that hold up in code. React, TypeScript."
     />
     <meta property="og:url" content="https://www.claratoloba.com/" />
-    <link rel="canonical" href="https://www.claratoloba.com/" />
+    <meta property="og:image" content="https://www.claratoloba.com/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Clara Toloba, Frontend Engineer · Product UI &amp; Design Systems" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Structured data: ties the name, role and LinkedIn profile to this site. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Clara Toloba",
+        "jobTitle": "Frontend Engineer",
+        "description": "Frontend Engineer specialising in product UI and design systems. React, TypeScript.",
+        "url": "https://www.claratoloba.com/",
+        "image": "https://www.claratoloba.com/og-image.jpg",
+        "email": "mailto:clara@claratoloba.com",
+        "address": { "@type": "PostalAddress", "addressCountry": "ES" },
+        "knowsAbout": ["Frontend development", "Design systems", "Design tokens", "React", "TypeScript", "Accessibility"],
+        "sameAs": ["https://www.linkedin.com/in/claratoloba"]
+      }
+    </script>
 
     <title>Clara Toloba · Frontend Engineer · Product UI &amp; Design Systems</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>
+      <h1>Clara Toloba, Frontend Engineer · Product UI &amp; Design Systems</h1>
+      <p>
+        This site needs JavaScript. Reach me at <a href="mailto:clara@claratoloba.com">clara@claratoloba.com</a>,
+        on <a href="https://www.linkedin.com/in/claratoloba">LinkedIn</a>, or download my
+        <a href="/clara_toloba_cv.pdf">CV</a>.
+      </p>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

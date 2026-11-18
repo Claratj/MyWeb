@@ -6,11 +6,9 @@
 [build.environment]
   NODE_VERSION = "22"
 
-# SPA fallback: any unknown path serves the single page instead of a 404.
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# No SPA fallback: the site is one page with #anchors and no router, so an
+# unknown path gets a real 404 (public/404.html, served by Netlify) instead of
+# the home page with a 200, which search engines read as duplicate content.
 
 # Security headers. None of them change how the page looks or behaves:
 # HTTPS only, no MIME sniffing, no framing by other sites, minimal referrer,

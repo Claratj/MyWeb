@@ -3,7 +3,7 @@ import { motion, useInView, useReducedMotion, useScroll, useTransform, useVeloci
 import { Eyebrow } from "../../components/Eyebrow/Eyebrow";
 import { Reveal } from "../../components/Reveal/Reveal";
 import { nudgeQuotesNear, usePendulum } from "../../hooks/usePendulum";
-import photo from "../../assets/img/clara-about.png";
+import photo from "../../assets/img/clara-about.webp";
 import styles from "./About.module.css";
 
 export function About() {

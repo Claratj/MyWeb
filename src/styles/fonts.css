@@ -1,26 +1,30 @@
 /* ==========================================================================
    Self-hosted fonts. Only the weights actually used are declared so we don't
    ship 18 Montserrat files. Vite fingerprints these urls at build time.
+   The .woff2 files are Latin-only subsets of the .ttf sources next to them
+   (pyftsubset, Google Fonts "latin" range + U+2264), ~10x smaller. If copy
+   gains characters outside that range, regenerate them from the .ttf.
+   The two fonts the hero paints first are preloaded in index.html.
    ========================================================================== */
 
 /* Montserrat — display */
 @font-face {
   font-family: "Montserrat";
-  src: url("../assets/fonts/Montserrat/Montserrat-SemiBold.ttf") format("truetype");
+  src: url("../assets/fonts/Montserrat/Montserrat-SemiBold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("../assets/fonts/Montserrat/Montserrat-Bold.ttf") format("truetype");
+  src: url("../assets/fonts/Montserrat/Montserrat-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("../assets/fonts/Montserrat/Montserrat-ExtraBold.ttf") format("truetype");
+  src: url("../assets/fonts/Montserrat/Montserrat-ExtraBold.woff2") format("woff2");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -29,21 +33,21 @@
 /* Mulish — body */
 @font-face {
   font-family: "Mulish";
-  src: url("../assets/fonts/Mulish/Mulish-Regular.ttf") format("truetype");
+  src: url("../assets/fonts/Mulish/Mulish-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Mulish";
-  src: url("../assets/fonts/Mulish/Mulish-SemiBold.ttf") format("truetype");
+  src: url("../assets/fonts/Mulish/Mulish-SemiBold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Mulish";
-  src: url("../assets/fonts/Mulish/Mulish-Bold.ttf") format("truetype");
+  src: url("../assets/fonts/Mulish/Mulish-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
